@@ -1,0 +1,5 @@
+﻿2017-06-24 16:38:03,873 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-06-24 16:38:03,904 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-06-24 16:38:03,904 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-06-24 16:38:04,252 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-06-24 16:38:04,262 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  

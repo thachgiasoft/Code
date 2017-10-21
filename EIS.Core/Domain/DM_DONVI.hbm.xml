@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+<class name="EIS.Core.Domain.DM_DONVI, EIS.Core" table="DM_DONVI" >
+  <id name="ID" column="ID">
+    <generator class="sequence-identity">
+      <param name="sequence">DM_DONVI_SEQ</param>
+    </generator>
+  </id>
+  <property name="TEN" column="TEN" type="string" length="255" />
+  <property name="MA" column="MA" type="string" length="50" />
+  <property name="HIEULUC" column="HIEULUC" type="bool"/>
+  <property name="STT" column="STT" type="int"/>
+  <property name="MIEUTA" column="MIEUTA" type="string" length="2000"/>
+  <property name="MACHA" column="MACHA" type="string" length="50"/>
+  <property name="DONVICHA_ID" column="DONVICHA_ID" type="Int64"/>
+  <property name="MATINHTHANH" column="MATINHTHANH" type="string" length="50"/>
+  <property name="TINHTHANH_ID" column="TINHTHANH_ID" type="Int64"/>
+  <many-to-one name="DONVICHA" not-found="ignore" class="EIS.Core.Domain.DM_DONVI, EIS.Core" insert="false" update="false">
+    <column name="DONVICHA_ID" not-null="false"/>
+  </many-to-one>
+  <many-to-one name="TINHTHANH" class="EIS.Core.Domain.DM_TINHTHANH, EIS.Core" insert="false" update="false">
+    <column name="TINHTHANH_ID" not-null="false"/>
+  </many-to-one>
+</class>
+</hibernate-mapping>

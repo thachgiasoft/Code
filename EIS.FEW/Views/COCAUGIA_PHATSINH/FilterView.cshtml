@@ -1,0 +1,95 @@
+﻿@model EIS.FEW.Models.COCAUGIA_DICHVU_FILTER
+
+@Html.DevExpress().FormLayout(settings =>
+{
+    settings.Name = "formLayout";
+    settings.EncodeHtml = false;
+    settings.Width = Unit.Percentage(100);
+    settings.ColCount = 6;
+
+    // Combobox chọn cơ sở y tế
+    settings.Items.Add(item =>
+    {
+        item.FieldName = "CSKCB";
+        item.Caption = "Cơ sở";
+        item.SetNestedContent(() =>
+        {
+            ViewContext.Writer.Write(Html.Partial("_ComboBoxCoSoKCBPartial"));
+        });
+    });
+
+    // Textbox nhập mã thẻ bảo hiểm y tế
+    settings.Items.Add(item =>
+    {
+        item.FieldName = "MA_THE";
+        item.Caption = "Mã thẻ";
+        item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
+        item.NestedExtension().TextBox(cb =>
+        {
+            cb.Name = "txt_ma_the";
+        });
+    });
+
+    // DateEdit ngày vào
+    settings.Items.Add(item =>
+    {
+        item.FieldName = "NGAY_VAO";
+        item.Caption = "Ngày vào";
+        item.NestedExtensionType = FormLayoutNestedExtensionItemType.DateEdit;
+        item.NestedExtension().DateEdit(cb =>
+        {
+            cb.Name = "txt_ngay_vao";
+            cb.Date = DateTime.Now;
+            cb.Properties.DisplayFormatString = "dd/MM/yyyy";
+        });
+    });
+
+    // DateEdit ngảy ra
+    settings.Items.Add(item =>
+    {
+        item.FieldName = "NGAY_RA";
+        item.Caption = "Ngày ra";
+        item.NestedExtensionType = FormLayoutNestedExtensionItemType.DateEdit;
+        item.NestedExtension().DateEdit(cb =>
+        {
+            cb.Name = "txt_ngay_ra";
+            cb.Date = DateTime.Now;
+            cb.Properties.DisplayFormatString = "dd/MM/yyyy";
+        });
+    });
+
+    // Combobox dịch vụ
+    settings.Items.Add(item =>
+    {
+        item.FieldName = "DICHVU21";
+        item.Caption = "Mã dịch vụ";
+        item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
+        item.NestedExtension().TextBox(cb =>
+        {
+            cb.Name = "txt_ma_dich_vu";
+        });
+    });
+
+
+    // Nút tìm kiếm
+    settings.Items.Add(bt =>
+    {
+        bt.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+        bt.Caption = @" ";
+        bt.Width = Unit.Percentage(2);
+        bt.CaptionSettings.Location = LayoutItemCaptionLocation.Right;
+        bt.NestedExtension().Button(s =>
+        {
+            s.Name = "bt_TimKiem";
+            s.EnableTheming = false;
+            s.Text = "";
+            s.AllowFocus = false;
+            s.RenderMode = ButtonRenderMode.Link;
+            s.Images.Image.SpriteProperties.CssClass = "btnSearch";
+            s.Images.Image.SpriteProperties.HottrackedCssClass = "btnSearchHottracked";
+            s.Images.Image.SpriteProperties.PressedCssClass = "btnSearchPressed";
+            s.ToolTip = "Tìm kiếm";
+            s.ClientSideEvents.Click = "Filter";
+        });
+    });
+}).Bind(Model).GetHtml()

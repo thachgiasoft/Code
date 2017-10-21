@@ -1,0 +1,383 @@
+﻿2017-07-12 09:32:26,589 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-12 09:32:26,757 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-07-12 09:32:26,873 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-07-12 09:32:26,873 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-07-12 09:32:26,873 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-07-12 09:32:27,641 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-07-12 09:32:27,641 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-07-12 09:32:45,090 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-12 09:32:45,256 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-07-12 09:40:12,391 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00001: unique constraint (REPORT_SYS.USERDATA_PK) violated 
+2017-07-12 09:40:12,392 ERROR NHibernate.Event.Default.AbstractFlushingEventListener - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> Oracle.DataAccess.Client.OracleException: ORA-00001: unique constraint (REPORT_SYS.USERDATA_PK) violated
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.OracleDataClientBatchingBatcher.DoExecuteBatch(IDbCommand ps)
+   --- End of inner exception stack trace ---
+   at NHibernate.AdoNet.OracleDataClientBatchingBatcher.DoExecuteBatch(IDbCommand ps)
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps)
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteBatch()
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+2017-07-12 09:40:16,087 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01866: the datetime class is invalid 
+2017-07-12 09:40:16,087 ERROR NHibernate.Event.Default.AbstractFlushingEventListener - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> Oracle.DataAccess.Client.OracleException: ORA-01866: the datetime class is invalid
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.OracleDataClientBatchingBatcher.DoExecuteBatch(IDbCommand ps)
+   --- End of inner exception stack trace ---
+   at NHibernate.AdoNet.OracleDataClientBatchingBatcher.DoExecuteBatch(IDbCommand ps)
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps)
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteBatch()
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+2017-07-12 09:51:09,754 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00001: unique constraint (REPORT_SYS.USERDATA_PK) violated 
+2017-07-12 09:51:09,755 ERROR NHibernate.Event.Default.AbstractFlushingEventListener - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> Oracle.DataAccess.Client.OracleException: ORA-00001: unique constraint (REPORT_SYS.USERDATA_PK) violated
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.OracleDataClientBatchingBatcher.DoExecuteBatch(IDbCommand ps)
+   --- End of inner exception stack trace ---
+   at NHibernate.AdoNet.OracleDataClientBatchingBatcher.DoExecuteBatch(IDbCommand ps)
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps)
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteBatch()
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+2017-07-12 09:57:01,095 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-12 09:57:01,633 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-07-12 09:57:01,718 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-07-12 09:57:01,718 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-07-12 09:57:01,718 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-07-12 09:57:02,167 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-07-12 09:57:02,850 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-07-12 09:57:06,254 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-12 09:57:06,338 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-07-12 09:57:06,419 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-07-12 09:57:06,419 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-07-12 09:57:06,419 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-07-12 09:57:06,793 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-07-12 09:57:06,793 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-07-12 09:57:31,187 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-12 09:57:31,351 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-07-12 10:00:22,756 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-12 10:00:22,757 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-07-12 10:00:43,738 ERROR NHibernate.AssertionFailure - An AssertionFailure occurred - this may indicate a bug in NHibernate or in your custom types. 
+NHibernate.AssertionFailure: null id in EIS.Core.Domain.LogSystem entry (don't flush the Session after an exception occurs)
+2017-07-12 10:21:17,377 ERROR NHibernate.Util.ADOExceptionReporter - ORA-22992: cannot use LOB locators selected from remote tables 
+2017-07-12 10:21:59,081 ERROR NHibernate.Util.ADOExceptionReporter - ORA-22992: cannot use LOB locators selected from remote tables 
+2017-07-12 10:22:56,586 ERROR NHibernate.Util.ADOExceptionReporter - ORA-22992: cannot use LOB locators selected from remote tables 
+2017-07-12 10:29:47,749 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: DELETE FROM user_session WHERE userid = :p0 
+Oracle.DataAccess.Client.OracleException ORA-01031: insufficient privileges
+ORA-02063: preceding line from GIAMDINH    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-12 10:29:47,752 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01031: insufficient privileges
+ORA-02063: preceding line from GIAMDINH 
+2017-07-12 10:29:47,752 ERROR NHibernate.Event.Default.AbstractFlushingEventListener - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not delete collection: [IdentityManagement.Domain.user.Sessions#22][SQL: DELETE FROM user_session WHERE userid = :p0] ---> Oracle.DataAccess.Client.OracleException: ORA-01031: insufficient privileges
+ORA-02063: preceding line from GIAMDINH
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   --- End of inner exception stack trace ---
+   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   at NHibernate.Action.CollectionRemoveAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+2017-07-12 10:29:47,830 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not delete collection: [IdentityManagement.Domain.user.Sessions#22][SQL: DELETE FROM user_session WHERE userid = :p0]
+- StackTrace   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   at NHibernate.Action.CollectionRemoveAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+   at NHibernate.Event.Default.DefaultAutoFlushEventListener.OnAutoFlush(AutoFlushEvent event)
+   at NHibernate.Impl.SessionImpl.AutoFlushIfRequired(ISet`1 querySpaces)
+   at NHibernate.Impl.SessionImpl.List(IQueryExpression queryExpression, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.AbstractSessionImpl.List(IQueryExpression queryExpression, QueryParameters parameters)
+   at NHibernate.Impl.ExpressionQueryImpl.List()
+   at NHibernate.Linq.NhQueryProvider.ExecuteQuery(NhLinqExpression nhLinqExpression, IQuery query, NhLinqExpression nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.Core\ServiceImp\LogSystemService.cs:line 92 
+2017-07-12 10:29:48,716 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: DELETE FROM user_session WHERE userid = :p0 
+Oracle.DataAccess.Client.OracleException ORA-02047: cannot join the distributed transaction in progress    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-12 10:29:48,716 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02047: cannot join the distributed transaction in progress 
+2017-07-12 10:29:48,716 ERROR NHibernate.Event.Default.AbstractFlushingEventListener - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not delete collection: [IdentityManagement.Domain.user.Sessions#22][SQL: DELETE FROM user_session WHERE userid = :p0] ---> Oracle.DataAccess.Client.OracleException: ORA-02047: cannot join the distributed transaction in progress
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   --- End of inner exception stack trace ---
+   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   at NHibernate.Action.CollectionRemoveAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+2017-07-12 10:33:38,871 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: DELETE FROM NGUOIDUNG_COSOKCB WHERE NGUOIDUNG_ID = :p0 
+Oracle.DataAccess.Client.OracleException ORA-01031: insufficient privileges
+ORA-02063: preceding line from GIAMDINH    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-12 10:33:38,871 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01031: insufficient privileges
+ORA-02063: preceding line from GIAMDINH 
+2017-07-12 10:33:38,871 ERROR NHibernate.Event.Default.AbstractFlushingEventListener - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not delete collection: [EIS.Core.Domain.NGUOIDUNG.COSOKCBS#9][SQL: DELETE FROM NGUOIDUNG_COSOKCB WHERE NGUOIDUNG_ID = :p0] ---> Oracle.DataAccess.Client.OracleException: ORA-01031: insufficient privileges
+ORA-02063: preceding line from GIAMDINH
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   --- End of inner exception stack trace ---
+   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   at NHibernate.Action.CollectionRemoveAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+2017-07-12 10:33:38,924 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not delete collection: [EIS.Core.Domain.NGUOIDUNG.COSOKCBS#9][SQL: DELETE FROM NGUOIDUNG_COSOKCB WHERE NGUOIDUNG_ID = :p0]
+- StackTrace   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   at NHibernate.Action.CollectionRemoveAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+   at NHibernate.Event.Default.DefaultAutoFlushEventListener.OnAutoFlush(AutoFlushEvent event)
+   at NHibernate.Impl.SessionImpl.AutoFlushIfRequired(ISet`1 querySpaces)
+   at NHibernate.Impl.SessionImpl.List(IQueryExpression queryExpression, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.AbstractSessionImpl.List(IQueryExpression queryExpression, QueryParameters parameters)
+   at NHibernate.Impl.ExpressionQueryImpl.List()
+   at NHibernate.Linq.NhQueryProvider.ExecuteQuery(NhLinqExpression nhLinqExpression, IQuery query, NhLinqExpression nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.Core\ServiceImp\LogSystemService.cs:line 92 
+2017-07-12 10:33:39,856 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: DELETE FROM NGUOIDUNG_COSOKCB WHERE NGUOIDUNG_ID = :p0 
+Oracle.DataAccess.Client.OracleException ORA-02047: cannot join the distributed transaction in progress    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-12 10:33:39,856 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02047: cannot join the distributed transaction in progress 
+2017-07-12 10:33:39,856 ERROR NHibernate.Event.Default.AbstractFlushingEventListener - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not delete collection: [EIS.Core.Domain.NGUOIDUNG.COSOKCBS#9][SQL: DELETE FROM NGUOIDUNG_COSOKCB WHERE NGUOIDUNG_ID = :p0] ---> Oracle.DataAccess.Client.OracleException: ORA-02047: cannot join the distributed transaction in progress
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   --- End of inner exception stack trace ---
+   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   at NHibernate.Action.CollectionRemoveAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+2017-07-12 10:39:35,634 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: DELETE FROM NGUOIDUNG_COSOKCB WHERE NGUOIDUNG_ID = :p0 
+Oracle.DataAccess.Client.OracleException ORA-01031: insufficient privileges
+ORA-02063: preceding line from GIAMDINH    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-12 10:39:35,634 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01031: insufficient privileges
+ORA-02063: preceding line from GIAMDINH 
+2017-07-12 10:39:35,634 ERROR NHibernate.Event.Default.AbstractFlushingEventListener - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not delete collection: [EIS.Core.Domain.NGUOIDUNG.COSOKCBS#9][SQL: DELETE FROM NGUOIDUNG_COSOKCB WHERE NGUOIDUNG_ID = :p0] ---> Oracle.DataAccess.Client.OracleException: ORA-01031: insufficient privileges
+ORA-02063: preceding line from GIAMDINH
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   --- End of inner exception stack trace ---
+   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   at NHibernate.Action.CollectionRemoveAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+2017-07-12 10:39:35,680 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not delete collection: [EIS.Core.Domain.NGUOIDUNG.COSOKCBS#9][SQL: DELETE FROM NGUOIDUNG_COSOKCB WHERE NGUOIDUNG_ID = :p0]
+- StackTrace   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   at NHibernate.Action.CollectionRemoveAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+   at NHibernate.Event.Default.DefaultAutoFlushEventListener.OnAutoFlush(AutoFlushEvent event)
+   at NHibernate.Impl.SessionImpl.AutoFlushIfRequired(ISet`1 querySpaces)
+   at NHibernate.Impl.SessionImpl.List(IQueryExpression queryExpression, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.AbstractSessionImpl.List(IQueryExpression queryExpression, QueryParameters parameters)
+   at NHibernate.Impl.ExpressionQueryImpl.List()
+   at NHibernate.Linq.NhQueryProvider.ExecuteQuery(NhLinqExpression nhLinqExpression, IQuery query, NhLinqExpression nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.Core\ServiceImp\LogSystemService.cs:line 92 
+2017-07-12 10:39:36,836 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: DELETE FROM NGUOIDUNG_COSOKCB WHERE NGUOIDUNG_ID = :p0 
+Oracle.DataAccess.Client.OracleException ORA-02047: cannot join the distributed transaction in progress    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-12 10:39:36,836 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02047: cannot join the distributed transaction in progress 
+2017-07-12 10:39:36,836 ERROR NHibernate.Event.Default.AbstractFlushingEventListener - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not delete collection: [EIS.Core.Domain.NGUOIDUNG.COSOKCBS#9][SQL: DELETE FROM NGUOIDUNG_COSOKCB WHERE NGUOIDUNG_ID = :p0] ---> Oracle.DataAccess.Client.OracleException: ORA-02047: cannot join the distributed transaction in progress
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   --- End of inner exception stack trace ---
+   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   at NHibernate.Action.CollectionRemoveAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+2017-07-12 10:40:33,749 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: DELETE FROM NGUOIDUNG_COSOKCB WHERE NGUOIDUNG_ID = :p0 
+Oracle.DataAccess.Client.OracleException ORA-01031: insufficient privileges
+ORA-02063: preceding line from GIAMDINH    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-12 10:40:33,749 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01031: insufficient privileges
+ORA-02063: preceding line from GIAMDINH 
+2017-07-12 10:40:33,749 ERROR NHibernate.Event.Default.AbstractFlushingEventListener - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not delete collection: [EIS.Core.Domain.NGUOIDUNG.COSOKCBS#9][SQL: DELETE FROM NGUOIDUNG_COSOKCB WHERE NGUOIDUNG_ID = :p0] ---> Oracle.DataAccess.Client.OracleException: ORA-01031: insufficient privileges
+ORA-02063: preceding line from GIAMDINH
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   --- End of inner exception stack trace ---
+   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   at NHibernate.Action.CollectionRemoveAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+2017-07-12 10:40:33,796 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not delete collection: [EIS.Core.Domain.NGUOIDUNG.COSOKCBS#9][SQL: DELETE FROM NGUOIDUNG_COSOKCB WHERE NGUOIDUNG_ID = :p0]
+- StackTrace   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   at NHibernate.Action.CollectionRemoveAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+   at NHibernate.Event.Default.DefaultAutoFlushEventListener.OnAutoFlush(AutoFlushEvent event)
+   at NHibernate.Impl.SessionImpl.AutoFlushIfRequired(ISet`1 querySpaces)
+   at NHibernate.Impl.SessionImpl.List(IQueryExpression queryExpression, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.AbstractSessionImpl.List(IQueryExpression queryExpression, QueryParameters parameters)
+   at NHibernate.Impl.ExpressionQueryImpl.List()
+   at NHibernate.Linq.NhQueryProvider.ExecuteQuery(NhLinqExpression nhLinqExpression, IQuery query, NhLinqExpression nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.Core\ServiceImp\LogSystemService.cs:line 92 
+2017-07-12 10:40:33,858 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: DELETE FROM NGUOIDUNG_COSOKCB WHERE NGUOIDUNG_ID = :p0 
+Oracle.DataAccess.Client.OracleException ORA-02047: cannot join the distributed transaction in progress    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-12 10:40:33,858 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02047: cannot join the distributed transaction in progress 
+2017-07-12 10:40:33,858 ERROR NHibernate.Event.Default.AbstractFlushingEventListener - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not delete collection: [EIS.Core.Domain.NGUOIDUNG.COSOKCBS#9][SQL: DELETE FROM NGUOIDUNG_COSOKCB WHERE NGUOIDUNG_ID = :p0] ---> Oracle.DataAccess.Client.OracleException: ORA-02047: cannot join the distributed transaction in progress
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   --- End of inner exception stack trace ---
+   at NHibernate.Persister.Collection.AbstractCollectionPersister.Remove(Object id, ISessionImplementor session)
+   at NHibernate.Action.CollectionRemoveAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+2017-07-12 11:08:22,492 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Util.ThreadSafeDictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Type.TypeFactory.GetType(NullableType defaultUnqualifiedType, Int32 length, GetNullableTypeWithLength ctorDelegate)
+   at NHibernate.Type.TypeFactory.<RegisterDefaultNetTypes>b__c(Int32 l)
+   at NHibernate.Type.TypeFactory.BuiltInType(String typeName, Int32 length)
+   at NHibernate.Mapping.SimpleValue.GetHeuristicType()
+   at NHibernate.Mapping.SimpleValue.get_Type()
+   at NHibernate.Mapping.SimpleValue.IsValid(IMapping mapping)
+   at NHibernate.Mapping.PersistentClass.Validate(IMapping mapping)
+   at NHibernate.Mapping.RootClass.Validate(IMapping mapping)
+   at NHibernate.Cfg.Configuration.ValidateEntities()
+   at NHibernate.Cfg.Configuration.Validate()
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-07-12 18:22:26,944 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Util.ThreadSafeDictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Type.TypeFactory.GetType(NullableType defaultUnqualifiedType, Int32 length, GetNullableTypeWithLength ctorDelegate)
+   at NHibernate.Type.TypeFactory.<RegisterDefaultNetTypes>b__c(Int32 l)
+   at NHibernate.Type.TypeFactory.BuiltInType(String typeName, Int32 length)
+   at NHibernate.Mapping.SimpleValue.GetHeuristicType()
+   at NHibernate.Mapping.SimpleValue.get_Type()
+   at NHibernate.Mapping.SimpleValue.IsValid(IMapping mapping)
+   at NHibernate.Mapping.PersistentClass.Validate(IMapping mapping)
+   at NHibernate.Mapping.RootClass.Validate(IMapping mapping)
+   at NHibernate.Cfg.Configuration.ValidateEntities()
+   at NHibernate.Cfg.Configuration.Validate()
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-07-12 18:23:56,967 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-07-12 18:23:56,978 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-07-12 18:23:56,979 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-07-12 18:23:57,030 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-07-12 18:23:57,032 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  

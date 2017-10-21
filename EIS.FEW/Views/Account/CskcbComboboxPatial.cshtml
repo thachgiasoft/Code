@@ -1,0 +1,16 @@
+﻿@Html.DevExpress().ComboBox(
+    cb =>
+    {
+        cb.Name = "DF_COSOKCB_ID";
+        cb.Width = Unit.Percentage(100);
+        cb.CallbackRouteValues = new { Controller = "Account", Action = "CskcbComboboxPatial" };
+        cb.Properties.DropDownStyle = DropDownStyle.DropDown;
+        cb.Properties.CallbackPageSize = 15;
+        cb.Properties.TextFormatString = @"{1} ({0})";
+        cb.Properties.ValueField = "ID";
+        cb.Properties.TextField = "ID";
+        cb.Properties.ValueType = typeof(long);
+        cb.Properties.FilterMinLength = 0;
+        cb.Properties.Columns.Add("MA", "Mã", Unit.Percentage(30));
+        cb.Properties.Columns.Add("TEN", "Tên", Unit.Percentage(70));
+    }).BindList(Session["COSOKCB_Session"]).GetHtml()

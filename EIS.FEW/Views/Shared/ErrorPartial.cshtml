@@ -1,0 +1,36 @@
+﻿@model EIS.FEW.Models.ErrorScreen
+@{
+    ViewBag.Title = "EIS v" + EIS.FEW.RouteConfig.Version + " | " + Model.Title;
+    Layout = "~/Views/Shared/_rootLayout.cshtml";
+}
+<style>
+    .error_label {
+        font: bold 13pt 'Segoe UI' !important;
+        color: #000000 !important;
+        padding: 30px;
+    }
+</style>
+
+@*@Html.Partial("ErrorPartial")*@
+<table width="100%">
+    <tr>
+        <td height="50">
+            @Html.DevExpress().Label(settings =>
+            {
+                settings.Name = "errorText";
+                settings.Text = Model.ErrorText;
+                settings.ControlStyle.CssClass = "error_label";
+            }).GetHtml()
+        </td>
+    </tr>
+    <tr>
+        <td style="padding: 0px 0px 0px 30px; ">
+            @Html.DevExpress().Button(settings =>
+            {
+                settings.Name = "btnBack";
+                settings.Text = "Quay lại";
+                settings.ClientSideEvents.Click = "function(s, e) { window.history.back(); }"; 
+            }).GetHtml()
+        </td>
+    </tr>
+</table>

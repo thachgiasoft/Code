@@ -1,0 +1,42 @@
+﻿@Html.DevExpress().GridLookup(
+    settings =>
+    {
+        settings.Name = "cbx_NHOMCHUCNANGSettings";
+        settings.KeyFieldName = "NHOMCHUCNANGID";
+        settings.Properties.Caption = "Nhóm chức năng";
+        settings.Properties.CaptionStyle.Font.Bold = true;
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "DESCRIPTION";
+            c.Caption = "Tên nhóm chức năng";
+            c.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            c.Settings.AllowAutoFilter = DefaultBoolean.True;
+            c.Settings.AllowAutoFilterTextInputTimer = DefaultBoolean.False;
+            c.Settings.AutoFilterCondition = AutoFilterCondition.Contains;
+        });
+        settings.Properties.SelectionMode = GridLookupSelectionMode.Multiple;
+        settings.Properties.TextFormatString = "{0}";
+        settings.Properties.MultiTextSeparator = "; ";
+        settings.Width = Unit.Pixel(300);
+
+        settings.GridViewProperties.CallbackRouteValues = new { Controller = "RolePms", Action = "NHOMCHUCNANGPartial" };
+        settings.CommandColumn.Caption = @"Chọn";
+        settings.CommandColumn.FixedStyle = GridViewColumnFixedStyle.Left;
+        settings.CommandColumn.ShowSelectCheckbox = true;
+        settings.CommandColumn.Visible = true;
+        settings.GridViewProperties.Settings.ShowFilterRow = true;
+        settings.GridViewProperties.Settings.ShowFilterRowMenu = true;
+        settings.GridViewProperties.SettingsBehavior.AllowFocusedRow = true;
+        settings.GridViewProperties.SettingsBehavior.AllowSelectByRowClick = true;
+        settings.GridViewProperties.SettingsBehavior.AllowSelectSingleRowOnly = true;
+        settings.GridViewProperties.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.Control;
+        settings.GridViewProperties.SettingsPager.PageSize = 20;
+        settings.GridViewClientSideEvents.SelectionChanged = "function(s,e){s.GetRowValues(e.visibleIndex, 'NHOMCHUCNANGID', doGetNHOMCHUCNANGID);}";
+        settings.DataBound = (sender, e) =>
+        {
+            var gridLookup = (MVCxGridLookup)sender;
+            gridLookup.GridView.Width = Unit.Pixel(300);
+            gridLookup.GridView.Columns[0].Width = Unit.Pixel(50);
+        };
+    }).BindList(Model).GetHtml()

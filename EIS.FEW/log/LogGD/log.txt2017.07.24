@@ -1,0 +1,11 @@
+﻿2017-07-24 14:12:51,435 ERROR IdentityManagement.Authorization.UserIdentity - System.NullReferenceException: Object reference not set to an instance of an object.
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-07-24 14:13:20,548 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-07-24 14:13:20,549 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-07-24 14:13:20,549 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-07-24 14:13:20,564 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.2: End -Function AuthenUser  
+2017-07-24 14:13:41,277 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-07-24 14:13:41,277 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-07-24 14:13:41,277 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-07-24 14:13:41,334 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-07-24 14:13:41,336 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  

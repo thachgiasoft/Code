@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="EIS.Core.Domain.USER_GROUP, EIS.Core" table="USER_GROUP" >
+    <id name="ID" column="ID">
+      <generator class="sequence-identity">
+        <param name="sequence">USER_GROUP_SEQ</param>
+      </generator>
+    </id>
+    <property name="USER_ID" column="USER_ID" type="int" />
+    <property name="GROUP_ID" column="GROUP_ID" type="int" />
+  </class>
+</hibernate-mapping>

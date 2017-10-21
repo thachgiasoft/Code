@@ -1,0 +1,9 @@
+﻿<div class="footerMenu">
+    
+</div>
+<div class="copyright">
+    @Html.DevExpress().Label(settings => {
+        settings.EncodeHtml = false;
+        settings.Text = "Hệ thống giám định BHYT - "+DateTime.Now.Year + " &copy; Copyright by EIS";
+    }).GetHtml()
+</div>

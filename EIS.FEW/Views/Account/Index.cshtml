@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="@Url.Content("~/Content/Images/Icon/logo_bhxh.png")" type="image/x-icon" />
+    <link rel="icon" href="@Url.Content("~/Content/Images/Icon/logo_bhxh.png")" type="image/x-icon" />
+ @Html.DevExpress().GetStyleSheets(
+        new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout }
+    )
+    @Html.DevExpress().GetScripts()
+
+    <link href="/Content/themes/metronic/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet"/>
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.10.4.min.js"></script>
+</head>
+<body class="body-login">
+    @model EIS.Core.Domain.NGUOIDUNG
+    <div class="container-fluid">
+        <!--==============header=====================-->
+        <div class="header">
+            <div id="login">
+                <div class="col-xs-7 none-padding text-right bg-left">
+                    <img src="~/Content/Images/bando_login.png" />
+                </div>
+                <div class="col-xs-5 none-padding bg-form">
+                    <div class="col-xs-12 none-padding">
+                        <img src="~/Content/Images/logo_1.svg" class="img-logo">
+                    </div>
+                    <div class="col-xs-12 none-padding">
+                        <p class="p-banner">CƠ CÂU GIÁ </br>BHYT QUỐC GIA</p>
+                    </div>
+                    <div class="col-xs-12 none-padding">
+                        <p class="p-login">ĐĂNG NHẬP</p>
+                    </div>
+                    <div id="form">
+                        <ul class="ul-user">
+                            <li>
+                                <input name="username" id="username" class="form-control-text" type="text" placeholder="Tài khoản" autofocus required>
+                                @*<input type="text" class="form-control-text" placeholder="Tài khoản">*@
+                            </li>
+                        </ul>
+                        <ul class="ul-user">
+                            <li>
+                                @*<input type="password" class="form-control-text" placeholder="Mật khẩu">*@
+                                <input name="password" id="password" class="form-control-text" type="password" placeholder="Mật khẩu" required>
+                            </li>
+                        </ul>
+                        <ul class="ul-user">
+                            <li>
+                                <div class="col-xs-12 none-padding capcha">
+                                    <div class="col-xs-6 none-padding">
+                                        <!-- <button><img src="images/capcha.svg"></button> -->
+                                        <div class="col-xs-12 none-padding ">
+                                            <div class="col-xs-9 none-padding img-capcha">
+                                                @*<img src="~/Content/Images/ma_capcha.svg">*@
+                                                <div id="Captcha_IMGD" class="" style="background-color: #0093DD; border-width: 0px; line-height: 0px; font-size: 0px; text-align: center;">
+                                                    @Html.Partial("PartialImgCaptcha", Model)
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-3 none-padding ">
+                                                @*<span class="input-group-btn">
+                                            <button class=" btn-reset" type="button"> <img src="~/Content/Images/reset_1.svg" class="width-25"></button>
+                                        </span>*@
+                                                <a class="dxcaRefreshButton_EIS" id="Captcha_RB" href="javascript:;">
+                                                    <img id="Captcha_RIMG" class="dx-vam dxEditors_caRefresh_EIS" src="/DXR.axd?r=1_36-uLdNc" alt="Hiển thị mã khác" style="margin-right: 4px;">
+                                                    <span id="Captcha_RTS" class="dxcaRefreshButtonText_EIS" style="vertical-align: middle;"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- /input-group -->
+                                    </div>
+                                    <div class="col-xs-6 padd-left-15">
+
+                                        <input class="form-control-text" id="Captcha_TB_I" name="Captcha$TB" type="text" autocomplete="off" placeholder="Gõ mã hiển thị">
+                                        @*<input type="text" class="form-control-text" placeholder="Gõ mã hiển thị">*@
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="ul-user">
+                            <div class="col-xs-12 col-sm-12 none-padding ">
+                                <div class="form-group" id="dangnhap">
+                                    <input type="button" class="btn btn-login" onclick=" logOn() " id="submit" value="Đăng nhập"/>
+                                    @*<input type="button" class="btn btn-login" value="Đăng nhập">*@
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 none-padding ">
+                                <div class="form-group" id="dangnhap">
+                                    @Html.DevExpress().Label(s =>
+            {
+                s.Name = "lblMessage";
+                s.Text = "";
+                s.Style.Add("font-weight", "bold");
+                s.Style.Add("color", "red");
+            }).GetHtml()
+                                </div>
+                            </div>
+                            <!-- /input-group -->
+                        </ul>
+
+                    </div>
+                   
+                </div>
+                </div>
+            </div>
+  
+        <!--==============end header=====================-->
+    </div>
+    <div id="PopupLogin" style="display: none; ">
+        <p style="color:red;"> Sai tên đăng nhập hoặc mật khẩu </p>
+    </div>
+    <div id="PopupCaptchar" style="display: none; border-top: 1px solid #0093DD !important; margin-top: 10px;">
+        <p style="color:red;"> Nhập sai Captcha. Vui lòng nhập lại! </p>
+    </div>
+    <div id="PopupCaptcharVali" style="display: none; border-top: 1px solid #0093DD !important; margin-top: 10px;">
+        <p style="color:red;"> Vui lòng nhập mã kiểm tra! </p>
+    </div>
+    <div id="PopuErrSystem" style="display: none; border-top: 1px solid #0093DD !important; margin-top: 10px;">
+        <p style="color:red;"> Lỗi hệ thống, liên hệ quản trị ! </p>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#username").keyup(function (event) {
+                if (event.keyCode == 13) {
+                    $("#submit").click();
+                }
+            });
+            $("#password").keyup(function (event) {
+                if (event.keyCode == 13) {
+                    $("#submit").click();
+                }
+            });
+            $("#Captcha_TB_I").keyup(function (event) {
+                if (event.keyCode == 13) {
+                    $("#submit").click();
+                }
+            });
+        });
+
+        $('input[type=text],input[type="password"]').on("change paste keyup", function () {
+            $('#lblMessage').text('');
+        });
+
+        function logOn() {
+            debugger
+            var strCaptcha = $('#Captcha_TB_I').val();
+            if (strCaptcha == "") {
+                $('#lblMessage').text('Bạn chưa nhập mã Captcha');
+                //window.popup_error.Show();
+                //window.popup_error.SetContentHtml("Bạn chưa nhập mã Captcha!");
+                return false;
+            }
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("Login", "Account")',
+                data: { username: $('#username').val(), password: $('#password').val(), captcha: strCaptcha },
+                success: function (data) {
+                    if (data.data == 1) {
+                        window.location.href = '@Url.Action("Index","Home")';
+                    }
+                    else if (data.data == 2) {
+                        $('#lblMessage').text('Nhập sai tên đăng nhập hoặc mật khẩu');
+                        //window.popup_error.Show();
+                        //window.popup_error.SetContentHtml("Nhập sai tên đăng nhập hoặc mật khẩu. Vui lòng nhập lại!");
+                        return false;
+                    }
+                    else if (data.data == 3) {
+                        $('#lblMessage').text('Nhập sai Captcha. Vui lòng nhập lại');
+                        //window.popup_error.Show();
+                        //window.popup_error.SetContentHtml("Nhập sai Captcha. Vui lòng nhập lại!");
+                        return false;
+                    }
+                    else if (data.data == 4) {
+                        //$('#lblMessage').text('Nhập sai tên đăng nhập hoặc mật khẩu');
+                        window.location.href = '/ThongTinTaiKhoan/Index';
+                        //popup_msg.Show();
+                    }
+                    else if (data.data == 5) {
+                        window.location.href = '/Account/PartialPhienLamViec';
+                    }
+                    else if (data.data == 6) {
+                        $('#lblMessage').text('Xảy ra lỗi hệ thống, liên hệ với quản trị');
+                        console.log('message: ' + data.message);
+                        console.log('stack: ' + data.stack);
+                        //window.popup_error.Show();
+                        //window.popup_error.SetContentHtml("Xảy ra lỗi hệ thống, liên hệ với quản trị!");
+                        return false;
+                    }
+                }
+            });
+        }
+
+        function DY_PhienLamViec() {
+            window.popupPhienLamViec.Hide();
+            @*$.ajax({
+                type: "POST",
+                url: '@Url.Action("DY_PhienLamViec", "Account")',
+                data: {
+                    cskcbId: window.DF_COSOKCB_ID.GetValue(), loaiTg: window.cbx_thoigian_session.GetValue(), thang: window.cbx_thang_session.GetValue()
+                    , quy: window.cbx_quy_session.GetValue(), nam: window.cbx_nam_session.GetValue()
+                },
+                success: function (data) {
+                    if (data == 'true') {
+                        window.popupPhienLamViec.Hide();
+                        return false;
+                    }
+                    else if (data == 'TimeNull') {
+                        popup_message_phienlamviec.Show(); popup_message_phienlamviec.SetContentHtml(IDrawMessageTable("error", "Bạn phải chọn loại thời gian Tháng hoặc Quý!"));
+                        return false;
+                    }
+                    else if (data == 'kcbnull') {
+                        popup_message_phienlamviec.Show(); popup_message_phienlamviec.SetContentHtml(IDrawMessageTable("error", "Bạn phải chọn một cơ sở khám chữa bệnh!"));
+                        return false;
+                    }
+                    else if (data == 'notExistCskcb') {
+                        popup_message_phienlamviec.Show(); popup_message_phienlamviec.SetContentHtml(IDrawMessageTable("error", "Không tồn tại cơ sở khám chữa bệnh này, mời bạn chọn cơ sở khám chữa bệnh khác!"));
+                        return false;
+                    }
+                    window.location.href = '@Url.Action("Index", "Account")';
+                }
+            });*@
+        }
+
+        $("#Captcha_RIMG, #Captcha_RTS").click(function () {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("PartialImgCaptcha", "Account")',
+                data: {},
+                success: function (data) {
+                    $("#Captcha_IMGD").html(data);
+                }
+            });
+        });
+        function EndCallBack_CskcbCombobox() {
+            window.popupPhienLamViecCopy.Show();
+        }
+
+        function CloseMessage() {
+            return false;
+        }
+        function CloseMessage_CL() {
+            @*window.location = '@Url.Action("Index", "ThongTinTaiKhoan")';*@
+        }
+        function btnOK() {
+            popup_msg.Hide();
+            @*window.location = '@Url.Action("Index", "ThongTinTaiKhoan")';*@
+        }
+
+    </script>
+
+    @Html.DevExpress().PopupControl(
+settings =>
+{
+    settings.Name = "popup_error";
+    settings.HeaderText = "Thông báo";
+    settings.Width = Unit.Pixel(400);
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+    settings.CloseOnEscape = true;
+    settings.AllowDragging = true;
+    settings.Modal = true;
+    settings.CloseAction = CloseAction.OuterMouseClick;
+    settings.ClientSideEvents.CloseButtonClick = "CloseMessage";
+}).GetHtml()
+    @Html.DevExpress().PopupControl(
+settings =>
+{
+    settings.Name = "popup_msg";
+    settings.HeaderText = "Bạn phải thực hiện đổi mật khẩu mặc định!";
+    settings.Width = Unit.Pixel(300);
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+    settings.CloseAction = CloseAction.CloseButton;
+    settings.ClientSideEvents.CloseButtonClick = "CloseMessage_CL";
+    settings.SetContent(() =>
+    {
+
+        @Html.DevExpress().Button(
+        it =>
+        {
+            it.Name = "btnOK";
+            it.EnableTheming = true;
+            it.Text = "OK";
+            it.AllowFocus = false;
+            it.ControlStyle.CssClass = "btnOK";
+            it.ClientSideEvents.Click = string.Format("function(s, e) {{ popup_msg.Hide(); window.location = 'ThongTinTaiKhoan/Index'; }}", "");
+        }).GetHtml();
+
+    });
+
+}).GetHtml()
+</body>
+</html>

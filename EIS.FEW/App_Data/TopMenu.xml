@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu>
+  <item Text="" ImageUrl="~/Content/Images/Icon/logo_bhxh.png" NavigateUrl="/Home" />
+  <group Text="Hệ thống giám sát BHYT" NavigateUrl="">
+    <item Text="Sử dụng DVKT" NavigateUrl="/SuDungDVKT" />
+    <item Text="Gia tăng KCB" NavigateUrl="/GiaTangKCB" />
+    <item Text="Sử dụng quỹ KCB" NavigateUrl="/SuDungQuyKCB" />
+    <item Text="Sử dụng Kinh phí KCB" NavigateUrl="/SuDungKinhPhiKCB"/>
+    <item Text="Liên thông dữ liệu" NavigateUrl="/LienThongDuLieu" />
+  <group Text="Quản lý Báo cáo" NavigateUrl="">
+    <item Text="Báo cáo KCB" NavigateUrl="/" />
+    <item Text="Báo cáo sử dụng DVKT" NavigateUrl="/" />
+  </group>
+  </group>
+  <group Text="Quản trị hệ thống">
+    <group Text="Quản lý người dùng" NavigateUrl="">
+
+      <item Text="Quản lý Module" NavigateUrl="/MODULE" />
+      <item Text="Quản lý Nhóm chức năng" NavigateUrl="/NHOMCHUCNANG" />
+      <item Text="Quản lý Chức năng" NavigateUrl="/Object" />
+      <item Text="Quản lý tác vụ" NavigateUrl="/Permission" />
+      <item Text="Quản lý nhóm quyền" NavigateUrl="/RolePms" />
+      <item Text="Quản lý người dùng" NavigateUrl="/QuanLyNguoiDung" />
+  
+    </group>
+    <group Text="Quản lý hệ thống" NavigateUrl="">
+      <item Text="Lịch sử người dùng" NavigateUrl="/LogSystem" />
+    </group>
+  </group>
+  <!--<group Text="Trợ giúp">
+    <item Text="Liên hệ" NavigateUrl="/LienHe" />
+   <item Text="Câu hỏi thường gặp" NavigateUrl="" />
+   <item Text="Giới thiệu" NavigateUrl="" />
+  </group>-->
+  <group Text="Tài khoản">
+    <item Text="Thông tin tài khoản" NavigateUrl="/ThongTinTaiKhoan/Index" />
+    <item Text="Đăng xuất" NavigateUrl="/Account/LogOff" />
+  </group>
+</menu>

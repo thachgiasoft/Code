@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2E69A46E-F793-4F43-8720-CEE24B735DF3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EIS.Core</RootNamespace>
+    <AssemblyName>EIS.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\Lib\DevExpress.Data.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.Mvc.v15.1, Version=15.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\Lib\DevExpress.Web.Mvc.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.v15.1, Version=15.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DevExpress.Web.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="FX.Context, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\FX.Context.dll</HintPath>
+    </Reference>
+    <Reference Include="FX.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\FX.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FX.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\FX.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="FX.Utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\FX.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="GDTD.Business">
+      <HintPath>..\Lib\ServiceHoSo\GDTD.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.1.3.1\lib\net40\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IdentityManagement, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\IdentityManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.1.3.1\lib\net40\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.1.3.1\lib\net40\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.1.3.1\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.1.3.1, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.1.3.1\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="PIS.Core.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\PIS.Core.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="PIS.Logger">
+      <HintPath>..\Lib\PIS.Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="ProcessDataDLL">
+      <HintPath>..\Lib\ServiceHoSo\ProcessDataDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\Lib\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SolrNet">
+      <HintPath>..\..\Example\API_Solr_Redis\SolrNet.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\StackExchange.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO">
+      <HintPath>..\Lib\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\Lib\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\Lib\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\ConvertFontTCVN3.cs" />
+    <Compile Include="Common\DynamicLibrary.cs" />
+    <Compile Include="Common\GridViewCustomBindingHandlers.cs" />
+    <Compile Include="Common\GridViewCustomBindingSummaryCache.cs" />
+    <Compile Include="Common\GridViewCustomOperationDataHelper.cs" />
+    <Compile Include="Common\Helpper.cs" />
+    <Compile Include="Common\OracleDB.cs" />
+    <Compile Include="Common\PermissionCustom.cs" />
+    <Compile Include="Common\PredicateBuilder.cs" />
+    <Compile Include="Common\StoreProceduceEIS.cs" />
+    <Compile Include="Common\StringCustom.cs" />
+    <Compile Include="Common\StringExtension.cs" />
+    <Compile Include="Common\StringUtilHelperGDDM_CSKCB.cs" />
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="CustomView\ObjectPermission.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomView\QuanLyNguoiDungModels.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomView\TimeFilterView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomView\UserGroupModelDetail.cs" />
+    <Compile Include="CustomView\UserGroupViewModel.cs" />
+    <Compile Include="CustomView\ValidateNguoiDungAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain2\DichVu21DonGia.cs" />
+    <Compile Include="Domain2\NGUOIDUNG.cs" />
+    <Compile Include="Domain\BHYT_21.cs" />
+    <Compile Include="Domain\COCAUGIA_CHITIET.cs" />
+    <Compile Include="Domain\COCAUGIA_DICHVU21.cs" />
+    <Compile Include="Domain\COCAUGIA_LOAI.cs" />
+    <Compile Include="Domain\COCAUGIA_PHATSINH.cs" />
+    <Compile Include="Domain\COCAUGIA_THUCTE.cs" />
+    <Compile Include="Domain\COCAUGIA_THUCTE_CT.cs" />
+    <Compile Include="Domain\COCAUGIA_THUCTE_CT_QUERY.cs" />
+    <Compile Include="Domain\DM_COSOKCB.cs" />
+    <Compile Include="Domain\DM_DICHVU43.cs" />
+    <Compile Include="Domain\DM_DICHVU50.cs" />
+    <Compile Include="Domain\DM_DONVI.cs" />
+    <Compile Include="Domain\DM_GIADICHVU.cs" />
+    <Compile Include="Domain\DM_TINHTHANH.cs" />
+    <Compile Include="Domain\LogSystem.cs" />
+    <Compile Include="Domain\MODULE.cs" />
+    <Compile Include="Domain\NGUOIDUNG.cs" />
+    <Compile Include="Domain\NHOMCHA.cs" />
+    <Compile Include="Domain\NHOMCHUCNANG.cs" />
+    <Compile Include="Domain\NHOMCHUCNANG_OBJECT.cs" />
+    <Compile Include="Domain\NHOM_USER.cs" />
+    <Compile Include="Domain\TYPE_PERMISSION.cs" />
+    <Compile Include="Domain\TYPE_ROLE.cs" />
+    <Compile Include="Domain\USER_GROUP.cs" />
+    <Compile Include="Domain\ValueParam.cs" />
+    <Compile Include="EISContext.cs" />
+    <Compile Include="IService\FilterUtils.cs" />
+    <Compile Include="IService\IBHYT_21Service.cs" />
+    <Compile Include="IService\ICOCAUGIA_CHITIETService.cs" />
+    <Compile Include="IService\ICOCAUGIA_DICHVU21Service.cs" />
+    <Compile Include="IService\ICOCAUGIA_LOAIService.cs" />
+    <Compile Include="IService\ICOCAUGIA_PHATSINHService.cs" />
+    <Compile Include="IService\ICOCAUGIA_THUCTEService.cs" />
+    <Compile Include="IService\ICOCAUGIA_THUCTE_CTService.cs" />
+    <Compile Include="IService\IDMCOSOKCBService.cs" />
+    <Compile Include="IService\IDMTINHTHANHService.cs" />
+    <Compile Include="IService\IDM_DICHVU43Service.cs" />
+    <Compile Include="IService\IDM_DICHVU50Service.cs" />
+    <Compile Include="IService\IDM_DONVIService.cs" />
+    <Compile Include="IService\IDM_GIADICHVUService.cs" />
+    <Compile Include="IService\ILogSystemService.cs" />
+    <Compile Include="IService\IMODULEService.cs" />
+    <Compile Include="IService\INGUOIDUNGService.cs" />
+    <Compile Include="IService\INHOMCHUCNANGService.cs" />
+    <Compile Include="IService\INHOMCHUCNANG_OBJECTService.cs" />
+    <Compile Include="IService\INHOM_USERService.cs" />
+    <Compile Include="IService\ISoSanhCoCau21.cs" />
+    <Compile Include="IService\ITongHopCoCauChiTiet.cs" />
+    <Compile Include="IService\ITYPE_PERMISSIONService.cs" />
+    <Compile Include="IService\ITYPE_ROLEService.cs" />
+    <Compile Include="IService\IUSER_GROUPService.cs" />
+    <Compile Include="ServiceImp\BaseService.cs" />
+    <Compile Include="ServiceImp\BHYT_21Service.cs" />
+    <Compile Include="ServiceImp\COCAUGIA_CHITIETService.cs" />
+    <Compile Include="ServiceImp\COCAUGIA_DICHVU21Service.cs" />
+    <Compile Include="ServiceImp\COCAUGIA_LOAIService.cs" />
+    <Compile Include="ServiceImp\COCAUGIA_PHATSINHService.cs" />
+    <Compile Include="ServiceImp\COCAUGIA_THUCTEService.cs" />
+    <Compile Include="ServiceImp\COCAUGIA_THUCTE_CTService.cs" />
+    <Compile Include="ServiceImp\DMCOSOKCBService.cs" />
+    <Compile Include="ServiceImp\DMTINHTHANHService.cs" />
+    <Compile Include="ServiceImp\DM_DICHVU43Service.cs" />
+    <Compile Include="ServiceImp\DM_DICHVU50Service.cs" />
+    <Compile Include="ServiceImp\DM_DONVIService.cs" />
+    <Compile Include="ServiceImp\DM_GIADICHVUService.cs" />
+    <Compile Include="ServiceImp\NHOM_USERService.cs" />
+    <Compile Include="ServiceImp\LogSystemService.cs" />
+    <Compile Include="ServiceImp\MODULEService.cs" />
+    <Compile Include="ServiceImp\NHOMCHUCNANGService.cs" />
+    <Compile Include="ServiceImp\NHOMCHUCNANG_OBJECTService.cs" />
+    <Compile Include="ServiceImp\SoSanhCoCau21Service.cs" />
+    <Compile Include="ServiceImp\TYPE_PERMISSIONService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceImp\TYPE_ROLEService.cs" />
+    <Compile Include="ServiceImp\NGUOIDUNGService.cs" />
+    <Compile Include="ServiceImp\USER_GROUPService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\DM_COSOKCB.hbm.xml" />
+    <EmbeddedResource Include="Domain\DM_DONVI.hbm.xml" />
+    <EmbeddedResource Include="Domain\DM_TINHTHANH.hbm.xml" />
+    <EmbeddedResource Include="Domain\LogSystem.hbm.xml" />
+    <EmbeddedResource Include="Domain\MODULE.hbm.xml" />
+    <EmbeddedResource Include="Domain\NGUOIDUNG.hbm.xml" />
+    <EmbeddedResource Include="Domain\NHOMCHUCNANG.hbm.xml" />
+    <EmbeddedResource Include="Domain\NHOMCHUCNANG_OBJECT.hbm.xml" />
+    <EmbeddedResource Include="Domain\NHOM_USER.hbm.xml" />
+    <EmbeddedResource Include="Domain\TYPE_PERMISSION.hbm.xml" />
+    <EmbeddedResource Include="Domain\TYPE_ROLE.hbm.xml" />
+    <EmbeddedResource Include="Domain\USER_GROUP.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\COCAUGIA_DICHVU21.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\COCAUGIA_CHITIET.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\COCAUGIA_LOAI.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\DM_GIADICHVU.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\DM_DICHVU43.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\DM_DICHVU50.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\COCAUGIA_PHATSINH.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\BHYT_21.hbm.xml" />
+    <EmbeddedResource Include="Domain\COCAUGIA_THUCTE.hbm.xml" />
+    <EmbeddedResource Include="Domain\COCAUGIA_THUCTE_CT.hbm.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

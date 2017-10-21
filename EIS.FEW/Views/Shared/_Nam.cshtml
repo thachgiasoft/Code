@@ -1,0 +1,17 @@
+﻿@model EIS.Core.CustomView.TimeFilter
+
+<table style="width:100%">
+    <tr>
+        <td>
+                    @Html.DevExpress().ComboBoxFor(model => model.nam,
+                settings =>
+                {
+                    settings.Width = Unit.Percentage(100);
+                    settings.Name = "cbx_nam";
+                    settings.Properties.Width = Unit.Percentage(100);
+                    settings.Properties.DisplayFormatString = "{0}";
+                    settings.Properties.ValueType = typeof(int?);
+                }).BindList(EIS.Core.Common.Common.nams).GetHtml()
+        </td>
+    </tr>
+</table>

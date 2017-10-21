@@ -1,0 +1,54 @@
+﻿@model EIS.Core.Domain.NGUOIDUNG
+@Html.DevExpress().FormLayout(settings =>
+    {
+        settings.Name = "formLayout_PhienLamViec";
+        settings.EncodeHtml = false;
+        settings.Width = Unit.Percentage(100);
+        settings.Items.Add(item =>
+        {
+            item.FieldName = @"DF_COSOKCB_ID";
+            item.Caption = @"CSKCB";
+            item.Width = Unit.Percentage(100);
+            item.NestedExtensionType = FormLayoutNestedExtensionItemType.ComboBox;
+            item.NestedExtension().ComboBox(cb =>
+            {
+                cb.Width = Unit.Percentage(100);
+                cb.Properties.ClientSideEvents.EndCallback = "EndCallBack_CskcbCombobox";
+                cb.CallbackRouteValues = new { Controller = "Account", Action = "CskcbComboboxPatial" };
+                cb.Properties.DropDownStyle = DropDownStyle.DropDown;
+                cb.Properties.CallbackPageSize = 15;
+                cb.Properties.TextFormatString = @"{1} ({0})";
+                cb.Properties.ValueField = "ID";
+                cb.Properties.TextField = "ID";
+                cb.Properties.ValueType = typeof(long);
+                cb.Properties.FilterMinLength = 0;
+                cb.Properties.Columns.Add("MA", "Mã", Unit.Percentage(30));
+                cb.Properties.Columns.Add("TEN", "Tên", Unit.Percentage(70));
+                cb.Properties.DataSource = Session["COSOKCB_Session"];
+                cb.Properties.ValidationSettings.Display = Display.Dynamic;
+                cb.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            });
+        });
+        settings.Items.Add(item =>
+        {
+            item.Name = "TimeFilter";
+            item.Caption = @"Thời gian";
+            item.HorizontalAlign = FormLayoutHorizontalAlign.Center;
+            item.VerticalAlign = FormLayoutVerticalAlign.Top;
+            item.Width = Unit.Percentage(100);
+            item.SetNestedContent(() => Html.RenderPartial("KyFilterView_Session", Model.Time));
+        });
+        settings.Items.Add(item =>
+        {
+            item.Name = "bt_Ok";
+            item.Caption = "";
+            item.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+            item.HorizontalAlign = FormLayoutHorizontalAlign.Right;
+            item.NestedExtension().Button(bt =>
+            {
+                bt.Text = "Đồng ý";
+                bt.ClientSideEvents.Click = "DY_PhienLamViec";
+            });
+        });
+
+    }).Bind(Model).GetHtml()

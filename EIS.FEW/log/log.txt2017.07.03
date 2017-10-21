@@ -1,0 +1,33 @@
+﻿2017-07-03 17:27:47,424 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-03 17:27:47,456 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-07-03 17:27:47,572 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-07-03 17:27:47,572 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-07-03 17:27:47,572 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-07-03 17:27:47,682 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-07-03 17:27:47,688 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-07-03 17:28:08,504 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-03 17:28:08,520 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-07-03 17:28:08,670 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-07-03 17:28:08,670 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-07-03 17:28:08,670 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-07-03 17:28:08,720 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-07-03 17:28:08,726 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-07-03 18:22:55,774 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-03 18:22:56,172 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-07-03 18:22:56,270 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-07-03 18:22:56,271 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-07-03 18:22:56,272 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-07-03 18:22:56,397 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-07-03 18:22:56,405 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  

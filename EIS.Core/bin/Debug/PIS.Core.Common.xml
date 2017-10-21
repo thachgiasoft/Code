@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PIS.Core.Common</name>
+    </assembly>
+    <members>
+        <member name="M:PIS.Core.Common.GetSetSolr.GetDataDuLieuMau(System.Collections.Generic.List{System.String},System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Hàm lấy dữ liệu mẫu
+            </summary>
+            <param name="cosokcbid">Danh sách các cơ sở khám chữa bệnh id</param>
+            <param name="tungay">Filter ngày nhận theo từ ngày, đến ngày</param>
+            <param name="denngay">Filter ngày nhận theo từ ngày, đến ngày</param>
+            <param name="maloaikcb">Filter theo mã loại kcb</param>
+            <param name="dotgiamdinhid">Filter theo đợt giám định id</param>
+            <param name="trongmau">Filter theo trong mẫu</param>
+            <returns>Danh sách xml19423 thỏa mãn điều kiện filter</returns>
+        </member>
+        <member name="M:PIS.Core.Common.GetSetSolr.GetDataBHYT_7980(System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Hàm fitter dữ liệu form BHYT_7980
+            </summary>
+            <param name="macosokcb">Mã cơ sở KCB</param>
+            <param name="thoigian">
+            1: Filter theo năm
+            2: Filter theo quý
+            3: Fiter theo tháng
+            4: Fiter theo từ ngày, đến ngày
+            </param>
+            <param name="quytuthang">Nếu thời gian = 2, truyền tháng đầu của Quý</param>
+            <param name="quydenthang">Nếu thời gian = 2, truyền tháng cuối của Quý</param>
+            <param name="doituong">Chuỗi 2 kí tự đầu của MA_THE phân cách nhau bởi dấu ; Ex: "CN;BG;HN"</param>
+            <param name="namqt">Filter theo năm quy thu, với thời gian = 2,3</param>
+            <param name="thangqt">Filter theo tháng quy thu</param>
+            <param name="tungay">Nếu thời gian =4, fiter NGAYNHAN theo từ ngày, đến ngày</param>
+            <param name="denngay">Nếu thời gian =4, fiter NGAYNHAN theo từ ngày, đến ngày</param>
+            <param name="malydovvien">Filter theo list malydovvien</param>
+            <param name="ketqua">Filter theo list ketqua</param>
+            <param name="loaikcb">Filter theo loaikcb</param>
+            <returns>Danh sách xml19324 thỏa mãn điều kiện</returns>
+        </member>
+        <member name="M:PIS.Core.Common.GetSetSolr.GetDataBHYT_7980_GuiTinh(System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Hàm fitter dữ liệu form BHYT_7980_GuiTinh
+            </summary>
+            <param name="tinh">tỉnh thành ID, nếu tỉnh = "" filter theo mã cơ sở khám chữa bệnh, nếu có tỉnh filter theo tỉnh thành ID</param>
+            <param name="macosokcb">Mã cơ sở KCB</param>
+            <param name="thoigian">
+            1: Filter theo năm
+            2: Filter theo quý
+            3: Fiter theo tháng
+            4: Fiter theo từ ngày, đến ngày
+            </param>
+            <param name="quytuthang">Nếu thời gian = 2, truyền tháng đầu của Quý</param>
+            <param name="quydenthang">Nếu thời gian = 2, truyền tháng cuối của Quý</param>
+            <param name="doituong">Chuỗi 2 kí tự đầu của MA_THE phân cách nhau bởi dấu ; Ex: "CN;BG;HN"</param>
+            <param name="namqt">Filter theo năm quy thu, với thời gian = 2,3</param>
+            <param name="thangqt">Filter theo tháng quy thu</param>
+            <param name="tungay">Nếu thời gian =4, fiter NGAYNHAN theo từ ngày, đến ngày</param>
+            <param name="denngay">Nếu thời gian =4, fiter NGAYNHAN theo từ ngày, đến ngày</param>
+            <param name="malydovvien">Filter theo list malydovvien</param>
+            <param name="lstloaikcb">Danh sách các loại khám chữa bệnh</param>
+            <param name="noikham">Danh sách nơi khám filter theo loaiBN</param>
+            <returns>Danh sách xml19324 thỏa mãn điều kiện</returns>
+        </member>
+        <member name="M:PIS.Core.Common.GetSetSolr.getBHYT88(System.Int32,System.String,System.String,System.String,System.String)">
+            <summary>
+            Hàm lấy dữ liệu BHYT 88
+            </summary>
+            <param name="thoigian">thời gian = 1: filter theo điều kiện năm quyết toán(truyền vào namqt)
+            thời gian = 2: filter theo điều kiện quý(truyền vào namqt + thangqt = [quytuthang;quydenthang])
+            thời gian = 3: filter theo điều kiện tháng(truyền vào namqt + thangqt)</param>
+            <param name="quytuthang">trong trường hợp thời gian = 2: nhập tháng đầu tiên của quý, những trường hợp khác để trống</param>
+            <param name="quydenthang">trong trường hợp thời gian = 2: nhập tháng cuối của quý, những trường hợp khác để trống</param>
+            <param name="thangqt">filter theo tháng quyết toán</param>
+            <param name="namqt">filter theo năm quyết toán</param>
+            <returns>Danh sách XML1_9324</returns>
+        </member>
+        <member name="M:PIS.Core.Common.GetSetSolr.GetDataBHYT_7980_GuiBenhVien(System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Hàm fitter dữ liệu form BHYT_7980_GuiBenhVien
+            </summary>
+            <param name="tinh">Tinh</param>
+            <param name="macosokcb">Mã cơ sở KCB</param>
+            <param name="thoigian">
+            1: Filter theo năm
+            2: Filter theo quý
+            3: Fiter theo tháng
+            4: Fiter theo từ ngày, đến ngày
+            </param>
+            <param name="quytuthang">Nếu thời gian = 2, truyền tháng đầu của Quý</param>
+            <param name="quydenthang">Nếu thời gian = 2, truyền tháng cuối của Quý</param>
+            <param name="doituong">Chuỗi 2 kí tự đầu của MA_THE phân cách nhau bởi dấu ; Ex: "CN;BG;HN"</param>
+            <param name="namqt">Filter theo năm quy thu, với thời gian = 2,3</param>
+            <param name="thangqt">Filter theo tháng quy thu</param>
+            <param name="tungay">Nếu thời gian =4, fiter NGAYNHAN theo từ ngày, đến ngày</param>
+            <param name="denngay">Nếu thời gian =4, fiter NGAYNHAN theo từ ngày, đến ngày</param>
+            <param name="malydovvien">Filter theo list malydovvien</param>
+            <param name="ketqua">Filter theo list ketqua</param>
+            <param name="lstloaikcb">Filter theo loaikcb</param>
+            <returns>Danh sách xml19324 thỏa mãn điều kiện</returns>
+        </member>
+        <member name="M:PIS.Core.Common.GetSetSolr.fGetDSKCB(System.String,System.String,System.String)">
+            <summary>
+            Hàm lấy danh sách lịch sử khám chữa bệnh
+            </summary>
+            <param name="macskcb">Mã cơ sở khám chữa bệnh</param>
+            <param name="tungay">từ ngày, đến ngày filter theo ngày nhận</param>
+            <param name="denngay">từ ngày, đến ngày filter theo ngày nhận</param>
+            <returns>Danh sách XML1_9324 thỏa mãn điều kiện filter</returns>
+        </member>
+        <member name="M:PIS.Core.Common.GetSetSolr.fGetDSGCT(System.String,System.String,System.String)">
+            <summary>
+            Hàm lấy danh sách giấy chuyển tuyến
+            </summary>
+            <param name="macskcb">Mã cơ sở khám chữa bệnh</param>
+            <param name="tungay">từ ngày, đến ngày filter theo ngày nhận</param>
+            <param name="denngay">từ ngày, đến ngày filter theo ngày nhận</param>
+            <returns>Danh sách GIAYCHUYENTUYEN thỏa mãn điều kiện filter</returns>
+        </member>
+        <member name="M:PIS.Core.Common.GetSetSolr.GetTreEmKhongTheNgayra(System.String,System.String,System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Hàm lấy dữ liệu trẻ em không thẻ ngày ra
+            </summary>
+            <param name="cosokcbId">cơ sở khám chữa bệnh id</param>
+            <param name="tungay">filter theo ngày ra</param>
+            <param name="denngay">filter theo ngày ra</param>
+            <param name="makhoa">mã khoa</param>
+            <param name="lstloaikcb">list loại khám chữa bệnh</param>
+            <param name="lstGioitinh">list giới tính</param>
+            <returns>danh sách xml1_9324 phù hợp</returns>
+        </member>
+        <member name="M:PIS.Core.Common.GetSetSolr.GetTreEmKhongTheNgayThanhToan(System.String,System.String,System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Hàm lấy dữ liệu trẻ em không thẻ ngày thanh toán
+            </summary>
+            <param name="cosokcbId">cơ sở khám chữa bệnh id</param>
+            <param name="tungay">filter theo ngày thanh toán</param>
+            <param name="denngay">filter theo ngày thanh toán</param>
+            <param name="makhoa">mã khoa</param>
+            <param name="lstloaikcb">list loại khám chữa bệnh</param>
+            <param name="lstGioitinh">list giới tính</param>
+            <returns>danh sách xml1_9324 phù hợp</returns>
+        </member>
+        <member name="M:PIS.Core.Common.GetSetSolr.GetTreEmKhongTheNgayNhan(System.String,System.String,System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Hàm lấy dữ liệu trẻ em không thẻ ngày nhận
+            </summary>
+            <param name="cosokcbId">cơ sở khám chữa bệnh id</param>
+            <param name="tungay">filter theo ngày nhận</param>
+            <param name="denngay">filter theo ngày nhận</param>
+            <param name="makhoa">mã khoa</param>
+            <param name="lstloaikcb">list loại khám chữa bệnh</param>
+            <param name="lstGioitinh">list giới tính</param>
+            <returns>danh sách xml1_9324 phù hợp</returns>
+        </member>
+        <member name="M:PIS.Core.Common.GetSetSolr.SearchByQuery(SolrNet.ISolrQuery)">
+            <summary>
+            Hàm thực thi câu truy vấn query
+            </summary>
+            <param name="query">Câu truy vấn query solr</param>
+            <returns>list danh sách phù hợp với câu truy vấn query</returns>
+        </member>
+        <member name="M:PIS.Core.Common.GetSetSolr.Search(System.String,System.String)">
+            <summary>
+            Hàm search theo một trường theo một giá trị bất kỳ của xml19324
+            </summary>
+            <param name="field">tên trường trên solr</param>
+            <param name="value">giá trị của trường</param>
+            <returns>danh sách các kết quả phù hợp</returns>
+        </member>
+        <member name="M:PIS.Core.Common.GetSetSolr.SearchByList(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Hàm search theo một trường với list giá trị value
+            </summary>
+            <param name="field">tên trường trên solr</param>
+            <param name="value">list giá trị của trường đó</param>
+            <returns>danh sách các xml19324</returns>
+        </member>
+        <member name="M:PIS.Core.Common.GetSetSolr.SearchByRange(System.String,System.String,System.String)">
+            <summary>
+            Hàm search các đối tượng xml19324 có 1 trường bất kì thuộc khoảng giá trị [valueMin, valueMax]
+            </summary>
+            <param name="field">tên trường trên solr</param>
+            <param name="valueMin">giá trị min</param>
+            <param name="valueMax">giá trị max</param>
+            <returns>Danh sách xml19324 phù hợp với điều kiện</returns>
+        </member>
+        <member name="M:PIS.Core.Common.GetSetSolr.SolrHasValue(System.String)">
+            <summary>
+            Hàm kiểm tra có giá trị
+            </summary>
+            <param name="field">Tên trường trên solr</param>
+            <returns>Danh sách xml19324 có giá trị</returns>
+        </member>
+        <member name="M:PIS.Core.Common.GetSetSolr.CheckKeySolr``1(System.String)">
+            <summary>
+            Hàm kiểm tra trên solr đã có key theo đối tượng T hay chưa
+            </summary>
+            <typeparam name="T">đối tượng cần kiểm tra</typeparam>
+            <returns>true nếu đã tồn tại, false nếu chưa</returns>
+        </member>
+        <member name="M:PIS.Core.Common.GetSetSolr.ConvertDateTimeToString(System.DateTime)">
+            <summary>
+            Hàm convert Datetime thành string 
+            </summary>
+            <param name="datetime">Datetime</param>
+            <returns>chuỗi string có định dạng ("yyyy-MM-ddTHH:mm:ssZ") </returns>
+        </member>
+    </members>
+</doc>

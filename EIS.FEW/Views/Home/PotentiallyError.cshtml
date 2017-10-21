@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "EIS v" + EIS.FEW.RouteConfig.Version + " | Thông báo";
+    Layout = "~/Views/Shared/_mainLayoutLogin.cshtml";
+}
+@section HeadResources{
+    @Html.Partial("HeadResourcesPartial")
+}
+<style>
+    .ma-top-20 {
+        width: 50px;
+        clear: both;
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .height-20 {
+        width: 100%;
+        height: 10px;
+        clear: both;
+    }
+
+    .txt-anone {
+        color: #0093DD !important;
+        font-weight: bold;
+    }
+</style>
+
+@Html.DevExpress().RoundPanel(settings =>
+       {
+           settings.Name = "roundPanel";
+           settings.AllowCollapsingByHeaderClick = false;
+
+           settings.ShowCollapseButton = false;
+           settings.EnableAnimation = false;
+           settings.HeaderText = "THÔNG BÁO";
+           settings.Width = Unit.Percentage(90);
+           settings.Styles.Header.Height = 50;
+       }).GetHtml()
+
+<div class="height-20"></div>
+<div class="ma-top-20">
+    <p>
+        Bạn vừa gặp lỗi dữ liệu! Mời trở về <a href=@Url.Action("Index", "Home") class="txt-anone">trang chủ</a> để tiếp tục sử dụng.
+    </p>
+    @*<p>
+            <a href="/Account/Index" class="txt-anone">Về trang Đăng nhập</a>
+        </p>*@
+</div>

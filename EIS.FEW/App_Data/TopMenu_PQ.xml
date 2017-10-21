@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--thêm permission View vào thuộc tính ViewPer của mỗi item trong menu-->
+<!--nếu muốn luôn hiển thị thì đặt ViewPer="full"-->
+<menu>
+  <item Text="" ImageUrl="~/Content/Images/Icon/logo_bhxh.png" NavigateUrl="/Home" ViewPer="full"/>
+  <!--<group Text="Hệ thống giám sát BHYT" NavigateUrl="">-->
+ 
+  <group Text="Quản lý cơ cấu giá" NavigateUrl="" >
+    <item Text="Danh sách cơ cấu giá" NavigateUrl="/COCAUGIA_DICHVU21" ViewPer="full"/>
+    <item Text="Thêm mới cơ cấu giá" NavigateUrl="/THEMMOI_COCAUGIA_DICHVU21" ViewPer="full"/>
+    <item Text="Nhập cơ cấu thực tế" NavigateUrl="/COCAUGIA_PHATSINH" ViewPer="full"/>
+    <item Text="Tổng hợp cơ cấu chi tiết" NavigateUrl="/TongHopCoCauChiTiet" ViewPer="full"/>
+    <item Text="So sánh cơ cấu 21" NavigateUrl="/SoSanhCoCau21" ViewPer="full"/>
+
+  </group>
+
+
+  <!--</group>-->
+  <group Text="Quản trị hệ thống">
+    <group Text="Quản lý người dùng" NavigateUrl="">
+
+      <item Text="Quản lý Module" NavigateUrl="/MODULE" ViewPer="full"/>
+      <item Text="Quản lý Nhóm chức năng" NavigateUrl="/NHOMCHUCNANG" ViewPer="full"/>
+      <item Text="Quản lý Chức năng" NavigateUrl="/Object" ViewPer="full"/>
+      <item Text="Quản lý tác vụ" NavigateUrl="/Permission" ViewPer="full"/>
+      <item Text="Quản lý nhóm quyền" NavigateUrl="/RolePms" ViewPer="full" />
+      <item Text="Quản lý người dùng" NavigateUrl="/QuanLyNguoiDung" ViewPer="full" />
+
+    </group>
+    <group Text="Quản lý hệ thống" NavigateUrl="" ViewPer="full">
+      <item Text="Lịch sử người dùng" NavigateUrl="/LogSystem" ViewPer="full"/>
+    </group>
+  </group>
+  <!--<group Text="Trợ giúp">
+    <item Text="Liên hệ" NavigateUrl="/LienHe" />
+   <item Text="Câu hỏi thường gặp" NavigateUrl="" />
+   <item Text="Giới thiệu" NavigateUrl="" />
+  </group>-->
+  <group Text="Tài khoản" ViewPer="full">
+    <item Text="Thông tin tài khoản" NavigateUrl="/ThongTinTaiKhoan/Index" ViewPer="full"/>
+    <item Text="Đăng xuất" NavigateUrl="/Account/LogOff" ViewPer="full"/>
+  </group>
+</menu>

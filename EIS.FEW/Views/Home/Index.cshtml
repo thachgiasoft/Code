@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "EIS v" + EIS.FEW.RouteConfig.Version + " - HỆ THỐNG GIÁM SÁT";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+@section HeadResources{
+    @Html.Partial("HeadResourcesPartial")
+}
+<style>
+    #HeaderMenu_DXI0_ {
+        background-color: #0093DD !important;
+    }
+
+    body {
+      /* background: url(/Content/Images/homeImg.png) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;*/
+    }
+</style>
+
+@using (Html.BeginForm("", "", FormMethod.Post, new { id = "popupLDTC", @class = "edit_form", @style = "width: 100%;" }))
+{
+    @*@Html.Action("DashboardViewerPartial")*@
+}
+

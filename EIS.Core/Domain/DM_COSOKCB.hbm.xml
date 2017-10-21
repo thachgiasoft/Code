@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+<class name="EIS.Core.Domain.DM_COSOKCB, EIS.Core" table="DM_COSOKCB" >
+  <id name="ID" column="ID">
+    <generator class="sequence-identity">
+      <param name="sequence">DM_COSOKCB_SEQ</param>
+    </generator>
+  </id>
+  <property name="TEN" column="TEN" type="string" length="255" />
+  <property name="MA" column="MA" type="string" length="50" />
+  <property name="MABHYT" column="MABHYT" type="string" length="50" />
+  <property name="DONVIHANHCHINH_ID" column="DONVIHANHCHINH_ID" type="Int64"/>
+  <property name="DIACHI" column="DIACHI" type="string" length="100" />
+  <property name="HANGBENHVIEN" column="HANGBENHVIEN" type="Int32"/>
+  <property name="TUYENCMKT" column="TUYENCMKT" type="Int32"/>
+  <property name="HIEULUC" column="HIEULUC" type="bool"/>
+  <property name="STT" column="STT" type="Int32"/>
+  <property name="MIEUTA" column="MIEUTA" type="string" length="2000"/>
+  <property name="DONVI_ID" column="DONVI_ID" type="Int64"/>
+  <property name="TINHTHANH_ID" column="TINHTHANH_ID" type="Int64"/>
+  <property name="QUANHUYEN_ID" column="QUANHUYEN_ID" type="Int64"/>
+  <property name="MATINHTHANH" column="MATINHTHANH" type="string" length="50"/>
+  <property name="LOAI_DONVICHUQUAN" column="LOAI_DONVICHUQUAN" type="int"/>
+  <property name="COQUANCHUQUAN" column="COQUANCHUQUAN" type="string" length="225"/>
+  <property name="MAQUANHUYEN" column="MAQUANHUYEN" type="string" length="50"/>
+  <property name="MADONVI" column="MADONVI" type="string" length="50"/>
+  <property name="MACOSOKCBCHA" column="MACOSOKCBCHA" type="string" length="50"/>
+  <property name="DIENTHOAI" column="DIENTHOAI" type="string" length="15"/>
+  <property name="MASOTHUE" column="MASOTHUE" type="string" length="15"/>
+  <property name="EMAIL" column="EMAIL" type="string" length="225"/>
+  <property name="FAX" column="FAX" type="string" length="225"/>
+  <property name="COSOKCBCHA_ID" column="COSOKCBCHA_ID" type="Int64"/>
+  <property name="THANNHANTAO" column="THANNHANTAO" type="bool"/>
+  <property name="THAIGHEP" column="THAIGHEP" type="bool"/>
+  <property name="LOAIHOPDONG" column="LOAIHOPDONG" type="int"/>
+  <property name="DKKCBBD" column="DKKCBBD" type="int"/>
+  <property name="HINHTHUCTT" column="HINHTHUCTT" type="int"/>
+  <property name="LOAIBENHVIEN" column="LOAIBENHVIEN" type="int"/>
+  <property name="KHAMTREEM" column="KHAMTREEM" type="bool"/>
+  <property name="NGAYNGUNGHD" column="NGAYNGUNGHD" type="DateTime"/>
+  <property name="MATAICHINH" column="MATAICHINH" type="string" length="50" />
+  <property name="PKDAKHOA" column="PKDAKHOA" type="bool"/>
+  <property name="UNGTHU" column="UNGTHU" type="bool"/>
+  <property name="VIEMGAN" column="VIEMGAN" type="bool"/>
+  <property name="TEBAOMAUTD" column="TEBAOMAUTD" type="bool"/>
+  <property name="KHAMT7" column="KHAMT7" type="bool"/>
+  <property name="KHAMCN" column="KHAMCN" type="bool"/>
+  <property name="KHAMNGAYLE" column="KHAMNGAYLE" type="bool"/>
+  <property name="NGAYKYHOPDONG" column="NGAYKYHOPDONG" type="DateTime"/>
+  <property name="NGAYKYHOPDONGLANDAU" column="NGAYKYHOPDONGLANDAU" type="DateTime"/>
+  <property name="KIEUBV" column="KIEUBV" type="int"/>
+  <property name="CAPCSKCB_MIN" column="CAPCSKCB_MIN" type="int"/>
+  <property name="SOHOPDONG" column="SOHOPDONG" type="string" length="25" />
+  <property name="TTPHEDUYET" column="TTPHEDUYET" type="int"/>
+  <property name="LYDO" column="LYDO" type="string" length="1000" />
+  <property name="TRANGTHAI" column="TRANGTHAI" type="int"/>
+  <property name="TUCHU" column="TUCHU" type="int"/>
+  <property name="HANGDICHVU_TD" column="HANGDICHVU_TD" type="int"/>
+  <property name="HANGTHUOC_TD" column="HANGTHUOC_TD" type="int"/>
+  <property name="HANGVATTU_TD" column="HANGVATTU_TD" type="int"/>
+  <property name="BYT" column="BYT" type="bool"/>
+  <property name="SO_GPHD" column="SO_GPHD" type="string" length="255"/>
+  <property name="KCB" column="KCB" type="int"/>
+  <property name="NGAYCAPMA" column="NGAYCAPMA" type="DateTime"/>
+  <property name="NGAYDIEUCHINH" column="NGAYDIEUCHINH" type="DateTime"/>
+  <property name="CHUA_PD43" column="CHUA_PD43" type="bool"/>
+  <property name="GHICHU_TINHTHAYDOI" column="GHICHU_TINHTHAYDOI" type="string" length="2000"/>
+  <property name="SL_THE_BH_DKBD" column="SL_THE_BH_DKBD" type="Int64"/>
+    <property name="SL_THE_BH_DA_CAP" column="SL_THE_BH_DA_CAP" type="Int64"/>
+  <many-to-one name="COSOKCBCHA" not-found="ignore" class="EIS.Core.Domain.DM_COSOKCB, EIS.Core" insert="false" update="false">
+    <column name="COSOKCBCHA_ID" not-null="false"/>
+  </many-to-one>
+  <!--<many-to-one name="DM_DONVIHANHCHINH" class="EIS.Core.Domain.DM_DONVIHANHCHINH, EIS.Core" insert="false" update="false">
+	  <column name="DONVIHANHCHINH_ID" not-null="false"/>
+	</many-to-one>-->
+
+  <many-to-one name="DM_TINHTHANH" class="EIS.Core.Domain.DM_TINHTHANH, EIS.Core" insert="false" update="false">
+    <column name="TINHTHANH_ID" not-null="false"/>
+  </many-to-one>
+
+  <!--<many-to-one name="DM_QUANHUYEN" class="EIS.Core.Domain.DM_QUANHUYEN, EIS.Core" insert="false" update="false">
+    <column name="QUANHUYEN_ID" not-null="false"/>
+  </many-to-one>-->
+
+  <many-to-one name="DM_DONVI" class="EIS.Core.Domain.DM_DONVI, EIS.Core" insert="false" update="false">
+    <column name="DONVI_ID" not-null="false"/>
+  </many-to-one>
+  
+  <!--<bag name="NGUOIDUNGS" table="NGUOIDUNG_COSOKCB">
+    <key column="COSOKCB_ID"/>
+    <many-to-many class="DM_NGUOIDUNG" column="ID"/>
+  </bag>-->
+</class>
+</hibernate-mapping>

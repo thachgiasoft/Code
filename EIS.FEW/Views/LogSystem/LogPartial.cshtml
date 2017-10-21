@@ -1,0 +1,94 @@
+﻿@using System.Globalization
+@{
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+    var grid = Html.DevExpress().GridView(
+        settings =>
+        {
+            settings.Name = "gvLogSystem";
+            settings.KeyFieldName = "ID";
+            settings.CallbackRouteValues = new { Controller = "LogSystem", Action = "LogPartial" };
+            settings.CustomActionRouteValues = new { Controller = "LogSystem", Action = "ft_TimKiem" };
+            settings.ClientSideEvents.EndCallback = "OnEndCallback";
+            settings.ClientSideEvents.Init = "OnInit";
+            settings.SettingsBehavior.AllowSelectByRowClick = true;
+            settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.Control;
+            settings.SettingsPager.PageSizeItemSettings.Visible = true;
+            settings.SettingsPager.PageSizeItemSettings.Items = new[] { "10", "15", "20", "30", "50" };
+            settings.SettingsPager.PageSize = 15;
+            settings.Settings.VerticalScrollBarMode = ScrollBarMode.Auto;
+            settings.Settings.ShowFilterRow = true;
+            settings.Settings.ShowFilterRowMenu = true;
+            settings.Width = Unit.Percentage(90);
+            settings.Columns.Add(s =>
+            {
+                s.EditFormSettings.Visible = DefaultBoolean.False;
+                s.Caption = @"STT";
+                s.Width = 50;
+                s.Settings.AutoFilterCondition = AutoFilterCondition.Contains;
+                s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                s.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+                s.ExportCellStyle.BorderSides = DevExpress.XtraPrinting.BorderSide.All;
+                s.VisibleIndex = 0;
+            });
+            settings.CustomColumnDisplayText = (send, e) =>
+            {
+                if (e.Column.Caption == @"STT")
+                {
+                    e.DisplayText = (e.VisibleRowIndex + 1).ToString(CultureInfo.InvariantCulture);
+                }
+            };
+            settings.Columns.Add(s =>
+            {
+                s.FieldName = "User.username";
+                s.Caption = @"Tên tài khoản";
+                s.Settings.AutoFilterCondition = AutoFilterCondition.Contains;
+                s.PropertiesEdit.EnableClientSideAPI = true;
+                s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            });
+            settings.Columns.Add(s =>
+            {
+                s.FieldName = "EVENT";
+                s.Caption = @"Sự kiện";
+                s.PropertiesEdit.EnableClientSideAPI = true;
+                s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            });
+            settings.Columns.Add(s =>
+            {
+                s.FieldName = "COMMENT_LOG";
+                s.Caption = @"Nội dung";
+                s.PropertiesEdit.EnableClientSideAPI = true;
+                s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            });
+            settings.Columns.Add(s =>
+            {
+                s.FieldName = "IPADDRESS";
+                s.Caption = @"Địa chỉ IP";
+                s.PropertiesEdit.EnableClientSideAPI = true;
+                s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            });
+            settings.Columns.Add(s =>
+            {
+                s.FieldName = "BROWSER";
+                s.Caption = @"Trình duyệt";
+                s.PropertiesEdit.EnableClientSideAPI = true;
+                s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            });
+            settings.Columns.Add(item =>
+            {
+                item.Caption = @"Ngày tạo";
+                item.FieldName = @"CREATEDATE";
+                item.ColumnType = MVCxGridViewColumnType.DateEdit;
+            });
+        });
+
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.BindToLINQ(string.Empty, string.Empty, (s, e) =>
+{
+    e.QueryableSource = Model;
+    e.KeyExpression = "ID";
+}).GetHtml()

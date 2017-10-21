@@ -1,0 +1,17 @@
+﻿@model EIS.Core.CustomView.TimeFilter
+<table style="width:100%">
+    <tr>
+        <td>
+            @Html.DevExpress().ComboBoxFor(model => model.thang,
+                settings =>
+                {
+                    settings.Width = Unit.Percentage(100);
+                    settings.Name = "cbx_thang";
+                    settings.Properties.Width = Unit.Percentage(100);
+                    settings.Properties.DisplayFormatString = "{0}";
+                    settings.Properties.ValueType = typeof(int?);               
+                }).BindList(EIS.Core.Common.Common.thangs).GetHtml()
+
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,145 @@
+﻿@using System.Web.Optimization
+@using EIS.FEW.HtmlHelpers
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/themes/base/css")
+    @Styles.Render("~/Content/themes/metronic/base")
+    @Styles.Render("~/Content/themes/metronic/theme")
+    @Styles.Render("~/Content/colorpicker")
+    @Styles.Render("~/Content/FancyTree")
+
+    <link href="~/Content/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="@Url.Content("~/Content/StyleSheet.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="@Url.Content("~/Content/Images/Icon/logo_bhxh.png")" type="image/x-icon" />
+    <link rel="icon" href="@Url.Content("~/Content/Images/Icon/logo_bhxh.png")" type="image/x-icon" />
+    @*<script src="@Url.Content("~/Scripts/ScriptDungChung.js")"></script>*@
+    @RenderSection("Css", required: false)
+    @* <script src="@Url.Content("~/Scripts/jquery-1.12.0.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+      <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+      <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+     <script src="@Url.Content("~/Scripts/Map/const.js")" type="text/javascript"></script>
+      <script src="@Url.Content("~/Scripts/Map/jquery-3.1.1.min.js")" type="text/javascript"></script>
+      <script src="@Url.Content("~/Scripts/Map/bootstrap.min.js")" type="text/javascript"></script>
+      <script src="@Url.Content("~/Scripts/Map/scale.raphael.js")" type="text/javascript"></script>
+      <script src="@Url.Content("~/Scripts/Map/vietnam.js")" type="text/javascript"></script>
+      <script src="@Url.Content("~/Scripts/Map/map.js")" type="text/javascript"></script>
+      <script src="@Url.Content("~/Scripts/Map/chart-loader.js")" type="text/javascript"></script>
+      <script src="@Url.Content("~/Scripts/serviceInvoker.js")" type="text/javascript"></script>
+      <script src="@Url.Content("~/Scripts/common.js")" type="text/javascript"></script>*@
+      
+    @Scripts.Render("~/bundles/jquerybase")
+    @Scripts.Render("~/bundles/metronic/base")
+    @Scripts.Render("~/bundles/chartreport")
+    @Scripts.Render("~/bundles/tableexport")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/colorpicker")
+    @Scripts.Render("~/bundles/fancytree")
+    @Scripts.Render("~/bundles/ckeditor")
+
+    @Scripts.Render("~/bundles/metronic/layout")
+    @Scripts.Render("~/bundles/app/modules")
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/functionCommon.js"></script>
+
+    <script type="text/javascript">
+        window.common = window.common || {};
+        common.baseUrl = '@Url.ModuleUrl("/")';
+    </script>
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- END PAGE LEVEL SCRIPTS -->
+    @*<script>
+        jQuery(document).ready(function () {
+            Metronic.init(); // init metronic core componets
+            Layout.init(); // init layout
+            Metronic.setAssetsPath('/Content/themes/metronic/assets/');
+        });
+    </script>*@
+    @RenderSection("Script", required: false)
+    @RenderSection("HeadResources", false)
+
+</head>
+<body>
+    @Html.DevExpress().Panel(settings =>
+{
+    settings.Name = "HeaderPane";
+    settings.FixedPosition = PanelFixedPosition.WindowTop;
+    settings.Collapsible = true;
+    settings.SettingsAdaptivity.CollapseAtWindowInnerWidth = 500;
+    settings.ControlStyle.CssClass = "headerPane";
+    settings.Styles.Panel.CssClass = "panel";
+    settings.Styles.ExpandedPanel.CssClass = "expandedPanel";
+    settings.Styles.ExpandBar.CssClass = "bar";
+    settings.SetContent(() => Html.RenderPartial("HeaderPartialView", HeaderViewRenderMode.Full));
+    settings.SetExpandBarTemplateContent((c) => Html.RenderPartial("HeaderPartialView", HeaderViewRenderMode.Title));
+}).GetHtml()
+   @Html.DevExpress().LoadingPanel(settings =>
+{
+    settings.Name = "LoadingPanelCustom";
+    settings.Text = "Vui lòng đợi trong giây lát!";
+    settings.Modal = true;
+    settings.ContainerElementID = "Panel_AX";
+}).GetHtml()
+    <script type="text/javascript">
+        function updateHeaderMenuOrientation() {
+            var orientation = HeaderPane.IsExpandable() ? 'Vertical' : 'Horizontal';
+            if (orientation !== HeaderMenu.GetOrientation())
+                HeaderMenu.SetOrientation(orientation);
+        }
+        var collection = ASPxClientControl.GetControlCollection();
+        collection.ControlsInitialized.AddHandler(updateHeaderMenuOrientation);
+        collection.BrowserWindowResized.AddHandler(updateHeaderMenuOrientation);
+    </script>
+    @Html.DevExpress().Panel(settings =>
+{
+    settings.Name = "MainPane";
+    settings.ControlStyle.CssClass = "mainContentPane";
+    settings.SetContent(RenderBody().ToHtmlString());
+}).GetHtml()
+    @{
+        if (Session["MustChangePW"] != null)
+        {
+            if ((bool)Session["MustChangePW"])
+            {
+                Response.Redirect("/ThongTinTaiKhoan/Index");
+            }
+        }
+    }
+    <script src="~/Scripts/toastr.min.js"></script>
+    <script src="~/Scripts/toastrServiceSetting.js"></script>
+    <script>
+        function alertSuccessYourMessage(yourMessage) {
+            toastr.success(yourMessage);
+        }
+
+        function alertWarningYourMessage(yourMessage) {
+            toastr.warning(yourMessage);
+        }
+
+        function alertErrorYourMessage(yourMessage) {
+            toastr.error(yourMessage);
+        }
+
+        function showLoadingPanel() {
+            try{
+                LoadingPanelCustom.Show();
+            }catch(err){
+                LoadingPanelCustom.Hide();
+            }
+        }
+
+        function hideLoadingPanel() {
+            LoadingPanelCustom.Hide();
+        }
+    </script>
+</body>
+</html>

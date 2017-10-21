@@ -1,0 +1,96 @@
+﻿@model HeaderViewRenderMode
+@if (Model == HeaderViewRenderMode.Title)
+{
+    @*<div class="templateTitle">
+        @Html.ActionLink("PHẦN MỀM GIÁM ĐỊNH BHXH - EIS", "Index", "Home")
+    </div>*@
+}
+else
+{
+    @*if (Model == HeaderViewRenderMode.Full)
+    {
+        <div class="headerTop">
+            <div class="templateTitle">
+                <img style="width:50px;" src="~/Content/Images/logo.jpg" />
+            </div>
+            <div class="templateTitle">
+                @Html.ActionLink("PHẦN MỀM GIÁM ĐỊNH BHXH - EIS", "Index", "Home")
+            </div>
+        </div>
+    }*@
+
+    <div class="headerMenu">
+        @* DXCOMMENT: Configure the header menu *@
+        @Html.DevExpress().Menu(settings =>
+        {
+            settings.Name = "HeaderMenu";
+            settings.ItemAutoWidth = false;
+            settings.ControlStyle.CssClass = "headerMenu";
+            settings.Width = Unit.Percentage(100);
+            
+            //TUNGNS: duyệt từng item để ẩn hiện theo phân quyền
+            settings.ItemDataBound = (sender, e) =>
+            {
+                var node = e.Item.DataItem as IHierarchyData;
+                if (node == null)
+                {
+                    return;
+                }
+                var item = node.Item as System.Xml.XmlElement;
+                if (item == null)
+                {
+                    return;
+                }
+                if (HttpContext.Current.User == null)
+                {
+                    return;
+                }
+                var hasPermission = false;
+                var permissionName = item.GetAttribute("ViewPer");
+                var lstPer = Session["LIST_PERMISSION"] as List<String>;
+                if (lstPer == null)
+                {
+                    return;
+                }
+                if (!string.IsNullOrWhiteSpace(permissionName) && (permissionName == "full" || lstPer.Contains(permissionName)))
+                {
+                    hasPermission = true;
+                }
+                if (!hasPermission)
+                {
+                    e.Item.Enabled = false;
+                    e.Item.Visible = false;
+                }
+                else
+                {
+                    e.Item.Enabled = true;
+                    e.Item.Visible = true;
+                    //cha
+                    if (e.Item.Parent == null)
+                    {
+                        return;
+                    }
+                    e.Item.Parent.Visible = true;
+                    e.Item.Parent.Enabled = true;
+                    //ông
+                    if (e.Item.Parent.Parent == null)
+                    {
+                        return;
+                    }
+                    e.Item.Parent.Parent.Visible = true;
+                    e.Item.Parent.Parent.Enabled = true;
+                    //cụ ^^!
+                    if (e.Item.Parent.Parent.Parent == null)
+                    {
+                        return;
+                    }
+                    e.Item.Parent.Parent.Parent.Visible = true;
+                    e.Item.Parent.Parent.Parent.Enabled = true;
+                }
+            };
+        }).BindToXML(HttpContext.Current.Server.MapPath("~/App_Data/TopMenu_PQ.xml"), "/menu/*").GetHtml()
+        <div class="loginControl">
+            @Html.Partial("LogOnPartialView")
+        </div>
+    </div>
+}

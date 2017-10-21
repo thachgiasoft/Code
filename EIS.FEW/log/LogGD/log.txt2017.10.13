@@ -1,0 +1,106 @@
+﻿2017-10-13 15:26:37,372 ERROR IdentityManagement.Authorization.UserIdentity - Oracle.DataAccess.Client.OracleException ORA-12170: TNS:Connect timeout occurred    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   at Oracle.DataAccess.Client.OracleConnection.Open()
+   at NHibernate.Connection.DriverConnectionProvider.GetConnection()
+   at NHibernate.Tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.Prepare()
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.GetReservedWords(Dialect dialect, IConnectionHelper connectionHelper)
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.Update(ISessionFactory sessionFactory)
+   at NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-10-13 15:26:58,850 ERROR IdentityManagement.Authorization.UserIdentity - Oracle.DataAccess.Client.OracleException ORA-12170: TNS:Connect timeout occurred    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   at Oracle.DataAccess.Client.OracleConnection.Open()
+   at NHibernate.Connection.DriverConnectionProvider.GetConnection()
+   at NHibernate.Tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.Prepare()
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.GetReservedWords(Dialect dialect, IConnectionHelper connectionHelper)
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.Update(ISessionFactory sessionFactory)
+   at NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-10-13 15:29:03,157 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-13 15:29:03,343 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-10-13 15:29:03,417 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in C:\workspaces\svn\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-10-13 15:29:03,418 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-10-13 15:29:03,419 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-10-13 15:29:03,420 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-10-13 15:29:03,634 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-10-13 15:29:03,643 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-10-13 15:29:06,005 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-13 15:29:06,028 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-10-13 15:29:06,052 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in C:\workspaces\svn\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-10-13 15:29:06,052 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-10-13 15:29:06,052 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-10-13 15:29:06,052 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-10-13 15:29:06,274 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-10-13 15:29:06,274 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-10-13 15:30:39,576 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO COCAUGIA_THUCTE_CT (ID, MA_COCAU, TEN_COCAU_OLD, SO_LUONG_OLD, DONGIA_OLD, TEN_COCAU_NEW, SO_LUONG_NEW, DONGIA_NEW, ID_LOAI, ID_THUCTE) VALUES (COCAUGIA_THUCTE_CT_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_THUCTE")    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-13 15:30:41,427 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_THUCTE") 
+2017-10-13 15:33:06,139 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO COCAUGIA_THUCTE_CT (ID, MA_COCAU, TEN_COCAU_OLD, SO_LUONG_OLD, DONGIA_OLD, TEN_COCAU_NEW, SO_LUONG_NEW, DONGIA_NEW, ID_LOAI, ID_THUCTE) VALUES (COCAUGIA_THUCTE_CT_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_THUCTE")    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-13 15:33:06,163 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_THUCTE") 
+2017-10-13 15:35:06,207 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO COCAUGIA_THUCTE_CT (ID, MA_COCAU, TEN_COCAU_OLD, SO_LUONG_OLD, DONGIA_OLD, TEN_COCAU_NEW, SO_LUONG_NEW, DONGIA_NEW, ID_LOAI, ID_THUCTE) VALUES (COCAUGIA_THUCTE_CT_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_THUCTE")    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-13 15:35:06,320 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_THUCTE") 

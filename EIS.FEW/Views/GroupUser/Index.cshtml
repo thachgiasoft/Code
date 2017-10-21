@@ -1,0 +1,404 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+@using EIS.Core.CustomView
+@model UserGroupModelDetail
+@section HeadResources{
+    @Html.Partial("HeadResourcesPartial")
+}
+<style>
+    .float_left_pms {
+        float: left;
+    }
+    .cssLstpq:hover{
+        text-decoration:underline;
+    }
+    .dxeBase_EIS {
+        float: left !important;
+        width: 220px !important;
+    }
+
+        .dxeBase_EIS .dxichCellSys {
+            width: 20px;
+        }
+
+    .checkboxclass {
+        color: blue;
+        width: 16px;
+        height: 16px;
+    }
+
+    .Roles {
+        max-width: 1300px;
+        margin: auto;
+    }
+
+    .btnCapNhap {
+        width: 100%;
+        padding-left: 40%;
+        padding-top: 1%;
+    }
+
+    #cbbGroup_ET {
+        float: left;
+    }
+
+    .fixLeft {
+        margin-left: 23px;
+        width: 400px;
+    }
+</style>
+
+
+<script>
+    var id = null;
+    function endCbbGroup() {
+        if (id != null) {
+            cbbGroup.SetValue(id);
+        }
+    }
+    function funcAddGroup(s, e) {
+        NameGroup.SetValue('');
+        UsersOfGroups.PerformCallback();
+        ppAddGroupUser.Show();
+    }
+
+    function funcEditGroup(s, e) {
+        var groupId = cbbGroup.GetValue();
+        if (groupId > 0) {
+            isCreate = 2;
+            NameEditGroup.SetValue(cbbGroup.GetText());
+            EditUsersOfGroups.PerformCallback();
+            ppEditGroupUser.Show();
+        } else {
+            alertWarningYourMessage('Chọn nhóm người dùng.');
+            cbbGroup.Focus();
+        }
+    }
+
+    //1 - create, 2 - update
+    var isCreate = -1;
+    function CreateOrUpdate(type) {
+        if (type == 1) {
+            isCreate = 1;
+            cbbGroup.SetSelectedIndex(-1);
+            NameGroup.SetValue('');
+            UsersOfGroups.PerformCallback();
+            ppAddGroupUser.Show();
+        } else {
+            var groupId = cbbGroup.GetValue();
+            if (groupId > 0) {
+                isCreate = 2;
+                NameGroup.SetValue(cbbGroup.GetText());
+                UsersOfGroups.PerformCallback({ 'groupId': groupId });
+                ppAddGroupUser.Show();
+            } else {
+                alertWarningYourMessage('Chọn nhóm người dùng.');
+                cbbGroup.Focus();
+            }
+        }
+    }
+
+    function funcCreateNewGroup(s, e) {
+        UsersOfGroups.GetSelectedFieldValues("userid", function (userIds) {
+            var ids = userIds;
+            var groupName = NameGroup.GetValue();
+
+            if (groupName == null || groupName == '') {
+                $('#ErrorAddGroup').text('Nhập Tên Nhóm');
+                return false;
+            }
+
+            if (ids.length <= 0) {
+                $('#ErrorAddGroup').text('Chọn người dùng của nhóm');
+                return false;
+            }
+            $('#ErrorAddGroup').text('');
+            showLoadingPanel();
+            $.ajax({
+                url: "/GroupUser/CreateNewGroup",
+                data: { groupName: groupName, ids: JSON.stringify(ids) },
+                type: "POST",
+                dataType: "json",
+                success: function (result) {
+                    hideLoadingPanel();
+                    if (result.status == true) {
+
+                        id = result.ID;
+                        cbbGroup.PerformCallback();
+                        lbUsers.PerformCallback({ groupId: parseInt(id)});
+                        CallbackPanel.PerformCallback({ groupId: parseInt(id) });
+                        ppAddGroupUser.Hide();
+                        alertSuccessYourMessage(result.mess);
+                    } else {
+                        $('#ErrorAddGroup').text(result.mess);
+                    }
+                },
+                error: function (result) {
+                    hideLoadingPanel();
+                    $('#ErrorAddGroup').text(result.mess);
+                    return false;
+                }
+            });
+        });
+    }
+
+    function funcUpdate(s, e) {
+        EditUsersOfGroups.GetSelectedFieldValues("userid", function (userIds) {
+            var ids = userIds;
+            var groupName = NameEditGroup.GetValue();
+
+            if (groupName == null || groupName == '') {
+                $('#ErrorEditGroup').text('Nhập Tên Nhóm');
+                return false;
+            }
+
+            if (ids.length <= 0) {
+                $('#ErrorEditGroup').text('Chọn người dùng của nhóm');
+                return false;
+            }
+            $('#ErrorEditGroup').text('');
+            showLoadingPanel();
+            $.ajax({
+                url: "/GroupUser/UpdateGroupUser",
+                data: { groupId: cbbGroup.GetValue(), groupName: groupName, ids: JSON.stringify(ids) },
+                type: "POST",
+                dataType: "json",
+                success: function (result) {
+                    hideLoadingPanel();
+                    if (result.status == true) {
+                        id = result.ID;
+                        cbbGroup.PerformCallback();
+                        lbUsers.PerformCallback({ groupId: parseInt(id) });
+                        CallbackPanel.PerformCallback({ groupId: parseInt(id) });
+                        ppEditGroupUser.Hide();
+                        alertSuccessYourMessage(result.mess);
+                    } else {
+                        $('#ErrorEditGroup').text(result.mess);
+                    }
+                },
+                error: function (result) {
+                    hideLoadingPanel();
+                    $('#ErrorEditGroup').text(result.mess);
+                    return false;
+                }
+            });
+        });
+    }
+
+    function funcCbbGroupUserChange(s, e) {
+        var groupId = s.GetValue();
+        if (groupId > 0) {
+            lbUsers.PerformCallback({ groupId: groupId });
+            CallbackPanel.PerformCallback({ groupId: groupId });
+        }
+    }
+
+    function UserOfGroupbeginCallback(s, e) {
+        e.customArgs["groupId"] = cbbGroup.GetValue();
+    }
+
+    function SaveChange(s, e) {
+        var groupId = cbbGroup.GetValue();
+        var roles = selectedRoles.GetSelectedValues();
+
+        if (groupId <= 0) {
+            alertWarningYourMessage('Chọn nhóm người dùng.');
+            cbbGroup.Focus();
+            return false;
+        }
+
+        if (roles.length <= 0) {
+            alertWarningYourMessage('Chọn những tác vụ của nhóm');
+            return false;
+        }
+        showLoadingPanel();
+        $.ajax({
+            url: "/GroupUser/AddRolesToGroup",
+            data: { groupId: groupId, roles: JSON.stringify(roles) },
+            type: "Post",
+            dataType: "json",
+            success: function (result) {
+                hideLoadingPanel();
+                if (result.status == true) {
+                    alertSuccessYourMessage(result.mess);
+                } else {
+                    alertWarningYourMessage(result.mess);
+                }
+            },
+            error: function (result) {
+                hideLoadingPanel();
+                alertErrorYourMessage('Lỗi hệ thống.');
+                return false;
+            }
+        });
+    }
+
+    function funcDeleteGroup(s, e) {
+        var groupId = cbbGroup.GetValue();
+        if (groupId <= 0) {
+            alertWarningYourMessage('Chọn nhóm người dùng.');
+            cbbGroup.Focus();
+            return false;
+        }
+        popup_ConfirmDialog.Show();
+    }
+
+    function funcBtnOK(s, e) {
+        popup_ConfirmDialog.Hide();
+        showLoadingPanel();
+        var groupId = cbbGroup.GetValue();
+        $.ajax({
+            url: "/GroupUser/DeleteGroup",
+            data: { groupId: groupId },
+            type: "Post",
+            dataType: "json",
+            success: function (result) {
+                hideLoadingPanel();
+                if (result.status == true) {
+                    id = result.ID;
+                    cbbGroup.PerformCallback();
+                    lbUsers.PerformCallback({ groupId: parseInt(id) });
+                    CallbackPanel.PerformCallback({ groupId: parseInt(id) });
+                    alertSuccessYourMessage(result.mess);
+                } else {
+                    alertWarningYourMessage(result.mess);
+                }
+                cbbGroup.PerformCallback();
+                lbUsers.ClearItems();
+            },
+            error: function (result) {
+                hideLoadingPanel();
+                alertErrorYourMessage('Lỗi hệ thống.');
+                return false;
+            }
+        });
+    }
+    function ChuyenhuongAddRolePms() {
+        window.location.href = '@Url.Action("Index","RolePms")';
+    }
+
+</script>
+<div style="padding-left: 20px; clear:both">
+    <h4 style="color: #0093DD; ">PHÂN QUYỀN NHÓM NGƯỜI DÙNG</h4>
+    <hr style="color: blue;" />
+    @Html.DevExpress().Splitter(
+    settings =>
+    {
+        settings.Name = "splScrolling";
+        settings.Width = Unit.Percentage(100);
+
+        settings.Panes.Add(pane =>
+        {
+            pane.ScrollBars = ScrollBars.Auto;
+            pane.Size = Unit.Percentage(45);
+            pane.SetContent(() =>
+            {
+                ViewContext.Writer.Write(string.Format("<div style='color: #0093DD; font-size: 12px; font-weight: bold;width:100%;border-bottom: 1px solid; padding-bottom: 0.3em;'>{0}</div>", "Quản lý nhóm người dùng:"));
+                ViewContext.Writer.Write(Html.Partial("cbbGroupUser"));
+            });
+        });
+        settings.Panes.Add(pane =>
+        {
+            pane.ScrollBars = ScrollBars.Auto;
+            settings.Height = Unit.Pixel(450);
+            settings.Width = Unit.Percentage(100);
+            pane.SetContent(() =>
+            {
+                ViewContext.Writer.Write(string.Format("<div style='color: #0093DD; font-size: 12px; font-weight: bold; width:100%; border-bottom: 1px solid; padding-bottom: 0.3em;'>{0}</div>", "Quyền truy cập:"));
+                ViewContext.Writer.Write(Html.Partial("cbbQuyentruycap"));
+            });
+        });
+    }).GetHtml()
+    @Html.DevExpress().Splitter(
+    settings =>
+    {
+        settings.Name = "splClientSideEvents";
+        settings.Height = Unit.Pixel(100);
+        settings.Width = Unit.Percentage(100);
+        settings.Panes.Add(pane =>
+        {
+            pane.Panes.Add("Pane 1-2").SetContent(() =>
+            {
+                ViewContext.Writer.Write(Html.Partial("BtnChapnhan"));
+            });
+        });
+    }).GetHtml()
+</div>
+
+@Html.DevExpress().PopupControl(settings =>
+{
+    settings.Name = "ppAddGroupUser";
+    settings.Width = 600;
+    settings.AllowDragging = true;
+    settings.CloseAction = CloseAction.CloseButton;
+    settings.CloseOnEscape = true;
+    settings.PopupAnimationType = AnimationType.None;
+    settings.HeaderText = "Thêm mới nhóm người dùng hệ thống";
+    settings.Modal = true;
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+    settings.SetContent(() =>
+    {
+        Html.RenderPartial("AddGroupUserPartial");
+    });
+}).GetHtml()
+
+@Html.DevExpress().PopupControl(settings =>
+{
+    settings.Name = "ppEditGroupUser";
+    settings.Width = 600;
+    settings.AllowDragging = true;
+    settings.CloseAction = CloseAction.CloseButton;
+    settings.CloseOnEscape = true;
+    settings.PopupAnimationType = AnimationType.None;
+    settings.HeaderText = "Cập nhật nhóm người dùng hệ thống";
+    settings.Modal = true;
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+    settings.SetContent(() =>
+    {
+        Html.RenderPartial("EditGroupUserPartial");
+    });
+}).GetHtml()
+
+@Html.DevExpress().PopupControl(settings =>
+{
+    settings.Name = "popup_ConfirmDialog";
+    settings.ShowHeader = true;
+    settings.AllowDragging = true;
+    settings.AllowResize = true;
+    settings.Modal = true;
+    settings.Width = Unit.Pixel(300);
+    settings.PopupAction = PopupAction.None;
+    settings.PopupElementID = "GridView1";
+    settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.HeaderText = "Cảnh báo!";
+    settings.SetContent(() =>
+    {
+        ViewContext.Writer.Write("<table style='width:460px'><tr><td style='padding : 5px; text-align: center;'>");
+        ViewContext.Writer.Write("<img src=\"/Content/Images/Icon-flat/Stop32.png\" height=\"16\" width=\"16\"></td>");
+        ViewContext.Writer.Write("<td style='padding : 5px; text-align: left;'><span id=\"noidungb1\">Khi xóa nhóm người dùng, toàn bộ các user trong nhóm sẽ bị mất nhóm quyền. Bạn có chắc chắn muốn xóa nhóm người dùng này không?</span></td></tr>");
+        ViewContext.Writer.Write("<tr><td colspan='2' style='padding : 5px; text-align: right;'>");
+        @Html.DevExpress().Button(buttonSettings =>
+        {
+            buttonSettings.Name = "ButtonYes1";
+            buttonSettings.Text = "Có";
+            buttonSettings.UseSubmitBehavior = false;
+            buttonSettings.ClientSideEvents.Click = "funcBtnOK";
+        }).Render();
+        ViewContext.Writer.Write("</td><td>");
+        @Html.DevExpress().Button(buttonSettings =>
+        {
+            buttonSettings.Name = "ButtonNo1";
+            buttonSettings.Text = "Không";
+            buttonSettings.UseSubmitBehavior = false;
+            buttonSettings.ClientSideEvents.Click = "function(s, e) { popup_ConfirmDialog.Hide(); }";
+        }).Render();
+        ViewContext.Writer.Write("</td></tr></table>");
+    });
+}).GetHtml()
+
+

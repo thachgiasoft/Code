@@ -1,0 +1,104 @@
+﻿@Html.DevExpress().FormLayout(settings =>
+{
+    settings.Name = "form_ThongTinTK";
+    settings.ControlStyle.CssClass = "form_ChangePW";
+    settings.EncodeHtml = false;
+    settings.Width = Unit.Percentage(100);
+    settings.Items.Add(item =>
+    {
+        item.Caption = "Tên đăng nhập";
+        item.Name = "Username";
+        item.NestedExtension().TextBox(s =>
+        {
+            s.Width = 300;
+            s.Height = 22;
+            s.Text = ViewBag.Username;
+            s.ToolTip = ViewBag.Username;
+            s.ShowModelErrors = true;
+            s.ReadOnly = true;
+            s.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
+            s.Properties.ValidationSettings.Display = Display.Dynamic;
+        });
+    });
+    settings.Items.Add(item =>
+    {
+        item.Caption = "Tên người dùng";
+        item.Name = "Tên";
+        item.NestedExtension().TextBox(s =>
+        {
+            s.Width = 300;
+            s.Height = 22;
+            s.Text = ViewBag.Ten;
+            s.ToolTip = ViewBag.Ten;
+            s.ShowModelErrors = true;
+            s.ReadOnly = true;
+            s.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
+            s.Properties.ValidationSettings.Display = Display.Dynamic;
+        });
+    });
+    settings.Items.Add(item =>
+    {
+        item.Caption = "Mật khẩu hiện tại";
+        item.Name = "Password";
+        item.FieldName = @"Password";
+        item.NestedExtension().TextBox(s =>
+        {
+            s.Width = 300;
+            s.Height = 22;
+            s.ShowModelErrors = true;
+            s.Properties.Password = true;
+            s.Properties.ClientSideEvents.Validation = "OnPWValidation";
+            s.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
+            s.Properties.ValidationSettings.Display = Display.Dynamic;
+        });
+    });
+    settings.Items.Add(item =>
+    {
+        item.Caption = "Mật khẩu mới";
+        item.Name = "NewPassword";
+        item.NestedExtension().TextBox(s =>
+        {
+            s.Width = 300;
+            s.Height = 22;
+            s.ShowModelErrors = true;
+            s.Properties.Password = true;
+            s.Properties.NullText = "Từ 6 - 100 kí tự";
+            s.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
+            s.Properties.ValidationSettings.Display = Display.Dynamic;
+        });
+    });
+    settings.Items.Add(item =>
+    {
+        item.Caption = "Nhập lại mật khẩu mới";
+        item.Name = "NewPasswordRe";
+        item.FieldName = @"PasswordRe";
+        item.NestedExtension().TextBox(s =>
+        {
+            s.Width = 300;
+            s.Height = 22;
+            s.ShowModelErrors = true;
+            s.Properties.Password = true;
+            s.Properties.NullText = "Từ 6 - 100 kí tự";
+            s.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
+            s.Properties.ValidationSettings.Display = Display.Dynamic;
+        });
+    });
+}).GetHtml()
+<table>
+    <tr>
+        <td>
+            @Html.DevExpress().Button(b =>
+        {
+            b.Name = "bt_save";
+            b.Text = "Cập nhật";
+            b.Images.Image.IconID = IconID.SaveSave16x16;
+            b.ClientSideEvents.Click = "UpdateUser";
+        }).GetHtml()
+        </td>
+    </tr>
+</table>

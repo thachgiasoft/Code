@@ -1,0 +1,32 @@
+﻿@{
+    ViewContext.Writer.Write(Html.Action("_GridViewChiTietDichVuPartial"));
+}
+
+@Html.DevExpress().FormLayout(settings =>
+{
+    settings.Name = "formLayoutAdd";
+    settings.EncodeHtml = false;
+    settings.Width = Unit.Percentage(100);
+    settings.ColCount = 3;
+   
+    settings.Items.Add(bt =>
+    {
+        bt.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+        bt.Caption = @" ";
+        bt.Width = Unit.Percentage(5);
+        bt.CaptionSettings.Location = LayoutItemCaptionLocation.Right;
+        bt.NestedExtension().Button(s =>
+        {
+            s.Name = "bt_luu";
+            s.EnableTheming = false;
+            s.Text = "";
+            s.AllowFocus = false;
+            s.RenderMode = ButtonRenderMode.Link;
+            s.Images.Image.SpriteProperties.CssClass = "btnSave";
+            s.Images.Image.SpriteProperties.HottrackedCssClass = "btnSaveHottracked";
+            s.Images.Image.SpriteProperties.PressedCssClass = "btnSavePressed";
+            s.ToolTip = "Lưu";
+            s.ClientSideEvents.Click = "Save";
+        });
+    });
+}).GetHtml()

@@ -1,0 +1,299 @@
+﻿2017-10-20 00:59:39,689 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-20 00:59:39,725 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-10-20 00:59:39,768 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in C:\workspaces\svn\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-10-20 00:59:39,769 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-10-20 00:59:39,770 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-10-20 00:59:39,770 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-10-20 00:59:39,932 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-10-20 00:59:39,940 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-10-20 00:59:43,016 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-20 00:59:43,053 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-10-20 00:59:43,074 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in C:\workspaces\svn\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-10-20 00:59:43,074 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-10-20 00:59:43,075 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-10-20 00:59:43,075 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-10-20 00:59:43,194 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-10-20 00:59:43,194 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-10-20 01:01:20,885 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Util.ThreadSafeDictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Type.TypeFactory.GetType(NullableType defaultUnqualifiedType, Int32 length, GetNullableTypeWithLength ctorDelegate)
+   at NHibernate.Type.TypeFactory.<RegisterDefaultNetTypes>b__c(Int32 l)
+   at NHibernate.Type.TypeFactory.BuiltInType(String typeName, Int32 length)
+   at NHibernate.Mapping.SimpleValue.GetHeuristicType()
+   at NHibernate.Mapping.SimpleValue.get_Type()
+   at NHibernate.Mapping.SimpleValue.IsValid(IMapping mapping)
+   at NHibernate.Mapping.PersistentClass.Validate(IMapping mapping)
+   at NHibernate.Mapping.RootClass.Validate(IMapping mapping)
+   at NHibernate.Cfg.Configuration.ValidateEntities()
+   at NHibernate.Cfg.Configuration.Validate()
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-10-20 01:10:29,790 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-20 01:10:29,856 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-10-20 01:10:29,905 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in C:\workspaces\svn\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-10-20 01:10:29,906 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-10-20 01:10:29,907 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-10-20 01:10:29,907 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-10-20 01:10:31,847 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-10-20 01:10:31,862 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-10-20 01:10:33,981 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-20 01:10:33,997 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-10-20 01:10:34,011 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in C:\workspaces\svn\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-10-20 01:10:34,011 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-10-20 01:10:34,011 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-10-20 01:10:34,011 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-10-20 01:10:34,101 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-10-20 01:10:34,101 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-10-20 01:10:35,675 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-20 01:10:35,693 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-10-20 01:10:35,710 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in C:\workspaces\svn\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-10-20 01:10:35,710 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-10-20 01:10:35,710 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-10-20 01:10:35,710 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-10-20 01:10:35,784 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-10-20 01:10:35,784 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-10-20 01:20:20,476 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: Item has already been added. Key in dictionary: 'C:\workspaces\svn\Code\EIS.FEW\Config\NHibernateConfig.xml'  Key being added: 'C:\workspaces\svn\Code\EIS.FEW\Config\NHibernateConfig.xml'
+   at System.Collections.Hashtable.Insert(Object key, Object nvalue, Boolean add)
+   at System.Collections.Hashtable.Add(Object key, Object value)
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-10-20 01:22:43,453 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-20 01:22:43,480 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-10-20 01:22:43,537 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in C:\workspaces\svn\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-10-20 01:22:43,539 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-10-20 01:22:43,540 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-10-20 01:22:43,541 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-10-20 01:22:43,647 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-10-20 01:22:43,653 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-10-20 01:22:56,632 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-20 01:22:56,644 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-10-20 01:22:56,669 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in C:\workspaces\svn\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-10-20 01:22:56,669 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-10-20 01:22:56,669 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-10-20 01:22:56,669 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-10-20 01:22:56,743 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-10-20 01:22:56,744 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-10-20 15:19:09,390 ERROR IdentityManagement.Authorization.UserIdentity - Oracle.DataAccess.Client.OracleException ORA-12170: TNS:Connect timeout occurred    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   at Oracle.DataAccess.Client.OracleConnection.Open()
+   at NHibernate.Connection.DriverConnectionProvider.GetConnection()
+   at NHibernate.Tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.Prepare()
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.GetReservedWords(Dialect dialect, IConnectionHelper connectionHelper)
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.Update(ISessionFactory sessionFactory)
+   at NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-10-20 15:22:01,327 ERROR IdentityManagement.Authorization.UserIdentity - Oracle.DataAccess.Client.OracleException ORA-12170: TNS:Connect timeout occurred    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   at Oracle.DataAccess.Client.OracleConnection.Open()
+   at NHibernate.Connection.DriverConnectionProvider.GetConnection()
+   at NHibernate.Tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.Prepare()
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.GetReservedWords(Dialect dialect, IConnectionHelper connectionHelper)
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.Update(ISessionFactory sessionFactory)
+   at NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-10-20 15:43:53,366 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO COCAUGIA_THUCTE_CT (ID, MA_COCAU, TEN_COCAU_OLD, SO_LUONG_OLD, DONGIA_OLD, TEN_COCAU_NEW, SO_LUONG_NEW, DONGIA_NEW, ID_LOAI, ID_THUCTE) VALUES (COCAUGIA_THUCTE_CT_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_LOAI")    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-20 15:43:53,399 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_LOAI") 
+2017-10-20 23:40:28,962 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-20 23:40:28,987 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-10-20 23:40:29,090 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in C:\workspaces\svn\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-10-20 23:40:29,091 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-10-20 23:40:29,092 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-10-20 23:40:29,093 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-10-20 23:40:29,709 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-10-20 23:40:29,719 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  

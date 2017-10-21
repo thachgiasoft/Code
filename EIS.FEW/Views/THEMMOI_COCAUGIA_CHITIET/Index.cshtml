@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+@section HeadResources{
+    @Html.Partial("HeadResourcesPartial")
+}
+
+@model EIS.FEW.Models.COCAUGIA_DICHVU
+
+<script type="text/javascript">
+    function FilterChiTiet() {
+        gridviewChiTiet.PerformCallback({});
+        //gridviewChiTiet.ExpandAll();
+    }
+    function ChonChiTiet() {
+        if (cbo_chitiet.GetSelectedItem()) {
+            txt_macc.SetEnabled(false);
+            txt_tencc.SetEnabled(false);
+            txt_macc.SetText(cbo_chitiet.GetSelectedItem().value);
+            txt_tencc.SetText(cbo_chitiet.GetSelectedItem().text);
+        } else {
+            txt_macc.SetEnabled(true);
+            txt_tencc.SetEnabled(true);
+            txt_macc.SetText("");
+            txt_tencc.SetText("");
+        }
+    }
+    function UpdateThanhTien() {
+        txt_thanhtiencc.SetText(txt_soluongcc.GetValue() * txt_dongiacc.GetValue());
+    }
+    function ThemMoiChiTiet() {
+        $.ajax({
+            type: 'POST',
+            url: '/THEMMOI_COCAUGIA_CHITIET/AddNewChiTiet',
+            contentType: 'application/json',
+            datatype: 'json',
+            data: JSON.stringify({
+                'LOAI_CC_ID': cbo_loai.GetValue(),
+                'MA_CC': txt_macc.GetValue(),
+                'TEN_CC': txt_tencc.GetValue(),
+                'SOLUONG_CC': txt_soluongcc.GetValue(),
+                'DONGIA_CC': txt_dongiacc.GetValue(),
+                'THANHTIEN_CC': txt_thanhtiencc.GetValue(),
+            }),
+            success: function (response) {
+                if (response.mess == "1") FilterChiTiet();
+                if (response.mess == "2") gridviewChiTiet.PerformCallback({});
+            }
+        });
+    }
+</script>
+
+@Html.DevExpress().RoundPanel(settings =>
+{
+    settings.Name = "roundPanel";
+    settings.AllowCollapsingByHeaderClick = true;
+    settings.ShowCollapseButton = true;
+    settings.EnableAnimation = true;
+    settings.Width = Unit.Percentage(100);
+    settings.HeaderText = "THÊM CHI TIẾT CƠ CẤU GIÁ";
+    settings.Height = Unit.Pixel(50);
+    settings.SetContent(() =>
+    {
+        Html.RenderPartial("FilterView", Model.Filter);
+    });
+}).GetHtml()
+
+@Html.DevExpress().Splitter(
+    settings =>
+    {
+        settings.Name = "splClientSideEvents";
+        settings.FullscreenMode = true;
+        settings.Width = Unit.Percentage(100);
+        settings.Orientation = Orientation.Horizontal;
+        settings.ShowCollapseBackwardButton = true;
+        settings.ShowCollapseForwardButton = true;
+
+        settings.Panes.Add(pane =>
+        {
+            pane.Name = "ChiTietDichVu";
+            pane.Size = Unit.Percentage(100);
+            pane.SetContent(() => Html.RenderPartial("_ThemChiTietPartial"));
+        });
+    }).GetHtml()

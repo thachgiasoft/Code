@@ -1,0 +1,139 @@
+﻿@{
+    var grid = Html.DevExpress().GridView(
+        settings =>
+        {
+            settings.Name = "gvEditing";
+            settings.KeyFieldName = "userid";
+            settings.CallbackRouteValues = new { Controller = "ThongTinTaiKhoan", Action = "DS_NguoiDungPartial" };
+            settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "ThongTinTaiKhoan", Action = "ChangeCapDuoi" };
+
+            settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.Control;
+            settings.SettingsEditing.Mode = EIS.FEW.Helper.GridViewEditingHelper.EditMode;
+            settings.SettingsPopup.EditForm.Width = 450;
+            settings.SettingsPopup.EditForm.HorizontalAlign = PopupHorizontalAlign.Center;
+            settings.SettingsPopup.EditForm.AllowResize = true;
+            settings.SettingsText.PopupEditFormCaption = "Thay đổi mật khẩu";
+            settings.SettingsPopup.EditForm.VerticalAlign = PopupVerticalAlign.Above;
+            settings.SettingsCommandButton.UpdateButton.Text = "Lưu";
+            settings.SettingsCommandButton.UpdateButton.Image.IconID = IconID.SaveSave16x16;
+            settings.SettingsCommandButton.CancelButton.Text = "Hủy";
+            settings.SettingsCommandButton.CancelButton.Image.IconID = IconID.ActionsCancel16x16;
+            settings.Width = Unit.Percentage(100);
+
+            settings.Settings.ShowFilterRowMenu = true;
+            settings.SettingsSearchPanel.Visible = true;
+            settings.SettingsSearchPanel.HighlightResults = true;
+            settings.SettingsText.SearchPanelEditorNullText = "Nhập từ khóa cần tìm kiếm...";
+
+            settings.SettingsContextMenu.Enabled = true;
+            settings.SettingsPopup.EditForm.Modal = true;
+            settings.SettingsPager.Position = PagerPosition.Bottom;
+            settings.SettingsPager.PageSizeItemSettings.Visible = true;
+            settings.SettingsPager.PageSizeItemSettings.Items = new string[] { "10", "15", "20", "25", "30" };
+            settings.SettingsBehavior.AllowFocusedRow = false;
+            settings.SettingsBehavior.AllowSelectByRowClick = true;
+            settings.SettingsContextMenu.RowMenuItemVisibility.Refresh = false;
+
+            settings.CommandColumn.Caption = "Tùy chọn";
+            settings.CommandColumn.Visible = true;
+            settings.CommandColumn.VisibleIndex = 99;
+            settings.CommandColumn.ShowEditButton = true;
+            settings.SettingsCommandButton.EditButton.Image.Url = "~/Content/Images/Edit_16x16.png";
+            settings.CommandColumn.Width = Unit.Percentage(4);
+
+                    /*Update*/
+            if (ViewData["EditError"] != null)
+            {
+                settings.SetFooterRowTemplateContent(c =>
+                {
+                    Html.ViewContext.Writer.Write(ViewData["EditError"]);
+                });
+            }
+
+            settings.BeforeGetCallbackResult = (s, e) =>
+            {
+                if (ViewData["EditError"] != null)
+                {
+                    MVCxGridView gridView = (MVCxGridView)s;
+                    gridView.Settings.ShowFooter = true;
+                }
+            };
+
+            settings.Columns.Add(col =>
+            {
+                col.Caption = "STT";
+                col.ToolTip = "STT";
+                col.EditFormSettings.Visible = DefaultBoolean.False;
+                col.PropertiesEdit.EnableClientSideAPI = true;
+                col.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+                col.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                col.Width = Unit.Percentage(3);
+            });
+            settings.CustomColumnDisplayText = (send, e) =>
+            {
+                if (e.Column.Caption == "STT")
+                {
+                    e.DisplayText = (e.VisibleRowIndex + 1).ToString();
+                }
+            };
+
+            settings.Columns.Add(col =>
+            {
+                col.FieldName = "username";
+                col.Caption = "Tên tài khoản";
+                col.PropertiesEdit.EnableClientSideAPI = true;
+                col.Width = Unit.Percentage(20);
+                col.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                col.CellStyle.Paddings.PaddingLeft = 30;
+                col.ReadOnly = true;
+                col.EditFormSettings.ColumnSpan = 3;
+            });
+         
+            settings.Columns.Add(col =>
+            {
+                col.FieldName = "NewPassword";
+                col.Caption = "Nhập mật khẩu mới";
+                col.PropertiesEdit.EnableClientSideAPI = true;
+                col.Width = 0;
+                col.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                col.CellStyle.Paddings.PaddingLeft = 30;
+                col.EditFormSettings.ColumnSpan = 3;
+                col.ColumnType = MVCxGridViewColumnType.TextBox;
+                var colP = col.PropertiesEdit as TextBoxProperties;
+                colP.Password = true;
+            });
+
+            settings.Columns.Add(col =>
+            {
+                col.FieldName = "PasswordRe";
+                col.Caption = "Nhập lại mật khẩu mới";
+                col.PropertiesEdit.EnableClientSideAPI = true;
+                col.Width = 0;
+                col.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                col.CellStyle.Paddings.PaddingLeft = 30;
+                col.EditFormSettings.ColumnSpan = 3;
+                col.ColumnType = MVCxGridViewColumnType.TextBox;
+                var colP = col.PropertiesEdit as TextBoxProperties;
+                colP.Password = true;
+            });
+
+            settings.Columns.Add(col =>
+            {
+                col.EditFormSettings.Visible = DefaultBoolean.False;
+                col.FieldName = "LastPasswordChangedDate";
+                col.Caption = "Ngày thay đổi gần nhất";
+                col.PropertiesEdit.EnableClientSideAPI = true;
+                col.Width = Unit.Percentage(20);
+                col.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                col.CellStyle.Paddings.PaddingLeft = 30;
+            });
+
+            settings.PreRender = (sender, e) =>
+            {
+                ((MVCxGridView)sender).StartEdit(-1);
+
+            };
+        });
+}
+@grid.Bind(Model).GetHtml()
+

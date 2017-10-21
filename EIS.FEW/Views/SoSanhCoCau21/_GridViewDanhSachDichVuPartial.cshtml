@@ -1,0 +1,124 @@
+﻿@{
+    FX.Core.IoC.Resolve<EIS.Core.IService.IDMTINHTHANHService>();
+}
+
+@{
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+    var grid = Html.DevExpress().GridView(
+         settings =>
+         {
+             settings.Name = "gridviewDanhSach";
+             settings.KeyFieldName = "MADICHVU";
+             settings.CallbackRouteValues = new { Controller = "SoSanhCoCau21", Action = "_GridViewDanhSachDichVuPartial" };
+             settings.CustomActionRouteValues = new { Controller = "SoSanhCoCau21", Action = "_GridViewDanhSachDichVuFilter", };
+             
+             settings.ClientSideEvents.FocusedRowChanged = "FilterChiTiet";
+
+             settings.SettingsBehavior.AllowSelectByRowClick = false;
+             settings.SettingsBehavior.EnableCustomizationWindow = true;
+             settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.Control;
+
+             settings.SettingsPager.PageSizeItemSettings.Visible = true;
+             settings.SettingsPager.PageSizeItemSettings.Items = new string[] { "10", "15", "20", "30", "50" };
+             settings.SettingsPager.PageSize = 100;
+             settings.SettingsPager.Visible = false;
+
+             settings.Settings.VerticalScrollBarMode = ScrollBarMode.Auto;
+             settings.Settings.HorizontalScrollBarMode = ScrollBarMode.Auto;
+             settings.Settings.VerticalScrollableHeight = 360;
+             settings.Settings.ShowFilterRow = false;
+             settings.Styles.EmptyDataRow.CssClass = "emptyRow";
+
+             settings.Settings.ShowFilterRowMenu = false;
+             settings.SettingsContextMenu.Enabled = false;
+             settings.EncodeHtml = false;
+
+             settings.EditFormLayoutProperties.EncodeHtml = false;
+             settings.SettingsBehavior.AllowFocusedRow = true;
+
+             /*settings.SettingsEditing.Mode = EIS.FEW.Helper.GridViewEditingHelper.EditMode;
+             settings.SettingsPopup.EditForm.Width = 400;
+             settings.SettingsPopup.EditForm.HorizontalAlign = PopupHorizontalAlign.WindowCenter;
+             settings.SettingsPopup.EditForm.VerticalAlign = PopupVerticalAlign.WindowCenter;*/
+             
+
+             settings.InitNewRow += (s, e) =>
+             {
+                 //EIS.Core.Domain.QUY_KINHPHI_TQ_NEW newRow = new EIS.Core.Domain.QUY_KINHPHI_TQ_NEW();
+                 //newRow.TEN_TINHTHANH = "Hà Nội";
+                 //ViewData["EditableQuy"] = newRow;
+             };
+
+             settings.Width = Unit.Percentage(100);
+
+             settings.Columns.Add(s =>
+             {
+                 s.FieldName = "STT";
+                 s.Caption = "STT";
+                 s.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+                 s.Width = Unit.Percentage(30);
+             });
+             settings.Columns.Add(s =>
+             {
+                 s.FieldName = "MADICHVU";
+                 s.Caption = "Mã";
+                 s.Width = Unit.Percentage(70);
+             });
+
+             settings.Columns.Add(s =>
+             {
+                 s.FieldName = "TENDICHVU";
+                 s.Caption = "Tên";
+                 s.Width = Unit.Percentage(70);
+             });
+
+             settings.Columns.Add(s =>
+             {
+                 s.FieldName = "SOLUONG";
+                 s.Caption = "Số Lượng";
+                 s.Width = Unit.Percentage(70);
+             });
+
+             settings.Columns.Add(s =>
+             {
+                 s.FieldName = "DONGIA";
+                 s.Caption = "Đơn Giá";
+                 s.PropertiesEdit.DisplayFormatString = "#,#";
+                 s.Width = Unit.Percentage(70);
+             });
+
+             settings.Columns.Add(s =>
+             {
+                 s.FieldName = "THANHTIEN";
+                 s.Caption = "Thành Tiền";
+                 s.PropertiesEdit.DisplayFormatString = "#,#";
+                 s.Width = Unit.Percentage(70);
+             });
+
+             //settings.CommandColumn.FixedStyle = GridViewColumnFixedStyle.Left;
+             //settings.CommandColumn.ShowSelectCheckbox = true;
+             settings.CommandColumn.Visible = true;
+             settings.CommandColumn.Width = 30;
+             //settings.CommandColumn.SelectAllCheckboxMode = EIS.FEW.Helper.GridViewSelectionHelper.SelectAllButtonMode;
+
+             settings.CustomColumnDisplayText = (sender, e) =>
+             {
+                 if (e.Column.FieldName == "STT")
+                 {
+                     e.DisplayText = (e.VisibleRowIndex + 1).ToString();
+                 }
+             };
+
+             settings.Settings.ShowTitlePanel = false;
+             settings.SetTitlePanelTemplateContent(c =>
+             {
+                 ViewContext.Writer.Write(string.Format("<span>Danh sách dịch vụ</span>"));
+             });
+         });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

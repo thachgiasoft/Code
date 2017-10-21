@@ -1,0 +1,184 @@
+﻿<script type="text/javascript">
+    window.app = window.app || {};
+
+    app.Task = app.Task || function () {
+        var self = this,
+            timer,
+            minus = parseInt('@ViewBag.NotificationTimesDelay'),
+            data = [],
+            htmlTemplate='';
+
+        function runtimer() {
+            //alertReportResultByUser();
+        }
+
+        function pageViewProcess() {
+            var url = common.moduleUrl('PageViews/Processing');
+            serviceInvoker.post(url, {}, {
+                error: function (response) {
+                    console.log(response);
+                },
+                success: function (response) {
+                }
+            }, null, null, true);
+        }
+
+        function alertReportResultByUser() {
+            var url = common.moduleUrl('BaoCao/GetReportResultByUser'),
+            msgPattern = "BaoCao.Message.NotificationAlert";
+            serviceInvoker.get(url, {}, {
+                error: function (response) {
+                    data = [];
+                },
+                success: function (response) {
+                    data = response.Data;
+                    htmlTemplate = response.Html;
+
+                    if (response.Data != null && response.Data.length > 0) {
+                        var message = $.StringFormat(msgPattern, response.Data.length);
+                        common.showSuccess(message, "Thông báo kết quả phân tích", 15000);
+                        $('.notify-container').on('click', 'span.detailMsg', viewReportResults);
+                    }
+                }
+            }, null, null, true);
+        }
+
+        function viewReportAll() {
+            var urlKetQuaAll = common.moduleUrl('BaoCao/ViewReportResult');
+            location.href = urlKetQuaAll;
+        }
+
+        function bindEvents() {
+            var $template = $('#viewReportResultDialog');
+            $template.on('click', '#btnGoViewAll', viewReportAll);
+            $template.on('click', '#btnDialogKeywords', searchReport);
+            $template.on('keyup', '#resultDialogKeywords', function (e) {
+                var key = e.which;
+                if (key == 13)  // the enter key code
+                {
+                    searchReport();
+                    return false;
+                }
+                return true;
+            });
+        }
+
+        function searchReport() {
+            common.showWaiting(true);
+            try {
+                var $template = $('#viewReportResultDialog');
+
+                var keywords = $('#resultDialogKeywords').val();
+                var reports = [];
+                if (keywords != '') {
+                    var keys = [],
+                        sort = 'desc' == 'asc' ? 1 : -1;
+
+                    if (keywords[0] == '"' && keywords[keywords.length - 1] == '"') {
+                        keys.push(keywords.substr(1, keywords.length - 2));
+                    } else {
+                        keys = keywords.split(' ');
+                    }
+
+                    reports = $.grep(data, function (item) {
+                        var exists = false;
+                        
+                        var regx = new RegExp(keys.join('|'), "ig");
+                        var matched = item.TenKetQua.match(regx);
+                        if (matched != null && matched.length) {
+                            item.Match = matched.length;
+                            exists = true;
+                        } else {
+                            item.Match = 0;
+                        }
+                        
+                        return exists;
+                    });
+
+                    reports.sort(function (a, b) {
+                        var vala = a.Match;
+                        var valb = b.Match;
+                        return (vala == valb) ? 0 : ((vala > valb) ? sort : -1 * sort);
+                    });
+
+                } else {
+                    reports = data;
+                }
+
+                bindData($template, reports);
+            } catch (e) {
+                console.log(e);
+            }
+            common.showWaiting(false);
+        }
+
+        function bindData(template, datas) {
+            var urlKetQua = common.moduleUrl('BaoCao/ViewReportResultDetail') + '?ketQuaBaoCaoId={0}&maPhanTich={1}',
+                trs = '',
+                $template;
+
+            if (typeof template == 'undefined') {
+                $template = $('#viewReportResultDialog');
+            } else {
+                $template = $(template);
+            }
+
+            if (datas == null) {
+                datas = [];
+            }
+
+            for (var i = 0; i < datas.length; i++) {
+                var urlDetail = $.StringFormat(urlKetQua, datas[i].Id, datas[i].MaPhanTich);
+                trs += '<tr>';
+                trs += '<td class="text-right">' + (i + 1) + '</td>';
+                trs += '<td class="text-right">' + datas[i].SoBanGhi + '</td>';
+                trs += '<td class="text-right">' + datas[i].CreateAt.formatFullDateFromJsonString() + '</td>';
+                trs += '<td><a href="' + urlDetail + '" target="_blank">' + datas[i].TenKetQua + '</a></td>';
+                trs += '</tr>';
+
+            }
+
+            $template.find('tbody').html(trs);
+
+            return $.getOuterHTML($template);
+        }
+
+        function viewReportResults() {
+            var html = bindData(htmlTemplate, data);
+
+            $.Dialog({
+                overlay: true,
+                shadow: true,
+                flat: false,
+                draggable: true,
+                title: "KETQUABAOCAO.Caption.Title.List",
+                content: '',
+                onShow: function (_dialog) {
+                    var content = _dialog.children('.content');
+                    content.html(html);
+                    bindEvents();
+                }
+            });
+
+        }
+
+        self.init = function () {
+            if (minus == 0) {
+                minus = 5;//5 phut
+            }
+            var times = minus * 60 * 1000;
+            //var times = 15 * 1000;
+            timer = $.timer(runtimer, times, true);
+            runtimer();
+            //call PageView Process
+            //pageViewProcess();
+        }
+
+        return self;
+    }
+
+    $(document).ready(function () {
+        var task = new app.Task();
+        task.init();
+    });
+</script>

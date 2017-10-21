@@ -1,0 +1,63 @@
+﻿@model IQueryable<EIS.Core.Domain.LogSystem>
+@{
+    ViewBag.Title = "Index";
+     Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+@section HeadResources{
+    @Html.Partial("HeadResourcesPartial")
+}
+<script type="text/javascript">
+    function OnTextBoxKeyDown(s, e) {
+        if (e.htmlEvent.keyCode == 46)
+            e.SetText("");
+
+        if (e.htmlEvent.keyCode == 13)
+            Filter();
+    }
+
+    function OnComboBoxKeyDown(s, e) {
+        // 'Delete' button key code = 46
+        if (e.htmlEvent.keyCode == 46)
+            s.SetSelectedIndex(-1);
+        if (e.htmlEvent.keyCode == 13)
+            Filter();
+    }
+
+    function Filter() {
+        window.gvLogSystem.PerformCallback({ 'strTimKiem': window.str_TimKiem.GetValue(), 'fromDate': fromDate.GetValue(), 'toDate': toDate.GetValue() });
+    }
+
+    function OnInit() {
+        AdjustSize();
+        window.ASPxClientUtils.AttachEventToElement(window, "resize", function () {
+            AdjustSize();
+        });
+    }
+
+    function OnEndCallback() {
+        AdjustSize();
+    }
+
+    function AdjustSize() {
+        var height = document.documentElement.clientHeight * 0.70;
+        window.gvLogSystem.SetHeight(height);
+    }
+
+</script>
+
+<div>
+    @Html.DevExpress().RoundPanel(settings =>
+       {
+           settings.Name = "roundPanel";
+           settings.AllowCollapsingByHeaderClick = true;
+
+           settings.ShowCollapseButton = true;
+           settings.EnableAnimation = true;
+           settings.Width = Unit.Percentage(90);
+           settings.HeaderText = "Hệ thống lịch sử người dùng";
+           settings.Height = Unit.Pixel(30);
+           settings.SetContent(() => Html.RenderPartial("FilterView"));
+       }).GetHtml()
+    <br />
+    @Html.Partial("LogPartial", Model)
+</div>

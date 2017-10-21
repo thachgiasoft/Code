@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Nhập cơ cấu chi tiết";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+@section HeadResources{
+    @Html.Partial("HeadResourcesPartial")
+}
+
+<script type="text/javascript">
+    function Filter() {
+        gvChiTietDichVu.PerformCallback({
+            maCskcb: cbx_cskcb.GetValue(),
+            maThe: txt_ma_the.GetValue(),
+            ngayVao: txt_ngay_vao.GetText(),
+            ngayRa: txt_ngay_ra.GetText(),
+            maDichVu: txt_ma_dich_vu.GetValue()
+        });
+    };
+
+    function Save() {
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("AddThucTe","NhapCoCauThucTe")",
+            data: {
+                maCskcb: cbx_cskcb.GetValue(),
+                maThe: txt_ma_the.GetValue(),
+                ngayVao: txt_ngay_vao.GetText(),
+                ngayRa: txt_ngay_ra.GetText(),
+                maDichVu: txt_ma_dich_vu.GetValue()
+            }
+        });
+    };
+</script>
+
+@Html.DevExpress().RoundPanel(settings =>
+{
+    settings.Name = "roundPanel";
+    settings.Width = Unit.Percentage(100);
+    settings.HeaderText = "Nhập cơ câu chi tiết";
+    settings.SetContent(() =>
+    {
+        Html.RenderPartial("FilterView", ViewData["ThucTe"]);
+    });
+
+}).GetHtml();
+
+@Html.DevExpress().Splitter(settings =>
+{
+    settings.Name = "splClientSideEvents";
+    settings.FullscreenMode = true;
+    settings.Width = Unit.Percentage(100);
+    settings.Orientation = Orientation.Horizontal;
+    settings.ShowCollapseBackwardButton = true;
+    settings.ShowCollapseForwardButton = true;
+
+    settings.Panes.Add(panel =>
+    {
+        panel.Name = "panelChiTietDichVu";
+        panel.Size = Unit.Percentage(100);
+        //panel.SetContent(() => ViewContext.Writer.Write(Html.Action("GridViewChitietDichVuPartial")));
+        panel.SetContent(() => Html.RenderAction("GridViewThucTeChiTietPartial"));
+    });
+}).GetHtml();

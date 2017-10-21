@@ -1,0 +1,58 @@
+﻿2017-06-30 08:41:24,361 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-06-30 08:41:24,394 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-06-30 08:41:24,487 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-06-30 08:41:24,489 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-06-30 08:41:24,489 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-06-30 08:41:24,571 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-06-30 08:41:24,578 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-06-30 08:41:42,594 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-06-30 08:41:42,601 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-06-30 08:41:42,713 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-06-30 08:41:42,713 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-06-30 08:41:42,713 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-06-30 08:41:42,745 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-06-30 08:41:42,745 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-06-30 10:33:13,412 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: select report_par0_.ID as ID15_, report_par0_.PARAM_NAME as PARAM2_15_, report_par0_.PARAM_TYPE as PARAM3_15_, report_par0_.PARAM_LABLE_CONTROL as PARAM4_15_, report_par0_.PARAM_TYPE_CONTROL as PARAM5_15_, report_par0_.PARAM_ORDER as PARAM6_15_, report_par0_.PARAM_SOURCES as PARAM7_15_, report_par0_.PARAM_SOURCES_VALUE as PARAM8_15_, report_par0_.ACTIVE as ACTIVE15_, report_par0_.REPORT_ID as REPORT10_15_ from REPORT_PARAM report_par0_ where report_par0_.REPORT_ID=:p0 order by report_par0_.PARAM_ORDER asc 
+Oracle.DataAccess.Client.OracleException ORA-03113: end-of-file on communication channel
+Process ID: 512738
+Session ID: 1471 Serial number: 56753    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-06-30 10:33:13,416 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03113: end-of-file on communication channel
+Process ID: 512738
+Session ID: 1471 Serial number: 56753 
+2017-06-30 10:33:13,428 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03113: end-of-file on communication channel
+Process ID: 512738
+Session ID: 1471 Serial number: 56753 
+2017-06-30 10:33:13,428 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03113: end-of-file on communication channel
+Process ID: 512738
+Session ID: 1471 Serial number: 56753 
+2017-06-30 12:56:37,497 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: select ID13_,ACTIVE13_,REPORT3_13_,REPORT4_13_,REPORT5_13_,REPORT6_13_ from ( select report0_.ID as ID13_, report0_.ACTIVE as ACTIVE13_, report0_.REPORT_DESCRIPTION as REPORT3_13_, report0_.REPORT_NAME as REPORT4_13_, report0_.REPORT_NAMESPACE as REPORT5_13_, report0_.REPORT_PROCEDURE as REPORT6_13_ from REPORT report0_ where report0_.ID=:p0 ) where rownum <=:p1 
+Oracle.DataAccess.Client.OracleException ORA-03113: end-of-file on communication channel
+Process ID: 306909
+Session ID: 1450 Serial number: 61301    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-06-30 12:56:37,914 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03113: end-of-file on communication channel
+Process ID: 306909
+Session ID: 1450 Serial number: 61301 
+2017-06-30 12:56:37,929 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03113: end-of-file on communication channel
+Process ID: 306909
+Session ID: 1450 Serial number: 61301 
+2017-06-30 12:56:37,932 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03113: end-of-file on communication channel
+Process ID: 306909
+Session ID: 1450 Serial number: 61301 

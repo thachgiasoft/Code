@@ -1,0 +1,510 @@
+﻿2017-10-16 00:26:33,004 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: select ID0_,TEN0_,MA0_,MABHYT0_,DONVIHAN5_0_,DIACHI0_,HANGBENH7_0_,TUYENCMKT0_,HIEULUC0_,STT0_,MIEUTA0_,DONVI12_0_,TINHTHANH13_0_,QUANHUYEN14_0_,MATINHT15_0_,LOAI16_0_,COQUANC17_0_,MAQUANH18_0_,MADONVI0_,MACOSOK20_0_,DIENTHOAI0_,MASOTHUE0_,EMAIL0_,FAX0_,COSOKCBCHA25_0_,THANNHA26_0_,THAIGHEP0_,LOAIHOP28_0_,DKKCBBD0_,HINHTHUCTT0_,LOAIBEN31_0_,KHAMTREEM0_,NGAYNGU33_0_,MATAICHINH0_,PKDAKHOA0_,UNGTHU0_,VIEMGAN0_,TEBAOMAUTD0_,KHAMT39_0_,KHAMCN0_,KHAMNGAYLE0_,NGAYKYH42_0_,NGAYKYH43_0_,KIEUBV0_,CAPCSKCB45_0_,SOHOPDONG0_,TTPHEDUYET0_,LYDO0_,TRANGTHAI0_,TUCHU0_,HANGDICHVU51_0_,HANGTHUOC52_0_,HANGVATTU53_0_,BYT0_,SO55_0_,KCB0_,NGAYCAPMA0_,NGAYDIE58_0_,CHUA59_0_,GHICHU60_0_,SL61_0_,SL62_0_ from ( select dm_cosokcb0_.ID as ID0_, dm_cosokcb0_.TEN as TEN0_, dm_cosokcb0_.MA as MA0_, dm_cosokcb0_.MABHYT as MABHYT0_, dm_cosokcb0_.DONVIHANHCHINH_ID as DONVIHAN5_0_, dm_cosokcb0_.DIACHI as DIACHI0_, dm_cosokcb0_.HANGBENHVIEN as HANGBENH7_0_, dm_cosokcb0_.TUYENCMKT as TUYENCMKT0_, dm_cosokcb0_.HIEULUC as HIEULUC0_, dm_cosokcb0_.STT as STT0_, dm_cosokcb0_.MIEUTA as MIEUTA0_, dm_cosokcb0_.DONVI_ID as DONVI12_0_, dm_cosokcb0_.TINHTHANH_ID as TINHTHANH13_0_, dm_cosokcb0_.QUANHUYEN_ID as QUANHUYEN14_0_, dm_cosokcb0_.MATINHTHANH as MATINHT15_0_, dm_cosokcb0_.LOAI_DONVICHUQUAN as LOAI16_0_, dm_cosokcb0_.COQUANCHUQUAN as COQUANC17_0_, dm_cosokcb0_.MAQUANHUYEN as MAQUANH18_0_, dm_cosokcb0_.MADONVI as MADONVI0_, dm_cosokcb0_.MACOSOKCBCHA as MACOSOK20_0_, dm_cosokcb0_.DIENTHOAI as DIENTHOAI0_, dm_cosokcb0_.MASOTHUE as MASOTHUE0_, dm_cosokcb0_.EMAIL as EMAIL0_, dm_cosokcb0_.FAX as FAX0_, dm_cosokcb0_.COSOKCBCHA_ID as COSOKCBCHA25_0_, dm_cosokcb0_.THANNHANTAO as THANNHA26_0_, dm_cosokcb0_.THAIGHEP as THAIGHEP0_, dm_cosokcb0_.LOAIHOPDONG as LOAIHOP28_0_, dm_cosokcb0_.DKKCBBD as DKKCBBD0_, dm_cosokcb0_.HINHTHUCTT as HINHTHUCTT0_, dm_cosokcb0_.LOAIBENHVIEN as LOAIBEN31_0_, dm_cosokcb0_.KHAMTREEM as KHAMTREEM0_, dm_cosokcb0_.NGAYNGUNGHD as NGAYNGU33_0_, dm_cosokcb0_.MATAICHINH as MATAICHINH0_, dm_cosokcb0_.PKDAKHOA as PKDAKHOA0_, dm_cosokcb0_.UNGTHU as UNGTHU0_, dm_cosokcb0_.VIEMGAN as VIEMGAN0_, dm_cosokcb0_.TEBAOMAUTD as TEBAOMAUTD0_, dm_cosokcb0_.KHAMT7 as KHAMT39_0_, dm_cosokcb0_.KHAMCN as KHAMCN0_, dm_cosokcb0_.KHAMNGAYLE as KHAMNGAYLE0_, dm_cosokcb0_.NGAYKYHOPDONG as NGAYKYH42_0_, dm_cosokcb0_.NGAYKYHOPDONGLANDAU as NGAYKYH43_0_, dm_cosokcb0_.KIEUBV as KIEUBV0_, dm_cosokcb0_.CAPCSKCB_MIN as CAPCSKCB45_0_, dm_cosokcb0_.SOHOPDONG as SOHOPDONG0_, dm_cosokcb0_.TTPHEDUYET as TTPHEDUYET0_, dm_cosokcb0_.LYDO as LYDO0_, dm_cosokcb0_.TRANGTHAI as TRANGTHAI0_, dm_cosokcb0_.TUCHU as TUCHU0_, dm_cosokcb0_.HANGDICHVU_TD as HANGDICHVU51_0_, dm_cosokcb0_.HANGTHUOC_TD as HANGTHUOC52_0_, dm_cosokcb0_.HANGVATTU_TD as HANGVATTU53_0_, dm_cosokcb0_.BYT as BYT0_, dm_cosokcb0_.SO_GPHD as SO55_0_, dm_cosokcb0_.KCB as KCB0_, dm_cosokcb0_.NGAYCAPMA as NGAYCAPMA0_, dm_cosokcb0_.NGAYDIEUCHINH as NGAYDIE58_0_, dm_cosokcb0_.CHUA_PD43 as CHUA59_0_, dm_cosokcb0_.GHICHU_TINHTHAYDOI as GHICHU60_0_, dm_cosokcb0_.SL_THE_BH_DKBD as SL61_0_, dm_cosokcb0_.SL_THE_BH_DA_CAP as SL62_0_ from DM_COSOKCB dm_cosokcb0_ where dm_cosokcb0_.TEN like (:p0||'%') ) where rownum <=:p1 
+Oracle.DataAccess.Client.OracleException ORA-03135: connection lost contact
+Process ID: 11073
+Session ID: 214 Serial number: 243    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-10-16 00:26:33,036 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 11073
+Session ID: 214 Serial number: 243 
+2017-10-16 00:26:33,045 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 11073
+Session ID: 214 Serial number: 243 
+2017-10-16 00:26:33,046 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 11073
+Session ID: 214 Serial number: 243 
+2017-10-16 00:26:43,894 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: select user0_.userid as userid72_, user0_.username as username72_, user0_.password as password72_, user0_.PasswordFormat as Password4_72_, user0_.PasswordSalt as Password5_72_, user0_.email as email72_, user0_.PasswordQuestion as Password7_72_, user0_.PasswordAnswer as Password8_72_, user0_.IsApproved as IsApproved72_, user0_.IsLockedOut as IsLocke10_72_, user0_.CreateDate as CreateDate72_, user0_.LastLoginDate as LastLog12_72_, user0_.LastPasswordChangedDate as LastPas13_72_, user0_.LastLockoutDate as LastLoc14_72_, user0_.FailedPassAttemptCount as FailedP15_72_, user0_.FailedPassAnswerAttemptCount as FailedP16_72_, user0_.FailedPassAttemptWindowStart as FailedP17_72_, user0_.FailedPassAnswerAttemptStart as FailedP18_72_, user0_.GroupName as GroupName72_, user0_.ISADMIN as ISADMIN72_ from userdata user0_ inner join APP_USER applicatio1_ on user0_.userid=applicatio1_.UserID inner join Applications applicatio2_ on applicatio1_.AppID=applicatio2_.AppID where user0_.username=:p0 and applicatio2_.AppID=:p1 
+Oracle.DataAccess.Client.OracleException ORA-03135: connection lost contact
+Process ID: 11071
+Session ID: 185 Serial number: 65407    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-10-16 00:26:43,895 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 11071
+Session ID: 185 Serial number: 65407 
+2017-10-16 00:26:43,896 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 11071
+Session ID: 185 Serial number: 65407 
+2017-10-16 00:26:43,896 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 11071
+Session ID: 185 Serial number: 65407 
+2017-10-16 00:26:43,897 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - GetNumberOfUsersOnline Error Application EIS 
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select user0_.userid as userid72_, user0_.username as username72_, user0_.password as password72_, user0_.PasswordFormat as Password4_72_, user0_.PasswordSalt as Password5_72_, user0_.email as email72_, user0_.PasswordQuestion as Password7_72_, user0_.PasswordAnswer as Password8_72_, user0_.IsApproved as IsApproved72_, user0_.IsLockedOut as IsLocke10_72_, user0_.CreateDate as CreateDate72_, user0_.LastLoginDate as LastLog12_72_, user0_.LastPasswordChangedDate as LastPas13_72_, user0_.LastLockoutDate as LastLoc14_72_, user0_.FailedPassAttemptCount as FailedP15_72_, user0_.FailedPassAnswerAttemptCount as FailedP16_72_, user0_.FailedPassAttemptWindowStart as FailedP17_72_, user0_.FailedPassAnswerAttemptStart as FailedP18_72_, user0_.GroupName as GroupName72_, user0_.ISADMIN as ISADMIN72_ from userdata user0_ inner join APP_USER applicatio1_ on user0_.userid=applicatio1_.UserID inner join Applications applicatio2_ on applicatio1_.AppID=applicatio2_.AppID where user0_.username=:p0 and applicatio2_.AppID=:p1 ]
+  Name:username - Value:CSYT_HETHONG  Name:AppID - Value:1
+[SQL: select user0_.userid as userid72_, user0_.username as username72_, user0_.password as password72_, user0_.PasswordFormat as Password4_72_, user0_.PasswordSalt as Password5_72_, user0_.email as email72_, user0_.PasswordQuestion as Password7_72_, user0_.PasswordAnswer as Password8_72_, user0_.IsApproved as IsApproved72_, user0_.IsLockedOut as IsLocke10_72_, user0_.CreateDate as CreateDate72_, user0_.LastLoginDate as LastLog12_72_, user0_.LastPasswordChangedDate as LastPas13_72_, user0_.LastLockoutDate as LastLoc14_72_, user0_.FailedPassAttemptCount as FailedP15_72_, user0_.FailedPassAnswerAttemptCount as FailedP16_72_, user0_.FailedPassAttemptWindowStart as FailedP17_72_, user0_.FailedPassAnswerAttemptStart as FailedP18_72_, user0_.GroupName as GroupName72_, user0_.ISADMIN as ISADMIN72_ from userdata user0_ inner join APP_USER applicatio1_ on user0_.userid=applicatio1_.UserID inner join Applications applicatio2_ on applicatio1_.AppID=applicatio2_.AppID where user0_.username=:p0 and applicatio2_.AppID=:p1] ---> Oracle.DataAccess.Client.OracleException: ORA-03135: connection lost contact
+Process ID: 11071
+Session ID: 185 Serial number: 65407
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- End of inner exception stack trace ---
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Hql.Ast.ANTLR.Loader.QueryLoader.List(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Hql.Ast.ANTLR.QueryTranslatorImpl.List(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Engine.Query.HQLQueryPlan.PerformList(QueryParameters queryParameters, ISessionImplementor session, IList results)
+   at NHibernate.Impl.SessionImpl.List(String query, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List[T](String query, QueryParameters parameters)
+   at NHibernate.Impl.QueryImpl.List[T]()
+   at FX.Data.BaseService`2.GetbyHQuery(String Query, SQLParam[] _params)
+   at IdentityManagement.ImplementService.userService.GetByName(String mUserName, Int32 AppID)
+   at IdentityManagement.WebProviders.RBACMembershipProvider.GetUser(String username, Boolean userIsOnline)
+2017-10-16 00:26:55,822 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: select userid72_,username72_,password72_,Password4_72_,Password5_72_,email72_,Password7_72_,Password8_72_,IsApproved72_,IsLocke10_72_,CreateDate72_,LastLog12_72_,LastPas13_72_,LastLoc14_72_,FailedP15_72_,FailedP16_72_,FailedP17_72_,FailedP18_72_,GroupName72_,ISADMIN72_ from ( select user0_.userid as userid72_, user0_.username as username72_, user0_.password as password72_, user0_.PasswordFormat as Password4_72_, user0_.PasswordSalt as Password5_72_, user0_.email as email72_, user0_.PasswordQuestion as Password7_72_, user0_.PasswordAnswer as Password8_72_, user0_.IsApproved as IsApproved72_, user0_.IsLockedOut as IsLocke10_72_, user0_.CreateDate as CreateDate72_, user0_.LastLoginDate as LastLog12_72_, user0_.LastPasswordChangedDate as LastPas13_72_, user0_.LastLockoutDate as LastLoc14_72_, user0_.FailedPassAttemptCount as FailedP15_72_, user0_.FailedPassAnswerAttemptCount as FailedP16_72_, user0_.FailedPassAttemptWindowStart as FailedP17_72_, user0_.FailedPassAnswerAttemptStart as FailedP18_72_, user0_.GroupName as GroupName72_, user0_.ISADMIN as ISADMIN72_ from userdata user0_ where user0_.username=:p0 ) where rownum <=:p1 
+Oracle.DataAccess.Client.OracleException ORA-03135: connection lost contact
+Process ID: 11069
+Session ID: 105 Serial number: 41967    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-10-16 00:26:55,822 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 11069
+Session ID: 105 Serial number: 41967 
+2017-10-16 00:26:55,822 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 11069
+Session ID: 105 Serial number: 41967 
+2017-10-16 00:26:55,822 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 11069
+Session ID: 105 Serial number: 41967 
+2017-10-16 00:26:55,838 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not execute query
+[ select userid72_,username72_,password72_,Password4_72_,Password5_72_,email72_,Password7_72_,Password8_72_,IsApproved72_,IsLocke10_72_,CreateDate72_,LastLog12_72_,LastPas13_72_,LastLoc14_72_,FailedP15_72_,FailedP16_72_,FailedP17_72_,FailedP18_72_,GroupName72_,ISADMIN72_ from ( select user0_.userid as userid72_, user0_.username as username72_, user0_.password as password72_, user0_.PasswordFormat as Password4_72_, user0_.PasswordSalt as Password5_72_, user0_.email as email72_, user0_.PasswordQuestion as Password7_72_, user0_.PasswordAnswer as Password8_72_, user0_.IsApproved as IsApproved72_, user0_.IsLockedOut as IsLocke10_72_, user0_.CreateDate as CreateDate72_, user0_.LastLoginDate as LastLog12_72_, user0_.LastPasswordChangedDate as LastPas13_72_, user0_.LastLockoutDate as LastLoc14_72_, user0_.FailedPassAttemptCount as FailedP15_72_, user0_.FailedPassAnswerAttemptCount as FailedP16_72_, user0_.FailedPassAttemptWindowStart as FailedP17_72_, user0_.FailedPassAnswerAttemptStart as FailedP18_72_, user0_.GroupName as GroupName72_, user0_.ISADMIN as ISADMIN72_ from userdata user0_ where user0_.username=:p0 ) where rownum <=:p1 ]
+  Name:p1 - Value:CSYT_HETHONG
+[SQL: select userid72_,username72_,password72_,Password4_72_,Password5_72_,email72_,Password7_72_,Password8_72_,IsApproved72_,IsLocke10_72_,CreateDate72_,LastLog12_72_,LastPas13_72_,LastLoc14_72_,FailedP15_72_,FailedP16_72_,FailedP17_72_,FailedP18_72_,GroupName72_,ISADMIN72_ from ( select user0_.userid as userid72_, user0_.username as username72_, user0_.password as password72_, user0_.PasswordFormat as Password4_72_, user0_.PasswordSalt as Password5_72_, user0_.email as email72_, user0_.PasswordQuestion as Password7_72_, user0_.PasswordAnswer as Password8_72_, user0_.IsApproved as IsApproved72_, user0_.IsLockedOut as IsLocke10_72_, user0_.CreateDate as CreateDate72_, user0_.LastLoginDate as LastLog12_72_, user0_.LastPasswordChangedDate as LastPas13_72_, user0_.LastLockoutDate as LastLoc14_72_, user0_.FailedPassAttemptCount as FailedP15_72_, user0_.FailedPassAnswerAttemptCount as FailedP16_72_, user0_.FailedPassAttemptWindowStart as FailedP17_72_, user0_.FailedPassAnswerAttemptStart as FailedP18_72_, user0_.GroupName as GroupName72_, user0_.ISADMIN as ISADMIN72_ from userdata user0_ where user0_.username=:p0 ) where rownum <=:p1]
+- StackTrace   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Hql.Ast.ANTLR.Loader.QueryLoader.List(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Hql.Ast.ANTLR.QueryTranslatorImpl.List(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Engine.Query.HQLQueryPlan.PerformList(QueryParameters queryParameters, ISessionImplementor session, IList results)
+   at NHibernate.Impl.SessionImpl.List(IQueryExpression queryExpression, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.AbstractSessionImpl.List(IQueryExpression queryExpression, QueryParameters parameters)
+   at NHibernate.Impl.ExpressionQueryImpl.List()
+   at NHibernate.Linq.NhQueryProvider.ExecuteQuery(NhLinqExpression nhLinqExpression, IQuery query, NhLinqExpression nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in C:\workspaces\svn\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 92 
+2017-10-16 00:26:55,854 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-10-16 00:26:55,854 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-10-16 00:26:55,854 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-10-16 00:26:55,854 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: select user0_.userid as userid72_, user0_.username as username72_, user0_.password as password72_, user0_.PasswordFormat as Password4_72_, user0_.PasswordSalt as Password5_72_, user0_.email as email72_, user0_.PasswordQuestion as Password7_72_, user0_.PasswordAnswer as Password8_72_, user0_.IsApproved as IsApproved72_, user0_.IsLockedOut as IsLocke10_72_, user0_.CreateDate as CreateDate72_, user0_.LastLoginDate as LastLog12_72_, user0_.LastPasswordChangedDate as LastPas13_72_, user0_.LastLockoutDate as LastLoc14_72_, user0_.FailedPassAttemptCount as FailedP15_72_, user0_.FailedPassAnswerAttemptCount as FailedP16_72_, user0_.FailedPassAttemptWindowStart as FailedP17_72_, user0_.FailedPassAnswerAttemptStart as FailedP18_72_, user0_.GroupName as GroupName72_, user0_.ISADMIN as ISADMIN72_ from userdata user0_ inner join APP_USER applicatio1_ on user0_.userid=applicatio1_.UserID inner join Applications applicatio2_ on applicatio1_.AppID=applicatio2_.AppID where user0_.username=:p0 and applicatio2_.AppID=:p1 
+Oracle.DataAccess.Client.OracleException ORA-03135: connection lost contact
+Process ID: 11067
+Session ID: 153 Serial number: 49877    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-10-16 00:26:55,854 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 11067
+Session ID: 153 Serial number: 49877 
+2017-10-16 00:26:55,854 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 11067
+Session ID: 153 Serial number: 49877 
+2017-10-16 00:26:55,854 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 11067
+Session ID: 153 Serial number: 49877 
+2017-10-16 00:26:55,869 ERROR EIS.FEW.Controllers.AccountController - could not execute query
+[ select user0_.userid as userid72_, user0_.username as username72_, user0_.password as password72_, user0_.PasswordFormat as Password4_72_, user0_.PasswordSalt as Password5_72_, user0_.email as email72_, user0_.PasswordQuestion as Password7_72_, user0_.PasswordAnswer as Password8_72_, user0_.IsApproved as IsApproved72_, user0_.IsLockedOut as IsLocke10_72_, user0_.CreateDate as CreateDate72_, user0_.LastLoginDate as LastLog12_72_, user0_.LastPasswordChangedDate as LastPas13_72_, user0_.LastLockoutDate as LastLoc14_72_, user0_.FailedPassAttemptCount as FailedP15_72_, user0_.FailedPassAnswerAttemptCount as FailedP16_72_, user0_.FailedPassAttemptWindowStart as FailedP17_72_, user0_.FailedPassAnswerAttemptStart as FailedP18_72_, user0_.GroupName as GroupName72_, user0_.ISADMIN as ISADMIN72_ from userdata user0_ inner join APP_USER applicatio1_ on user0_.userid=applicatio1_.UserID inner join Applications applicatio2_ on applicatio1_.AppID=applicatio2_.AppID where user0_.username=:p0 and applicatio2_.AppID=:p1 ]
+  Name:username - Value:CSYT_HETHONG  Name:AppID - Value:1
+[SQL: select user0_.userid as userid72_, user0_.username as username72_, user0_.password as password72_, user0_.PasswordFormat as Password4_72_, user0_.PasswordSalt as Password5_72_, user0_.email as email72_, user0_.PasswordQuestion as Password7_72_, user0_.PasswordAnswer as Password8_72_, user0_.IsApproved as IsApproved72_, user0_.IsLockedOut as IsLocke10_72_, user0_.CreateDate as CreateDate72_, user0_.LastLoginDate as LastLog12_72_, user0_.LastPasswordChangedDate as LastPas13_72_, user0_.LastLockoutDate as LastLoc14_72_, user0_.FailedPassAttemptCount as FailedP15_72_, user0_.FailedPassAnswerAttemptCount as FailedP16_72_, user0_.FailedPassAttemptWindowStart as FailedP17_72_, user0_.FailedPassAnswerAttemptStart as FailedP18_72_, user0_.GroupName as GroupName72_, user0_.ISADMIN as ISADMIN72_ from userdata user0_ inner join APP_USER applicatio1_ on user0_.userid=applicatio1_.UserID inner join Applications applicatio2_ on applicatio1_.AppID=applicatio2_.AppID where user0_.username=:p0 and applicatio2_.AppID=:p1] 
+2017-10-16 00:27:03,292 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: select user0_.userid as userid72_, user0_.username as username72_, user0_.password as password72_, user0_.PasswordFormat as Password4_72_, user0_.PasswordSalt as Password5_72_, user0_.email as email72_, user0_.PasswordQuestion as Password7_72_, user0_.PasswordAnswer as Password8_72_, user0_.IsApproved as IsApproved72_, user0_.IsLockedOut as IsLocke10_72_, user0_.CreateDate as CreateDate72_, user0_.LastLoginDate as LastLog12_72_, user0_.LastPasswordChangedDate as LastPas13_72_, user0_.LastLockoutDate as LastLoc14_72_, user0_.FailedPassAttemptCount as FailedP15_72_, user0_.FailedPassAnswerAttemptCount as FailedP16_72_, user0_.FailedPassAttemptWindowStart as FailedP17_72_, user0_.FailedPassAnswerAttemptStart as FailedP18_72_, user0_.GroupName as GroupName72_, user0_.ISADMIN as ISADMIN72_ from userdata user0_ inner join APP_USER applicatio1_ on user0_.userid=applicatio1_.UserID inner join Applications applicatio2_ on applicatio1_.AppID=applicatio2_.AppID where user0_.username=:p0 and applicatio2_.AppID=:p1 
+Oracle.DataAccess.Client.OracleException ORA-03135: connection lost contact
+Process ID: 11065
+Session ID: 139 Serial number: 3945    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-10-16 00:27:03,294 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 11065
+Session ID: 139 Serial number: 3945 
+2017-10-16 00:27:03,295 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 11065
+Session ID: 139 Serial number: 3945 
+2017-10-16 00:27:03,295 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 11065
+Session ID: 139 Serial number: 3945 
+2017-10-16 00:27:03,296 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - GetNumberOfUsersOnline Error Application EIS 
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select user0_.userid as userid72_, user0_.username as username72_, user0_.password as password72_, user0_.PasswordFormat as Password4_72_, user0_.PasswordSalt as Password5_72_, user0_.email as email72_, user0_.PasswordQuestion as Password7_72_, user0_.PasswordAnswer as Password8_72_, user0_.IsApproved as IsApproved72_, user0_.IsLockedOut as IsLocke10_72_, user0_.CreateDate as CreateDate72_, user0_.LastLoginDate as LastLog12_72_, user0_.LastPasswordChangedDate as LastPas13_72_, user0_.LastLockoutDate as LastLoc14_72_, user0_.FailedPassAttemptCount as FailedP15_72_, user0_.FailedPassAnswerAttemptCount as FailedP16_72_, user0_.FailedPassAttemptWindowStart as FailedP17_72_, user0_.FailedPassAnswerAttemptStart as FailedP18_72_, user0_.GroupName as GroupName72_, user0_.ISADMIN as ISADMIN72_ from userdata user0_ inner join APP_USER applicatio1_ on user0_.userid=applicatio1_.UserID inner join Applications applicatio2_ on applicatio1_.AppID=applicatio2_.AppID where user0_.username=:p0 and applicatio2_.AppID=:p1 ]
+  Name:username - Value:CSYT_HETHONG  Name:AppID - Value:1
+[SQL: select user0_.userid as userid72_, user0_.username as username72_, user0_.password as password72_, user0_.PasswordFormat as Password4_72_, user0_.PasswordSalt as Password5_72_, user0_.email as email72_, user0_.PasswordQuestion as Password7_72_, user0_.PasswordAnswer as Password8_72_, user0_.IsApproved as IsApproved72_, user0_.IsLockedOut as IsLocke10_72_, user0_.CreateDate as CreateDate72_, user0_.LastLoginDate as LastLog12_72_, user0_.LastPasswordChangedDate as LastPas13_72_, user0_.LastLockoutDate as LastLoc14_72_, user0_.FailedPassAttemptCount as FailedP15_72_, user0_.FailedPassAnswerAttemptCount as FailedP16_72_, user0_.FailedPassAttemptWindowStart as FailedP17_72_, user0_.FailedPassAnswerAttemptStart as FailedP18_72_, user0_.GroupName as GroupName72_, user0_.ISADMIN as ISADMIN72_ from userdata user0_ inner join APP_USER applicatio1_ on user0_.userid=applicatio1_.UserID inner join Applications applicatio2_ on applicatio1_.AppID=applicatio2_.AppID where user0_.username=:p0 and applicatio2_.AppID=:p1] ---> Oracle.DataAccess.Client.OracleException: ORA-03135: connection lost contact
+Process ID: 11065
+Session ID: 139 Serial number: 3945
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- End of inner exception stack trace ---
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Hql.Ast.ANTLR.Loader.QueryLoader.List(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Hql.Ast.ANTLR.QueryTranslatorImpl.List(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Engine.Query.HQLQueryPlan.PerformList(QueryParameters queryParameters, ISessionImplementor session, IList results)
+   at NHibernate.Impl.SessionImpl.List(String query, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List[T](String query, QueryParameters parameters)
+   at NHibernate.Impl.QueryImpl.List[T]()
+   at FX.Data.BaseService`2.GetbyHQuery(String Query, SQLParam[] _params)
+   at IdentityManagement.ImplementService.userService.GetByName(String mUserName, Int32 AppID)
+   at IdentityManagement.WebProviders.RBACMembershipProvider.GetUser(String username, Boolean userIsOnline)
+2017-10-16 00:27:13,088 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: select userid72_,username72_,password72_,Password4_72_,Password5_72_,email72_,Password7_72_,Password8_72_,IsApproved72_,IsLocke10_72_,CreateDate72_,LastLog12_72_,LastPas13_72_,LastLoc14_72_,FailedP15_72_,FailedP16_72_,FailedP17_72_,FailedP18_72_,GroupName72_,ISADMIN72_ from ( select user0_.userid as userid72_, user0_.username as username72_, user0_.password as password72_, user0_.PasswordFormat as Password4_72_, user0_.PasswordSalt as Password5_72_, user0_.email as email72_, user0_.PasswordQuestion as Password7_72_, user0_.PasswordAnswer as Password8_72_, user0_.IsApproved as IsApproved72_, user0_.IsLockedOut as IsLocke10_72_, user0_.CreateDate as CreateDate72_, user0_.LastLoginDate as LastLog12_72_, user0_.LastPasswordChangedDate as LastPas13_72_, user0_.LastLockoutDate as LastLoc14_72_, user0_.FailedPassAttemptCount as FailedP15_72_, user0_.FailedPassAnswerAttemptCount as FailedP16_72_, user0_.FailedPassAttemptWindowStart as FailedP17_72_, user0_.FailedPassAnswerAttemptStart as FailedP18_72_, user0_.GroupName as GroupName72_, user0_.ISADMIN as ISADMIN72_ from userdata user0_ where user0_.username=:p0 ) where rownum <=:p1 
+Oracle.DataAccess.Client.OracleException ORA-03135: connection lost contact
+Process ID: 11063
+Session ID: 122 Serial number: 4869    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-10-16 00:27:13,088 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 11063
+Session ID: 122 Serial number: 4869 
+2017-10-16 00:27:13,089 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 11063
+Session ID: 122 Serial number: 4869 
+2017-10-16 00:27:13,089 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 11063
+Session ID: 122 Serial number: 4869 
+2017-10-16 00:27:13,101 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not execute query
+[ select userid72_,username72_,password72_,Password4_72_,Password5_72_,email72_,Password7_72_,Password8_72_,IsApproved72_,IsLocke10_72_,CreateDate72_,LastLog12_72_,LastPas13_72_,LastLoc14_72_,FailedP15_72_,FailedP16_72_,FailedP17_72_,FailedP18_72_,GroupName72_,ISADMIN72_ from ( select user0_.userid as userid72_, user0_.username as username72_, user0_.password as password72_, user0_.PasswordFormat as Password4_72_, user0_.PasswordSalt as Password5_72_, user0_.email as email72_, user0_.PasswordQuestion as Password7_72_, user0_.PasswordAnswer as Password8_72_, user0_.IsApproved as IsApproved72_, user0_.IsLockedOut as IsLocke10_72_, user0_.CreateDate as CreateDate72_, user0_.LastLoginDate as LastLog12_72_, user0_.LastPasswordChangedDate as LastPas13_72_, user0_.LastLockoutDate as LastLoc14_72_, user0_.FailedPassAttemptCount as FailedP15_72_, user0_.FailedPassAnswerAttemptCount as FailedP16_72_, user0_.FailedPassAttemptWindowStart as FailedP17_72_, user0_.FailedPassAnswerAttemptStart as FailedP18_72_, user0_.GroupName as GroupName72_, user0_.ISADMIN as ISADMIN72_ from userdata user0_ where user0_.username=:p0 ) where rownum <=:p1 ]
+  Name:p1 - Value:CSYT_HETHONG
+[SQL: select userid72_,username72_,password72_,Password4_72_,Password5_72_,email72_,Password7_72_,Password8_72_,IsApproved72_,IsLocke10_72_,CreateDate72_,LastLog12_72_,LastPas13_72_,LastLoc14_72_,FailedP15_72_,FailedP16_72_,FailedP17_72_,FailedP18_72_,GroupName72_,ISADMIN72_ from ( select user0_.userid as userid72_, user0_.username as username72_, user0_.password as password72_, user0_.PasswordFormat as Password4_72_, user0_.PasswordSalt as Password5_72_, user0_.email as email72_, user0_.PasswordQuestion as Password7_72_, user0_.PasswordAnswer as Password8_72_, user0_.IsApproved as IsApproved72_, user0_.IsLockedOut as IsLocke10_72_, user0_.CreateDate as CreateDate72_, user0_.LastLoginDate as LastLog12_72_, user0_.LastPasswordChangedDate as LastPas13_72_, user0_.LastLockoutDate as LastLoc14_72_, user0_.FailedPassAttemptCount as FailedP15_72_, user0_.FailedPassAnswerAttemptCount as FailedP16_72_, user0_.FailedPassAttemptWindowStart as FailedP17_72_, user0_.FailedPassAnswerAttemptStart as FailedP18_72_, user0_.GroupName as GroupName72_, user0_.ISADMIN as ISADMIN72_ from userdata user0_ where user0_.username=:p0 ) where rownum <=:p1]
+- StackTrace   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Hql.Ast.ANTLR.Loader.QueryLoader.List(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Hql.Ast.ANTLR.QueryTranslatorImpl.List(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Engine.Query.HQLQueryPlan.PerformList(QueryParameters queryParameters, ISessionImplementor session, IList results)
+   at NHibernate.Impl.SessionImpl.List(IQueryExpression queryExpression, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.AbstractSessionImpl.List(IQueryExpression queryExpression, QueryParameters parameters)
+   at NHibernate.Impl.ExpressionQueryImpl.List()
+   at NHibernate.Linq.NhQueryProvider.ExecuteQuery(NhLinqExpression nhLinqExpression, IQuery query, NhLinqExpression nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in C:\workspaces\svn\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 92 
+2017-10-16 00:27:13,101 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-10-16 00:27:13,101 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-10-16 00:27:13,101 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-10-16 00:27:13,279 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-10-16 00:27:13,279 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-10-16 01:58:54,893 ERROR EIS.FEW.Controllers.NhapCoCauThucTeController - Index - message: An item with the same key has already been added.
+ -    at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Util.ThreadSafeDictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Type.TypeFactory.GetType(NullableType defaultUnqualifiedType, Int32 length, GetNullableTypeWithLength ctorDelegate)
+   at NHibernate.Type.TypeFactory.<RegisterDefaultNetTypes>b__c(Int32 l)
+   at NHibernate.Type.TypeFactory.BuiltInType(String typeName, Int32 length)
+   at NHibernate.Mapping.SimpleValue.GetHeuristicType()
+   at NHibernate.Mapping.SimpleValue.get_Type()
+   at NHibernate.Mapping.SimpleValue.IsValid(IMapping mapping)
+   at NHibernate.Mapping.PersistentClass.Validate(IMapping mapping)
+   at NHibernate.Mapping.RootClass.Validate(IMapping mapping)
+   at NHibernate.Cfg.Configuration.ValidateEntities()
+   at NHibernate.Cfg.Configuration.Validate()
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at EIS.FEW.Providers.CoCauGiaThucTeChiTiet.GetThucTeChiTietByIDThucTe(Int64 idThucTe) in C:\workspaces\svn\Code\EIS.FEW\Providers\NhapCoCauGiaThucTe\CoCauGiaThucTeChiTiet.cs:line 40
+   at EIS.FEW.Controllers.NhapCoCauThucTeController.GridViewThucTeChiTietPartial() in C:\workspaces\svn\Code\EIS.FEW\Controllers\NhapCoCauThucTeController.cs:line 43 
+2017-10-16 09:47:07,684 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-16 09:47:07,715 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-10-16 09:47:07,778 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in C:\workspaces\svn\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-10-16 09:47:07,778 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-10-16 09:47:07,778 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-10-16 09:47:07,778 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-10-16 09:47:07,981 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-10-16 09:47:07,997 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-10-16 09:51:12,783 ERROR IdentityManagement.Authorization.UserIdentity - System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.set_Item(TKey key, TValue value)
+   at NHibernate.Impl.SessionFactoryObjectFactory.AddInstance(String uid, String name, ISessionFactory instance, IDictionary`2 properties)
+   at NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-10-16 09:51:12,783 ERROR IdentityManagement.Authorization.UserIdentity - System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.set_Item(TKey key, TValue value)
+   at NHibernate.Impl.SessionFactoryObjectFactory.AddInstance(String uid, String name, ISessionFactory instance, IDictionary`2 properties)
+   at NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-10-16 22:45:10,017 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-16 22:45:10,064 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-10-16 22:45:10,111 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in C:\workspaces\svn\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-10-16 22:45:10,111 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-10-16 22:45:10,111 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-10-16 22:45:10,111 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-10-16 22:45:10,533 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-10-16 22:45:10,548 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-10-16 22:51:27,943 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Util.ThreadSafeDictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Type.TypeFactory.GetType(NullableType defaultUnqualifiedType, Int32 length, GetNullableTypeWithLength ctorDelegate)
+   at NHibernate.Type.TypeFactory.<RegisterDefaultNetTypes>b__c(Int32 l)
+   at NHibernate.Type.TypeFactory.BuiltInType(String typeName, Int32 length)
+   at NHibernate.Mapping.SimpleValue.GetHeuristicType()
+   at NHibernate.Mapping.SimpleValue.get_Type()
+   at NHibernate.Mapping.SimpleValue.IsValid(IMapping mapping)
+   at NHibernate.Mapping.PersistentClass.Validate(IMapping mapping)
+   at NHibernate.Mapping.RootClass.Validate(IMapping mapping)
+   at NHibernate.Cfg.Configuration.ValidateEntities()
+   at NHibernate.Cfg.Configuration.Validate()
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-10-16 22:51:34,762 ERROR IdentityManagement.Authorization.UserIdentity - System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.set_Item(TKey key, TValue value)
+   at NHibernate.Impl.SessionFactoryObjectFactory.AddInstance(String uid, String name, ISessionFactory instance, IDictionary`2 properties)
+   at NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-10-16 22:51:35,037 ERROR EIS.FEW.Controllers.NhapCoCauThucTeController - Index - message: Object reference not set to an instance of an object.
+ -    at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.set_Item(TKey key, TValue value)
+   at NHibernate.Impl.SessionFactoryObjectFactory.AddInstance(String uid, String name, ISessionFactory instance, IDictionary`2 properties)
+   at NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at EIS.FEW.Providers.CoCauGiaThucTeChiTiet.GetThucTeChiTietByIDThucTe(Int64 idThucTe) in C:\workspaces\svn\Code\EIS.FEW\Providers\NhapCoCauGiaThucTe\CoCauGiaThucTeChiTiet.cs:line 40
+   at EIS.FEW.Controllers.NhapCoCauThucTeController.GridViewThucTeChiTietPartial() in C:\workspaces\svn\Code\EIS.FEW\Controllers\NhapCoCauThucTeController.cs:line 43 
+2017-10-16 22:52:13,884 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-16 22:52:13,915 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-10-16 22:52:13,947 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in C:\workspaces\svn\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-10-16 22:52:13,947 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-10-16 22:52:13,962 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-10-16 22:52:13,962 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-10-16 22:52:14,025 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-10-16 22:52:14,025 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-10-16 23:14:06,244 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO COCAUGIA_THUCTE_CT (ID, MA_COCAU, TEN_COCAU_OLD, SO_LUONG_OLD, DONGIA_OLD, TEN_COCAU_NEW, SO_LUONG_NEW, DONGIA_NEW, ID_LOAI, ID_THUCTE) VALUES (COCAUGIA_THUCTE_CT_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_THUCTE")    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-16 23:14:06,275 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_THUCTE") 
+2017-10-16 23:19:15,436 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO COCAUGIA_THUCTE_CT (ID, MA_COCAU, TEN_COCAU_OLD, SO_LUONG_OLD, DONGIA_OLD, TEN_COCAU_NEW, SO_LUONG_NEW, DONGIA_NEW, ID_LOAI, ID_THUCTE) VALUES (COCAUGIA_THUCTE_CT_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_THUCTE")    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-16 23:19:15,598 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_THUCTE") 
+2017-10-16 23:29:33,724 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: select role0_.roleid as roleid29_, role0_.AppID as AppID29_, role0_.name as name29_ from ROLE role0_ where role0_.name in (:p0 , :p1 , :p2 , :p3 , :p4 , :p5 , :p6 , :p7 , :p8 , :p9 , :p10 , :p11 , :p12 , :p13 , :p14 , :p15 , :p16 , :p17 , :p18 , :p19 , :p20 , :p21 , :p22 , :p23) 
+Oracle.DataAccess.Client.OracleException ORA-03113: end-of-file on communication channel
+Process ID: 31529
+Session ID: 70 Serial number: 34373    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-10-16 23:29:33,777 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03113: end-of-file on communication channel
+Process ID: 31529
+Session ID: 70 Serial number: 34373 
+2017-10-16 23:29:33,783 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03113: end-of-file on communication channel
+Process ID: 31529
+Session ID: 70 Serial number: 34373 
+2017-10-16 23:29:33,784 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03113: end-of-file on communication channel
+Process ID: 31529
+Session ID: 70 Serial number: 34373 
+2017-10-16 23:29:33,789 ERROR IdentityManagement.Authorization.UserIdentity - NHibernate.Exceptions.GenericADOException: could not execute query
+[ select role0_.roleid as roleid29_, role0_.AppID as AppID29_, role0_.name as name29_ from ROLE role0_ where role0_.name in (:p0 , :p1 , :p2 , :p3 , :p4 , :p5 , :p6 , :p7 , :p8 , :p9 , :p10 , :p11 , :p12 , :p13 , :p14 , :p15 , :p16 , :p17 , :p18 , :p19 , :p20 , :p21 , :p22 , :p23) ]
+  Name:p1_0_ - Value:Phê Duyệt Quy Tắc TW  Name:p1_1_ - Value:Lãnh đạo trung ương  Name:p1_2_ - Value:Báo cáo cấp trung ương  Name:p1_3_ - Value:Danh mục cấp trung ương  Name:p1_4_ - Value:Thống kê tra cứu cấp trung ương  Name:p1_5_ - Value:Tạo mới CSKCB  Name:p1_6_ - Value:Xem Danh mục  Name:p1_7_ - Value:FULL_CSYT  Name:p1_8_ - Value:FULL_XEM_CSYT  Name:p1_9_ - Value:PQTW  Name:p1_10_ - Value:CQT_TW  Name:p1_11_ - Value:Giám định Hồ Sơ  Name:p1_12_ - Value:Thống kê chi phí XML - TW  Name:p1_13_ - Value:TEST_DM_TW  Name:p1_14_ - Value:Ban Dược  Name:p1_15_ - Value:Quản Lý TTTT  Name:p1_16_ - Value:Quyền xem của các GDV Đa tuyến Bắc  Name:p1_17_ - Value:UPDATE DANH MUC VAT TU  Name:p1_18_ - Value:Cập nhật thuốc có SDK và thuốc KKG (có được xóa)  Name:p1_19_ - Value:Cập nhật thuốc có SDK (không xóa)  Name:p1_20_ - Value:Cập nhật thuốc có SDK và thuốc KKG (không xóa)  Name:p1_21_ - Value:Tạm ứng VSA  Name:p1_22_ - Value:Quyền tài chính kế toán TW  Name:p1_23_ - Value:Quyền xem của GDV Đa tuyến Nam
+[SQL: select role0_.roleid as roleid29_, role0_.AppID as AppID29_, role0_.name as name29_ from ROLE role0_ where role0_.name in (:p0 , :p1 , :p2 , :p3 , :p4 , :p5 , :p6 , :p7 , :p8 , :p9 , :p10 , :p11 , :p12 , :p13 , :p14 , :p15 , :p16 , :p17 , :p18 , :p19 , :p20 , :p21 , :p22 , :p23)] ---> Oracle.DataAccess.Client.OracleException: ORA-03113: end-of-file on communication channel
+Process ID: 31529
+Session ID: 70 Serial number: 34373
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- End of inner exception stack trace ---
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Hql.Ast.ANTLR.Loader.QueryLoader.List(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Hql.Ast.ANTLR.QueryTranslatorImpl.List(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Engine.Query.HQLQueryPlan.PerformList(QueryParameters queryParameters, ISessionImplementor session, IList results)
+   at NHibernate.Impl.SessionImpl.List(IQueryExpression queryExpression, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.AbstractSessionImpl.List(IQueryExpression queryExpression, QueryParameters parameters)
+   at NHibernate.Impl.ExpressionQueryImpl.List()
+   at NHibernate.Linq.NhQueryProvider.ExecuteQuery(NhLinqExpression nhLinqExpression, IQuery query, NhLinqExpression nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute[TResult](Expression expression)
+   at Remotion.Data.Linq.QueryableBase`1.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-10-16 23:31:21,006 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO COCAUGIA_THUCTE_CT (ID, MA_COCAU, TEN_COCAU_OLD, SO_LUONG_OLD, DONGIA_OLD, TEN_COCAU_NEW, SO_LUONG_NEW, DONGIA_NEW, ID_LOAI, ID_THUCTE) VALUES (COCAUGIA_THUCTE_CT_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_LOAI")    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-16 23:31:21,030 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_LOAI") 
+2017-10-16 23:33:33,022 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO COCAUGIA_THUCTE_CT (ID, MA_COCAU, TEN_COCAU_OLD, SO_LUONG_OLD, DONGIA_OLD, TEN_COCAU_NEW, SO_LUONG_NEW, DONGIA_NEW, ID_LOAI, ID_THUCTE) VALUES (COCAUGIA_THUCTE_CT_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_LOAI")    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-16 23:33:33,053 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_LOAI") 
+2017-10-16 23:35:56,656 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO COCAUGIA_THUCTE_CT (ID, MA_COCAU, TEN_COCAU_OLD, SO_LUONG_OLD, DONGIA_OLD, TEN_COCAU_NEW, SO_LUONG_NEW, DONGIA_NEW, ID_LOAI, ID_THUCTE) VALUES (COCAUGIA_THUCTE_CT_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_LOAI")    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-16 23:35:56,656 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_LOAI") 
+2017-10-16 23:42:28,569 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-16 23:42:28,600 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-10-16 23:42:28,647 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in C:\workspaces\svn\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-10-16 23:42:28,647 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-10-16 23:42:28,647 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-10-16 23:42:28,647 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-10-16 23:42:28,788 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-10-16 23:42:28,788 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-10-16 23:46:59,288 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO COCAUGIA_THUCTE_CT (ID, MA_COCAU, TEN_COCAU_OLD, SO_LUONG_OLD, DONGIA_OLD, TEN_COCAU_NEW, SO_LUONG_NEW, DONGIA_NEW, ID_LOAI, ID_THUCTE) VALUES (COCAUGIA_THUCTE_CT_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_LOAI")    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-10-16 23:46:59,305 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_LOAI") 

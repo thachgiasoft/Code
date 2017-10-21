@@ -1,0 +1,522 @@
+﻿@model System.Collections.IEnumerable
+@{
+    ViewBag.Title = "EIS v" + EIS.FEW.RouteConfig.Version + " | Thêm mới Nhóm quyền - Tác vụ";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+@section HeadResources{
+    @Html.Partial("HeadResourcesPartial")
+}
+
+<style type="text/css">
+    .margin-10 {
+        margin-bottom: 10px;
+    }
+    .fixTopPixel{
+        margin-top: 15px;
+    }
+    .float-right {
+        float: right;
+        clear: both;
+    }
+
+    .mg-left {
+        margin-left: 0px !important;
+    }
+
+    .float-r10 {
+        margin-right: 10px;
+        float: right;
+    }
+
+    #divUpdatePms {
+        float: right;
+    }
+
+    .margintop-10 {
+        margin-top: 10px;
+    }
+
+    .height20 {
+        width: 1000px;
+        height: 20px;
+        clear: both;
+    }
+
+    .mg-left20 {
+        margin-left: 20px;
+    }
+
+    .btnSearch:hover {
+        background-image: url('/Content/Images/Icon-flat/Search-over.png');
+        width: 32px;
+        height: 32px;
+    }
+
+    .btnSearch:active {
+        background-image: url('/Content/Images/Icon-flat/Search.png');
+        width: 32px;
+        height: 32px;
+    }
+
+    .dxgvSearchPanel_EIS {
+        float: left;
+    }
+
+    .height_10 {
+        height: 10px;
+        clear: both;
+    }
+
+    .table_main {
+        width: 80%;
+    }
+
+    .float-r10-left {
+        margin-right: 10px;
+        float: left;
+    }
+
+    #txtRoleName_ET {
+        float: left;
+    }
+
+    #txtRoleName_I {
+        width: 210px;
+    }
+     a.nonUnderlineHyperlink:visited {
+        color: black;
+        text-decoration: none;
+    }
+
+    a.nonUnderlineHyperlink {
+        color: black;
+        text-decoration: none;
+    }
+    .fixText{
+        color : white;
+        float : left;
+    }
+</style>
+
+<script type="text/javascript">
+    var CheckAllPer = false;
+    var CheckAllPerView = false;
+    var CheckAllPerEdit = false;
+    var CheckAllPerDelete = false;
+    var CheckAllPerDuyet = false;
+    function AddRoleAndPermission() {
+        var _typeRoleId = $('#hdSttUser').val();
+        var _rolename = txtRoleName.GetValue();
+        _rolename = $.trim(_rolename);
+        if (_rolename == "") {
+            $("#noidung").html("Bạn phải nhập tên nhóm quyền!");
+            Message.Show()
+            //alert("Bạn phải nhập tên nhóm quyền");
+            return false;
+        }
+        $.ajax({
+            url: '@Url.Action("DoAddNewRole", "RolePms")',
+            type: "GET",
+            data: { name: _rolename.toString(), RoleTypeId: _typeRoleId },
+            success: function (response) {
+                var _stNotice = response;
+                if (_stNotice == "OK") {
+                    LoadingExcel.Hide();
+                    $("#noidung_successRole").html("Bạn đã cập nhật thành công!");
+                    Message_SuccessRole.Show();
+                } else if (_stNotice == "ExistName") {
+                    LoadingExcel.Hide();
+                    $("#noidung").html("Tên đã tồn tại, vui lòng chọn tên khác!");
+                    Message.Show()
+                }
+            }
+        });
+    }
+
+    function OnCheckedChangedPms(pms, checkReal) {
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("ChangeCheckBoxPms", "RolePms")',
+            data: { pms: pms, checkReal: checkReal },
+            success: function () {
+            }
+        });
+    }
+    function OnCheckedAllPms(s, e) {
+
+        if (s.GetChecked()) {
+            CheckAllPer = true;
+        } else {
+            CheckAllPer = false;
+        }
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("CheckAllBoxPms", "RolePms")',
+            data: { CheckAllPer: CheckAllPer },
+            success: function () {
+                gvObject.Refresh();
+            }
+        });
+    }
+    function OnCheckedViewAllPms(s, e) {
+
+        if (s.GetChecked()) {
+            CheckAllPerView = true;
+        } else {
+            CheckAllPerView = false;
+        }
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("CheckAllViewPms", "RolePms")',
+            data: { CheckAllPer: CheckAllPerView },
+            success: function () {
+                gvObject.Refresh();
+            }
+        });
+    }
+    function OnCheckedEditAllPms(s, e) {
+
+        if (s.GetChecked()) {
+            CheckAllPerEdit = true;
+        } else {
+            CheckAllPerEdit = false;
+        }
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("CheckAllEditPms", "RolePms")',
+            data: { CheckAllPer: CheckAllPerEdit },
+            success: function () {
+                gvObject.Refresh();
+            }
+        });
+    }
+    function OnCheckedDeleteAllPms(s, e) {
+
+        if (s.GetChecked()) {
+            CheckAllPerDelete = true;
+        } else {
+            CheckAllPerDelete = false;
+        }
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("CheckAllDeletePms", "RolePms")',
+            data: { CheckAllPer: CheckAllPerDelete },
+            success: function () {
+                gvObject.Refresh();
+            }
+        });
+    }
+    function OnCheckedDuyetAllPms(s, e) {
+
+        if (s.GetChecked()) {
+            CheckAllPerDuyet = true;
+        } else {
+            CheckAllPerDuyet = false;
+        }
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("CheckAllDuyetPms", "RolePms")',
+            data: { CheckAllPer: CheckAllPerDuyet },
+            success: function () {
+                gvObject.Refresh();
+            }
+        });
+    }
+    function OnEndCallback(s, e) {
+        if (CheckAllPerView) {
+            cbSelectViewAll.SetValue(true);
+        } else {
+            cbSelectViewAll.SetValue(false);
+        }
+        if (CheckAllPerEdit) {
+            cbSelectEditAll.SetValue(true);
+        } else {
+            cbSelectEditAll.SetValue(false);
+        }
+        if (CheckAllPerDelete) {
+            cbSelectDeleteAll.SetValue(true);
+        } else {
+            cbSelectDeleteAll.SetValue(false);
+        }
+        if (CheckAllPerDuyet) {
+            cbSelectDuyetAll.SetValue(true);
+        } else {
+            cbSelectDuyetAll.SetValue(false);
+        }
+
+        if (CheckAllPer) {
+            cbSelectAll.SetValue(true);
+        } else {
+            cbSelectAll.SetValue(false);
+        }
+    }
+    //Drop nhom chuc nang
+
+    function OnComboBoxKeyDown_MODULE(s, e) {
+        //Khi nhan nut Delete, keyCode==46
+        if (e.htmlEvent.keyCode == 46) {
+            s.SetSelectedIndex(-1);
+            if (s == cbbMODULESetting) {
+                cbx_NHOMCHUCNANGSettings.Clear();
+            }
+        }
+    }
+
+    function ChangeMODULEIDcomboBox(MODULEID) {
+        lstNHOMCHUCNANGID = "";
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("ChangeMODULEIDCBB", "RolePms")',
+            data: { MODULEID: parseInt(MODULEID) },
+            success: function () {
+            }
+        });
+    }
+
+    var lstNHOMCHUCNANGID = "";
+
+    function doGetNHOMCHUCNANGID(NHOMCHUCNANGID) {
+        NHOMCHUCNANGID = $.trim(NHOMCHUCNANGID);
+        if (lstNHOMCHUCNANGID == "") {
+            lstNHOMCHUCNANGID = NHOMCHUCNANGID;
+        } else {
+            var arrSt = lstNHOMCHUCNANGID.split(' ');
+            var count = arrSt.length;
+            var sttAdd = 'OK';
+            for (i = 0; i < count; i++) {
+                if (arrSt[i] == NHOMCHUCNANGID) {
+                    arrSt.splice(i, 1);
+                    sttAdd = 'NotOK';
+                    break;
+                }
+            }
+            if (sttAdd == 'OK')
+                arrSt[count] = NHOMCHUCNANGID;
+            var lstTg = "";
+            var countAdd = arrSt.length;
+            for (i = 0; i < countAdd; i++) {
+                lstTg += arrSt[i] + ' ';
+            }
+            lstNHOMCHUCNANGID = $.trim(lstTg);
+        }
+    }
+
+    function back() {
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("BackPage", "RolePms")',
+            data: {},
+            success: function () {
+                window.location.href = '@Url.Action("Index", "RolePms")';
+            }
+        });
+    }
+    function OnSelectAllFunctionPms(pmsList, itemIndex) {
+        var allChecked = true;
+        //Kiểm tra từng permission trên dòng, để xác định tất cả có đang được check hay không
+        for (var i = 1; i < 11; i++) {
+            var anObjectName = "chk_pms" + i + "_" + itemIndex;
+            //if (this[anObjectName].GetText().substring(0, 1)) {
+            if (this[anObjectName].GetValue() == true) {
+                allChecked = true;
+            } else if (this[anObjectName].GetValue() == false) {
+                allChecked = false;
+            }
+            //}
+            if (!allChecked) {
+                break;
+            }
+        }
+
+        //Nếu tất cả chưa được check, thì thực hiện check all. Nếu check all rồi thì uncheck all
+        for (var i = 1; i < 11; i++) {
+            var anObjectName = "chk_pms" + i + "_" + itemIndex;
+            this[anObjectName].SetChecked(!allChecked);
+        }
+
+        //Call lên server để lưu lại các permission thay đổi
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("OnSelectAllFunctionPms", "RolePms")',
+            data: { pmsListInput: pmsList },
+            success: function () { }
+        });
+    }
+    function DoSearchPms() {
+        var ComboTypeRole_2 = $('#hdSttUser').val();
+        if (lstNHOMCHUCNANGID != "") {
+            window.gvObject.PerformCallback({
+                'stLstNhomchucnangID': lstNHOMCHUCNANGID, 'ComboTypeRole': ComboTypeRole_2
+            });
+        }
+    }
+
+
+    function StoreTypeRolehdUser(ComboTypeRoleUser) {
+        $('#hdSttUser').val(ComboTypeRoleUser);
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("ChangeTypeRoleCombox", "RolePms")',
+            data: { TypeRole: ComboTypeRoleUser },
+            success: function () {
+            }
+        });
+    }
+
+    function cbbLoaiSelectedIndexChanged(s, e) {
+        var getvalue = ComboTypeRole.GetValue();
+        StoreTypeRolehdUser(getvalue);
+        window.gvObject.PerformCallback({
+            'stLstNhomchucnangID': lstNHOMCHUCNANGID,
+            'ComboTypeRole': getvalue
+        });
+    }
+
+    //End drop nhom chuc nang
+</script>
+
+<div class="height_10"></div>
+@Html.DevExpress().RoundPanel(settings =>
+       {
+           settings.Name = "roundPanel";
+           settings.AllowCollapsingByHeaderClick = false;
+           settings.ShowCollapseButton = false;
+           settings.EnableAnimation = false;
+           settings.HeaderText = "THÊM MỚI NHÓM QUYỀN - TÁC VỤ";
+           settings.Width = Unit.Percentage(80);
+       }).GetHtml()
+<table class="table_main">
+    <tr>
+        <td>
+            @Html.DevExpress().TextBox(t =>
+       {
+           t.Name = "txtRoleName";
+           t.Properties.Caption = "Tên phân quyền";
+           t.Properties.CaptionStyle.Font.Bold = true;
+           t.Properties.Style.Font.Bold = true;
+           t.Properties.CaptionSettings.HorizontalAlign = EditorCaptionHorizontalAlign.Left;
+           t.ControlStyle.HorizontalAlign = HorizontalAlign.Left;
+           t.Text = "";
+           t.Properties.MaxLength = 100;
+       }).GetHtml()
+        </td>
+        <td>
+            @Html.DevExpress().ComboBox(settings =>
+       {
+           settings.Properties.ClientSideEvents.SelectedIndexChanged = "cbbLoaiSelectedIndexChanged";
+           settings.Properties.Caption = "Loại";
+           settings.Properties.CaptionStyle.Font.Bold = true;
+           settings.Properties.Height = Unit.Pixel(20);
+           settings.Properties.Width = Unit.Pixel(200);
+           settings.Properties.DropDownWidth = 200;
+           settings.Name = "ComboTypeRole";
+           settings.Properties.DropDownStyle = DropDownStyle.DropDownList;
+           settings.Properties.ValueType = typeof(string);
+           settings.Properties.FilterMinLength = 0;
+           settings.SelectedIndex = 0;
+
+           var sttUser = (int)ViewData["SttUser"];
+           if (sttUser == 0)
+           {
+               settings.Properties.Items.Add("Cấp quản trị", 0);
+               settings.Properties.Items.Add("Cấp trung ương", 1);
+               settings.Properties.Items.Add("Cấp tỉnh", 2);
+               settings.Properties.Items.Add("Cấp huyện", 3);
+           }
+           else if (sttUser == 1)
+           {
+               settings.Properties.Items.Add("Cấp trung ương", 1);
+           }
+           else if (sttUser == 2)
+           {
+               settings.Properties.Items.Add("Cấp tỉnh", 2);
+               settings.Properties.Items.Add("Cấp huyện", 3);
+           }
+       }).GetHtml()
+        </td>
+        <td>
+            @Html.DevExpress().ComboBox(
+                    settings =>
+                    {
+                        settings.Properties.CaptionStyle.Font.Bold = true;
+                        settings.Name = "cbbMODULESetting";
+                        settings.Properties.Caption = "Module";
+                        settings.SelectedIndex = 0;
+                        settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.StartsWith;
+                        settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                        settings.Properties.TextField = "DESCRIPTION";
+                        settings.Properties.ValueField = "MODULEID";
+                        settings.Properties.ClientSideEvents.KeyDown = "OnComboBoxKeyDown_MODULE";
+                        settings.Properties.ClientSideEvents.SelectedIndexChanged = "function(s, e) { var grid = cbx_NHOMCHUCNANGSettings.GetGridView(); grid.PerformCallback(); ChangeMODULEIDcomboBox(cbbMODULESetting.GetValue()); }";
+                    }
+                ).BindList(ViewData["lstMODULE"]).GetHtml()
+        </td>
+        <td>
+            @Html.Partial("NHOMCHUCNANGPartial", ViewData["FirstNHOMCHUCNANG"])
+        </td>
+        <td>
+            @Html.DevExpress().Button(
+                                    settings =>
+                                    {
+                                        settings.ControlStyle.CssClass = "button";
+                                        settings.Name = "btSearch";
+                                        settings.ClientSideEvents.Click = "DoSearchPms";
+                                        settings.EnableTheming = false;
+                                        settings.Text = "";
+                                        settings.AllowFocus = false;
+                                        settings.RenderMode = ButtonRenderMode.Link;
+                                        settings.Images.Image.SpriteProperties.CssClass = "btnSearch";
+                                        settings.Images.Image.SpriteProperties.HottrackedCssClass = "btnSearchHottracked";
+                                        settings.Images.Image.SpriteProperties.PressedCssClass = "btnSearchPressed";
+                                        settings.ToolTip = "Tìm kiếm";
+                                    }).GetHtml()
+
+        </td>
+    </tr>
+</table>
+<div class="height20"></div>
+<span style="margin-left: 190px; color: #ff0000;">Click vào tên chức năng để chọn tất cả các tác vụ theo hàng</span>
+@Html.Partial("PermissionForAddRolePartial", Model)
+<div class="height20"></div>
+<table class="table_main">
+    <tr>
+        <td>
+            <div class="float-r10">
+                @Html.DevExpress().Button(
+                    settings =>
+                    {
+                        settings.ControlStyle.CssClass = "button";
+                        settings.Name = "Savebtn";
+                        settings.Text = "Thêm";
+                        settings.ClientSideEvents.Click = "AddRoleAndPermission";
+                        settings.Images.Image.IconID = IconID.SaveSave16x16;
+                    }).GetHtml()
+            </div>
+        </td>
+        <td>
+            <div class="float-r10-left">
+                @Html.DevExpress().Button(
+                                    settings =>
+                                    {
+                                        settings.ControlStyle.CssClass = "button";
+                                        settings.Name = "backbtn";
+                                        settings.Text = "Quay Lại";
+                                        settings.ClientSideEvents.Click = "back";
+                                        settings.Images.Image.IconID = IconID.NavigationBackward16x16;
+                                    }).GetHtml()
+            </div>
+        </td>
+    </tr>
+</table>
+<div class="height20"></div>
+<input type="hidden" id="hdSttUser" value="@ViewBag.vbSttUser" />
+@Html.DevExpress().LoadingPanel(
+    settings =>
+    {
+        settings.Name = "LoadingExcel";
+        settings.Modal = true;
+        settings.Text = "Vui lòng chờ trong giây lát !";
+        settings.ContainerElementID = "pannel_192021";
+    }).GetHtml()
+@Html.Partial("_MessageSuccessRole")
+@Html.Partial("_Message")

@@ -1,0 +1,70 @@
+﻿@using EIS.Core
+@using FX.Context
+@using Iesi.Collections
+<style>
+    #admin {
+        position: absolute;
+        white-space: nowrap; 
+        right: 10px;
+    }
+</style>
+<script>
+    function ShowPhienLamViec() {
+        window.popupPhienLamViec.Show();
+    }
+
+    function DY_PhienLamViec() {
+        window.popupPhienLamViec.Hide();
+        @*$.ajax({
+            type: "POST",
+            url: '@Url.Action("DY_PhienLamViec", "Account")',
+            data: {
+                cskcbId: window.DF_COSOKCB_ID.GetValue(), loaiTg: window.cbx_thoigian_session.GetValue(), thang: window.cbx_thang_session.GetValue()
+                , quy: window.cbx_quy_session.GetValue(), nam: window.cbx_nam_session.GetValue()
+            },
+            success: function (data) {
+                if (data == 'true') {
+                    window.popupPhienLamViec.Hide();
+                    return;
+                }
+                window.location.href = '@Url.Action("Index", "Account")';
+                return;
+            }
+        });*@
+    }
+</script>
+@if (Request.IsAuthenticated)
+{
+    var host = Dns.GetHostEntry(Dns.GetHostName());
+    string ipad = "";
+    foreach (var ip in host.AddressList)
+    {
+        if (ip.ToString().Contains("10."))
+        {
+            ipad += ip.ToString().Replace("10.0.","");
+        }
+    }
+
+    string k = ipad;
+    <div id="admin">IP:<b>@ipad</b> Xin chào <b>@User.Identity.Name</b>! @*|<a href="javascript:ShowPhienLamViec();">&nbsp;Phiên làm việc</a>*@</div>
+}
+@Html.DevExpress().PopupControl(
+    settings =>
+    {
+        settings.Name = "popupPhienLamViec";
+        settings.Width = 450;
+        settings.Height = 150;
+        settings.ShowOnPageLoad = false;
+        settings.AllowDragging = false;
+        settings.CloseAction = CloseAction.CloseButton;
+        settings.CloseOnEscape = true;
+        settings.AutoUpdatePosition = true;
+        settings.PopupAnimationType = AnimationType.None;
+        settings.ShowHeader = true;
+        settings.Modal = true;
+        settings.HeaderText = "Thông tin phiên làm việc";
+        settings.ShowCloseButton = true;
+        settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+        settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+        settings.SetContent(() => @Html.RenderPartial("PopupPhienLamViec", ((EISContext)FXContext.Current).CurrentNguoidung));
+    }).GetHtml()

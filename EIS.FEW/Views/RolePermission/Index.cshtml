@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "EIS v" + EIS.FEW.RouteConfig.Version + " | Quản lý Phân quyền - quyền";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+@section HeadResources{
+    @Html.Partial("HeadResourcesPartial")
+}
+
+<style>
+    .dxgvTable_EIS {
+        border-right: 1px solid #c0c0c0;
+    }
+
+    #gvEditing_tcFooterRow {
+        color: red !important;
+    }
+
+    .btnSearch:hover {
+        background-image: url('/Content/Images/Icon-flat/Search-over.png');
+        width: 32px;
+        height: 32px;
+    }
+
+    .btnSearch:active {
+        background-image: url('/Content/Images/Icon-flat/Search.png');
+        width: 32px;
+        height: 32px;
+    }
+
+    .dxgvSearchPanel_EIS {
+        float: left;
+        margin-left: -70px;
+        border-bottom: 0px !important;
+    }
+
+    .height_10 {
+        height: 10px;
+        clear: both;
+    }
+</style>
+
+<script type="text/javascript">
+
+    function back() {
+        window.location.href = '@Url.Action("Index", "RolePermission")';
+    }
+    function DeleteRole(roleid) {
+        $.ajax({
+            url: "@Url.Action("DeleteRole","RolePermission")",
+            type: "GET",
+            data: { roleId: roleid.toString() },
+            success: function (response) {
+                var _stNotice = response;
+                if (_stNotice == "OK") {
+                    alert("Bạn đã xóa thành công!");
+                    back();
+                }
+                else if (_stNotice == "NotOKPms") {
+                    alert("Bạn không thể xóa vì có quyền tồn tại trong phân quyền này!");
+                }
+                else if (_stNotice == "NotOKUser") {
+                    alert("Bạn không thể xóa vì có người dùng sử dụng phân quyền này!");
+                }
+            }
+        });
+    }
+</script>
+<div class="height_10"></div>
+@Html.DevExpress().RoundPanel(settings =>
+{
+    settings.Name = "roundPanel";
+    settings.AllowCollapsingByHeaderClick = false;
+
+    settings.ShowCollapseButton = false;
+    settings.EnableAnimation = false;
+    settings.HeaderText = "Quản lý Phân quyền - quyền";
+    settings.Width = Unit.Percentage(60);
+}).GetHtml()
+<div class="height_10"></div>
+@Html.Partial("RolePartial")
+<div class="height_10"></div>

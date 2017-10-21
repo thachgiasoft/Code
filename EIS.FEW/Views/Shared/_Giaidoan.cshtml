@@ -1,0 +1,39 @@
+﻿@model EIS.Core.CustomView.TimeFilter
+
+<table style="width:100%">
+    <tr>
+        <td style="width: 50%; padding-left: 11px; padding-right: 5px">
+            <div style="width:100px; float: left">
+                @Html.DevExpress().DateEditFor(model => model.tuNgay,
+                    settings =>
+                    {
+                        settings.Width = Unit.Percentage(100);
+                        settings.Name = "dt_tungay";
+                        settings.Properties.Width = Unit.Percentage(100);
+                        settings.Properties.EditFormat = EditFormat.Custom;
+                        settings.Properties.DisplayFormatInEditMode = true;
+                        settings.Properties.DisplayFormatString = "dd/MM/yyyy";
+                        settings.Properties.EditFormatString = "dd/MM/yyyy";
+                    }).GetHtml()
+            </div>
+
+        </td>
+        <td style="width: 50%; padding-left: 11px;">
+            <div style="width:100px; float: right">
+                @Html.DevExpress().DateEditFor(model => model.denNgay,
+                    settings =>
+                    {
+                        settings.Width = Unit.Percentage(100);
+                        settings.Name = "dt_denngay";
+                        settings.Properties.Width = Unit.Percentage(100);
+                        settings.Properties.EditFormat = EditFormat.Custom;
+                        settings.Properties.DisplayFormatInEditMode = true;
+                        settings.Properties.DisplayFormatString = "dd/MM/yyyy";
+                        settings.Properties.EditFormatString = "dd/MM/yyyy";
+                    }).GetHtml()
+            </div>
+
+        </td>
+
+    </tr>
+</table>

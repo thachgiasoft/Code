@@ -1,0 +1,347 @@
+﻿@Html.DevExpress().GridView(
+    settings =>
+    {
+        settings.Name = "gvObject";
+        settings.KeyFieldName = "objectid";
+        settings.CallbackRouteValues = new { Controller = "RolePermission", Action = "PermissionForAddRolePartial" };
+        settings.Width = Unit.Percentage(90);
+        settings.SettingsPager.PageSizeItemSettings.Visible = true;
+        settings.SettingsPager.PageSizeItemSettings.Items = new string[] { "20", "30", "40", "50", "100" };
+        settings.CommandColumn.FixedStyle = GridViewColumnFixedStyle.Left;
+        settings.Settings.VerticalScrollableHeight = 600;
+        settings.CommandColumn.FixedStyle = GridViewColumnFixedStyle.Left;
+        settings.Settings.VerticalScrollBarMode = ScrollBarMode.Auto;
+        settings.Settings.HorizontalScrollBarMode = ScrollBarMode.Auto;
+        settings.SettingsPager.PageSize = 20;
+        settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.Control;
+
+
+        settings.Settings.ShowFilterRow = true;
+        settings.Settings.ShowFilterRowMenu = true;
+
+        settings.Columns.Add(col =>
+        {
+            col.FieldName = "objectid";
+            col.Caption = "objectid";
+            col.PropertiesEdit.EnableClientSideAPI = true;
+            col.Width = 20;
+            col.HeaderStyle.HorizontalAlign = HorizontalAlign.Left;
+            col.CellStyle.Paddings.PaddingLeft = 5;
+            col.FixedStyle = GridViewColumnFixedStyle.Left;
+            col.Visible = false;
+        });
+
+        settings.Columns.Add(s =>
+        {
+            s.Caption = @"STT";
+            s.ToolTip = "STT";
+            s.EditFormSettings.Visible = DefaultBoolean.False;
+            s.PropertiesEdit.EnableClientSideAPI = true;
+            s.CellStyle.HorizontalAlign = HorizontalAlign.Left;
+            s.HeaderStyle.HorizontalAlign = HorizontalAlign.Left;
+            s.Width = 35;
+            s.FixedStyle = GridViewColumnFixedStyle.Left;
+        });
+        settings.CustomColumnDisplayText = (send, e) =>
+        {
+            if (e.Column.Caption == "STT")
+            {
+                e.DisplayText = (e.VisibleRowIndex + 1).ToString();
+            }
+        };
+
+        settings.Columns.Add(col =>
+        {
+            col.FieldName = "name";
+            col.Caption = "Nhóm quyền";
+            col.PropertiesEdit.EnableClientSideAPI = true;
+            col.Width = 190;
+            col.HeaderStyle.HorizontalAlign = HorizontalAlign.Left;
+            col.CellStyle.Paddings.PaddingLeft = 5;
+            col.CellStyle.Font.Bold = true;
+            col.FixedStyle = GridViewColumnFixedStyle.Left;
+            col.Settings.AutoFilterCondition = AutoFilterCondition.Contains;
+            col.ColumnType = MVCxGridViewColumnType.TextBox;
+        });
+
+        settings.Columns.Add(col =>
+        {
+
+
+            col.Settings.AllowAutoFilter = DefaultBoolean.False;
+            col.FieldName = "pms1";
+            col.Caption = "Quyền 1";
+            col.PropertiesEdit.EnableClientSideAPI = true;
+            col.Width = 225;
+            col.HeaderStyle.HorizontalAlign = HorizontalAlign.Left;
+            col.CellStyle.Paddings.PaddingLeft = 5;
+            col.CellStyle.HorizontalAlign = HorizontalAlign.Left;
+            col.ColumnType = MVCxGridViewColumnType.CheckBox;
+            col.SetDataItemTemplateContent(c =>
+            {
+                Html.DevExpress().CheckBox(checkboxSettings =>
+                {
+                    checkboxSettings.Name = "chk_" + c.Column.FieldName + "_" + c.ItemIndex;
+                    checkboxSettings.Properties.DisplayImageChecked.IconID = IconID.ContentCheckbox16x16;
+                    checkboxSettings.ControlStyle.CssClass = "mg-left";
+                    string pms = Convert.ToString(DataBinder.Eval(c.DataItem, "pms1"));
+                    checkboxSettings.Text = pms;
+
+                    bool checkVisible = (!string.IsNullOrEmpty(pms)) ? true : false;
+                    if (checkVisible == false)
+                        checkboxSettings.ClientVisible = false;
+                    else
+                    {
+                        string subName = pms.Substring(0, 1);
+                        bool CheckReal = (subName == " ") ? true : false;
+                        checkboxSettings.Checked = CheckReal;
+                        checkboxSettings.Properties.ClientSideEvents.CheckedChanged = "function (s, e){ OnCheckedChangedPms(\"" + pms.Trim() + "\",s.GetChecked());}";
+                    }
+                }).Render();
+            });
+        });
+
+        settings.Columns.Add(col =>
+        {
+            col.Settings.AllowAutoFilter = DefaultBoolean.False;
+            col.FieldName = "pms2";
+            col.Caption = "Quyền 2";
+            col.PropertiesEdit.EnableClientSideAPI = true;
+            col.Width = 225;
+            col.HeaderStyle.HorizontalAlign = HorizontalAlign.Left;
+            col.CellStyle.Paddings.PaddingLeft = 5;
+            col.CellStyle.HorizontalAlign = HorizontalAlign.Left;
+            col.ColumnType = MVCxGridViewColumnType.CheckBox;
+            col.SetDataItemTemplateContent(c =>
+            {
+                Html.DevExpress().CheckBox(checkboxSettings =>
+                {
+                    checkboxSettings.Name = "chk_" + c.Column.FieldName + "_" + c.ItemIndex;
+                    checkboxSettings.Properties.DisplayImageChecked.IconID = IconID.ContentCheckbox16x16;
+                    checkboxSettings.ControlStyle.CssClass = "mg-left";
+                    string pms = Convert.ToString(DataBinder.Eval(c.DataItem, "pms2"));
+                    checkboxSettings.Text = pms;
+                    bool checkVisible = (!string.IsNullOrEmpty(pms)) ? true : false;
+                    if (checkVisible == false)
+                        checkboxSettings.ClientVisible = false;
+                    else
+                    {
+                        string subName = pms.Substring(0, 1);
+                        bool CheckReal = (subName == " ") ? true : false;
+                        checkboxSettings.Checked = CheckReal;
+                        checkboxSettings.Properties.ClientSideEvents.CheckedChanged = "function (s, e){ OnCheckedChangedPms(\"" + pms.Trim() + "\",s.GetChecked());}";
+                    }
+                }).Render();
+            });
+        });
+
+        settings.Columns.Add(col =>
+        {
+            col.Settings.AllowAutoFilter = DefaultBoolean.False;
+            col.FieldName = "pms3";
+            col.Caption = "Quyền 3";
+            col.PropertiesEdit.EnableClientSideAPI = true;
+            col.Width = 225;
+            col.HeaderStyle.HorizontalAlign = HorizontalAlign.Left;
+            col.CellStyle.Paddings.PaddingLeft = 5;
+            col.CellStyle.HorizontalAlign = HorizontalAlign.Left;
+            col.ColumnType = MVCxGridViewColumnType.CheckBox;
+            col.SetDataItemTemplateContent(c =>
+            {
+                Html.DevExpress().CheckBox(checkboxSettings =>
+                {
+                    checkboxSettings.Name = "chk_" + c.Column.FieldName + "_" + c.ItemIndex;
+                    checkboxSettings.Properties.DisplayImageChecked.IconID = IconID.ContentCheckbox16x16;
+                    checkboxSettings.ControlStyle.CssClass = "mg-left";
+                    string pms = Convert.ToString(DataBinder.Eval(c.DataItem, "pms3"));
+                    checkboxSettings.Text = pms;
+
+                    bool checkVisible = (!string.IsNullOrEmpty(pms)) ? true : false;
+                    if (checkVisible == false)
+                        checkboxSettings.ClientVisible = false;
+                    else
+                    {
+                        string subName = pms.Substring(0, 1);
+                        bool CheckReal = (subName == " ") ? true : false;
+                        checkboxSettings.Checked = CheckReal;
+                        checkboxSettings.Properties.ClientSideEvents.CheckedChanged = "function (s, e){ OnCheckedChangedPms(\"" + pms.Trim() + "\",s.GetChecked());}";
+                    }
+                }).Render();
+            });
+        });
+
+        settings.Columns.Add(col =>
+        {
+            col.Settings.AllowAutoFilter = DefaultBoolean.False;
+            col.FieldName = "pms4";
+            col.Caption = "Quyền 4";
+            col.PropertiesEdit.EnableClientSideAPI = true;
+            col.Width = 225;
+            col.HeaderStyle.HorizontalAlign = HorizontalAlign.Left;
+            col.CellStyle.Paddings.PaddingLeft = 5;
+            col.CellStyle.HorizontalAlign = HorizontalAlign.Left;
+            col.ColumnType = MVCxGridViewColumnType.CheckBox;
+            col.SetDataItemTemplateContent(c =>
+            {
+                Html.DevExpress().CheckBox(checkboxSettings =>
+                {
+                    checkboxSettings.Name = "chk_" + c.Column.FieldName + "_" + c.ItemIndex;
+                    checkboxSettings.Properties.DisplayImageChecked.IconID = IconID.ContentCheckbox16x16;
+                    checkboxSettings.ControlStyle.CssClass = "mg-left";
+                    string pms = Convert.ToString(DataBinder.Eval(c.DataItem, "pms4"));
+                    checkboxSettings.Text = pms;
+
+                    bool checkVisible = (!string.IsNullOrEmpty(pms)) ? true : false;
+                    if (checkVisible == false)
+                        checkboxSettings.ClientVisible = false;
+                    else
+                    {
+                        string subName = pms.Substring(0, 1);
+                        bool CheckReal = (subName == " ") ? true : false;
+                        checkboxSettings.Checked = CheckReal;
+                        checkboxSettings.Properties.ClientSideEvents.CheckedChanged = "function (s, e){ OnCheckedChangedPms(\"" + pms.Trim() + "\",s.GetChecked());}";
+                    }
+                }).Render();
+            });
+        });
+
+        settings.Columns.Add(col =>
+        {
+            col.Settings.AllowAutoFilter = DefaultBoolean.False;
+            col.FieldName = "pms5";
+            col.Caption = "Quyền 5";
+            col.PropertiesEdit.EnableClientSideAPI = true;
+            col.Width = 225;
+            col.HeaderStyle.HorizontalAlign = HorizontalAlign.Left;
+            col.CellStyle.Paddings.PaddingLeft = 5;
+            col.CellStyle.HorizontalAlign = HorizontalAlign.Left;
+            col.ColumnType = MVCxGridViewColumnType.CheckBox;
+            col.SetDataItemTemplateContent(c =>
+            {
+                Html.DevExpress().CheckBox(checkboxSettings =>
+                {
+                    checkboxSettings.Name = "chk_" + c.Column.FieldName + "_" + c.ItemIndex;
+                    checkboxSettings.Properties.DisplayImageChecked.IconID = IconID.ContentCheckbox16x16;
+                    checkboxSettings.ControlStyle.CssClass = "mg-left";
+                    string pms = Convert.ToString(DataBinder.Eval(c.DataItem, "pms5"));
+                    checkboxSettings.Text = pms;
+
+                    bool checkVisible = (!string.IsNullOrEmpty(pms)) ? true : false;
+                    if (checkVisible == false)
+                        checkboxSettings.ClientVisible = false;
+                    else
+                    {
+                        string subName = pms.Substring(0, 1);
+                        bool CheckReal = (subName == " ") ? true : false;
+                        checkboxSettings.Checked = CheckReal;
+                        checkboxSettings.Properties.ClientSideEvents.CheckedChanged = "function (s, e){ OnCheckedChangedPms(\"" + pms.Trim() + "\",s.GetChecked());}";
+                    }
+                }).Render();
+            });
+        });
+
+        settings.Columns.Add(col =>
+        {
+            col.Settings.AllowAutoFilter = DefaultBoolean.False;
+            col.FieldName = "pms6";
+            col.Caption = "Quyền 6";
+            col.PropertiesEdit.EnableClientSideAPI = true;
+            col.Width = 225;
+            col.HeaderStyle.HorizontalAlign = HorizontalAlign.Left;
+            col.CellStyle.Paddings.PaddingLeft = 5;
+            col.CellStyle.HorizontalAlign = HorizontalAlign.Left;
+            col.ColumnType = MVCxGridViewColumnType.CheckBox;
+            col.SetDataItemTemplateContent(c =>
+            {
+                Html.DevExpress().CheckBox(checkboxSettings =>
+                {
+                    checkboxSettings.Name = "chk_" + c.Column.FieldName + "_" + c.ItemIndex;
+                    checkboxSettings.Properties.DisplayImageChecked.IconID = IconID.ContentCheckbox16x16;
+                    checkboxSettings.ControlStyle.CssClass = "mg-left";
+                    string pms = Convert.ToString(DataBinder.Eval(c.DataItem, "pms6"));
+                    checkboxSettings.Text = pms;
+
+                    bool checkVisible = (!string.IsNullOrEmpty(pms)) ? true : false;
+                    if (checkVisible == false)
+                        checkboxSettings.ClientVisible = false;
+                    else
+                    {
+                        string subName = pms.Substring(0, 1);
+                        bool CheckReal = (subName == " ") ? true : false;
+                        checkboxSettings.Checked = CheckReal;
+                        checkboxSettings.Properties.ClientSideEvents.CheckedChanged = "function (s, e){ OnCheckedChangedPms(\"" + pms.Trim() + "\",s.GetChecked());}";
+                    }
+                }).Render();
+            });
+        });
+
+        settings.Columns.Add(col =>
+        {
+            col.Settings.AllowAutoFilter = DefaultBoolean.False;
+            col.FieldName = "pms7";
+            col.Caption = "Quyền 7";
+            col.PropertiesEdit.EnableClientSideAPI = true;
+            col.Width = 225;
+            col.HeaderStyle.HorizontalAlign = HorizontalAlign.Left;
+            col.CellStyle.Paddings.PaddingLeft = 5;
+            col.CellStyle.HorizontalAlign = HorizontalAlign.Left;
+            col.ColumnType = MVCxGridViewColumnType.CheckBox;
+            col.SetDataItemTemplateContent(c =>
+            {
+                Html.DevExpress().CheckBox(checkboxSettings =>
+                {
+                    checkboxSettings.Name = "chk_" + c.Column.FieldName + "_" + c.ItemIndex;
+                    checkboxSettings.Properties.DisplayImageChecked.IconID = IconID.ContentCheckbox16x16;
+                    checkboxSettings.ControlStyle.CssClass = "mg-left";
+                    string pms = Convert.ToString(DataBinder.Eval(c.DataItem, "pms7"));
+                    checkboxSettings.Text = pms;
+
+                    bool checkVisible = (!string.IsNullOrEmpty(pms)) ? true : false;
+                    if (checkVisible == false)
+                        checkboxSettings.ClientVisible = false;
+                    else
+                    {
+                        string subName = pms.Substring(0, 1);
+                        bool CheckReal = (subName == " ") ? true : false;
+                        checkboxSettings.Checked = CheckReal;
+                        checkboxSettings.Properties.ClientSideEvents.CheckedChanged = "function (s, e){ OnCheckedChangedPms(\"" + pms.Trim() + "\",s.GetChecked());}";
+                    }
+                }).Render();
+            });
+        });
+
+        settings.Columns.Add(col =>
+        {
+            col.Settings.AllowAutoFilter = DefaultBoolean.False;
+            col.FieldName = "pms8";
+            col.Caption = "Quyền 8";
+            col.PropertiesEdit.EnableClientSideAPI = true;
+            col.Width = 225;
+            col.HeaderStyle.HorizontalAlign = HorizontalAlign.Left;
+            col.CellStyle.Paddings.PaddingLeft = 5;
+            col.CellStyle.HorizontalAlign = HorizontalAlign.Left;
+            col.ColumnType = MVCxGridViewColumnType.CheckBox;
+            col.SetDataItemTemplateContent(c =>
+            {
+                Html.DevExpress().CheckBox(checkboxSettings =>
+                {
+                    checkboxSettings.Name = "chk_" + c.Column.FieldName + "_" + c.ItemIndex;
+                    checkboxSettings.Properties.DisplayImageChecked.IconID = IconID.ContentCheckbox16x16;
+                    checkboxSettings.ControlStyle.CssClass = "mg-left";
+                    string pms = Convert.ToString(DataBinder.Eval(c.DataItem, "pms8"));
+                    checkboxSettings.Text = pms;
+
+                    bool checkVisible = (!string.IsNullOrEmpty(pms)) ? true : false;
+                    if (checkVisible == false)
+                        checkboxSettings.ClientVisible = false;
+                    else
+                    {
+                        string subName = pms.Substring(0, 1);
+                        bool CheckReal = (subName == " ") ? true : false;
+                        checkboxSettings.Checked = CheckReal;
+                        checkboxSettings.Properties.ClientSideEvents.CheckedChanged = "function (s, e){ OnCheckedChangedPms(\"" + pms.Trim() + "\",s.GetChecked());}";
+                    }
+                }).Render();
+            });
+        });
+    }).Bind(Model).GetHtml()

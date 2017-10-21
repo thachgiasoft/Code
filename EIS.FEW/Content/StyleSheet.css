@@ -1,0 +1,748 @@
+﻿body {
+}
+
+#HeaderMenu {
+	background: #0093DD !important;
+}
+
+#HeaderMenu span {
+	color: #fff !important;
+}
+
+.filter {
+	margin: 12px 0 0 0;
+	padding: 0px 0;
+	border: 0;
+	background-color: #fff;
+	width: 100%;
+	text-align: center;
+	float: left;
+}
+
+.tbFilter {
+	margin: 0;
+	padding: 10px;
+	border: 0;
+	width: 100%;
+	text-align: left;
+}
+
+.tbFilter td {
+	padding: 3px 0;
+}
+
+#table_filter {
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+#HeaderMenu_DXI0_T {
+	padding: 3px 15px 4px 5px !important;
+}
+.marginleft {
+	margin-left: -76px;
+}
+.footerPane {
+	height: 30px !important;
+	background-color: #002A54 !important;
+	/*background-color: #0F5DB1 !important*/
+}
+
+.copyright {
+	margin: 6px 15px 11px !important;
+}
+
+	.copyright span {
+		color: #fff !important;
+		font-family: Tahoma !important;
+	}
+
+.dxm-separator {
+	display: none !important;
+}
+
+.headerMenu {
+	/*background: url('Images/bg_header_tet.png') center !important*/
+	/*background: #0F5DB1 !important;*/
+	background: #FFFFFF !important;
+}
+
+.dxeRoot_OneNETMetropolisBlue {
+	margin-top: 15px;
+}
+
+.PrePage {
+	background-image: url(Images/Icon-flat/Prev.png);
+	width: 32px;
+	height: 32px;
+}
+
+.PrePageHottracked {
+	background-image: url(Images/Icon-flat/Prev-over.png);
+}
+
+.PrePagePressed {
+	
+}
+
+.Pre {
+	background-image: url(Images/Icon-flat/Left.png);
+	width: 32px;
+	height: 32px;
+}
+
+.PreHottracked {
+	background-image: url(Images/Icon-flat/Left-over.png);
+}
+
+.PrePressed {
+
+}
+
+.btnSetting {
+	background-image: url(Images/Icon-flat/Setting.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnSettingHottracked {
+	background-image: url(Images/Icon-flat/Setting-over.png);
+}
+
+.btnSettingPressed {
+	
+}
+
+.btnCancel {
+	background-image: url(Images/Icon-flat/Cancel.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnCancelHottracked {
+	background-image: url(Images/Icon-flat/Cancel-over.png);
+}
+
+.btnCancelPressed {
+	
+}
+
+.btnDuyet {
+	background-image: url(Images/Icon-flat/Check.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnDuyetHottracked {
+	background-image: url(Images/Icon-flat/Check-over.png);
+}
+
+.btnCancelPressed {
+	
+}
+
+.btnDeclined {
+	background-image: url(Images/Icon-flat/Declined.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnDeclinedHottracked {
+	background-image: url(Images/Icon-flat/Declined-over.png);
+}
+
+.btnDeclinedPressed {
+	
+}
+
+.btnMinus {
+	background-image: url(Images/Icon-flat/Minus.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnMinusHottracked {
+	background-image: url(Images/Icon-flat/Minus-over.png);
+}
+
+.btnMinusPressed {
+	
+}
+
+.btnCheckAll {
+	background-image: url(Images/Icon-flat/CheckAll.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnCheckAllHottracked {
+	background-image: url(Images/Icon-flat/CheckAll-over.png);
+}
+
+.btnCheckAllPressed {
+	
+}
+
+.btnHuyAll {
+	background-image: url(Images/Icon-flat/x-all.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnHuyAllHottracked {
+	background-image: url(Images/Icon-flat/x-all-over.png);
+}
+
+.btnHuyAllPressed {
+	
+}
+
+.btnSearch {
+	background-image: url(Images/Icon-flat/Search.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnSearchHottracked {
+	background-image: url(Images/Icon-flat/Search-over.png);
+}
+
+.btnSearchPressed {
+	
+}
+
+.btnDownload {
+	background-image: url(Images/Icon-flat/Download.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnDownloadHottracked {
+	background-image: url(Images/Icon-flat/Download-over.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnDownloadPressed {
+	
+}
+
+.btnAdd {
+	background-image: url(Images/Icon-flat/Add.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnAddHottracked {
+	background-image: url(Images/Icon-flat/Add-over.png);
+}
+
+.btnAddPressed {
+	
+}
+
+.btnSave {
+	background-image: url(Images/Icon-flat/Save.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnSaveHottracked {
+	background-image: url(Images/Icon-flat/Save-over.png);
+}
+
+.btnSavePressed {
+	
+}
+
+.btnTrash {
+	background-image: url(Images/Icon-flat/Trash.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnTrashHottracked {
+	background-image: url(Images/Icon-flat/Trash-over.png);
+}
+
+.btnTrashPressed {
+	
+}
+
+.btnAnhXa {
+	background-image: url(Images/Icon-flat/Prev.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnAnhXaHottracked {
+	background-image: url(Images/Icon-flat/Prev-over.png);
+}
+
+.btnAnhXaPressed {
+	
+}
+
+.btnExportExcel {
+	background-image: url(Images/Icon-flat/Excel.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnExportExcelHottracked {
+	background-image: url(Images/Icon-flat/Excel-over.png);
+}
+
+.btnExportExcelPressed {
+	
+}
+
+
+.NextPage {
+	background-image: url(Images/Icon-flat/Next.png);
+	width: 32px;
+	height: 32px;
+}
+
+.NextPageHottracked {
+	 background-image: url(Images/Icon-flat/Next-over.png);
+}
+
+.NextPagePressed {
+	
+}
+
+.Next {
+	background-image: url(Images/Icon-flat/Right.png);
+	width: 32px;
+	height: 32px;
+}
+
+.NextHottracked {
+	background-image: url(Images/Icon-flat/Right-over.png);
+}
+
+.NextPressed {
+	
+}
+.VeDS {
+	background-image: url(Images/Icon-flat/List.png);
+	width: 32px;
+	height: 32px;
+}
+
+.VeDSHottracked {
+	background-image: url(Images/Icon-flat/List-over.png);
+}
+
+.VeDSPressed {
+	
+}
+.troVe {
+	background-image: url(Images/Icon-flat/Reply.png);
+	width: 32px;
+	height: 32px;
+}
+
+.troVeHottracked {
+	background-image: url(Images/Icon-flat/Reply-over.png);
+}
+
+.troVePressed {
+	
+}
+ .refresh {
+	background-image: url(Images/Icon-flat/Refesh32.png);
+	width: 32px;
+	height: 32px;
+}
+
+.refreshsave {
+	background-image: url(Images/Icon-flat/Refesh-over32.png);
+}
+
+.refreshss {
+	
+}
+.traKQGD {
+	background-image: url(Images/Icon-flat/TraKetQuaGD.png);
+	width: 32px;
+	height: 32px;
+}
+
+.traKQGDHottracked {
+	background-image: url(Images/Icon-flat/TraKetQuaGD-over.png);
+}
+
+.btnRefesh {
+	background-image: url(Images/Icon-flat/Refesh32.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnRefeshHottracked {
+	background-image: url(Images/Icon-flat/Refesh-over32.png);
+}
+
+.btnRefeshPressed {
+	
+}
+
+.bt_popup {
+	padding-top: 10px !important;
+}
+
+#bt_thuchien {
+	
+}
+
+.gropBT {
+	padding: 0 !important;
+}
+
+.lb_hoso {
+	font-weight: bold !important;
+}
+
+.btn_hsct {
+	margin-right: 10px;
+	margin-bottom: 20px;
+}
+
+.lb_help_text {
+	width: 100%;
+}
+
+.divResult {
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 110px;
+	overflow: hidden;
+}
+
+.devTreeNhomVT {
+	display: inline-block;
+	float: left;
+	width: 20%;
+}
+
+.devVT {
+	float: right;
+	display: inline-block;
+	width: 50%;
+}
+
+#LeftPanel {
+	padding: 0px !important;
+	padding-top: 5px !important;
+}
+
+#RightPanel {
+	padding: 2px !important;
+}
+
+#RightPanel1 {
+	border: 1px solid #c0c0c0 !important;
+}
+
+#RightPanel2 {
+	margin-top: 5px !important;
+	border: 1px solid #c0c0c0 !important;
+}
+
+table#table_1 th {
+	padding: 5px;
+}
+
+table#table_1 td {
+	padding: 5px;
+}
+
+table#table_1 {
+	border: 1px solid #F0F0F0;
+}
+
+table#table_2 th {
+	padding: 2px;
+}
+
+table#table_2 td {
+	padding: 2px;
+}
+
+table#table_2 {
+	border: 1px solid #F0F0F0;
+}
+
+#formTTBN td {
+	width: auto !important;
+}
+
+#formTTBN span {
+	font-weight: bold !important;
+}
+
+#formKHAC span {
+	color: #0f5db1 !important;
+}
+
+#lbTen {
+	font-size: 14px !important;
+	font-weight: bold !important;
+	color: #0f5db1;
+}
+
+.btnDongY {
+	background: url(Images/Icon-flat/Check.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnDongYHottracked {
+	background: url(Images/Icon-flat/Check-over.png);
+}
+
+.btnDongYPressed {
+	
+}
+
+.btnKhoiPhuc {
+	background: url(Images/Icon-flat/Reply.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnKhoiPhucHottracked {
+	background: url(Images/Icon-flat/Reply-over.png);
+}
+
+.btnTuChoiAll {
+	background: url(Images/Icon-flat/x.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnTuChoiAllHottracked {
+	background: url(Images/Icon-flat/x-over.png);
+}
+
+.btnTuChoiAllPressed {
+	
+}
+
+.btnTuChoi {
+	background: url(Images/Icon-flat/x-over.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnTuChoiHottracked {
+	background: url(Images/Icon-flat/x-over.png);
+}
+
+.btnTuChoiPressed {
+	
+}
+
+.btnLichSuDT {
+	background: url(Images/Icon-flat/Calendar.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnLichSuDTHottracked {
+	background: url(Images/Icon-flat/Calendar-over.png);
+}
+
+.btnCKCP {
+	background: url(Images/Icon-flat/History.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnCKCPHottracked {
+	background: url(Images/Icon-flat/History-over.png);
+}
+.btnHS {
+	background-image:url(Images/Icon-flat/HoSo.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btsavenhoso {
+	background-image: url(Images/Icon-flat/HoSo.png);
+}
+.tbnhso{
+
+}
+
+.btnTuDien {
+	background: url(Images/Icon-flat/TuDien.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnTuDienHottracked {
+	background: url(Images/Icon-flat/TuDien-over.png);
+}
+
+.btnLichSu {
+	background: url(Images/Icon-flat/HoSo.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnLichSuHottracked {
+	background: url(Images/Icon-flat/HoSo-over.png);
+}
+
+.btnInKQ {
+	background: url(Images/Icon-flat/Print.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnXuatExcel {
+	background: url(Images/Icon-flat/Excel.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnXuatExcelHottracked {
+	background: url(Images/Icon-flat/Excel-over.png);
+}
+
+.btnInKQ {
+	background: url(Images/Icon-flat/Print.png);
+	width: 32px;
+	height: 32px;
+}
+
+.btnInKQHottracked {
+	background: url(Images/Icon-flat/Print-over.png);
+}
+
+.btnHSCT {
+	padding: 0 !important;
+	/*background: #ff0000 !important;*/
+}
+
+.formTitle {
+	padding-bottom: 10px !important;
+}
+
+	.formTitle span {
+		font-size: 14px !important;
+		font-weight: bold !important;
+		color: #000000 !important;
+	}
+
+#formTTCTHS span {
+	color: #2196F3;
+}
+
+#formLDTT_E1, #formLDTT_E2, #formLDTT_E3 {
+	font-weight: bold !important;
+}
+
+#frmFilter {
+	margin: 0 auto !important;
+	padding: 0 !important;
+}
+
+.HiddenField {
+	display: none;
+}
+
+.dxrpControl_EIS .dxWeb_rpCollapseButton_EIS {
+	background: url(Images/Icon/hide_ndh.png);
+}
+
+.dxrpCollapsed .dxWeb_rpCollapseButton_EIS {
+	background: url(Images/Icon/show_ndh.png) !important;
+}
+
+.dxflRequired_EIS {
+	color: red !important;
+	font-weight: bold;
+}
+.dxtlIndentWithButton_EIS {
+	padding : 5px 0 0 0 !important;
+}
+#content {
+	width: 100%;
+	height: auto;
+	display: block;
+	background: #fff;
+	min-height: 500px;
+	overflow: hidden;
+	position: relative;
+	z-index: 2;
+	color: #fff;
+}
+#content_left {
+	position: absolute;
+	width: 20px;
+	height: 100%;
+	background: #f0f0f0;
+	/*border-right: 1px solid #cccedb;*/
+	color: #0093DD;
+}
+#content_left:hover {
+	background: #0093DD;
+	color: #fff;
+}
+#content_right {
+	display: block;
+	margin-left: 20px;
+	/*padding: 0 10px;*/
+}
+#title {
+	font-family: Arial;
+	font-size: 13px;
+	font-weight: bold;
+	-ms-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	transform-origin: left 17px;
+	text-align: center;
+	/*padding-right: 33px;*/
+}
+#icon {
+	margin-left: 2px;
+	margin-top: 3px;
+}
+#left_content {
+	display: block;
+	width: 300px;
+	background: #fff;
+	position: absolute;
+	min-height: 500px;
+}
+
+#grid_left {
+	float: left; 
+	width:50%
+}
+
+#grid_right {
+	float: right; 
+	width:50%
+}
+
+.dxrpHT dx-vam {
+	color: #ff0000;
+}
+
+.grid_title {
+	color: #0093DD;
+	font-weight: bold;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	font-size: 14px;
+	font-family: 'Segoe UI';
+	margin-left: 5px;
+}
+.borderFooter .dxgv {
+	border-right: solid 1px #CFCFCF !important;
+}

@@ -1,0 +1,103 @@
+﻿@using System.Globalization
+@{
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+
+    var grid = Html.DevExpress().GridView(
+        settings =>
+        {
+            settings.Name = "gvCSKCB";
+            settings.KeyFieldName = "ID";
+            settings.CallbackRouteValues = new { Controller = "QuanLyNguoiDung", Action = "CSKCBPartial" };
+            //settings.SettingsBehavior.AllowSelectByRowClick = true;
+            //settings.SettingsBehavior.EnableCustomizationWindow = true;
+            //settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.Control;
+            settings.SettingsPager.PageSizeItemSettings.Visible = true;
+            settings.SettingsPager.PageSizeItemSettings.Items = new[] { "10", "15", "20", "30", "50", "100" };
+            settings.SettingsPager.PageSize = 50;
+            settings.SettingsPager.NumericButtonCount = 3;
+            
+            settings.Settings.ShowFilterRow = true;
+            settings.Settings.ShowFilterRowMenu = true;
+            //settings.SettingsBehavior.AllowSelectByRowClick = true;
+            //settings.SettingsBehavior.AllowFocusedRow = true;
+            settings.ClientSideEvents.Init = "CSKCBInit";
+            settings.ClientSideEvents.SelectionChanged = "OnSelectionChanged";
+            settings.Settings.VerticalScrollBarMode = ScrollBarMode.Auto;
+            //settings.Settings.HorizontalScrollBarMode = ScrollBarMode.Auto;
+            settings.Settings.VerticalScrollableHeight = 170;
+            settings.CommandColumn.Visible = true;
+            settings.CommandColumn.ShowSelectCheckbox = true;
+            settings.CommandColumn.ShowClearFilterButton = true;
+            settings.CommandColumn.Width = Unit.Percentage(8);
+            settings.CommandColumn.SelectAllCheckboxMode = GridViewSelectAllCheckBoxMode.AllPages;            
+            settings.CommandColumn.FixedStyle = GridViewColumnFixedStyle.Left;
+            settings.Width = Unit.Percentage(100);
+            settings.Columns.Add(s =>
+            {
+                s.Caption = @"STT";
+                s.EditFormSettings.Visible = DefaultBoolean.False;
+                s.PropertiesEdit.EnableClientSideAPI = true;
+                s.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+                s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                s.Width = Unit.Percentage(10);
+            });
+            settings.CustomColumnDisplayText = (send, e) =>
+            {
+                if (e.Column.Caption == @"STT")
+                {
+                    e.DisplayText = (e.VisibleRowIndex + 1).ToString(CultureInfo.InvariantCulture);
+                }
+            };
+            settings.Columns.Add(s =>
+            {
+                s.FieldName = "MA";
+                s.Caption = @"Mã";
+                s.ToolTip = @"Mã";
+                s.PropertiesEdit.EnableClientSideAPI = true;
+                s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                s.Width = Unit.Percentage(15);
+            });
+            settings.Columns.Add(s =>
+            {
+                s.FieldName = "TEN";
+                s.Caption = @"Tên";
+                s.ToolTip = @"Tên";
+                s.PropertiesEdit.EnableClientSideAPI = true;
+                s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                s.Width = Unit.Percentage(47);
+            });
+            settings.Columns.Add(s =>
+            {
+                s.FieldName = "MACOSOKCBCHA";
+                s.Caption = @"Mã cha";
+                s.ToolTip = @"Mã cha";
+                s.PropertiesEdit.EnableClientSideAPI = true;
+                s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                s.Width = Unit.Percentage(20);
+            });
+            settings.PreRender = (s, e) =>
+            {
+                if (HttpContext.Current.Session["SelectCSKCB_QLPQ"] != null)
+                {
+                    var g = s as MVCxGridView;
+                    var temp = HttpContext.Current.Session["SelectCSKCB_QLPQ"].ToString().Split(',');
+                    foreach (var t in temp.Where(t => !string.IsNullOrEmpty(t)))
+                    {
+                        if (g != null)
+                        {
+                            g.Selection.SelectRowByKey(t);
+                        }
+                    }
+                }
+                
+            };
+        });
+
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()
+@*@grid.BindToLINQ(string.Empty, string.Empty, (s, e) => { e.QueryableSource = Model; }).GetHtml()*@

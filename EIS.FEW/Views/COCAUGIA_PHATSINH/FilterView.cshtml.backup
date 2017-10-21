@@ -1,0 +1,62 @@
+﻿@model EIS.FEW.Models.COCAUGIA_DICHVU_FILTER
+
+@Html.DevExpress().FormLayout(settings =>
+{
+    settings.Name = "formLayout";
+    settings.EncodeHtml = false;
+    settings.Width = Unit.Percentage(75);
+    settings.ColCount = 6;
+    settings.Items.Add(item =>
+    {
+        item.FieldName = "MATINH";
+        item.Caption = "Tỉnh";
+        item.Width = Unit.Percentage(30);
+        item.NestedExtensionType = FormLayoutNestedExtensionItemType.ComboBox;
+        item.NestedExtension().ComboBox(cb =>
+        {
+            cb.Name = "cbx_tinh";
+            cb.Width = Unit.Percentage(80);
+            cb.Properties.ClearButton.DisplayMode = ClearButtonDisplayMode.Always;
+            cb.Properties.NullText = "Toàn quốc";
+            cb.Properties.ValueField = "MA";
+            cb.Properties.TextField = "TEN";
+            cb.Properties.ValueType = typeof(string);
+            cb.Properties.DataSource = FX.Core.IoC.Resolve<EIS.Core.IService.IDMTINHTHANHService>().GetAll();
+        });
+    });
+    settings.Items.Add(item =>
+    {
+        item.FieldName = "TRANGTHAI";
+        item.Caption = "Trạng thái";
+        item.Width = Unit.Percentage(20);
+        item.NestedExtensionType = FormLayoutNestedExtensionItemType.ComboBox;
+        item.NestedExtension().ComboBox(cb =>
+        {
+            cb.Name = "cbx_trangthai";
+            cb.Width = Unit.Percentage(70);
+            cb.SelectedIndex = 0;
+            cb.Properties.ValueType = typeof(string);
+            cb.Properties.DataSource = new string[] { "Chờ duyệt", "Đã duyệt" };
+        });
+    });
+    settings.Items.Add(bt =>
+    {
+        bt.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+        bt.Caption = @" ";
+        bt.Width = Unit.Percentage(2);
+        bt.CaptionSettings.Location = LayoutItemCaptionLocation.Right;
+        bt.NestedExtension().Button(s =>
+        {
+            s.Name = "bt_TimKiem";
+            s.EnableTheming = false;
+            s.Text = "";
+            s.AllowFocus = false;
+            s.RenderMode = ButtonRenderMode.Link;
+            s.Images.Image.SpriteProperties.CssClass = "btnSearch";
+            s.Images.Image.SpriteProperties.HottrackedCssClass = "btnSearchHottracked";
+            s.Images.Image.SpriteProperties.PressedCssClass = "btnSearchPressed";
+            s.ToolTip = "Tìm kiếm";
+            s.ClientSideEvents.Click = "Filter";
+        });
+    });
+}).GetHtml()

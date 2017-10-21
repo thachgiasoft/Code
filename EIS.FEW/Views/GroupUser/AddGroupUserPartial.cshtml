@@ -1,0 +1,27 @@
+﻿@Html.DevExpress().TextBox(txt =>
+{
+    txt.Name = "NameGroup";
+    txt.Properties.Caption = "Tên nhóm";
+    txt.Width = Unit.Pixel(600);
+}).GetHtml()
+<br/>
+@Html.Action("LoadUserNonOfGroup", "GroupUser")
+<div style="padding-top: 15px;"></div>
+<div><p class="error" style="color: red;" id="ErrorAddGroup"></p></div>
+<hr />
+<div class="btnSaveOrCloseAddGroup" style="width: 240px; padding-left: 230px;">
+    @Html.DevExpress().Button(btn => {
+        btn.Name = "btnAddNewGroup";
+        btn.Text = "Lưu";
+        btn.Width = Unit.Pixel(100);
+        btn.ClientSideEvents.Click = "funcCreateNewGroup";
+    }).GetHtml()
+
+    @Html.DevExpress().Button(btn =>
+    {
+        btn.Name = "btnClosePPAddGroup";
+        btn.Text = "Đóng";
+        btn.Width = Unit.Pixel(100);
+        btn.ClientSideEvents.Click = "function(){ ppAddGroupUser.Hide(); $('#ErrorAddGroup').text(' ');}";
+    }).GetHtml()
+</div>

@@ -1,0 +1,156 @@
+﻿@{
+    FX.Core.IoC.Resolve<EIS.Core.IService.IDMTINHTHANHService>();
+}
+
+@{
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+    var grid = Html.DevExpress().GridView(
+         settings =>
+         {
+             settings.Name = "gridviewDanhSach";
+             settings.KeyFieldName = "ID";
+             settings.CallbackRouteValues = new { Controller = "COCAUGIA_DICHVU21", Action = "_GridViewDanhSachDichVuPartial" };
+             settings.CustomActionRouteValues = new { Controller = "COCAUGIA_DICHVU21", Action = "_GridViewDanhSachDichVuFilter", };
+             settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "COCAUGIA_DICHVU21", Action = "UpdateDichVu" };
+             //settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "COCAUGIA_DICHVU21", Action = "SaveDichVu" };
+             settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "COCAUGIA_DICHVU21", Action = "DeleteDichVu" };
+             settings.ClientSideEvents.FocusedRowChanged = "FilterChiTiet";
+             
+             settings.SettingsBehavior.AllowSelectByRowClick = true;
+             settings.SettingsBehavior.EnableCustomizationWindow = true;
+             settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.Control;
+
+             settings.SettingsPager.PageSizeItemSettings.Visible = true;
+             settings.SettingsPager.PageSizeItemSettings.Items = new string[] { "10", "15", "20", "30", "50" };
+             settings.SettingsPager.PageSize = 100;
+             settings.SettingsPager.Visible = false;
+             
+             settings.Settings.VerticalScrollBarMode = ScrollBarMode.Auto;
+             settings.Settings.HorizontalScrollBarMode = ScrollBarMode.Auto;
+             settings.Settings.VerticalScrollableHeight = 360;
+             settings.Settings.ShowFilterRow = true;
+             settings.Styles.EmptyDataRow.CssClass = "emptyRow";
+
+             settings.Settings.ShowFilterRowMenu = true;
+             settings.SettingsContextMenu.Enabled = true;
+             settings.SettingsBehavior.AllowSelectByRowClick = true;
+             settings.EncodeHtml = false;
+
+             settings.EditFormLayoutProperties.EncodeHtml = false;
+             settings.SettingsContextMenu.RowMenuItemVisibility.NewRow = false;
+             settings.SettingsContextMenu.RowMenuItemVisibility.Refresh = false;
+             settings.SettingsContextMenu.RowMenuItemVisibility.EditRow = true;
+             settings.SettingsContextMenu.RowMenuItemVisibility.DeleteRow = true;
+             settings.SettingsBehavior.AllowFocusedRow = true;
+
+             settings.SettingsEditing.Mode = EIS.FEW.Helper.GridViewEditingHelper.EditMode;
+             settings.SettingsPopup.EditForm.Width = 400;
+             settings.SettingsPopup.EditForm.HorizontalAlign = PopupHorizontalAlign.WindowCenter;
+             settings.SettingsPopup.EditForm.VerticalAlign = PopupVerticalAlign.WindowCenter;
+             settings.SettingsText.CommandUpdate = "Lưu";
+             settings.SettingsText.CommandCancel = "Đóng";
+             settings.SettingsText.PopupEditFormCaption = "Sửa tên dịch vụ";
+             settings.SettingsText.ContextMenuEditRow = "Sửa nhóm";
+             //settings.SettingsText.ContextMenuNewRow = "Thêm mới";
+             settings.SettingsText.ContextMenuDeleteRow = "Xoá nhóm";
+             settings.InitNewRow += (s, e) =>
+             {
+                 //EIS.Core.Domain.QUY_KINHPHI_TQ_NEW newRow = new EIS.Core.Domain.QUY_KINHPHI_TQ_NEW();
+                 //newRow.TEN_TINHTHANH = "Hà Nội";
+                 //ViewData["EditableQuy"] = newRow;
+             };
+             settings.SetEditFormTemplateContent(c =>
+             {
+                 dynamic data = ViewData["EditableDichVu"] != null ? ViewData["EditableDichVu"] : c.DataItem;
+                 //if (data.KY_QT > 10000) data.NAM = data.KY_QT % 10000 + "";
+
+                 Html.DevExpress().FormLayout(formLayoutSettings =>
+                 {
+                     formLayoutSettings.Name = "FormLayoutProducts";
+                     formLayoutSettings.Width = Unit.Percentage(100);
+                     formLayoutSettings.ColCount = 1;
+                     formLayoutSettings.Items.Add(i =>
+                     {
+                         i.FieldName = "MA_DICHVU21";
+                         i.Caption = "Mã nhóm";
+                         i.NestedExtension().TextBox(s =>
+                         {
+                             s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+                             s.ShowModelErrors = true;
+                             s.Width = Unit.Percentage(100);
+                         });
+                     });
+                     formLayoutSettings.Items.Add(i =>
+                     {
+                         i.FieldName = "TEN_DICHVU21";
+                         i.Caption = "Tên nhóm";
+                         i.NestedExtension().TextBox(s =>
+                         {
+                             s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+                             s.ShowModelErrors = true;
+                             s.Width = Unit.Percentage(100);
+                         });
+                     });
+                     formLayoutSettings.Items.AddEmptyItem();
+                     formLayoutSettings.Items.Add(i =>
+                     {
+                         i.ShowCaption = DefaultBoolean.False;
+                     }).SetNestedContent(() =>
+                     {
+                         ViewContext.Writer.Write("<div style='margin-left: 130px;'>");
+                         Html.DevExpress().Button(
+                             btnSettings =>
+                             {
+                                 btnSettings.Name = "btnUpdate";
+                                 btnSettings.Text = "Lưu";
+                                 btnSettings.ClientSideEvents.Click = "function(s, e){ gridviewDanhSach.UpdateEdit(); }";
+                             }).Render();
+                         Html.DevExpress().Button(
+                             btnSettings =>
+                             {
+                                 btnSettings.Name = "btnCancel";
+                                 btnSettings.Text = "Hủy";
+                                 btnSettings.Style[HtmlTextWriterStyle.MarginLeft] = "5px";
+                                 btnSettings.ClientSideEvents.Click = "function(s, e){ gridviewDanhSach.CancelEdit(); }";
+                             }).Render();
+                         ViewContext.Writer.Write("</div>");
+                     });
+                 })
+                 .Bind(data)
+                 .Render();
+             });
+
+             settings.Width = Unit.Percentage(100);
+
+             settings.Columns.Add(s =>
+             {
+                 s.FieldName = "MA_DICHVU21";
+                 s.Caption = "Mã";
+                 s.Width = Unit.Percentage(30);
+             });
+             settings.Columns.Add(s =>
+             {
+                 s.FieldName = "TEN_DICHVU21";
+                 s.Caption = "Tên";
+                 s.Width = Unit.Percentage(70);
+             });
+
+             //settings.CommandColumn.FixedStyle = GridViewColumnFixedStyle.Left;
+             settings.CommandColumn.ShowSelectCheckbox = true;
+             settings.CommandColumn.Visible = true;
+             settings.CommandColumn.Width = 30;
+             settings.CommandColumn.SelectAllCheckboxMode = EIS.FEW.Helper.GridViewSelectionHelper.SelectAllButtonMode;
+
+             settings.Settings.ShowTitlePanel = true;
+             settings.SetTitlePanelTemplateContent(c =>
+             {
+                 ViewContext.Writer.Write(string.Format("<span>Danh sách dịch vụ</span>"));
+             });
+         });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

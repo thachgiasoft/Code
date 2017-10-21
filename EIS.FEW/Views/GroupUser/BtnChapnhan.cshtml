@@ -1,0 +1,21 @@
+﻿@using EIS.Core.CustomView
+@model UserGroupModelDetail
+<div class="btnCapNhap">
+        @Html.DevExpress().Button(s =>
+        {
+            s.ControlStyle.CssClass = "button";
+            s.Name = "bt_CapNhat";
+            s.Text = "Cập nhật";
+            s.ClientSideEvents.Click = "SaveChange";
+            s.Images.Image.IconID = IconID.SaveSave16x16;
+        }).GetHtml()
+
+        @Html.DevExpress().Button(s =>
+        {
+            s.Name = "bt_back";
+            s.Text = "Quay lại";
+            s.ClientSideEvents.Click = "function(s, e){ location.href = '/QuanLyNguoiDung/Index'}";
+            s.ControlStyle.CssClass = "button";
+            s.Images.Image.IconID = IconID.NavigationBackward16x16;
+        }).GetHtml()
+    </div>

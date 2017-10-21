@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="EIS.Core.Domain.LogSystem, EIS.Core" table="LOGSYSTEM" >
+    <id name="ID" column="ID">
+      <generator class="sequence-identity">
+        <param name="sequence">LOGSYSTEM_SEQ</param>
+      </generator>
+    </id>
+    <property name="ADMINID" column="ADMINID" type="int" />
+    <property name="EVENT" column="EVENT" type="string" length="250"/>
+    <property name="CREATEDATE" column="CREATEDATE" type="DateTime" />
+    <property name="COMMENT_LOG" column="COMMENT_LOG" type="string" length="2000" />
+    <property name="IPADDRESS" column="IPADDRESS" type="string" length="250" />
+    <property name="BROWSER" column="BROWSER" type="string" length="250" />
+	<property name="TRANGTHAI" column="TRANGTHAI" type="Int16" />
+    <many-to-one name="User" class="IdentityManagement.Domain.user,IdentityManagement" column="ADMINID" not-found="ignore" insert="false" update ="false" fetch="select" />
+  </class>
+
+</hibernate-mapping>

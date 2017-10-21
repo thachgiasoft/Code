@@ -1,0 +1,3472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\HuyLQ\Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/TopMenu.xml">
+      <publishTime>02/25/2016 10:44:14</publishTime>
+    </File>
+    <File Include="bin/Castle.Core.dll">
+      <publishTime>12/23/2015 08:20:20</publishTime>
+    </File>
+    <File Include="bin/Castle.Windsor.dll">
+      <publishTime>12/23/2015 08:20:20</publishTime>
+    </File>
+    <File Include="bin/de/DevExpress.Sparkline.v15.1.Core.resources.dll">
+      <publishTime>12/23/2015 19:20:49</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Charts.v15.1.Core.dll">
+      <publishTime>12/23/2015 19:20:56</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Dashboard.v15.1.Core.dll">
+      <publishTime>12/23/2015 19:20:32</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Dashboard.v15.1.Web.dll">
+      <publishTime>12/23/2015 19:20:32</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Dashboard.v15.1.Web.Mvc.dll">
+      <publishTime>12/23/2015 19:20:32</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Data.v15.1.dll">
+      <publishTime>12/23/2015 19:20:33</publishTime>
+    </File>
+    <File Include="bin/DevExpress.DataAccess.v15.1.dll">
+      <publishTime>12/23/2015 19:20:37</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Office.v15.1.Core.dll">
+      <publishTime>12/23/2015 19:20:46</publishTime>
+    </File>
+    <File Include="bin/DevExpress.PivotGrid.v15.1.Core.dll">
+      <publishTime>12/23/2015 19:20:59</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Printing.v15.1.Core.dll">
+      <publishTime>12/23/2015 19:20:47</publishTime>
+    </File>
+    <File Include="bin/DevExpress.RichEdit.v15.1.Core.dll">
+      <publishTime>12/23/2015 19:21:03</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Sparkline.v15.1.Core.dll">
+      <publishTime>12/23/2015 19:20:49</publishTime>
+    </File>
+    <File Include="bin/DevExpress.SpellChecker.v15.1.Core.dll">
+      <publishTime>12/23/2015 19:20:49</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Spreadsheet.v15.1.Core.dll">
+      <publishTime>12/23/2015 19:21:05</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Utils.v15.1.dll">
+      <publishTime>12/23/2015 19:20:51</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Web.ASPxGauges.v15.1.dll">
+      <publishTime>12/23/2015 19:20:27</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Web.ASPxHtmlEditor.v15.1.dll">
+      <publishTime>12/23/2015 19:20:27</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Web.ASPxPivotGrid.v15.1.dll">
+      <publishTime>12/23/2015 19:20:28</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Web.ASPxRichEdit.v15.1.dll">
+      <publishTime>12/23/2015 19:20:28</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Web.ASPxScheduler.v15.1.dll">
+      <publishTime>12/23/2015 19:20:28</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Web.ASPxSpellChecker.v15.1.dll">
+      <publishTime>12/23/2015 19:20:28</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Web.ASPxSpreadsheet.v15.1.dll">
+      <publishTime>12/23/2015 19:20:49</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Web.ASPxThemes.v15.1.dll">
+      <publishTime>12/23/2015 19:20:28</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Web.ASPxTreeList.v15.1.dll">
+      <publishTime>12/23/2015 19:20:28</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Web.Mvc.v15.1.dll">
+      <publishTime>12/23/2015 19:20:46</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Web.v15.1.dll">
+      <publishTime>12/23/2015 19:20:28</publishTime>
+    </File>
+    <File Include="bin/DevExpress.Xpo.v15.1.dll">
+      <publishTime>12/23/2015 19:20:55</publishTime>
+    </File>
+    <File Include="bin/DevExpress.XtraCharts.v15.1.dll">
+      <publishTime>12/23/2015 19:20:56</publishTime>
+    </File>
+    <File Include="bin/DevExpress.XtraCharts.v15.1.Web.dll">
+      <publishTime>12/23/2015 19:20:27</publishTime>
+    </File>
+    <File Include="bin/DevExpress.XtraEditors.v15.1.dll">
+      <publishTime>12/23/2015 19:20:57</publishTime>
+    </File>
+    <File Include="bin/DevExpress.XtraGauges.v15.1.Core.dll">
+      <publishTime>12/23/2015 19:20:57</publishTime>
+    </File>
+    <File Include="bin/DevExpress.XtraGauges.v15.1.Presets.dll">
+      <publishTime>12/23/2015 19:20:57</publishTime>
+    </File>
+    <File Include="bin/DevExpress.XtraPivotGrid.v15.1.dll">
+      <publishTime>12/23/2015 19:20:59</publishTime>
+    </File>
+    <File Include="bin/DevExpress.XtraReports.v15.1.dll">
+      <publishTime>12/23/2015 19:21:00</publishTime>
+    </File>
+    <File Include="bin/DevExpress.XtraReports.v15.1.Web.dll">
+      <publishTime>12/23/2015 19:21:00</publishTime>
+    </File>
+    <File Include="bin/DevExpress.XtraScheduler.v15.1.Core.dll">
+      <publishTime>12/23/2015 19:21:04</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.AspNet.dll">
+      <publishTime>12/23/2015 08:20:21</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.Core.dll">
+      <publishTime>12/23/2015 08:20:22</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.Consumer.dll">
+      <publishTime>12/23/2015 08:20:22</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.dll">
+      <publishTime>12/23/2015 08:20:22</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.dll">
+      <publishTime>12/23/2015 08:20:22</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.RelyingParty.dll">
+      <publishTime>12/23/2015 08:20:23</publishTime>
+    </File>
+    <File Include="bin/EIS.Core.dll">
+      <publishTime>02/26/2016 16:17:48</publishTime>
+    </File>
+    <File Include="bin/EIS.FEW.dll">
+      <publishTime>02/26/2016 16:17:57</publishTime>
+    </File>
+    <File Include="bin/EISTheme.dll">
+      <publishTime>01/09/2016 13:59:28</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>12/23/2015 08:20:24</publishTime>
+    </File>
+    <File Include="bin/es/DevExpress.Sparkline.v15.1.Core.resources.dll">
+      <publishTime>12/23/2015 19:20:49</publishTime>
+    </File>
+    <File Include="bin/Excel.dll">
+      <publishTime>01/30/2014 19:10:44</publishTime>
+    </File>
+    <File Include="bin/FX.Context.dll">
+      <publishTime>12/23/2015 08:20:20</publishTime>
+    </File>
+    <File Include="bin/FX.Core.dll">
+      <publishTime>12/23/2015 08:20:20</publishTime>
+    </File>
+    <File Include="bin/FX.Data.dll">
+      <publishTime>12/23/2015 08:20:20</publishTime>
+    </File>
+    <File Include="bin/FX.Utils.dll">
+      <publishTime>12/23/2015 08:20:20</publishTime>
+    </File>
+    <File Include="bin/HttpWebAdapters.dll">
+      <publishTime>02/21/2016 08:40:56</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>01/02/2014 20:05:23</publishTime>
+    </File>
+    <File Include="bin/IdentityManagement.dll">
+      <publishTime>02/13/2016 10:30:08</publishTime>
+    </File>
+    <File Include="bin/Iesi.Collections.dll">
+      <publishTime>12/23/2015 08:20:20</publishTime>
+    </File>
+    <File Include="bin/itextsharp.dll">
+      <publishTime>12/23/2015 08:20:21</publishTime>
+    </File>
+    <File Include="bin/ja/DevExpress.Sparkline.v15.1.Core.resources.dll">
+      <publishTime>12/23/2015 19:20:49</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>12/23/2015 08:20:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CSharp.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.ServiceLocation.dll">
+      <publishTime>01/21/2016 13:34:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>12/23/2015 08:20:43</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.WebPages.OAuth.dll">
+      <publishTime>12/23/2015 08:20:37</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>12/23/2015 08:20:45</publishTime>
+    </File>
+    <File Include="bin/NHibernate.ByteCode.Castle.dll">
+      <publishTime>12/23/2015 08:20:20</publishTime>
+    </File>
+    <File Include="bin/NHibernate.Caches.SysCache.dll">
+      <publishTime>12/23/2015 08:20:20</publishTime>
+    </File>
+    <File Include="bin/NHibernate.dll">
+      <publishTime>12/23/2015 08:20:21</publishTime>
+    </File>
+    <File Include="bin/OneNET.dll">
+      <publishTime>01/30/2016 13:33:04</publishTime>
+    </File>
+    <File Include="bin/Oracle.DataAccess.dll">
+      <publishTime>12/23/2015 08:20:21</publishTime>
+    </File>
+    <File Include="bin/PIS.Core.Common.dll">
+      <publishTime>02/25/2016 17:52:35</publishTime>
+    </File>
+    <File Include="bin/PIS.Logger.dll">
+      <publishTime>02/17/2016 16:30:52</publishTime>
+    </File>
+    <File Include="bin/PIS.SQL_DAL.dll">
+      <publishTime>01/29/2016 13:53:23</publishTime>
+    </File>
+    <File Include="bin/ru/DevExpress.Sparkline.v15.1.Core.resources.dll">
+      <publishTime>12/23/2015 19:20:49</publishTime>
+    </File>
+    <File Include="bin/ServiceStack.Common.dll">
+      <publishTime>01/21/2016 13:34:32</publishTime>
+    </File>
+    <File Include="bin/ServiceStack.Interfaces.dll">
+      <publishTime>01/21/2016 13:34:32</publishTime>
+    </File>
+    <File Include="bin/ServiceStack.Redis.dll">
+      <publishTime>01/21/2016 13:34:32</publishTime>
+    </File>
+    <File Include="bin/ServiceStack.Text.dll">
+      <publishTime>01/21/2016 13:34:32</publishTime>
+    </File>
+    <File Include="bin/SolrNet.dll">
+      <publishTime>02/17/2016 16:30:53</publishTime>
+    </File>
+    <File Include="bin/System.ComponentModel.DataAnnotations.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Configuration.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Data.DataSetExtensions.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Data.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Data.Entity.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Data.OracleClient.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Drawing.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.EnterpriseServices.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.dll">
+      <publishTime>12/23/2015 08:20:43</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>12/23/2015 08:20:31</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.WebRequest.dll">
+      <publishTime>12/23/2015 08:20:43</publishTime>
+    </File>
+    <File Include="bin/System.Web.Abstractions.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.ApplicationServices.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.DynamicData.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Entity.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Extensions.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>12/23/2015 08:20:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>12/23/2015 08:20:31</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>12/23/2015 08:20:33</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>12/23/2015 08:20:29</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>12/23/2015 08:20:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>12/23/2015 08:20:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Routing.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Services.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>12/23/2015 08:20:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>12/23/2015 08:20:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>12/23/2015 08:20:34</publishTime>
+    </File>
+    <File Include="bin/System.Windows.Forms.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Xml.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Xml.Linq.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/ThemeOneNET.dll">
+      <publishTime>01/08/2016 08:42:04</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.Data.dll">
+      <publishTime>12/23/2015 08:20:36</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.WebData.dll">
+      <publishTime>12/23/2015 08:20:38</publishTime>
+    </File>
+    <File Include="Config/appSetting.config">
+      <publishTime>12/23/2015 08:20:11</publishTime>
+    </File>
+    <File Include="Config/facilities.config">
+      <publishTime>12/23/2015 08:20:11</publishTime>
+    </File>
+    <File Include="Config/logging.config">
+      <publishTime>12/23/2015 08:20:11</publishTime>
+    </File>
+    <File Include="Config/NHibernateConfig.xml">
+      <publishTime>01/07/2016 20:10:19</publishTime>
+    </File>
+    <File Include="Config/services.config">
+      <publishTime>02/26/2016 16:15:44</publishTime>
+    </File>
+    <File Include="Content/global.css">
+      <publishTime>01/13/2016 20:56:38</publishTime>
+    </File>
+    <File Include="Content/Images/123.png">
+      <publishTime>02/02/2016 10:24:49</publishTime>
+    </File>
+    <File Include="Content/Images/add2.png">
+      <publishTime>01/13/2016 20:34:15</publishTime>
+    </File>
+    <File Include="Content/Images/anhxa.png">
+      <publishTime>02/16/2016 20:10:21</publishTime>
+    </File>
+    <File Include="Content/Images/AquaHeader.jpg">
+      <publishTime>12/23/2015 08:20:11</publishTime>
+    </File>
+    <File Include="Content/Images/arrow.png">
+      <publishTime>01/22/2016 16:17:03</publishTime>
+    </File>
+    <File Include="Content/Images/bg_header_tet.png">
+      <publishTime>12/30/2015 20:02:04</publishTime>
+    </File>
+    <File Include="Content/Images/BlackGlassHeader.jpg">
+      <publishTime>12/23/2015 08:20:11</publishTime>
+    </File>
+    <File Include="Content/Images/cancel.png">
+      <publishTime>01/13/2016 20:56:38</publishTime>
+    </File>
+    <File Include="Content/Images/Delete_16x16.png">
+      <publishTime>01/13/2016 20:34:15</publishTime>
+    </File>
+    <File Include="Content/Images/Delete_Disable.gif">
+      <publishTime>02/05/2016 10:30:34</publishTime>
+    </File>
+    <File Include="Content/Images/dong_y.png">
+      <publishTime>01/13/2016 20:56:38</publishTime>
+    </File>
+    <File Include="Content/Images/Edit_16x16.png">
+      <publishTime>01/13/2016 20:34:15</publishTime>
+    </File>
+    <File Include="Content/Images/error.png">
+      <publishTime>01/11/2016 10:07:29</publishTime>
+    </File>
+    <File Include="Content/Images/error2.png">
+      <publishTime>01/25/2016 07:16:12</publishTime>
+    </File>
+    <File Include="Content/Images/ExportExcel_Enable.png">
+      <publishTime>02/05/2016 10:30:34</publishTime>
+    </File>
+    <File Include="Content/Images/folder.gif">
+      <publishTime>01/09/2016 08:12:38</publishTime>
+    </File>
+    <File Include="Content/Images/Folder.png">
+      <publishTime>01/11/2016 10:07:29</publishTime>
+    </File>
+    <File Include="Content/Images/GlassHeader.jpg">
+      <publishTime>12/23/2015 08:20:11</publishTime>
+    </File>
+    <File Include="Content/Images/hide.png">
+      <publishTime>01/08/2016 08:42:05</publishTime>
+    </File>
+    <File Include="Content/Images/hide_left.png">
+      <publishTime>01/13/2016 20:56:38</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Calendar-over.png">
+      <publishTime>02/26/2016 10:26:21</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Calendar.png">
+      <publishTime>02/26/2016 10:26:21</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Check-over.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Check.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/CheckList-over.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/CheckList.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Clock-over.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Clock.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Comment-over.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Comment.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Download-over.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Download.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Eye-over.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Eye.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/History-over.png">
+      <publishTime>02/26/2016 10:26:21</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/History.png">
+      <publishTime>02/26/2016 10:26:21</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/HoSo-over.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/HoSo.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Left-over.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Left.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/List-over.png">
+      <publishTime>02/26/2016 10:26:21</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/List.png">
+      <publishTime>02/26/2016 10:26:21</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Lock-over.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Lock.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Mail-over.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Mail.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Next-over.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Next.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/NoEntry-over.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/NoEntry.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Prev-over.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Prev.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Print-over.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Print.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Refesh-over.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Refesh.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Reply-over.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Reply.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Right-over.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Right.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Save-over.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Save.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Search-over.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Search.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Setting-over.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Setting.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Stop32.png">
+      <publishTime>02/26/2016 11:59:47</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Target-over.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Target.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/ThongKe-over.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/ThongKe.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Trash-over.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Trash.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/TuDien-over.png">
+      <publishTime>02/26/2016 10:26:21</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/TuDien.png">
+      <publishTime>02/26/2016 10:26:21</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Unlock-over.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/Unlock.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/User-over.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/User.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/warning-32.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/warning32.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/warning32Yellow.png">
+      <publishTime>01/30/2016 15:37:06</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/x-over.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon-flat/x.png">
+      <publishTime>02/01/2016 10:23:24</publishTime>
+    </File>
+    <File Include="Content/Images/Icon/dong-y.png">
+      <publishTime>01/19/2016 16:40:01</publishTime>
+    </File>
+    <File Include="Content/Images/Icon/hide_ndh.png">
+      <publishTime>02/01/2016 10:23:22</publishTime>
+    </File>
+    <File Include="Content/Images/Icon/in.png">
+      <publishTime>01/19/2016 16:40:01</publishTime>
+    </File>
+    <File Include="Content/Images/Icon/khoi-phuc.png">
+      <publishTime>01/19/2016 16:40:01</publishTime>
+    </File>
+    <File Include="Content/Images/Icon/lich-su-hs.png">
+      <publishTime>01/19/2016 16:40:01</publishTime>
+    </File>
+    <File Include="Content/Images/Icon/lich-su.png">
+      <publishTime>01/19/2016 16:40:01</publishTime>
+    </File>
+    <File Include="Content/Images/Icon/logo_bhxh.png">
+      <publishTime>02/01/2016 10:23:22</publishTime>
+    </File>
+    <File Include="Content/Images/Icon/show_ndh.png">
+      <publishTime>02/01/2016 10:23:22</publishTime>
+    </File>
+    <File Include="Content/Images/Icon/tu-choi.png">
+      <publishTime>01/19/2016 16:40:01</publishTime>
+    </File>
+    <File Include="Content/Images/Icon/tu-dien.png">
+      <publishTime>01/19/2016 16:40:01</publishTime>
+    </File>
+    <File Include="Content/Images/items.gif">
+      <publishTime>01/12/2016 19:29:59</publishTime>
+    </File>
+    <File Include="Content/Images/lockdeleteicon16x16.png">
+      <publishTime>02/18/2016 18:55:50</publishTime>
+    </File>
+    <File Include="Content/Images/locked.png">
+      <publishTime>02/15/2016 09:41:04</publishTime>
+    </File>
+    <File Include="Content/Images/logo.ico">
+      <publishTime>12/29/2015 11:33:53</publishTime>
+    </File>
+    <File Include="Content/Images/logo.jpg">
+      <publishTime>12/23/2015 08:20:11</publishTime>
+    </File>
+    <File Include="Content/Images/logo_40.png">
+      <publishTime>01/01/2016 11:14:32</publishTime>
+    </File>
+    <File Include="Content/Images/next.png">
+      <publishTime>01/07/2016 19:15:55</publishTime>
+    </File>
+    <File Include="Content/Images/next_all.png">
+      <publishTime>01/07/2016 19:15:55</publishTime>
+    </File>
+    <File Include="Content/Images/PlasticBlueHeader.jpg">
+      <publishTime>12/23/2015 08:20:11</publishTime>
+    </File>
+    <File Include="Content/Images/pre.png">
+      <publishTime>01/07/2016 19:15:55</publishTime>
+    </File>
+    <File Include="Content/Images/pre_all.png">
+      <publishTime>01/07/2016 19:15:55</publishTime>
+    </File>
+    <File Include="Content/Images/Process_Enable.png">
+      <publishTime>02/05/2016 10:30:34</publishTime>
+    </File>
+    <File Include="Content/Images/RedWineHeader.jpg">
+      <publishTime>12/23/2015 08:20:11</publishTime>
+    </File>
+    <File Include="Content/Images/search-hover.png">
+      <publishTime>01/19/2016 14:45:48</publishTime>
+    </File>
+    <File Include="Content/Images/search.png">
+      <publishTime>01/19/2016 14:45:48</publishTime>
+    </File>
+    <File Include="Content/Images/setting.png">
+      <publishTime>01/25/2016 13:38:05</publishTime>
+    </File>
+    <File Include="Content/Images/show.png">
+      <publishTime>01/08/2016 08:42:05</publishTime>
+    </File>
+    <File Include="Content/Images/show_left.png">
+      <publishTime>01/13/2016 20:56:38</publishTime>
+    </File>
+    <File Include="Content/Images/User.png">
+      <publishTime>01/11/2016 10:07:29</publishTime>
+    </File>
+    <File Include="Content/Images/VSA.jpg">
+      <publishTime>12/23/2015 08:20:11</publishTime>
+    </File>
+    <File Include="Content/Images/wine.png">
+      <publishTime>01/19/2016 19:30:15</publishTime>
+    </File>
+    <File Include="Content/jquery-ui.css">
+      <publishTime>12/23/2015 08:20:11</publishTime>
+    </File>
+    <File Include="Content/jquery-ui.min.css">
+      <publishTime>12/23/2015 08:20:11</publishTime>
+    </File>
+    <File Include="Content/Login.css">
+      <publishTime>01/04/2016 09:43:17</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>02/04/2016 15:11:38</publishTime>
+    </File>
+    <File Include="Content/StyleSheet.css">
+      <publishTime>02/26/2016 10:26:21</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>12/23/2015 08:20:11</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Report/BHYT_79B_HD/79B_HD_Dataset.xsc">
+      <publishTime>02/15/2016 19:01:02</publishTime>
+    </File>
+    <File Include="Report/BHYT_79B_HD/79B_HD_Dataset.xss">
+      <publishTime>02/15/2016 19:01:02</publishTime>
+    </File>
+    <File Include="Report/BHYT_79B_HD/79B_HD_TH_Dataset.xsc">
+      <publishTime>02/17/2016 19:42:49</publishTime>
+    </File>
+    <File Include="Report/BHYT_79B_HD/79B_HD_TH_Dataset.xss">
+      <publishTime>02/17/2016 19:42:49</publishTime>
+    </File>
+    <File Include="Report/BHYT_80B_HD/80B_HD_Dataset.xsc">
+      <publishTime>02/16/2016 11:35:58</publishTime>
+    </File>
+    <File Include="Report/BHYT_80B_HD/80B_HD_Dataset.xss">
+      <publishTime>02/16/2016 11:35:58</publishTime>
+    </File>
+    <File Include="Report/BHYT_80B_HD/80B_HD_TH_Dataset.xsc">
+      <publishTime>02/17/2016 19:42:48</publishTime>
+    </File>
+    <File Include="Report/BHYT_80B_HD/80B_HD_TH_Dataset.xss">
+      <publishTime>02/17/2016 19:42:48</publishTime>
+    </File>
+    <File Include="Report/BHYT_88/BHYT_88_Dataset.xsc">
+      <publishTime>02/21/2016 16:49:47</publishTime>
+    </File>
+    <File Include="Report/BHYT_88/BHYT_88_Dataset.xss">
+      <publishTime>02/21/2016 16:49:47</publishTime>
+    </File>
+    <File Include="Report/DaTuyenNoiTinh_10/DT_NOITINH_Dataset.xsc">
+      <publishTime>02/19/2016 19:45:19</publishTime>
+    </File>
+    <File Include="Report/DaTuyenNoiTinh_10/DT_NOITINH_Dataset.xss">
+      <publishTime>02/19/2016 19:45:19</publishTime>
+    </File>
+    <File Include="Scripts/1.4.2.jquery.min.js">
+      <publishTime>01/29/2016 13:53:11</publishTime>
+    </File>
+    <File Include="Scripts/1.8.11.jquery-ui.min.js">
+      <publishTime>01/29/2016 13:53:11</publishTime>
+    </File>
+    <File Include="Scripts/AjaxLogin.js">
+      <publishTime>12/23/2015 08:20:12</publishTime>
+    </File>
+    <File Include="Scripts/Demo.js">
+      <publishTime>12/28/2015 08:17:23</publishTime>
+    </File>
+    <File Include="Scripts/globalize.cultures.js">
+      <publishTime>12/23/2015 08:20:12</publishTime>
+    </File>
+    <File Include="Scripts/globalize.js">
+      <publishTime>12/23/2015 08:20:12</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>12/23/2015 08:20:12</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>12/23/2015 08:20:12</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.12.0.js">
+      <publishTime>01/29/2016 13:53:11</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.12.0.min.js">
+      <publishTime>01/29/2016 13:53:11</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.10.3.js">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.10.3.min.js">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui.js">
+      <publishTime>01/18/2016 08:15:59</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui.min.js">
+      <publishTime>01/18/2016 08:15:59</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.js">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.min.js">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Scripts/knockout-3.0.0.debug.js">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Scripts/knockout-3.0.0.js">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.0.6-development-only.js">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Scripts/nav-left.js">
+      <publishTime>01/13/2016 20:56:39</publishTime>
+    </File>
+    <File Include="Scripts/ScriptDungChung.js">
+      <publishTime>02/18/2016 18:55:51</publishTime>
+    </File>
+    <File Include="Views/Account/ChangePassword.cshtml">
+      <publishTime>12/25/2015 14:47:37</publishTime>
+    </File>
+    <File Include="Views/Account/ChangePasswordSuccess.cshtml">
+      <publishTime>12/25/2015 14:47:37</publishTime>
+    </File>
+    <File Include="Views/Account/Index.cshtml">
+      <publishTime>02/10/2016 17:55:24</publishTime>
+    </File>
+    <File Include="Views/Account/Login.cshtml">
+      <publishTime>12/25/2015 14:47:37</publishTime>
+    </File>
+    <File Include="Views/Account/Register.cshtml">
+      <publishTime>12/25/2015 14:47:37</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_DICHVUBV/DichVuBenhVienPartial.cshtml">
+      <publishTime>02/20/2016 21:33:39</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_DICHVUBV/FilterView.cshtml">
+      <publishTime>02/15/2016 09:41:00</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_DICHVUBV/FilterViewBenhVien.cshtml">
+      <publishTime>02/20/2016 21:33:39</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_DICHVUBV/FilterViewDungChung.cshtml">
+      <publishTime>02/20/2016 21:33:39</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_DICHVUBV/Index.cshtml">
+      <publishTime>02/22/2016 19:27:10</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_DICHVUBV/TenDichVuPartial.cshtml">
+      <publishTime>02/20/2016 21:33:39</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_DichVuThau/DM_GIADICHVUPartial.cshtml">
+      <publishTime>02/17/2016 20:22:48</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_DichVuThau/DM_GIADICHVUTINHPartial.cshtml">
+      <publishTime>02/24/2016 13:35:07</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_DichVuThau/FilterView.cshtml">
+      <publishTime>02/13/2016 17:33:15</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_DichVuThau/FilterViewDungChung.cshtml">
+      <publishTime>02/13/2016 17:33:15</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_DichVuThau/FilterViewTHAU.cshtml">
+      <publishTime>02/20/2016 21:33:39</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_DichVuThau/Index.cshtml">
+      <publishTime>02/20/2016 21:33:39</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_GiaDichVuBV/DM_GIADICHVUBVPartial.cshtml">
+      <publishTime>02/24/2016 13:52:39</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_GiaDichVuBV/DM_GIADICHVUPartial.cshtml">
+      <publishTime>02/17/2016 20:22:49</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_GiaDichVuBV/FilterView.cshtml">
+      <publishTime>02/15/2016 09:40:59</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_GiaDichVuBV/FilterViewBV.cshtml">
+      <publishTime>02/22/2016 08:28:53</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_GiaDichVuBV/FilterViewDungChung.cshtml">
+      <publishTime>02/15/2016 09:40:59</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_GiaDichVuBV/Index.cshtml">
+      <publishTime>02/22/2016 08:28:53</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_ThuocBV/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/20/2016 13:16:43</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_ThuocBV/DM_THUOCBVPartial.cshtml">
+      <publishTime>02/25/2016 20:00:16</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_ThuocBV/DM_THUOCPartial.cshtml">
+      <publishTime>02/15/2016 19:00:57</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_ThuocBV/FilterView.cshtml">
+      <publishTime>02/15/2016 19:00:57</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_ThuocBV/FilterViewBV.cshtml">
+      <publishTime>02/20/2016 21:33:42</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_ThuocBV/FilterViewDungChung.cshtml">
+      <publishTime>02/15/2016 19:00:57</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_ThuocBV/Index.cshtml">
+      <publishTime>02/20/2016 21:33:42</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_ThuocThau/DM_THUOCPartial.cshtml">
+      <publishTime>02/15/2016 19:00:58</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_ThuocThau/DM_THUOCTHAUPartial.cshtml">
+      <publishTime>02/20/2016 13:16:43</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_ThuocThau/FilterView.cshtml">
+      <publishTime>02/05/2016 10:30:29</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_ThuocThau/FilterViewDungChung.cshtml">
+      <publishTime>02/18/2016 18:55:42</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_ThuocThau/FilterViewTHAU.cshtml">
+      <publishTime>02/20/2016 13:16:43</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_ThuocThau/Index.cshtml">
+      <publishTime>02/17/2016 16:30:45</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_VatTuBV/CBCOSOKCBPartial.cshtml">
+      <publishTime>02/19/2016 19:45:15</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_VatTuBV/DM_VATTUBVPartial.cshtml">
+      <publishTime>02/24/2016 13:35:08</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_VatTuBV/DM_VATTUPartial.cshtml">
+      <publishTime>02/24/2016 13:35:08</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_VatTuBV/FilterView.cshtml">
+      <publishTime>02/15/2016 09:41:01</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_VatTuBV/FilterViewBV.cshtml">
+      <publishTime>02/24/2016 19:28:14</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_VatTuBV/FilterViewDungChung.cshtml">
+      <publishTime>02/15/2016 09:41:01</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_VatTuBV/Index.cshtml">
+      <publishTime>02/19/2016 22:27:30</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_VatTuThau/DM_VATTUPartial.cshtml">
+      <publishTime>02/20/2016 13:16:43</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_VatTuThau/DM_VATTUTHAUPartial.cshtml">
+      <publishTime>02/20/2016 13:16:43</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_VatTuThau/FilterView.cshtml">
+      <publishTime>02/12/2016 08:27:38</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_VatTuThau/FilterViewDungChung.cshtml">
+      <publishTime>02/20/2016 13:16:43</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_VatTuThau/FilterViewTHAU.cshtml">
+      <publishTime>02/20/2016 13:16:43</publishTime>
+    </File>
+    <File Include="Views/AnhXa_DM_VatTuThau/Index.cshtml">
+      <publishTime>02/20/2016 13:16:43</publishTime>
+    </File>
+    <File Include="Views/BHYT_12Report/BHYT_12_Partial.cshtml">
+      <publishTime>02/25/2016 20:37:45</publishTime>
+    </File>
+    <File Include="Views/BHYT_12Report/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/17/2016 19:42:39</publishTime>
+    </File>
+    <File Include="Views/BHYT_12Report/DMKhoaComboBoxPartial.cshtml">
+      <publishTime>02/17/2016 19:42:39</publishTime>
+    </File>
+    <File Include="Views/BHYT_12Report/Index.cshtml">
+      <publishTime>02/20/2016 21:33:40</publishTime>
+    </File>
+    <File Include="Views/BHYT_12Report/PopupBHYT_12.cshtml">
+      <publishTime>02/17/2016 19:42:39</publishTime>
+    </File>
+    <File Include="Views/BHYT_12Report/PopupReport.cshtml">
+      <publishTime>02/19/2016 16:25:53</publishTime>
+    </File>
+    <File Include="Views/BHYT_12Report/Report_12.cshtml">
+      <publishTime>02/17/2016 19:42:39</publishTime>
+    </File>
+    <File Include="Views/BHYT_12Report/_Giaidoan.cshtml">
+      <publishTime>02/17/2016 19:42:39</publishTime>
+    </File>
+    <File Include="Views/BHYT_12Report/_Nam.cshtml">
+      <publishTime>02/21/2016 16:49:49</publishTime>
+    </File>
+    <File Include="Views/BHYT_12Report/_Quy.cshtml">
+      <publishTime>02/21/2016 16:49:49</publishTime>
+    </File>
+    <File Include="Views/BHYT_12Report/_Thang.cshtml">
+      <publishTime>02/21/2016 16:49:49</publishTime>
+    </File>
+    <File Include="Views/BHYT_14Report/BHYT_14_Partial.cshtml">
+      <publishTime>02/26/2016 07:34:59</publishTime>
+    </File>
+    <File Include="Views/BHYT_14Report/cbb_HangbvPartial.cshtml">
+      <publishTime>02/21/2016 16:49:49</publishTime>
+    </File>
+    <File Include="Views/BHYT_14Report/cbb_TuyenbvPartial.cshtml">
+      <publishTime>02/21/2016 16:49:49</publishTime>
+    </File>
+    <File Include="Views/BHYT_14Report/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/03/2016 08:35:26</publishTime>
+    </File>
+    <File Include="Views/BHYT_14Report/DMKhoaComboBoxPartial.cshtml">
+      <publishTime>02/01/2016 15:46:52</publishTime>
+    </File>
+    <File Include="Views/BHYT_14Report/Index.cshtml">
+      <publishTime>02/22/2016 08:28:56</publishTime>
+    </File>
+    <File Include="Views/BHYT_14Report/PopupBHYT_14.cshtml">
+      <publishTime>02/15/2016 09:41:02</publishTime>
+    </File>
+    <File Include="Views/BHYT_14Report/PopupReport.cshtml">
+      <publishTime>02/19/2016 16:25:53</publishTime>
+    </File>
+    <File Include="Views/BHYT_14Report/Report_14.cshtml">
+      <publishTime>02/13/2016 13:48:44</publishTime>
+    </File>
+    <File Include="Views/BHYT_14Report/_Giaidoan.cshtml">
+      <publishTime>02/15/2016 09:41:02</publishTime>
+    </File>
+    <File Include="Views/BHYT_14Report/_Nam.cshtml">
+      <publishTime>02/21/2016 16:49:49</publishTime>
+    </File>
+    <File Include="Views/BHYT_14Report/_Quy.cshtml">
+      <publishTime>02/21/2016 16:49:49</publishTime>
+    </File>
+    <File Include="Views/BHYT_14Report/_Thang.cshtml">
+      <publishTime>02/21/2016 16:49:49</publishTime>
+    </File>
+    <File Include="Views/BHYT_15Report/BHYT_15_Partial.cshtml">
+      <publishTime>02/25/2016 20:37:45</publishTime>
+    </File>
+    <File Include="Views/BHYT_15Report/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/20/2016 21:33:40</publishTime>
+    </File>
+    <File Include="Views/BHYT_15Report/GridBHYT_12_Partial.cshtml">
+      <publishTime>02/23/2016 04:15:37</publishTime>
+    </File>
+    <File Include="Views/BHYT_15Report/GridBHYT_15_Partial.cshtml">
+      <publishTime>02/25/2016 20:37:45</publishTime>
+    </File>
+    <File Include="Views/BHYT_15Report/Index.cshtml">
+      <publishTime>02/25/2016 20:37:45</publishTime>
+    </File>
+    <File Include="Views/BHYT_15Report/PopupBHYT_15.cshtml">
+      <publishTime>02/25/2016 20:37:45</publishTime>
+    </File>
+    <File Include="Views/BHYT_15Report/PopupReport.cshtml">
+      <publishTime>02/20/2016 21:33:40</publishTime>
+    </File>
+    <File Include="Views/BHYT_15Report/Report_15.cshtml">
+      <publishTime>02/20/2016 21:33:40</publishTime>
+    </File>
+    <File Include="Views/BHYT_15Report/TinhComboBoxPartial.cshtml">
+      <publishTime>02/20/2016 21:33:40</publishTime>
+    </File>
+    <File Include="Views/BHYT_15Report/_Giaidoan.cshtml">
+      <publishTime>02/20/2016 21:33:40</publishTime>
+    </File>
+    <File Include="Views/BHYT_15Report/_Nam.cshtml">
+      <publishTime>02/21/2016 16:49:49</publishTime>
+    </File>
+    <File Include="Views/BHYT_15Report/_Quy.cshtml">
+      <publishTime>02/21/2016 16:49:49</publishTime>
+    </File>
+    <File Include="Views/BHYT_15Report/_Thang.cshtml">
+      <publishTime>02/21/2016 16:49:49</publishTime>
+    </File>
+    <File Include="Views/BHYT_19Report/BHYT_19_Partial.cshtml">
+      <publishTime>02/17/2016 19:42:43</publishTime>
+    </File>
+    <File Include="Views/BHYT_19Report/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/16/2016 20:10:16</publishTime>
+    </File>
+    <File Include="Views/BHYT_19Report/Index.cshtml">
+      <publishTime>02/18/2016 18:55:40</publishTime>
+    </File>
+    <File Include="Views/BHYT_19Report/PopupBHYT_19.cshtml">
+      <publishTime>02/18/2016 18:55:40</publishTime>
+    </File>
+    <File Include="Views/BHYT_19Report/PopupReport.cshtml">
+      <publishTime>02/15/2016 09:40:59</publishTime>
+    </File>
+    <File Include="Views/BHYT_19Report/Report_19.cshtml">
+      <publishTime>02/05/2016 10:30:27</publishTime>
+    </File>
+    <File Include="Views/BHYT_20Report/BHYT_20_Partial.cshtml">
+      <publishTime>02/17/2016 19:42:43</publishTime>
+    </File>
+    <File Include="Views/BHYT_20Report/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/16/2016 20:10:17</publishTime>
+    </File>
+    <File Include="Views/BHYT_20Report/Index.cshtml">
+      <publishTime>02/19/2016 16:25:53</publishTime>
+    </File>
+    <File Include="Views/BHYT_20Report/PopupBHYT_20.cshtml">
+      <publishTime>02/18/2016 18:55:41</publishTime>
+    </File>
+    <File Include="Views/BHYT_20Report/PopupReport.cshtml">
+      <publishTime>02/15/2016 09:40:59</publishTime>
+    </File>
+    <File Include="Views/BHYT_21Report/BHYT_21_Partial.cshtml">
+      <publishTime>02/18/2016 18:55:41</publishTime>
+    </File>
+    <File Include="Views/BHYT_21Report/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/02/2016 19:52:55</publishTime>
+    </File>
+    <File Include="Views/BHYT_21Report/Index.cshtml">
+      <publishTime>02/18/2016 18:55:41</publishTime>
+    </File>
+    <File Include="Views/BHYT_21Report/PopupBHYT_21.cshtml">
+      <publishTime>02/18/2016 18:55:41</publishTime>
+    </File>
+    <File Include="Views/BHYT_21Report/PopupReport.cshtml">
+      <publishTime>02/15/2016 09:41:00</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980/BHYT_7980Partial.cshtml">
+      <publishTime>02/25/2016 14:50:35</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980/CbbDoiTuong.cshtml">
+      <publishTime>02/21/2016 16:49:48</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980/CbbKetQua.cshtml">
+      <publishTime>02/21/2016 16:49:48</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/04/2016 17:29:44</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980/Index.cshtml">
+      <publishTime>02/24/2016 17:28:08</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980/Index2.cshtml">
+      <publishTime>02/05/2016 13:49:34</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980/Index3.cshtml">
+      <publishTime>02/05/2016 13:49:34</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980/PopupReport.cshtml">
+      <publishTime>02/19/2016 16:25:52</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980_BENHVIEN/BHYT_7980Partial.cshtml">
+      <publishTime>02/25/2016 14:50:35</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980_BENHVIEN/CbbDoiTuong.cshtml">
+      <publishTime>02/21/2016 17:09:16</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980_BENHVIEN/CbbKetQua.cshtml">
+      <publishTime>02/23/2016 20:33:05</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980_BENHVIEN/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/13/2016 10:30:07</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980_BENHVIEN/Index.cshtml">
+      <publishTime>02/24/2016 17:28:08</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980_BENHVIEN/PopupReport.cshtml">
+      <publishTime>02/19/2016 16:25:52</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980_BENHVIEN/TinhThanhComboBoxPartial.cshtml">
+      <publishTime>02/23/2016 20:33:05</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980_GUITINH/BHYT_7980Partial.cshtml">
+      <publishTime>02/25/2016 14:50:35</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980_GUITINH/CbbDoiTuong.cshtml">
+      <publishTime>02/24/2016 22:32:05</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980_GUITINH/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/18/2016 13:46:50</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980_GUITINH/Index.cshtml">
+      <publishTime>02/24/2016 22:32:05</publishTime>
+    </File>
+    <File Include="Views/BHYT_7980_GUITINH/PopupReport.cshtml">
+      <publishTime>02/24/2016 22:32:05</publishTime>
+    </File>
+    <File Include="Views/BHYT_81HDReport/BHYT_81HD_Partial.cshtml">
+      <publishTime>02/26/2016 16:15:41</publishTime>
+    </File>
+    <File Include="Views/BHYT_81HDReport/BHYT_C81HD_Partial.cshtml">
+      <publishTime>02/21/2016 16:49:49</publishTime>
+    </File>
+    <File Include="Views/BHYT_81HDReport/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/21/2016 16:49:49</publishTime>
+    </File>
+    <File Include="Views/BHYT_81HDReport/FilterView.cshtml">
+      <publishTime>02/25/2016 19:22:54</publishTime>
+    </File>
+    <File Include="Views/BHYT_81HDReport/GridBHYT_81_HD_Partial.cshtml">
+      <publishTime>02/23/2016 20:33:06</publishTime>
+    </File>
+    <File Include="Views/BHYT_81HDReport/Index.cshtml">
+      <publishTime>02/26/2016 07:34:59</publishTime>
+    </File>
+    <File Include="Views/BHYT_81HDReport/PopupBHYT.cshtml">
+      <publishTime>02/26/2016 16:15:41</publishTime>
+    </File>
+    <File Include="Views/BHYT_81HDReport/PopupReport.cshtml">
+      <publishTime>02/25/2016 19:22:54</publishTime>
+    </File>
+    <File Include="Views/BHYT_81HDReport/TimeViewC81HD.cshtml">
+      <publishTime>02/21/2016 16:49:49</publishTime>
+    </File>
+    <File Include="Views/BHYT_82HDReport/BHYT_82HD_Partial.cshtml">
+      <publishTime>02/26/2016 16:15:42</publishTime>
+    </File>
+    <File Include="Views/BHYT_82HDReport/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/26/2016 16:15:42</publishTime>
+    </File>
+    <File Include="Views/BHYT_82HDReport/FilterView.cshtml">
+      <publishTime>02/26/2016 16:15:42</publishTime>
+    </File>
+    <File Include="Views/BHYT_82HDReport/Index.cshtml">
+      <publishTime>02/26/2016 16:15:42</publishTime>
+    </File>
+    <File Include="Views/BHYT_82HDReport/PopupBHYT.cshtml">
+      <publishTime>02/26/2016 16:15:42</publishTime>
+    </File>
+    <File Include="Views/BHYT_82HDReport/PopupReport.cshtml">
+      <publishTime>02/26/2016 16:15:42</publishTime>
+    </File>
+    <File Include="Views/BHYT_88/BHYT_88_Filter.cshtml">
+      <publishTime>02/23/2016 16:28:03</publishTime>
+    </File>
+    <File Include="Views/BHYT_88/GridBHYT_88_Partial.cshtml">
+      <publishTime>02/21/2016 16:49:49</publishTime>
+    </File>
+    <File Include="Views/BHYT_88/Index.cshtml">
+      <publishTime>02/23/2016 16:28:03</publishTime>
+    </File>
+    <File Include="Views/BHYT_88/TinhThanhComboBoxPartial.cshtml">
+      <publishTime>02/23/2016 17:34:31</publishTime>
+    </File>
+    <File Include="Views/CHITIETHSTTTT/SOTHE.cshtml">
+      <publishTime>01/26/2016 14:29:39</publishTime>
+    </File>
+    <File Include="Views/DM_BACSI/CSKCBComboBoxPartial.cshtml">
+      <publishTime>01/18/2016 19:16:30</publishTime>
+    </File>
+    <File Include="Views/DM_BACSI/DM_BACSIPartial.cshtml">
+      <publishTime>02/25/2016 20:23:39</publishTime>
+    </File>
+    <File Include="Views/DM_BACSI/FilterView.cshtml">
+      <publishTime>01/27/2016 13:33:45</publishTime>
+    </File>
+    <File Include="Views/DM_BACSI/Index.cshtml">
+      <publishTime>02/25/2016 20:23:40</publishTime>
+    </File>
+    <File Include="Views/DM_BANGGIADICHVU/DMDICHVUPartial.cshtml">
+      <publishTime>01/05/2016 13:45:56</publishTime>
+    </File>
+    <File Include="Views/DM_BANGGIADICHVU/DMTINHTHANHPartial.cshtml">
+      <publishTime>01/05/2016 13:45:56</publishTime>
+    </File>
+    <File Include="Views/DM_BANGGIADICHVU/DM_BANGGIADICHVUPartial.cshtml">
+      <publishTime>01/05/2016 13:45:56</publishTime>
+    </File>
+    <File Include="Views/DM_BANGGIADICHVU/FilterView.cshtml">
+      <publishTime>01/05/2016 13:45:56</publishTime>
+    </File>
+    <File Include="Views/DM_BANGGIADICHVU/Index.cshtml">
+      <publishTime>01/05/2016 13:45:56</publishTime>
+    </File>
+    <File Include="Views/DM_BANGGIADICHVU/MultiColumnComboBoxPartial.cshtml">
+      <publishTime>01/05/2016 13:45:56</publishTime>
+    </File>
+    <File Include="Views/DM_CHANDOANHINHANH/DM_CHANDOANHINHANHPartial.cshtml">
+      <publishTime>02/23/2016 16:28:03</publishTime>
+    </File>
+    <File Include="Views/DM_CHANDOANHINHANH/FilterView.cshtml">
+      <publishTime>02/23/2016 16:28:03</publishTime>
+    </File>
+    <File Include="Views/DM_CHANDOANHINHANH/Index.cshtml">
+      <publishTime>01/20/2016 19:42:14</publishTime>
+    </File>
+    <File Include="Views/DM_CHISOXETNGHIEM/DM_CHISOXETNGHIEMPartial.cshtml">
+      <publishTime>02/23/2016 17:34:31</publishTime>
+    </File>
+    <File Include="Views/DM_CHISOXETNGHIEM/FilterView.cshtml">
+      <publishTime>02/23/2016 17:34:31</publishTime>
+    </File>
+    <File Include="Views/DM_CHISOXETNGHIEM/Index.cshtml">
+      <publishTime>02/17/2016 19:42:38</publishTime>
+    </File>
+    <File Include="Views/DM_CHUNGTUKT/DM_CHUNGTUKTPartial.cshtml">
+      <publishTime>02/01/2016 17:29:36</publishTime>
+    </File>
+    <File Include="Views/DM_CHUNGTUKT/FilterView.cshtml">
+      <publishTime>02/01/2016 15:46:53</publishTime>
+    </File>
+    <File Include="Views/DM_CHUNGTUKT/Index.cshtml">
+      <publishTime>01/20/2016 19:42:16</publishTime>
+    </File>
+    <File Include="Views/DM_CHUONGDICHVU43/DM_CHUONGDICHVU43Partial.cshtml">
+      <publishTime>02/20/2016 21:33:41</publishTime>
+    </File>
+    <File Include="Views/DM_CHUONGDICHVU43/FilterView.cshtml">
+      <publishTime>02/17/2016 12:44:16</publishTime>
+    </File>
+    <File Include="Views/DM_CHUONGDICHVU43/Index.cshtml">
+      <publishTime>02/17/2016 19:42:39</publishTime>
+    </File>
+    <File Include="Views/DM_CHUONGDICHVU50/DM_CHUONGDICHVU50Partial.cshtml">
+      <publishTime>02/23/2016 16:28:03</publishTime>
+    </File>
+    <File Include="Views/DM_CHUONGDICHVU50/FilterView.cshtml">
+      <publishTime>01/27/2016 20:53:33</publishTime>
+    </File>
+    <File Include="Views/DM_CHUONGDICHVU50/Index.cshtml">
+      <publishTime>02/23/2016 16:28:03</publishTime>
+    </File>
+    <File Include="Views/DM_CHUYENKHOA/DM_CHUYENKHOAPartial.cshtml">
+      <publishTime>01/30/2016 09:22:19</publishTime>
+    </File>
+    <File Include="Views/DM_CHUYENKHOA/FilterView.cshtml">
+      <publishTime>01/29/2016 16:58:19</publishTime>
+    </File>
+    <File Include="Views/DM_CHUYENKHOA/Index.cshtml">
+      <publishTime>01/20/2016 19:42:16</publishTime>
+    </File>
+    <File Include="Views/DM_CONGTYCUNGUNG/DM_CONGTYCUNGUNGPartial.cshtml">
+      <publishTime>02/19/2016 16:25:52</publishTime>
+    </File>
+    <File Include="Views/DM_CONGTYCUNGUNG/FilterView.cshtml">
+      <publishTime>02/19/2016 16:25:52</publishTime>
+    </File>
+    <File Include="Views/DM_CONGTYCUNGUNG/Index.cshtml">
+      <publishTime>02/19/2016 16:25:52</publishTime>
+    </File>
+    <File Include="Views/DM_COSOKCB/DM_COSOKCBPartial.cshtml">
+      <publishTime>02/23/2016 12:42:41</publishTime>
+    </File>
+    <File Include="Views/DM_COSOKCB/FilterView.cshtml">
+      <publishTime>02/23/2016 04:15:38</publishTime>
+    </File>
+    <File Include="Views/DM_COSOKCB/Index.cshtml">
+      <publishTime>02/22/2016 19:48:20</publishTime>
+    </File>
+    <File Include="Views/DM_COSOKCB/LargeDataComboBoxPartial.cshtml">
+      <publishTime>12/31/2015 16:30:07</publishTime>
+    </File>
+    <File Include="Views/DM_COSOKCB/Tree_VirtualPartial.cshtml">
+      <publishTime>01/29/2016 13:52:39</publishTime>
+    </File>
+    <File Include="Views/DM_COSOKCB/_TreeListPartial.cshtml">
+      <publishTime>01/29/2016 13:52:39</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU/ComboBoxPartial.cshtml">
+      <publishTime>12/25/2015 14:47:38</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU/DMNHOMDICHVUPartial.cshtml">
+      <publishTime>01/05/2016 08:23:04</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU/DMVANBANQUYETDINHPartial.cshtml">
+      <publishTime>01/05/2016 08:23:04</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU/DM_DICHVUPartial.cshtml">
+      <publishTime>01/20/2016 23:51:20</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU/FilterView.cshtml">
+      <publishTime>01/20/2016 11:53:21</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU/Index.cshtml">
+      <publishTime>01/20/2016 19:42:16</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU/LargeDataComboBoxPartial.cshtml">
+      <publishTime>12/25/2015 14:47:38</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU/MultiColumnComboBoxPartial.cshtml">
+      <publishTime>12/25/2015 14:47:38</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU/Tree_VirtualPartial.cshtml">
+      <publishTime>01/15/2016 08:29:16</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU/_TreeListPartial.cshtml">
+      <publishTime>01/18/2016 08:15:57</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU03/DM_DICHVU03Partial.cshtml">
+      <publishTime>02/23/2016 13:40:33</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU03/FilterView.cshtml">
+      <publishTime>02/23/2016 20:33:06</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU03/Index03.cshtml">
+      <publishTime>02/23/2016 20:33:06</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU03/Tree_VirtualPartial.cshtml">
+      <publishTime>01/21/2016 17:12:29</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU03/_TreeListPartial.cshtml">
+      <publishTime>01/30/2016 16:41:26</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU04/DM_DICHVU04Partial.cshtml">
+      <publishTime>02/23/2016 13:40:33</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU04/FilterView.cshtml">
+      <publishTime>02/23/2016 17:34:31</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU04/Index04.cshtml">
+      <publishTime>02/23/2016 20:33:06</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU04/Tree_VirtualPartial.cshtml">
+      <publishTime>01/21/2016 17:12:29</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU04/_TreeListPartial.cshtml">
+      <publishTime>02/02/2016 14:38:10</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU43/DM_DICHVU43Partial.cshtml">
+      <publishTime>02/20/2016 21:33:42</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU43/FilterView.cshtml">
+      <publishTime>02/20/2016 21:33:42</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU43/Index.cshtml">
+      <publishTime>02/23/2016 20:33:05</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU43/Tree_VirtualPartial.cshtml">
+      <publishTime>01/20/2016 08:26:40</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU43/_TreeListPartial.cshtml">
+      <publishTime>01/27/2016 15:16:57</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU50/DM_DICHVU50Partial.cshtml">
+      <publishTime>02/23/2016 16:28:03</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU50/FilterView.cshtml">
+      <publishTime>02/20/2016 21:33:42</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU50/Index.cshtml">
+      <publishTime>02/23/2016 20:33:05</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU50/Tree_VirtualPartial.cshtml">
+      <publishTime>01/19/2016 19:30:12</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVU50/_TreeListPartial.cshtml">
+      <publishTime>02/20/2016 21:33:42</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVUBV/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/01/2016 19:57:17</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVUBV/DMNHOMDICHVUPartial.cshtml">
+      <publishTime>01/07/2016 18:06:11</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVUBV/DMVANBANQUYETDINHPartial.cshtml">
+      <publishTime>01/07/2016 18:06:11</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVUBV/DM_DICHVUBVPartial.cshtml">
+      <publishTime>02/17/2016 19:42:40</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVUBV/FilterView.cshtml">
+      <publishTime>02/03/2016 14:38:59</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVUBV/Index.cshtml">
+      <publishTime>02/03/2016 14:38:59</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVUBV/MultiColumnComboBoxPartial.cshtml">
+      <publishTime>01/07/2016 18:06:11</publishTime>
+    </File>
+    <File Include="Views/DM_DICHVUBV/_TreeListPartial.cshtml">
+      <publishTime>02/01/2016 19:57:17</publishTime>
+    </File>
+    <File Include="Views/DM_DONVI/DM_DONVIPartial.cshtml">
+      <publishTime>02/26/2016 09:12:37</publishTime>
+    </File>
+    <File Include="Views/DM_DONVI/FilterView.cshtml">
+      <publishTime>02/26/2016 09:12:37</publishTime>
+    </File>
+    <File Include="Views/DM_DONVI/Index.cshtml">
+      <publishTime>02/20/2016 21:33:43</publishTime>
+    </File>
+    <File Include="Views/DM_DONVI/TINHComboBoxPartial.cshtml">
+      <publishTime>02/25/2016 14:50:35</publishTime>
+    </File>
+    <File Include="Views/DM_DONVIHANHCHINH/DM_DONVIHANHCHINHPartial.cshtml">
+      <publishTime>01/12/2016 19:29:51</publishTime>
+    </File>
+    <File Include="Views/DM_DONVIHANHCHINH/FilterView.cshtml">
+      <publishTime>01/08/2016 20:30:53</publishTime>
+    </File>
+    <File Include="Views/DM_DONVIHANHCHINH/Index.cshtml">
+      <publishTime>01/20/2016 19:42:16</publishTime>
+    </File>
+    <File Include="Views/DM_DONVITINH/DM_DONVITINHPartial.cshtml">
+      <publishTime>02/03/2016 08:35:24</publishTime>
+    </File>
+    <File Include="Views/DM_DONVITINH/FilterView.cshtml">
+      <publishTime>02/19/2016 13:40:53</publishTime>
+    </File>
+    <File Include="Views/DM_DONVITINH/Index.cshtml">
+      <publishTime>02/19/2016 13:40:53</publishTime>
+    </File>
+    <File Include="Views/DM_DULIEUDANSO/DM_DULIEUDANSOPartial.cshtml">
+      <publishTime>02/22/2016 19:27:09</publishTime>
+    </File>
+    <File Include="Views/DM_DULIEUDANSO/FilterView.cshtml">
+      <publishTime>02/22/2016 19:27:09</publishTime>
+    </File>
+    <File Include="Views/DM_DULIEUDANSO/Index.cshtml">
+      <publishTime>02/02/2016 08:27:55</publishTime>
+    </File>
+    <File Include="Views/DM_DUONGDUNG/DM_DUONGDUNGPartial.cshtml">
+      <publishTime>02/02/2016 14:38:11</publishTime>
+    </File>
+    <File Include="Views/DM_DUONGDUNG/FilterView.cshtml">
+      <publishTime>02/02/2016 14:38:11</publishTime>
+    </File>
+    <File Include="Views/DM_DUONGDUNG/Index.cshtml">
+      <publishTime>02/22/2016 19:27:09</publishTime>
+    </File>
+    <File Include="Views/DM_DVYT_CSKCB/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/02/2016 14:38:12</publishTime>
+    </File>
+    <File Include="Views/DM_DVYT_CSKCB/DM_DVYT_CSKCBPartial.cshtml">
+      <publishTime>02/25/2016 20:37:45</publishTime>
+    </File>
+    <File Include="Views/DM_DVYT_CSKCB/FilterView.cshtml">
+      <publishTime>02/25/2016 20:37:45</publishTime>
+    </File>
+    <File Include="Views/DM_DVYT_CSKCB/Index.cshtml">
+      <publishTime>02/24/2016 14:56:05</publishTime>
+    </File>
+    <File Include="Views/DM_DVYT_CSKCB/Tree_VirtualPartial.cshtml">
+      <publishTime>02/01/2016 16:29:26</publishTime>
+    </File>
+    <File Include="Views/DM_DVYT_CSKCB/_TreeListPartial.cshtml">
+      <publishTime>02/01/2016 16:29:26</publishTime>
+    </File>
+    <File Include="Views/DM_GIADICHVU_BV/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/18/2016 18:55:43</publishTime>
+    </File>
+    <File Include="Views/DM_GIADICHVU_BV/DM_GIADICHVU_BVPartial.cshtml">
+      <publishTime>02/26/2016 13:54:23</publishTime>
+    </File>
+    <File Include="Views/DM_GIADICHVU_BV/FilterView.cshtml">
+      <publishTime>02/18/2016 18:55:43</publishTime>
+    </File>
+    <File Include="Views/DM_GIADICHVU_BV/Index.cshtml">
+      <publishTime>02/18/2016 13:46:49</publishTime>
+    </File>
+    <File Include="Views/DM_GIADICHVU_BV/Tree_VirtualPartial.cshtml">
+      <publishTime>02/17/2016 19:42:44</publishTime>
+    </File>
+    <File Include="Views/DM_GIADICHVU_BV/_TreeListPartial.cshtml">
+      <publishTime>02/19/2016 19:45:18</publishTime>
+    </File>
+    <File Include="Views/DM_GIADICHVU_TINH/DM_GIADVKT_THAUPartial.cshtml">
+      <publishTime>02/17/2016 20:22:49</publishTime>
+    </File>
+    <File Include="Views/DM_GIADICHVU_TINH/FilterView.cshtml">
+      <publishTime>01/30/2016 09:05:28</publishTime>
+    </File>
+    <File Include="Views/DM_GIADICHVU_TINH/Index.cshtml">
+      <publishTime>02/01/2016 10:23:25</publishTime>
+    </File>
+    <File Include="Views/DM_GIADICHVU_TINH/Tree_VirtualPartial.cshtml">
+      <publishTime>02/01/2016 19:57:17</publishTime>
+    </File>
+    <File Include="Views/DM_GIADICHVU_TINH/_TreeListPartial.cshtml">
+      <publishTime>02/01/2016 19:57:17</publishTime>
+    </File>
+    <File Include="Views/DM_GIADVKT_THAU/DM_GIADVKT_THAUPartial.cshtml">
+      <publishTime>01/25/2016 07:16:07</publishTime>
+    </File>
+    <File Include="Views/DM_GIADVKT_THAU/FilterView.cshtml">
+      <publishTime>01/25/2016 07:16:07</publishTime>
+    </File>
+    <File Include="Views/DM_GIADVKT_THAU/Index.cshtml">
+      <publishTime>01/25/2016 07:16:07</publishTime>
+    </File>
+    <File Include="Views/DM_GIADVKT_THAU/Tree_VirtualPartial.cshtml">
+      <publishTime>01/15/2016 08:29:17</publishTime>
+    </File>
+    <File Include="Views/DM_GIADVKT_THAU/_TreeListPartial.cshtml">
+      <publishTime>01/25/2016 07:16:07</publishTime>
+    </File>
+    <File Include="Views/DM_GIATOIDAVTYT/DM_GIATOIDAVTYTPartial.cshtml">
+      <publishTime>02/19/2016 15:32:25</publishTime>
+    </File>
+    <File Include="Views/DM_GIATOIDAVTYT/FilterView.cshtml">
+      <publishTime>02/19/2016 17:25:49</publishTime>
+    </File>
+    <File Include="Views/DM_GIATOIDAVTYT/Index.cshtml">
+      <publishTime>02/19/2016 16:25:52</publishTime>
+    </File>
+    <File Include="Views/DM_GIATOIDAVTYT/NhomvattucomboboxPartial.cshtml">
+      <publishTime>02/19/2016 15:32:25</publishTime>
+    </File>
+    <File Include="Views/DM_GIATOIDAVTYT/Tree_VirtualPartial.cshtml">
+      <publishTime>01/26/2016 16:34:33</publishTime>
+    </File>
+    <File Include="Views/DM_GIATOIDAVTYT/_TreeListPartial.cshtml">
+      <publishTime>02/02/2016 08:27:53</publishTime>
+    </File>
+    <File Include="Views/DM_GIAXANG/DM_GIAXANGPartial.cshtml">
+      <publishTime>02/17/2016 20:22:49</publishTime>
+    </File>
+    <File Include="Views/DM_GIAXANG/FilterView.cshtml">
+      <publishTime>02/02/2016 10:24:52</publishTime>
+    </File>
+    <File Include="Views/DM_GIAXANG/Index.cshtml">
+      <publishTime>02/04/2016 15:11:34</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAU/CBCOSOKCBPartial.cshtml">
+      <publishTime>02/16/2016 20:10:18</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAU/CBTINHTHANHPartial.cshtml">
+      <publishTime>02/16/2016 20:10:18</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAU/DM_GOITHAUPartial.cshtml">
+      <publishTime>02/26/2016 16:15:43</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAU/FilterView.cshtml">
+      <publishTime>02/20/2016 21:33:43</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAU/Index.cshtml">
+      <publishTime>02/26/2016 11:59:45</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAU/_TreeListPartial.cshtml">
+      <publishTime>02/05/2016 10:30:24</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAUCHITIET/CBCOSOKCBPartial.cshtml">
+      <publishTime>02/16/2016 20:10:18</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAUCHITIET/CBTINHTHANHPartial.cshtml">
+      <publishTime>02/19/2016 10:02:41</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAUCHITIET/DM_THUOCTHAUPartial.cshtml">
+      <publishTime>02/26/2016 11:59:45</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAUCHITIET/GOITHAUView.cshtml">
+      <publishTime>02/20/2016 21:33:44</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAUCHITIET/Index.cshtml">
+      <publishTime>02/26/2016 11:59:45</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAUVATTU/CBCOSOKCBPartial.cshtml">
+      <publishTime>02/19/2016 10:02:42</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAUVATTU/CBTINHTHANHPartial.cshtml">
+      <publishTime>02/19/2016 10:02:42</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAUVATTU/DM_GOITHAUPartial.cshtml">
+      <publishTime>02/26/2016 16:15:44</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAUVATTU/FilterView.cshtml">
+      <publishTime>02/20/2016 21:33:43</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAUVATTU/Index.cshtml">
+      <publishTime>02/26/2016 11:59:45</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAUVATTU/_TreeListPartial.cshtml">
+      <publishTime>02/12/2016 08:27:37</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAUVATTUCHITIET/CBCOSOKCBPartial.cshtml">
+      <publishTime>02/19/2016 10:02:43</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAUVATTUCHITIET/CBTINHTHANHPartial.cshtml">
+      <publishTime>02/19/2016 10:02:43</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAUVATTUCHITIET/DM_VATTUTHAUPartial.cshtml">
+      <publishTime>02/26/2016 11:59:45</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAUVATTUCHITIET/GOITHAUView.cshtml">
+      <publishTime>02/20/2016 21:33:43</publishTime>
+    </File>
+    <File Include="Views/DM_GOITHAUVATTUCHITIET/Index.cshtml">
+      <publishTime>02/26/2016 11:59:45</publishTime>
+    </File>
+    <File Include="Views/DM_HOADON_CSKCB/DM_HOADON_CSKCBPartial.cshtml">
+      <publishTime>02/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Views/DM_HOADON_CSKCB/FilterView.cshtml">
+      <publishTime>02/19/2016 17:25:48</publishTime>
+    </File>
+    <File Include="Views/DM_HOADON_CSKCB/Index.cshtml">
+      <publishTime>02/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Views/DM_HOATCHAT/DMPHANLOAIHOATCHATPartial.cshtml">
+      <publishTime>01/03/2016 23:04:43</publishTime>
+    </File>
+    <File Include="Views/DM_HOATCHAT/DMVANBANQUYETDINHPartial.cshtml">
+      <publishTime>01/04/2016 16:53:37</publishTime>
+    </File>
+    <File Include="Views/DM_HOATCHAT/DM_HOATCHATPartial.cshtml">
+      <publishTime>02/18/2016 19:41:25</publishTime>
+    </File>
+    <File Include="Views/DM_HOATCHAT/FilterView.cshtml">
+      <publishTime>02/17/2016 20:22:49</publishTime>
+    </File>
+    <File Include="Views/DM_HOATCHAT/Index.cshtml">
+      <publishTime>02/01/2016 15:46:55</publishTime>
+    </File>
+    <File Include="Views/DM_HOATCHAT/MultiColumnComboBoxPartial.cshtml">
+      <publishTime>12/31/2015 14:41:24</publishTime>
+    </File>
+    <File Include="Views/DM_HOATCHAT/NhomThuocPartial.cshtml">
+      <publishTime>01/29/2016 13:52:41</publishTime>
+    </File>
+    <File Include="Views/DM_HOATCHAT/Tree_VirtualPartial.cshtml">
+      <publishTime>01/20/2016 19:42:16</publishTime>
+    </File>
+    <File Include="Views/DM_HOATCHAT/_TreeListPartial.cshtml">
+      <publishTime>01/27/2016 08:39:31</publishTime>
+    </File>
+    <File Include="Views/DM_HUHAOYHCT/DM_HUHAOYHCTPartial.cshtml">
+      <publishTime>02/26/2016 16:15:40</publishTime>
+    </File>
+    <File Include="Views/DM_HUHAOYHCT/FilterView.cshtml">
+      <publishTime>02/03/2016 18:55:00</publishTime>
+    </File>
+    <File Include="Views/DM_HUHAOYHCT/Index.cshtml">
+      <publishTime>01/27/2016 13:33:45</publishTime>
+    </File>
+    <File Include="Views/DM_ICD/CBICDNhomPartial.cshtml">
+      <publishTime>02/17/2016 20:22:50</publishTime>
+    </File>
+    <File Include="Views/DM_ICD/ComboBoxPartial.cshtml">
+      <publishTime>12/25/2015 20:39:35</publishTime>
+    </File>
+    <File Include="Views/DM_ICD/DMICDNHOMPartial.cshtml">
+      <publishTime>01/09/2016 14:10:11</publishTime>
+    </File>
+    <File Include="Views/DM_ICD/DM_ICDManTinh.cshtml">
+      <publishTime>12/28/2015 08:17:21</publishTime>
+    </File>
+    <File Include="Views/DM_ICD/DM_ICDManTinhPartial.cshtml">
+      <publishTime>12/28/2015 08:17:21</publishTime>
+    </File>
+    <File Include="Views/DM_ICD/DM_ICDPartial.cshtml">
+      <publishTime>02/01/2016 17:29:36</publishTime>
+    </File>
+    <File Include="Views/DM_ICD/FilterView.cshtml">
+      <publishTime>02/17/2016 20:22:50</publishTime>
+    </File>
+    <File Include="Views/DM_ICD/Index.cshtml">
+      <publishTime>02/19/2016 19:45:16</publishTime>
+    </File>
+    <File Include="Views/DM_ICD/LargeDataComboBoxPartial.cshtml">
+      <publishTime>12/31/2015 10:51:31</publishTime>
+    </File>
+    <File Include="Views/DM_ICD/MultiColumnComboBoxPartial.cshtml">
+      <publishTime>12/25/2015 14:47:38</publishTime>
+    </File>
+    <File Include="Views/DM_ICD/Tree_VirtualPartial.cshtml">
+      <publishTime>01/15/2016 08:29:13</publishTime>
+    </File>
+    <File Include="Views/DM_ICD/_TreeListPartial.cshtml">
+      <publishTime>01/26/2016 17:19:16</publishTime>
+    </File>
+    <File Include="Views/DM_ICDCHUONG/DM_ICDCHUONGPartial.cshtml">
+      <publishTime>01/30/2016 09:05:27</publishTime>
+    </File>
+    <File Include="Views/DM_ICDCHUONG/FilterView.cshtml">
+      <publishTime>01/28/2016 15:33:42</publishTime>
+    </File>
+    <File Include="Views/DM_ICDCHUONG/Index.cshtml">
+      <publishTime>02/13/2016 10:30:06</publishTime>
+    </File>
+    <File Include="Views/DM_ICDMANTINH/DM_ICDPartial.cshtml">
+      <publishTime>02/01/2016 17:29:36</publishTime>
+    </File>
+    <File Include="Views/DM_ICDMANTINH/FilterView.cshtml">
+      <publishTime>01/22/2016 17:50:14</publishTime>
+    </File>
+    <File Include="Views/DM_ICDMANTINH/Index.cshtml">
+      <publishTime>01/28/2016 15:33:42</publishTime>
+    </File>
+    <File Include="Views/DM_ICDMANTINH/Tree_VirtualPartial.cshtml">
+      <publishTime>01/22/2016 17:50:14</publishTime>
+    </File>
+    <File Include="Views/DM_ICDMANTINH/_TreeListPartial.cshtml">
+      <publishTime>01/26/2016 17:19:16</publishTime>
+    </File>
+    <File Include="Views/DM_ICDNHOM/ComboBoxPartial.cshtml">
+      <publishTime>12/25/2015 14:47:38</publishTime>
+    </File>
+    <File Include="Views/DM_ICDNHOM/DMICDNHOMPartial.cshtml">
+      <publishTime>01/09/2016 08:12:35</publishTime>
+    </File>
+    <File Include="Views/DM_ICDNHOM/DM_ICDNHOMPartial.cshtml">
+      <publishTime>02/01/2016 17:29:36</publishTime>
+    </File>
+    <File Include="Views/DM_ICDNHOM/DM_ICDPartial.cshtml">
+      <publishTime>01/09/2016 14:10:11</publishTime>
+    </File>
+    <File Include="Views/DM_ICDNHOM/FilterView.cshtml">
+      <publishTime>01/30/2016 09:05:24</publishTime>
+    </File>
+    <File Include="Views/DM_ICDNHOM/Index.cshtml">
+      <publishTime>02/01/2016 15:46:55</publishTime>
+    </File>
+    <File Include="Views/DM_ICDNHOM/LargeDataComboBoxPartial.cshtml">
+      <publishTime>12/25/2015 14:47:38</publishTime>
+    </File>
+    <File Include="Views/DM_ICDNHOM/MultiColumnComboBoxPartial.cshtml">
+      <publishTime>12/25/2015 14:47:38</publishTime>
+    </File>
+    <File Include="Views/DM_ICDNHOM/_TreeListPartial.cshtml">
+      <publishTime>01/26/2016 17:19:16</publishTime>
+    </File>
+    <File Include="Views/DM_KHOA/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/22/2016 14:05:45</publishTime>
+    </File>
+    <File Include="Views/DM_KHOA/DMCOSOKCBPartial.cshtml">
+      <publishTime>01/25/2016 07:16:07</publishTime>
+    </File>
+    <File Include="Views/DM_KHOA/DM_KHOAPartial.cshtml">
+      <publishTime>02/24/2016 17:28:09</publishTime>
+    </File>
+    <File Include="Views/DM_KHOA/FilterView.cshtml">
+      <publishTime>02/24/2016 13:35:07</publishTime>
+    </File>
+    <File Include="Views/DM_KHOA/Index.cshtml">
+      <publishTime>02/24/2016 14:56:05</publishTime>
+    </File>
+    <File Include="Views/DM_KHOA/MultiColumnComboBoxPartial.cshtml">
+      <publishTime>01/05/2016 13:45:57</publishTime>
+    </File>
+    <File Include="Views/DM_KHOA/Tree_VirtualPartial.cshtml">
+      <publishTime>02/23/2016 12:42:41</publishTime>
+    </File>
+    <File Include="Views/DM_KHOA/_TreeListPartial.cshtml">
+      <publishTime>02/23/2016 12:42:41</publishTime>
+    </File>
+    <File Include="Views/DM_LOAICHUANBI/DM_LOAICHUANBIPartial.cshtml">
+      <publishTime>02/02/2016 19:52:55</publishTime>
+    </File>
+    <File Include="Views/DM_LOAICHUANBI/FilterView.cshtml">
+      <publishTime>02/02/2016 08:27:56</publishTime>
+    </File>
+    <File Include="Views/DM_LOAICHUANBI/Index.cshtml">
+      <publishTime>02/02/2016 08:27:56</publishTime>
+    </File>
+    <File Include="Views/DM_LOAIMAU/DM_LOAIMAUPartial.cshtml">
+      <publishTime>02/26/2016 16:15:43</publishTime>
+    </File>
+    <File Include="Views/DM_LOAIMAU/FilterView.cshtml">
+      <publishTime>02/03/2016 14:38:58</publishTime>
+    </File>
+    <File Include="Views/DM_LOAIMAU/Index.cshtml">
+      <publishTime>02/24/2016 17:28:08</publishTime>
+    </File>
+    <File Include="Views/DM_LUONGTOITHIEU/DM_LUONGTOITHIEUPartial.cshtml">
+      <publishTime>01/27/2016 20:53:34</publishTime>
+    </File>
+    <File Include="Views/DM_LUONGTOITHIEU/FilterView.cshtml">
+      <publishTime>01/27/2016 20:53:34</publishTime>
+    </File>
+    <File Include="Views/DM_LUONGTOITHIEU/Index.cshtml">
+      <publishTime>01/27/2016 20:53:34</publishTime>
+    </File>
+    <File Include="Views/DM_MAHOAKHOA/DM_MAHOAKHOAPartial.cshtml">
+      <publishTime>02/17/2016 16:30:46</publishTime>
+    </File>
+    <File Include="Views/DM_MAHOAKHOA/FilterView.cshtml">
+      <publishTime>01/26/2016 11:50:52</publishTime>
+    </File>
+    <File Include="Views/DM_MAHOAKHOA/Index.cshtml">
+      <publishTime>02/17/2016 16:30:46</publishTime>
+    </File>
+    <File Include="Views/DM_MAHOATAINAN/DM_MAHOATAINANPartial.cshtml">
+      <publishTime>01/15/2016 08:29:17</publishTime>
+    </File>
+    <File Include="Views/DM_MAHOATAINAN/FilterView.cshtml">
+      <publishTime>01/15/2016 08:29:17</publishTime>
+    </File>
+    <File Include="Views/DM_MAHOATAINAN/Index.cshtml">
+      <publishTime>01/20/2016 19:42:17</publishTime>
+    </File>
+    <File Include="Views/DM_MAU/DM_MAUPartial.cshtml">
+      <publishTime>02/26/2016 16:15:43</publishTime>
+    </File>
+    <File Include="Views/DM_MAU/FilterView.cshtml">
+      <publishTime>02/26/2016 16:15:43</publishTime>
+    </File>
+    <File Include="Views/DM_MAU/Index.cshtml">
+      <publishTime>02/26/2016 16:15:43</publishTime>
+    </File>
+    <File Include="Views/DM_MAU/Tree_VirtualPartial.cshtml">
+      <publishTime>01/22/2016 16:17:03</publishTime>
+    </File>
+    <File Include="Views/DM_MAU/_TreeListPartial.cshtml">
+      <publishTime>01/26/2016 17:19:16</publishTime>
+    </File>
+    <File Include="Views/DM_MUCDONGBQ/DM_MUCDONGBQPartial.cshtml">
+      <publishTime>02/19/2016 15:32:26</publishTime>
+    </File>
+    <File Include="Views/DM_MUCDONGBQ/FilterView.cshtml">
+      <publishTime>02/16/2016 20:10:17</publishTime>
+    </File>
+    <File Include="Views/DM_MUCDONGBQ/Index.cshtml">
+      <publishTime>02/16/2016 20:10:17</publishTime>
+    </File>
+    <File Include="Views/DM_MUCHUONGBHYT/DM_MUCHUONGBHYTPartial.cshtml">
+      <publishTime>02/24/2016 13:35:08</publishTime>
+    </File>
+    <File Include="Views/DM_MUCHUONGBHYT/FilterView.cshtml">
+      <publishTime>02/22/2016 09:03:51</publishTime>
+    </File>
+    <File Include="Views/DM_MUCHUONGBHYT/Index.cshtml">
+      <publishTime>02/22/2016 19:27:10</publishTime>
+    </File>
+    <File Include="Views/DM_MUCHUONGBHYT/Tree_VirtualPartial.cshtml">
+      <publishTime>02/18/2016 18:55:45</publishTime>
+    </File>
+    <File Include="Views/DM_MUCHUONGBHYT/_TreeListPartial.cshtml">
+      <publishTime>02/18/2016 18:55:45</publishTime>
+    </File>
+    <File Include="Views/DM_MUCHUONGTOIDATTTT/DM_MUCHUONGTOIDATTTTPartial.cshtml">
+      <publishTime>02/20/2016 08:37:24</publishTime>
+    </File>
+    <File Include="Views/DM_MUCHUONGTOIDATTTT/FilterPartial.cshtml">
+      <publishTime>02/20/2016 08:37:24</publishTime>
+    </File>
+    <File Include="Views/DM_MUCHUONGTOIDATTTT/Index.cshtml">
+      <publishTime>02/20/2016 08:37:24</publishTime>
+    </File>
+    <File Include="Views/DM_NGAYNGHILE/DM_NGAYNGHILEPartial.cshtml">
+      <publishTime>02/23/2016 12:42:41</publishTime>
+    </File>
+    <File Include="Views/DM_NGAYNGHILE/FilterView.cshtml">
+      <publishTime>02/18/2016 18:55:43</publishTime>
+    </File>
+    <File Include="Views/DM_NGAYNGHILE/Index.cshtml">
+      <publishTime>02/18/2016 18:55:43</publishTime>
+    </File>
+    <File Include="Views/DM_NHANVIENYTE/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/02/2016 10:24:53</publishTime>
+    </File>
+    <File Include="Views/DM_NHANVIENYTE/DM_NHANVIENYTEPartial.cshtml">
+      <publishTime>02/26/2016 12:07:40</publishTime>
+    </File>
+    <File Include="Views/DM_NHANVIENYTE/FilterView.cshtml">
+      <publishTime>02/24/2016 09:43:19</publishTime>
+    </File>
+    <File Include="Views/DM_NHANVIENYTE/Index.cshtml">
+      <publishTime>02/26/2016 11:59:46</publishTime>
+    </File>
+    <File Include="Views/DM_NHASX/DM_NHASXPartial.cshtml">
+      <publishTime>02/15/2016 19:00:58</publishTime>
+    </File>
+    <File Include="Views/DM_NHASX/FilterView.cshtml">
+      <publishTime>02/03/2016 14:38:58</publishTime>
+    </File>
+    <File Include="Views/DM_NHASX/Index.cshtml">
+      <publishTime>02/03/2016 14:38:58</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMBHYT/DM_NHOMBHYTPartial.cshtml">
+      <publishTime>01/15/2016 08:29:18</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMBHYT/FilterView.cshtml">
+      <publishTime>01/15/2016 08:29:18</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMBHYT/Index.cshtml">
+      <publishTime>01/20/2016 19:42:17</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMDICHVU/DM_NHOMDICHVUPartial.cshtml">
+      <publishTime>02/20/2016 21:33:41</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMDICHVU/FilterView.cshtml">
+      <publishTime>01/25/2016 07:16:05</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMDICHVU/Index.cshtml">
+      <publishTime>02/18/2016 13:46:50</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMDTBHYT/DM_NHOMDTBHYTPartial.cshtml">
+      <publishTime>02/23/2016 17:34:31</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMDTBHYT/FilterView.cshtml">
+      <publishTime>02/02/2016 08:27:50</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMDTBHYT/Index.cshtml">
+      <publishTime>02/23/2016 20:33:06</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMHOATCHAT/DM_NHOMHOATCHATPartial.cshtml">
+      <publishTime>01/29/2016 13:52:47</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMHOATCHAT/FilterView.cshtml">
+      <publishTime>01/27/2016 15:21:44</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMHOATCHAT/Index.cshtml">
+      <publishTime>02/01/2016 15:46:55</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMQUYTRINH/DM_NHOMQUYTRINHPartial.cshtml">
+      <publishTime>02/02/2016 19:52:55</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMQUYTRINH/FilterView.cshtml">
+      <publishTime>02/22/2016 19:27:10</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMQUYTRINH/Index.cshtml">
+      <publishTime>02/02/2016 08:27:56</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMTHUOC/DM_NHOMTHUOCPartial.cshtml">
+      <publishTime>01/31/2016 09:18:20</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMTHUOC/FilterView.cshtml">
+      <publishTime>01/31/2016 09:18:20</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMTHUOC/Index.cshtml">
+      <publishTime>02/01/2016 15:46:56</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMTHUOCYHCT/DM_NHOMTHUOCYHCTPartial.cshtml">
+      <publishTime>02/26/2016 16:15:44</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMTHUOCYHCT/FilterView.cshtml">
+      <publishTime>02/24/2016 13:52:40</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMTHUOCYHCT/Index.cshtml">
+      <publishTime>02/24/2016 09:43:19</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMVATTU/DM_NHOMDICHVUPartial.cshtml">
+      <publishTime>12/31/2015 17:10:54</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMVATTU/DM_NHOMVATTUPartial.cshtml">
+      <publishTime>02/02/2016 14:38:10</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMVATTU/FilterView.cshtml">
+      <publishTime>01/22/2016 16:17:01</publishTime>
+    </File>
+    <File Include="Views/DM_NHOMVATTU/Index.cshtml">
+      <publishTime>02/22/2016 19:39:30</publishTime>
+    </File>
+    <File Include="Views/DM_NhomVatTu_Tree/DMNHOMVATTUPartial.cshtml">
+      <publishTime>01/09/2016 08:12:35</publishTime>
+    </File>
+    <File Include="Views/DM_NhomVatTu_Tree/DMVANBANQUYETDINHPartial.cshtml">
+      <publishTime>01/09/2016 08:12:35</publishTime>
+    </File>
+    <File Include="Views/DM_NhomVatTu_Tree/DM_VATTUPartial.cshtml">
+      <publishTime>01/09/2016 08:12:35</publishTime>
+    </File>
+    <File Include="Views/DM_NhomVatTu_Tree/FilterView.cshtml">
+      <publishTime>01/09/2016 08:12:35</publishTime>
+    </File>
+    <File Include="Views/DM_NhomVatTu_Tree/Index.cshtml">
+      <publishTime>01/09/2016 08:12:35</publishTime>
+    </File>
+    <File Include="Views/DM_NhomVatTu_Tree/_TreeListPartial.cshtml">
+      <publishTime>01/09/2016 08:12:35</publishTime>
+    </File>
+    <File Include="Views/DM_QUANHUYEN/DM_QUANHUYENPartial.cshtml">
+      <publishTime>02/23/2016 20:33:07</publishTime>
+    </File>
+    <File Include="Views/DM_QUANHUYEN/FilterView.cshtml">
+      <publishTime>02/20/2016 21:33:41</publishTime>
+    </File>
+    <File Include="Views/DM_QUANHUYEN/Index.cshtml">
+      <publishTime>02/20/2016 21:33:41</publishTime>
+    </File>
+    <File Include="Views/DM_QUANHUYEN/Tree_VirtualPartial.cshtml">
+      <publishTime>01/15/2016 08:29:18</publishTime>
+    </File>
+    <File Include="Views/DM_QUANHUYEN/_TreeListPartial.cshtml">
+      <publishTime>01/27/2016 13:33:44</publishTime>
+    </File>
+    <File Include="Views/DM_QUOCGIA/DM_QUOCGIAPartial.cshtml">
+      <publishTime>02/03/2016 08:35:25</publishTime>
+    </File>
+    <File Include="Views/DM_QUOCGIA/FilterView.cshtml">
+      <publishTime>01/25/2016 07:16:09</publishTime>
+    </File>
+    <File Include="Views/DM_QUOCGIA/Index.cshtml">
+      <publishTime>02/03/2016 18:55:00</publishTime>
+    </File>
+    <File Include="Views/DM_QUYBHXH/DM_QUYBHXHPartial.cshtml">
+      <publishTime>02/17/2016 16:30:46</publishTime>
+    </File>
+    <File Include="Views/DM_QUYBHXH/FilterView.cshtml">
+      <publishTime>01/29/2016 17:08:11</publishTime>
+    </File>
+    <File Include="Views/DM_QUYBHXH/Index.cshtml">
+      <publishTime>01/29/2016 17:08:11</publishTime>
+    </File>
+    <File Include="Views/DM_QUYTRINH/ChongChiDinhEditorPartial.cshtml">
+      <publishTime>02/16/2016 20:10:14</publishTime>
+    </File>
+    <File Include="Views/DM_QUYTRINH/DM_QUYTRINHPartial.cshtml">
+      <publishTime>02/23/2016 12:42:41</publishTime>
+    </File>
+    <File Include="Views/DM_QUYTRINH/FilterView.cshtml">
+      <publishTime>02/23/2016 04:15:38</publishTime>
+    </File>
+    <File Include="Views/DM_QUYTRINH/GripchuanbiPartial.cshtml">
+      <publishTime>02/23/2016 04:15:38</publishTime>
+    </File>
+    <File Include="Views/DM_QUYTRINH/HtmlEditorPartial.cshtml">
+      <publishTime>02/02/2016 19:52:53</publishTime>
+    </File>
+    <File Include="Views/DM_QUYTRINH/Index.cshtml">
+      <publishTime>02/23/2016 04:15:38</publishTime>
+    </File>
+    <File Include="Views/DM_QUYTRINH/PopupQUYTRINHPartial.cshtml">
+      <publishTime>02/23/2016 04:15:38</publishTime>
+    </File>
+    <File Include="Views/DM_QUYTRINH/QuyTrinhEditorPartial.cshtml">
+      <publishTime>02/16/2016 20:10:14</publishTime>
+    </File>
+    <File Include="Views/DM_SUATPHIBQ/DM_SUATPHIBQPartial.cshtml">
+      <publishTime>02/01/2016 09:23:47</publishTime>
+    </File>
+    <File Include="Views/DM_SUATPHIBQ/FilterView.cshtml">
+      <publishTime>01/29/2016 13:52:33</publishTime>
+    </File>
+    <File Include="Views/DM_SUATPHIBQ/Index.cshtml">
+      <publishTime>01/29/2016 13:52:33</publishTime>
+    </File>
+    <File Include="Views/DM_TENDICHVU/DM_TENDICHVUPartial.cshtml">
+      <publishTime>01/29/2016 13:52:51</publishTime>
+    </File>
+    <File Include="Views/DM_TENDICHVU/FilterView.cshtml">
+      <publishTime>01/27/2016 20:53:34</publishTime>
+    </File>
+    <File Include="Views/DM_TENDICHVU/Index.cshtml">
+      <publishTime>02/18/2016 13:46:50</publishTime>
+    </File>
+    <File Include="Views/DM_THUOC/CBNHOMTHUOCPartial.cshtml">
+      <publishTime>01/01/2016 14:08:53</publishTime>
+    </File>
+    <File Include="Views/DM_THUOC/DM_THUOCPartial.cshtml">
+      <publishTime>02/17/2016 19:42:41</publishTime>
+    </File>
+    <File Include="Views/DM_THUOC/FilterView.cshtml">
+      <publishTime>02/17/2016 19:42:41</publishTime>
+    </File>
+    <File Include="Views/DM_THUOC/Index.cshtml">
+      <publishTime>02/02/2016 19:52:55</publishTime>
+    </File>
+    <File Include="Views/DM_THUOC/_TreeListPartial.cshtml">
+      <publishTime>01/27/2016 08:39:31</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCBV/CBCOSOKCBPartial.cshtml">
+      <publishTime>12/31/2015 20:50:23</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCBV/CBTINHTHANHPartial.cshtml">
+      <publishTime>12/31/2015 20:35:28</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCBV/CSKCBComboBoxPartial.cshtml">
+      <publishTime>01/29/2016 17:08:11</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCBV/DM_THUOCBVPartial.cshtml">
+      <publishTime>02/19/2016 22:33:23</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCBV/FilterView.cshtml">
+      <publishTime>02/24/2016 19:28:14</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCBV/Index.cshtml">
+      <publishTime>02/24/2016 19:28:14</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCBV/MultiColumnComboBoxPartial.cshtml">
+      <publishTime>12/31/2015 19:23:12</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCBV/_TreeListPartial.cshtml">
+      <publishTime>01/27/2016 20:53:32</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCKK/DM_THUOCKKPartial.cshtml">
+      <publishTime>01/29/2016 13:52:52</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCKK/FilterView.cshtml">
+      <publishTime>01/22/2016 16:17:02</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCKK/Index.cshtml">
+      <publishTime>01/20/2016 19:42:17</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCTHAU/CBCOSOKCBPartial.cshtml">
+      <publishTime>01/05/2016 08:23:05</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCTHAU/CBTINHTHANHPartial.cshtml">
+      <publishTime>01/05/2016 08:23:05</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCTHAU/DM_THUOCTHAUPartial.cshtml">
+      <publishTime>02/01/2016 17:29:37</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCTHAU/FilterView.cshtml">
+      <publishTime>01/22/2016 17:50:12</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCTHAU/Index.cshtml">
+      <publishTime>01/22/2016 17:50:12</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCTHAU/MultiColumnComboBoxPartial.cshtml">
+      <publishTime>01/05/2016 08:23:05</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCYHCT/CBNHOMTHUOCYHCTPartial.cshtml">
+      <publishTime>01/22/2016 10:13:14</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCYHCT/DM_THUOCYHCTPartial.cshtml">
+      <publishTime>02/26/2016 16:15:43</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCYHCT/FilterView.cshtml">
+      <publishTime>02/17/2016 19:42:42</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCYHCT/Index.cshtml">
+      <publishTime>02/26/2016 10:26:22</publishTime>
+    </File>
+    <File Include="Views/DM_THUOCYHCT/_TreeListPartial.cshtml">
+      <publishTime>01/27/2016 08:39:31</publishTime>
+    </File>
+    <File Include="Views/DM_TINHTHANH/DM_TINHTHANHPartial.cshtml">
+      <publishTime>02/03/2016 08:35:25</publishTime>
+    </File>
+    <File Include="Views/DM_TINHTHANH/FilterView.cshtml">
+      <publishTime>01/30/2016 09:05:23</publishTime>
+    </File>
+    <File Include="Views/DM_TINHTHANH/Index.cshtml">
+      <publishTime>02/18/2016 18:55:43</publishTime>
+    </File>
+    <File Include="Views/DM_TINHTHANH/LargeDataComboBoxPartial.cshtml">
+      <publishTime>12/31/2015 10:51:31</publishTime>
+    </File>
+    <File Include="Views/DM_TRACUU/DM_TRACUUPartial.cshtml">
+      <publishTime>02/03/2016 18:55:00</publishTime>
+    </File>
+    <File Include="Views/DM_TRACUU/FilterView.cshtml">
+      <publishTime>02/02/2016 08:27:50</publishTime>
+    </File>
+    <File Include="Views/DM_TRACUU/HtmlEditorPartial.cshtml">
+      <publishTime>02/15/2016 19:00:59</publishTime>
+    </File>
+    <File Include="Views/DM_TRACUU/Index.cshtml">
+      <publishTime>02/03/2016 18:55:00</publishTime>
+    </File>
+    <File Include="Views/DM_TRACUU/POPUPDetail.cshtml">
+      <publishTime>02/15/2016 19:00:59</publishTime>
+    </File>
+    <File Include="Views/DM_TRACUU_TTTHUOC/DM_TRACUU_TTTHUOCPartial.cshtml">
+      <publishTime>02/24/2016 09:43:19</publishTime>
+    </File>
+    <File Include="Views/DM_TRACUU_TTTHUOC/DM_TTTCHITIETPartial.cshtml">
+      <publishTime>02/19/2016 19:45:17</publishTime>
+    </File>
+    <File Include="Views/DM_TRACUU_TTTHUOC/FilterView.cshtml">
+      <publishTime>02/16/2016 20:10:15</publishTime>
+    </File>
+    <File Include="Views/DM_TRACUU_TTTHUOC/HtmlEditorPartial.cshtml">
+      <publishTime>02/17/2016 13:57:55</publishTime>
+    </File>
+    <File Include="Views/DM_TRACUU_TTTHUOC/Index.cshtml">
+      <publishTime>02/24/2016 09:43:19</publishTime>
+    </File>
+    <File Include="Views/DM_TYLETTTRAITUYEN/DM_TYLETTTRAITUYENPartial.cshtml">
+      <publishTime>02/26/2016 13:54:23</publishTime>
+    </File>
+    <File Include="Views/DM_TYLETTTRAITUYEN/FilterView.cshtml">
+      <publishTime>02/26/2016 16:15:43</publishTime>
+    </File>
+    <File Include="Views/DM_TYLETTTRAITUYEN/Index.cshtml">
+      <publishTime>02/24/2016 09:43:19</publishTime>
+    </File>
+    <File Include="Views/DM_VANBANQUYETDINH/cbbPartial.cshtml">
+      <publishTime>12/25/2015 14:47:39</publishTime>
+    </File>
+    <File Include="Views/DM_VATTU/DMNHOMVATTUPartial.cshtml">
+      <publishTime>01/09/2016 10:49:45</publishTime>
+    </File>
+    <File Include="Views/DM_VATTU/DMVANBANQUYETDINHPartial.cshtml">
+      <publishTime>01/09/2016 10:49:45</publishTime>
+    </File>
+    <File Include="Views/DM_VATTU/DM_VATTUPartial.cshtml">
+      <publishTime>02/23/2016 04:15:38</publishTime>
+    </File>
+    <File Include="Views/DM_VATTU/DockManager.cshtml">
+      <publishTime>01/09/2016 14:18:55</publishTime>
+    </File>
+    <File Include="Views/DM_VATTU/FilterView.cshtml">
+      <publishTime>02/19/2016 13:40:53</publishTime>
+    </File>
+    <File Include="Views/DM_VATTU/Index.cshtml">
+      <publishTime>02/19/2016 19:45:17</publishTime>
+    </File>
+    <File Include="Views/DM_VATTU/MultiColumnComboBoxPartial.cshtml">
+      <publishTime>01/05/2016 14:56:47</publishTime>
+    </File>
+    <File Include="Views/DM_VATTU/Tree_VirtualPartial.cshtml">
+      <publishTime>01/22/2016 16:17:01</publishTime>
+    </File>
+    <File Include="Views/DM_VATTU/_TreeListPartial.cshtml">
+      <publishTime>01/28/2016 15:33:41</publishTime>
+    </File>
+    <File Include="Views/DM_VATTUBV/CBCOSOKCBPartial.cshtml">
+      <publishTime>01/30/2016 09:05:26</publishTime>
+    </File>
+    <File Include="Views/DM_VATTUBV/CBHOSOPartial.cshtml">
+      <publishTime>01/07/2016 18:06:12</publishTime>
+    </File>
+    <File Include="Views/DM_VATTUBV/DM_VATTUBVPartial.cshtml">
+      <publishTime>02/17/2016 20:22:50</publishTime>
+    </File>
+    <File Include="Views/DM_VATTUBV/FilterView.cshtml">
+      <publishTime>02/17/2016 19:42:42</publishTime>
+    </File>
+    <File Include="Views/DM_VATTUBV/Index.cshtml">
+      <publishTime>02/01/2016 15:46:56</publishTime>
+    </File>
+    <File Include="Views/DM_VATTUBV/Tree_VirtualPartial.cshtml">
+      <publishTime>01/25/2016 20:11:13</publishTime>
+    </File>
+    <File Include="Views/DM_VATTUBV/_TreeListPartial.cshtml">
+      <publishTime>01/27/2016 08:39:30</publishTime>
+    </File>
+    <File Include="Views/DM_VATTUTHAU/DMNHOMVATTUPartial.cshtml">
+      <publishTime>01/06/2016 22:56:15</publishTime>
+    </File>
+    <File Include="Views/DM_VATTUTHAU/DMVANBANQUYETDINHPartial.cshtml">
+      <publishTime>01/06/2016 22:56:15</publishTime>
+    </File>
+    <File Include="Views/DM_VATTUTHAU/DM_VATTUTHAUPartial.cshtml">
+      <publishTime>02/17/2016 20:22:50</publishTime>
+    </File>
+    <File Include="Views/DM_VATTUTHAU/FilterView.cshtml">
+      <publishTime>01/27/2016 16:39:27</publishTime>
+    </File>
+    <File Include="Views/DM_VATTUTHAU/Index.cshtml">
+      <publishTime>01/27/2016 16:39:27</publishTime>
+    </File>
+    <File Include="Views/DM_XAPHUONG/DM_XAPHUONGPartial.cshtml">
+      <publishTime>02/23/2016 20:33:06</publishTime>
+    </File>
+    <File Include="Views/DM_XAPHUONG/FilterView.cshtml">
+      <publishTime>01/27/2016 13:33:44</publishTime>
+    </File>
+    <File Include="Views/DM_XAPHUONG/Index.cshtml">
+      <publishTime>02/02/2016 08:27:56</publishTime>
+    </File>
+    <File Include="Views/DM_XAPHUONG/Tree_VirtualPartial.cshtml">
+      <publishTime>01/15/2016 08:29:19</publishTime>
+    </File>
+    <File Include="Views/DM_XAPHUONG/_TreeListPartial.cshtml">
+      <publishTime>01/27/2016 13:33:44</publishTime>
+    </File>
+    <File Include="Views/DS_GDHOSOKCB_192021/Button.cshtml">
+      <publishTime>01/22/2016 10:33:09</publishTime>
+    </File>
+    <File Include="Views/DS_GDHOSOKCB_192021/CSKCBComboBoxPartial.cshtml">
+      <publishTime>01/22/2016 10:33:09</publishTime>
+    </File>
+    <File Include="Views/DS_GDHOSOKCB_192021/DS_GDHOSOKCB_192021Partial.cshtml">
+      <publishTime>02/24/2016 22:32:05</publishTime>
+    </File>
+    <File Include="Views/DS_GDHOSOKCB_192021/HeaderView.cshtml">
+      <publishTime>01/22/2016 10:33:09</publishTime>
+    </File>
+    <File Include="Views/DS_GDHOSOKCB_192021/Index.cshtml">
+      <publishTime>02/18/2016 13:46:47</publishTime>
+    </File>
+    <File Include="Views/DS_GDHOSOKCB_192021/TimeView.cshtml">
+      <publishTime>01/22/2016 10:33:09</publishTime>
+    </File>
+    <File Include="Views/DS_GDHOSOKCB_TD/Button.cshtml">
+      <publishTime>02/15/2016 09:40:57</publishTime>
+    </File>
+    <File Include="Views/DS_GDHOSOKCB_TD/CSKCBComboBoxPartial.cshtml">
+      <publishTime>01/19/2016 16:39:59</publishTime>
+    </File>
+    <File Include="Views/DS_GDHOSOKCB_TD/DS_GDHOSOKCB_TDPartial.cshtml">
+      <publishTime>02/24/2016 22:32:06</publishTime>
+    </File>
+    <File Include="Views/DS_GDHOSOKCB_TD/HeaderView.cshtml">
+      <publishTime>02/17/2016 19:42:44</publishTime>
+    </File>
+    <File Include="Views/DS_GDHOSOKCB_TD/Index.cshtml">
+      <publishTime>02/18/2016 13:46:48</publishTime>
+    </File>
+    <File Include="Views/DS_GDHOSOKCB_TD/TimeView.cshtml">
+      <publishTime>01/21/2016 17:12:29</publishTime>
+    </File>
+    <File Include="Views/DS_GDHOSOKCB_TD/TramYteComboBoxPartial.cshtml">
+      <publishTime>02/17/2016 19:42:44</publishTime>
+    </File>
+    <File Include="Views/DS_HOSOGIAMDINH/ComboBoxPartial.cshtml">
+      <publishTime>12/31/2015 14:41:24</publishTime>
+    </File>
+    <File Include="Views/DS_HOSOGIAMDINH/DS_HOSOGIAMDINHPartial.cshtml">
+      <publishTime>01/03/2016 23:04:42</publishTime>
+    </File>
+    <File Include="Views/DS_HOSOGIAMDINH/FilterView.cshtml">
+      <publishTime>01/06/2016 22:56:14</publishTime>
+    </File>
+    <File Include="Views/DS_HOSOGIAMDINH/Index.cshtml">
+      <publishTime>01/19/2016 15:01:42</publishTime>
+    </File>
+    <File Include="Views/DS_HOSOGIAMDINH/LargeDataComboBoxPartial.cshtml">
+      <publishTime>12/31/2015 14:41:24</publishTime>
+    </File>
+    <File Include="Views/DS_HOSOGIAMDINH/MultiColumnComboBoxPartial.cshtml">
+      <publishTime>12/31/2015 14:41:24</publishTime>
+    </File>
+    <File Include="Views/DS_HOSOGIAMDINH/NHOMQUYTACHOSOPartial.cshtml">
+      <publishTime>01/03/2016 23:04:42</publishTime>
+    </File>
+    <File Include="Views/DS_HOSOGIAMDINH/PopupPartial.cshtml">
+      <publishTime>01/07/2016 19:15:55</publishTime>
+    </File>
+    <File Include="Views/DS_HOSOGIAMDINH/TinhThanhComboBoxPartial.cshtml">
+      <publishTime>01/03/2016 23:04:42</publishTime>
+    </File>
+    <File Include="Views/DS_HOSOGIAMDINH/TT.cshtml">
+      <publishTime>01/19/2016 15:01:42</publishTime>
+    </File>
+    <File Include="Views/DS_HOSOGIAMDINH_TD/CSKCBComboBoxPartial.cshtml">
+      <publishTime>01/19/2016 16:39:59</publishTime>
+    </File>
+    <File Include="Views/DS_HOSOGIAMDINH_TD/HeaderView.cshtml">
+      <publishTime>02/15/2016 09:40:57</publishTime>
+    </File>
+    <File Include="Views/DS_HOSOGIAMDINH_TD/HOSOPartial.cshtml">
+      <publishTime>01/11/2016 10:07:24</publishTime>
+    </File>
+    <File Include="Views/DS_HOSOGIAMDINH_TD/Index.cshtml">
+      <publishTime>01/19/2016 15:01:42</publishTime>
+    </File>
+    <File Include="Views/DS_HOSOGIAMDINH_TD/TreeListPartial.cshtml">
+      <publishTime>01/28/2016 15:33:41</publishTime>
+    </File>
+    <File Include="Views/DS_HOSOGIAMDINH_TD/_TreeListPartial.cshtml">
+      <publishTime>01/11/2016 10:07:24</publishTime>
+    </File>
+    <File Include="Views/DS_HOSO_TTTT/cbCSKCBPartial.cshtml">
+      <publishTime>01/13/2016 11:59:19</publishTime>
+    </File>
+    <File Include="Views/DS_HOSO_TTTT/DS_HOSO_TTTTPartial.cshtml">
+      <publishTime>01/25/2016 07:16:04</publishTime>
+    </File>
+    <File Include="Views/DS_HOSO_TTTT/HeaderView.cshtml">
+      <publishTime>01/25/2016 07:16:04</publishTime>
+    </File>
+    <File Include="Views/DS_HOSO_TTTT/Index.cshtml">
+      <publishTime>01/22/2016 16:17:03</publishTime>
+    </File>
+    <File Include="Views/DS_LICHSUKCB_TD/DS_LICHSUKCB_TDPartial.cshtml">
+      <publishTime>02/24/2016 22:32:06</publishTime>
+    </File>
+    <File Include="Views/DS_LICHSUKCB_TD/HeaderView.cshtml">
+      <publishTime>02/05/2016 10:30:29</publishTime>
+    </File>
+    <File Include="Views/DS_LICHSUKCB_TD/Index.cshtml">
+      <publishTime>02/05/2016 10:30:29</publishTime>
+    </File>
+    <File Include="Views/DS_QUYTAC/DS_QUYTACPartial.cshtml">
+      <publishTime>01/06/2016 15:55:15</publishTime>
+    </File>
+    <File Include="Views/DS_QUYTAC/FilterView.cshtml">
+      <publishTime>01/06/2016 15:55:15</publishTime>
+    </File>
+    <File Include="Views/DS_QUYTAC/Index.cshtml">
+      <publishTime>01/19/2016 15:01:42</publishTime>
+    </File>
+    <File Include="Views/DS_TreEmKhongTheReport/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/16/2016 20:10:17</publishTime>
+    </File>
+    <File Include="Views/DS_TreEmKhongTheReport/DMKhoaComboBoxPartial.cshtml">
+      <publishTime>02/16/2016 20:10:17</publishTime>
+    </File>
+    <File Include="Views/DS_TreEmKhongTheReport/DS_TreEmKhongThePartial.cshtml">
+      <publishTime>02/20/2016 21:33:41</publishTime>
+    </File>
+    <File Include="Views/DS_TreEmKhongTheReport/Index.cshtml">
+      <publishTime>02/19/2016 16:25:53</publishTime>
+    </File>
+    <File Include="Views/DS_TreEmKhongTheReport/PopupForm.cshtml">
+      <publishTime>02/18/2016 18:55:42</publishTime>
+    </File>
+    <File Include="Views/DS_TreEmKhongTheReport/PopupReport.cshtml">
+      <publishTime>02/15/2016 09:41:00</publishTime>
+    </File>
+    <File Include="Views/DS_TreEmKhongTheReport/TimeViewTreEmKhongThe.cshtml">
+      <publishTime>02/20/2016 21:33:41</publishTime>
+    </File>
+    <File Include="Views/Editing/BatchEditing.cshtml">
+      <publishTime>01/19/2016 08:37:49</publishTime>
+    </File>
+    <File Include="Views/Editing/BatchEditingPartial.cshtml">
+      <publishTime>01/19/2016 08:37:49</publishTime>
+    </File>
+    <File Include="Views/FUNCTION/FilterView.cshtml">
+      <publishTime>01/29/2016 13:53:00</publishTime>
+    </File>
+    <File Include="Views/FUNCTION/FUNCTIONPartial.cshtml">
+      <publishTime>02/02/2016 10:24:53</publishTime>
+    </File>
+    <File Include="Views/FUNCTION/Index.cshtml">
+      <publishTime>01/30/2016 09:05:29</publishTime>
+    </File>
+    <File Include="Views/GDCD/CBTINHTHANHPartial.cshtml">
+      <publishTime>02/18/2016 18:55:40</publishTime>
+    </File>
+    <File Include="Views/GDCD/CSKCBComboBoxPartial.cshtml">
+      <publishTime>02/18/2016 18:55:40</publishTime>
+    </File>
+    <File Include="Views/GDCD/GDCD_CanhBaoPartial.cshtml">
+      <publishTime>01/28/2016 17:21:22</publishTime>
+    </File>
+    <File Include="Views/GDCD/GDCD_TrangThaiPartial.cshtml">
+      <publishTime>01/27/2016 15:49:32</publishTime>
+    </File>
+    <File Include="Views/GDCD/HeaderView.cshtml">
+      <publishTime>02/24/2016 22:32:06</publishTime>
+    </File>
+    <File Include="Views/GDCD/HOSOPartial.cshtml">
+      <publishTime>02/26/2016 11:59:46</publishTime>
+    </File>
+    <File Include="Views/GDCD/Index.cshtml">
+      <publishTime>02/26/2016 11:59:46</publishTime>
+    </File>
+    <File Include="Views/GDCD/MultiSelectPartial.cshtml">
+      <publishTime>02/25/2016 10:44:14</publishTime>
+    </File>
+    <File Include="Views/GDCD/TramYteComboBoxPartial.cshtml">
+      <publishTime>02/23/2016 04:15:38</publishTime>
+    </File>
+    <File Include="Views/GDDM/ComboBoxPartial.cshtml">
+      <publishTime>01/01/2016 14:46:31</publishTime>
+    </File>
+    <File Include="Views/GDDM/CoSoKcbPartial.cshtml">
+      <publishTime>02/02/2016 19:52:54</publishTime>
+    </File>
+    <File Include="Views/GDDM/CSKCBComboBoxPartial.cshtml">
+      <publishTime>12/31/2015 17:32:46</publishTime>
+    </File>
+    <File Include="Views/GDDM/Error.cshtml">
+      <publishTime>01/06/2016 20:49:17</publishTime>
+    </File>
+    <File Include="Views/GDDM/FilterView.cshtml">
+      <publishTime>01/06/2016 20:49:17</publishTime>
+    </File>
+    <File Include="Views/GDDM/FilterView2.cshtml">
+      <publishTime>01/04/2016 16:53:37</publishTime>
+    </File>
+    <File Include="Views/GDDM/FilterView3.cshtml">
+      <publishTime>01/01/2016 14:46:31</publishTime>
+    </File>
+    <File Include="Views/GDDM/FilterView_ThuocBV.cshtml">
+      <publishTime>01/06/2016 14:22:48</publishTime>
+    </File>
+    <File Include="Views/GDDM/FilterView_ThuocDungChung.cshtml">
+      <publishTime>01/08/2016 08:42:02</publishTime>
+    </File>
+    <File Include="Views/GDDM/GDDMPartial.cshtml">
+      <publishTime>12/30/2015 20:02:03</publishTime>
+    </File>
+    <File Include="Views/GDDM/Index.cshtml">
+      <publishTime>01/19/2016 15:01:43</publishTime>
+    </File>
+    <File Include="Views/GDDM/LargeDataComboBoxPartial.cshtml">
+      <publishTime>01/06/2016 20:49:17</publishTime>
+    </File>
+    <File Include="Views/GDDM/ThuocBVPartial.cshtml">
+      <publishTime>01/08/2016 08:42:02</publishTime>
+    </File>
+    <File Include="Views/GDDM/ThuocDungChungPartial.cshtml">
+      <publishTime>01/06/2016 14:22:48</publishTime>
+    </File>
+    <File Include="Views/GDDM_CSKCB/DanhMucGiaDVKTPartial.cshtml">
+      <publishTime>02/01/2016 17:29:37</publishTime>
+    </File>
+    <File Include="Views/GDDM_CSKCB/DanhMucTenDVKTPartial.cshtml">
+      <publishTime>02/01/2016 17:29:37</publishTime>
+    </File>
+    <File Include="Views/GDDM_CSKCB/DanhMucThuocCPYHCTPartial.cshtml">
+      <publishTime>02/01/2016 17:29:37</publishTime>
+    </File>
+    <File Include="Views/GDDM_CSKCB/DanhMucThuocPhongXaPartial.cshtml">
+      <publishTime>02/01/2016 17:29:37</publishTime>
+    </File>
+    <File Include="Views/GDDM_CSKCB/DanhMucThuocTanDuocPartial.cshtml">
+      <publishTime>02/01/2016 17:29:37</publishTime>
+    </File>
+    <File Include="Views/GDDM_CSKCB/DanhMucThuocYHCTPartial.cshtml">
+      <publishTime>02/01/2016 17:29:37</publishTime>
+    </File>
+    <File Include="Views/GDDM_CSKCB/DanhMucVatTuYTePartial.cshtml">
+      <publishTime>02/01/2016 17:29:37</publishTime>
+    </File>
+    <File Include="Views/GDDM_CSKCB/FilterView.cshtml">
+      <publishTime>02/15/2016 19:01:01</publishTime>
+    </File>
+    <File Include="Views/GDDM_CSKCB/Index.cshtml">
+      <publishTime>02/15/2016 19:01:01</publishTime>
+    </File>
+    <File Include="Views/GDDM_CSKCB/PanelPartial.cshtml">
+      <publishTime>01/21/2016 11:55:18</publishTime>
+    </File>
+    <File Include="Views/GDDM_DVKT/CoSoKcbPartial.cshtml">
+      <publishTime>01/08/2016 08:42:02</publishTime>
+    </File>
+    <File Include="Views/GDDM_DVKT/DichVuBVPartial.cshtml">
+      <publishTime>01/08/2016 08:42:02</publishTime>
+    </File>
+    <File Include="Views/GDDM_DVKT/DichVuDungChungPartial.cshtml">
+      <publishTime>01/08/2016 08:42:02</publishTime>
+    </File>
+    <File Include="Views/GDDM_DVKT/Error.cshtml">
+      <publishTime>01/08/2016 08:42:02</publishTime>
+    </File>
+    <File Include="Views/GDDM_DVKT/FilterView.cshtml">
+      <publishTime>01/08/2016 08:42:02</publishTime>
+    </File>
+    <File Include="Views/GDDM_DVKT/FilterView_DichVuBV.cshtml">
+      <publishTime>01/08/2016 08:42:02</publishTime>
+    </File>
+    <File Include="Views/GDDM_DVKT/FilterView_DichVuDungChung.cshtml">
+      <publishTime>01/08/2016 08:42:02</publishTime>
+    </File>
+    <File Include="Views/GDDM_DVKT/Index.cshtml">
+      <publishTime>01/19/2016 15:01:43</publishTime>
+    </File>
+    <File Include="Views/GDDM_DVKT/LargeDataComboBoxPartial.cshtml">
+      <publishTime>01/08/2016 08:42:02</publishTime>
+    </File>
+    <File Include="Views/GDDM_HOSO/CoSoKCBComboBoxPartial.cshtml">
+      <publishTime>01/06/2016 20:49:17</publishTime>
+    </File>
+    <File Include="Views/GDDM_HOSO/Error.cshtml">
+      <publishTime>01/06/2016 20:49:17</publishTime>
+    </File>
+    <File Include="Views/GDDM_HOSO/FilterView.cshtml">
+      <publishTime>01/08/2016 20:30:53</publishTime>
+    </File>
+    <File Include="Views/GDDM_HOSO/Index.cshtml">
+      <publishTime>01/19/2016 15:01:43</publishTime>
+    </File>
+    <File Include="Views/GDDM_HOSO/LargeDataComboBoxPartial.cshtml">
+      <publishTime>01/06/2016 20:49:17</publishTime>
+    </File>
+    <File Include="Views/GDDM_HOSO/PopupPartial.cshtml">
+      <publishTime>01/06/2016 20:49:17</publishTime>
+    </File>
+    <File Include="Views/GDDM_HOSO/QL_HOSO.cshtml">
+      <publishTime>01/19/2016 15:01:43</publishTime>
+    </File>
+    <File Include="Views/GDDM_HOSO/QL_HOSOPartial.cshtml">
+      <publishTime>01/08/2016 08:42:03</publishTime>
+    </File>
+    <File Include="Views/GDDM_HOSO/TinhThanhComboBoxPartial.cshtml">
+      <publishTime>01/06/2016 20:49:17</publishTime>
+    </File>
+    <File Include="Views/GDDM_VTYT/ComboBoxPartial.cshtml">
+      <publishTime>01/08/2016 08:42:03</publishTime>
+    </File>
+    <File Include="Views/GDDM_VTYT/CoSoKcbPartial.cshtml">
+      <publishTime>01/08/2016 08:42:03</publishTime>
+    </File>
+    <File Include="Views/GDDM_VTYT/Error.cshtml">
+      <publishTime>01/08/2016 08:42:03</publishTime>
+    </File>
+    <File Include="Views/GDDM_VTYT/FilterView.cshtml">
+      <publishTime>01/08/2016 08:42:03</publishTime>
+    </File>
+    <File Include="Views/GDDM_VTYT/FilterView_VatTuBV.cshtml">
+      <publishTime>01/08/2016 08:42:03</publishTime>
+    </File>
+    <File Include="Views/GDDM_VTYT/FilterView_VatTuDungChung.cshtml">
+      <publishTime>01/08/2016 08:42:03</publishTime>
+    </File>
+    <File Include="Views/GDDM_VTYT/Index.cshtml">
+      <publishTime>01/19/2016 15:01:43</publishTime>
+    </File>
+    <File Include="Views/GDDM_VTYT/LargeDataComboBoxPartial.cshtml">
+      <publishTime>01/08/2016 08:42:03</publishTime>
+    </File>
+    <File Include="Views/GDDM_VTYT/VatTuBVPartial.cshtml">
+      <publishTime>01/08/2016 08:42:03</publishTime>
+    </File>
+    <File Include="Views/GDDM_VTYT/VatTuDungChungPartial.cshtml">
+      <publishTime>01/08/2016 08:42:03</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/DetailLDXTPartial.cshtml">
+      <publishTime>02/03/2016 08:35:28</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/DienBienBenhPartial.cshtml">
+      <publishTime>02/04/2016 08:34:28</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/FileDinhKem.cshtml">
+      <publishTime>01/19/2016 19:30:11</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/FileDinhKemPartial.cshtml">
+      <publishTime>02/05/2016 10:30:29</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/GhiChuPartial.cshtml">
+      <publishTime>02/23/2016 04:15:40</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/GVChiphiTTPartial.cshtml">
+      <publishTime>02/26/2016 11:59:45</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/GVCT_DBLSPartial.cshtml">
+      <publishTime>01/22/2016 17:50:13</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/GVCT_KQCLSPartial.cshtml">
+      <publishTime>01/22/2016 17:50:13</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/GVDICHVUPartial.cshtml">
+      <publishTime>02/23/2016 20:33:04</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/GVDienBienLamSanPartial.cshtml">
+      <publishTime>01/31/2016 09:18:20</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/GVKetQuaLamSanPartial.cshtml">
+      <publishTime>02/04/2016 08:34:28</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/GVLDTCPartial.cshtml">
+      <publishTime>02/23/2016 04:15:40</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/GVLDXTPartial.cshtml">
+      <publishTime>02/23/2016 12:42:40</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/GVTHUOCPartial.cshtml">
+      <publishTime>02/23/2016 20:33:05</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/GVVATTUPartial.cshtml">
+      <publishTime>02/23/2016 20:33:05</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/HoSoDinhKemFilePartial.cshtml">
+      <publishTime>02/10/2016 17:55:25</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/HuongDanPartial.cshtml">
+      <publishTime>02/23/2016 04:15:40</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/HuongDanThuocPartial.cshtml">
+      <publishTime>02/23/2016 04:15:41</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/Index.cshtml">
+      <publishTime>02/26/2016 11:59:45</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/LyDoComboBoxPartial.cshtml">
+      <publishTime>02/14/2016 08:31:52</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/PopupCPDVKTPartial.cshtml">
+      <publishTime>02/26/2016 11:59:45</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/PopupCPTHUOCPartial.cshtml">
+      <publishTime>02/26/2016 11:59:45</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/PopupCPVTPartial.cshtml">
+      <publishTime>02/26/2016 11:59:45</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/PopupLDTCPartial.cshtml">
+      <publishTime>02/22/2016 08:28:56</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/PopupLDXTPartial.cshtml">
+      <publishTime>02/04/2016 08:34:28</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/PopupTHUOCPartial.cshtml">
+      <publishTime>01/22/2016 17:50:13</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/PopupTTDVPartial.cshtml">
+      <publishTime>01/22/2016 17:50:13</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/PopupTTVATTUPartial.cshtml">
+      <publishTime>01/25/2016 15:22:22</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/RightView.cshtml">
+      <publishTime>01/29/2016 13:53:04</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/TopView.cshtml">
+      <publishTime>02/26/2016 10:26:21</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/TTBenhNhan.cshtml">
+      <publishTime>01/20/2016 11:53:19</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/TTBenhNhanPartial.cshtml">
+      <publishTime>02/25/2016 17:55:05</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/TTDichVuKiThuat.cshtml">
+      <publishTime>01/19/2016 19:30:12</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/TTDichVuKiThuatPartial.cshtml">
+      <publishTime>01/22/2016 17:50:13</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/TTKhac.cshtml">
+      <publishTime>01/20/2016 09:33:04</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/TTKhacPartial.cshtml">
+      <publishTime>02/25/2016 17:55:05</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/TTThuoc.cshtml">
+      <publishTime>01/20/2016 23:51:20</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/TTThuocPartial.cshtml">
+      <publishTime>01/22/2016 17:50:13</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/UploadContent.cshtml">
+      <publishTime>01/19/2016 19:30:11</publishTime>
+    </File>
+    <File Include="Views/GDHOSOKCBCHITIET_TD/UploadContentPartial.cshtml">
+      <publishTime>01/20/2016 23:51:20</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/CSKCBComboBoxPartial.cshtml">
+      <publishTime>01/21/2016 17:12:31</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/FilterView.cshtml">
+      <publishTime>02/15/2016 09:40:58</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/GV19Partial.cshtml">
+      <publishTime>02/17/2016 19:42:44</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/GV20Partial.cshtml">
+      <publishTime>02/17/2016 19:42:44</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/GV21Partial.cshtml">
+      <publishTime>02/17/2016 19:42:44</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/GVCT_DBLSPartial.cshtml">
+      <publishTime>01/13/2016 20:34:13</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/GVCT_KQCLSPartial.cshtml">
+      <publishTime>01/25/2016 07:16:06</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/GVDICHVUPartial.cshtml">
+      <publishTime>02/15/2016 09:40:58</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/GVTHUOCPartial.cshtml">
+      <publishTime>02/15/2016 09:40:59</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/GVVATTUPartial.cshtml">
+      <publishTime>02/15/2016 09:40:59</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/HuongDanPartial.cshtml">
+      <publishTime>01/25/2016 15:22:23</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/HuongDanThuocPartial.cshtml">
+      <publishTime>01/13/2016 20:34:13</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/Index.cshtml">
+      <publishTime>02/15/2016 22:35:21</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/PanelPartial.cshtml">
+      <publishTime>01/27/2016 20:53:33</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/PopupCPDVKTPartial.cshtml">
+      <publishTime>02/15/2016 22:35:21</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/PopupCPTHUOCPartial.cshtml">
+      <publishTime>02/15/2016 22:35:21</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/PopupCPVTPartial.cshtml">
+      <publishTime>02/15/2016 22:35:21</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/PopupTTDVKTPartial.cshtml">
+      <publishTime>01/27/2016 20:53:33</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/PopupTTTHUOCPartial.cshtml">
+      <publishTime>01/27/2016 20:53:33</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/PopupTTVATTUPartial.cshtml">
+      <publishTime>01/27/2016 20:53:33</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/TatCaPartial.cshtml">
+      <publishTime>02/17/2016 19:42:44</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/TramYteComboBoxPartial.cshtml">
+      <publishTime>01/25/2016 07:16:06</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/TTDichVuKiThuat.cshtml">
+      <publishTime>01/13/2016 20:34:13</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/TTDichVuKiThuatPartial.cshtml">
+      <publishTime>01/25/2016 15:22:23</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/TTThuoc.cshtml">
+      <publishTime>01/13/2016 20:34:13</publishTime>
+    </File>
+    <File Include="Views/GDTD_192021/TTThuocPartial.cshtml">
+      <publishTime>01/25/2016 15:22:23</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/ButtonView.cshtml">
+      <publishTime>02/20/2016 08:55:56</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/CSKCBComboBoxPartial.cshtml">
+      <publishTime>01/20/2016 11:53:21</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/GridLookupTramYTe.cshtml">
+      <publishTime>02/02/2016 19:52:53</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/GridViewHoSoPartial.cshtml">
+      <publishTime>02/24/2016 19:28:14</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/GridViewKhoaHSPartial.cshtml">
+      <publishTime>01/28/2016 19:12:00</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/GridViewKhoaNgayPartial.cshtml">
+      <publishTime>02/26/2016 11:59:46</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/GridViewNgayHSPartial.cshtml">
+      <publishTime>02/16/2016 20:10:13</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/GridViewNgayPartial.cshtml">
+      <publishTime>02/24/2016 19:28:14</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/Index.cshtml">
+      <publishTime>02/26/2016 11:59:46</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/PanelPartial.cshtml">
+      <publishTime>02/02/2016 19:52:53</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/PCXL.cshtml">
+      <publishTime>02/26/2016 11:59:46</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/PCXLKN.cshtml">
+      <publishTime>02/26/2016 11:59:46</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/PhanCongHoSoKNPartial.cshtml">
+      <publishTime>02/25/2016 17:00:46</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/PhanCongHoSoPartial.cshtml">
+      <publishTime>02/25/2016 17:00:46</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/PopupReport.cshtml">
+      <publishTime>02/20/2016 08:55:56</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/Report_gdtlchonmau.cshtml">
+      <publishTime>02/18/2016 21:06:27</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/ThongKePartial.cshtml">
+      <publishTime>02/10/2016 17:55:26</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/TimeView.cshtml">
+      <publishTime>02/23/2016 20:43:51</publishTime>
+    </File>
+    <File Include="Views/GDTL_CHONMAU/TopView.cshtml">
+      <publishTime>02/24/2016 19:28:14</publishTime>
+    </File>
+    <File Include="Views/GD_HOSO_TTTT/GD_HOSO_TTTTPartial.cshtml">
+      <publishTime>01/28/2016 17:21:22</publishTime>
+    </File>
+    <File Include="Views/GD_HOSO_TTTT/HeaderView.cshtml">
+      <publishTime>01/23/2016 10:27:39</publishTime>
+    </File>
+    <File Include="Views/GD_HOSO_TTTT/Index.cshtml">
+      <publishTime>01/23/2016 10:27:39</publishTime>
+    </File>
+    <File Include="Views/Home/GridViewPartialView.cshtml">
+      <publishTime>01/21/2016 20:46:20</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>01/22/2016 10:30:13</publishTime>
+    </File>
+    <File Include="Views/HOSO/HOSOPartial.cshtml">
+      <publishTime>01/12/2016 08:48:00</publishTime>
+    </File>
+    <File Include="Views/HOSO/Index.cshtml">
+      <publishTime>01/20/2016 09:59:15</publishTime>
+    </File>
+    <File Include="Views/HOSO/UploadedFilesContainer.cshtml">
+      <publishTime>12/30/2015 13:34:26</publishTime>
+    </File>
+    <File Include="Views/HOSOCHITIET/FilterView.cshtml">
+      <publishTime>12/31/2015 08:23:40</publishTime>
+    </File>
+    <File Include="Views/HOSOCHITIET/GVTTCPartial.cshtml">
+      <publishTime>01/08/2016 20:30:54</publishTime>
+    </File>
+    <File Include="Views/HOSOCHITIET/Index.cshtml">
+      <publishTime>12/31/2015 08:23:40</publishTime>
+    </File>
+    <File Include="Views/HOSOCHITIET/LICHSUKCBPartial.cshtml">
+      <publishTime>01/08/2016 20:30:54</publishTime>
+    </File>
+    <File Include="Views/HOSOCHITIET/SO.cshtml">
+      <publishTime>01/09/2016 08:12:36</publishTime>
+    </File>
+    <File Include="Views/HOSOCHITIET/TEPTINPartial.cshtml">
+      <publishTime>01/08/2016 20:30:54</publishTime>
+    </File>
+    <File Include="Views/HOSOCHITIET/THONGTINCHUNGPartial.cshtml">
+      <publishTime>01/11/2016 10:07:24</publishTime>
+    </File>
+    <File Include="Views/HOSOCHITIET/THONGTINDIEUTRIPartial.cshtml">
+      <publishTime>12/31/2015 19:21:33</publishTime>
+    </File>
+    <File Include="Views/HOSOCHITIET/TTKHACPartial.cshtml">
+      <publishTime>01/08/2016 20:30:54</publishTime>
+    </File>
+    <File Include="Views/HOSOGIAMDINH/CSKCBComboBoxPartial.cshtml">
+      <publishTime>01/11/2016 10:07:23</publishTime>
+    </File>
+    <File Include="Views/HOSOGIAMDINH/HeaderView.cshtml">
+      <publishTime>01/11/2016 10:07:23</publishTime>
+    </File>
+    <File Include="Views/HOSOGIAMDINH/Index.cshtml">
+      <publishTime>01/19/2016 15:01:43</publishTime>
+    </File>
+    <File Include="Views/HOSOGIAMDINH/TREELISTPartial.cshtml">
+      <publishTime>01/11/2016 10:07:23</publishTime>
+    </File>
+    <File Include="Views/HOSO_TTTT/ChanDoanKhacPartial.cshtml">
+      <publishTime>01/27/2016 20:53:33</publishTime>
+    </File>
+    <File Include="Views/HOSO_TTTT/CoSoKcbComboBoxPartial.cshtml">
+      <publishTime>01/25/2016 07:16:08</publishTime>
+    </File>
+    <File Include="Views/HOSO_TTTT/CoSoKcbComboBoxPartial_NoiKham.cshtml">
+      <publishTime>01/25/2016 07:16:08</publishTime>
+    </File>
+    <File Include="Views/HOSO_TTTT/DmicdComboBoxPartial.cshtml">
+      <publishTime>01/27/2016 20:53:33</publishTime>
+    </File>
+    <File Include="Views/HOSO_TTTT/FilePartial.cshtml">
+      <publishTime>02/16/2016 10:49:33</publishTime>
+    </File>
+    <File Include="Views/HOSO_TTTT/HOSO_TTTTPartial.cshtml">
+      <publishTime>02/16/2016 10:49:33</publishTime>
+    </File>
+    <File Include="Views/HOSO_TTTT/Index.cshtml">
+      <publishTime>02/16/2016 10:49:33</publishTime>
+    </File>
+    <File Include="Views/HOSO_TTTT/MultiSelectPartial.cshtml">
+      <publishTime>01/15/2016 08:29:20</publishTime>
+    </File>
+    <File Include="Views/HOSO_TTTT/TenChanDoanKhacPartial.cshtml">
+      <publishTime>01/27/2016 20:53:33</publishTime>
+    </File>
+    <File Include="Views/ImportTest/Index.cshtml">
+      <publishTime>01/19/2016 15:01:43</publishTime>
+    </File>
+    <File Include="Views/KQGD_DMT/CsKcbComboBoxPartial.cshtml">
+      <publishTime>02/19/2016 10:02:47</publishTime>
+    </File>
+    <File Include="Views/KQGD_DMT/FilterView.cshtml">
+      <publishTime>02/20/2016 21:33:44</publishTime>
+    </File>
+    <File Include="Views/KQGD_DMT/GoiThauComboBoxPartial.cshtml">
+      <publishTime>02/19/2016 10:02:47</publishTime>
+    </File>
+    <File Include="Views/KQGD_DMT/GVDvktTinhPartial.cshtml">
+      <publishTime>02/20/2016 21:33:44</publishTime>
+    </File>
+    <File Include="Views/KQGD_DMT/GVThuocTinhPartial.cshtml">
+      <publishTime>02/20/2016 21:33:44</publishTime>
+    </File>
+    <File Include="Views/KQGD_DMT/GVVtytTinhPartial.cshtml">
+      <publishTime>02/20/2016 21:33:44</publishTime>
+    </File>
+    <File Include="Views/KQGD_DMT/Index.cshtml">
+      <publishTime>02/26/2016 11:59:46</publishTime>
+    </File>
+    <File Include="Views/KQGD_DMT/KQGD_DMT_LOAIKQPartial.cshtml">
+      <publishTime>02/20/2016 21:33:44</publishTime>
+    </File>
+    <File Include="Views/KQGD_DMT/PanelPartial.cshtml">
+      <publishTime>01/20/2016 08:26:38</publishTime>
+    </File>
+    <File Include="Views/KQGD_DMT/TINHComboBoxPartial.cshtml">
+      <publishTime>02/19/2016 10:02:47</publishTime>
+    </File>
+    <File Include="Views/KQGD_DMT/TinhTreeListPartial.cshtml">
+      <publishTime>02/16/2016 20:10:16</publishTime>
+    </File>
+    <File Include="Views/KYGIAMDINH/DMCOSOKCBPartial.cshtml">
+      <publishTime>01/06/2016 19:15:18</publishTime>
+    </File>
+    <File Include="Views/KYGIAMDINH/FilterView.cshtml">
+      <publishTime>01/08/2016 20:30:53</publishTime>
+    </File>
+    <File Include="Views/KYGIAMDINH/Index.cshtml">
+      <publishTime>01/19/2016 15:01:43</publishTime>
+    </File>
+    <File Include="Views/KYGIAMDINH/KYGIAMDINHPartial.cshtml">
+      <publishTime>01/07/2016 18:06:13</publishTime>
+    </File>
+    <File Include="Views/KYGIAMDINH/MultiColumnComboBoxPartial.cshtml">
+      <publishTime>01/06/2016 19:15:18</publishTime>
+    </File>
+    <File Include="Views/LICHSUKB/HeaderView.cshtml">
+      <publishTime>01/11/2016 10:07:24</publishTime>
+    </File>
+    <File Include="Views/LICHSUKB/LICHSUKCBPartial.cshtml">
+      <publishTime>01/11/2016 10:07:24</publishTime>
+    </File>
+    <File Include="Views/LICHSUKB/SOBH.cshtml">
+      <publishTime>01/19/2016 15:01:43</publishTime>
+    </File>
+    <File Include="Views/LICHSUKCB_TD/GVLDXTPartial.cshtml">
+      <publishTime>01/18/2016 19:16:31</publishTime>
+    </File>
+    <File Include="Views/LICHSUKCB_TD/HeaderView.cshtml">
+      <publishTime>02/05/2016 10:30:30</publishTime>
+    </File>
+    <File Include="Views/LICHSUKCB_TD/Index.cshtml">
+      <publishTime>02/23/2016 12:42:41</publishTime>
+    </File>
+    <File Include="Views/LICHSUKCB_TD/LICHSUKCB_TDPartial.cshtml">
+      <publishTime>02/24/2016 22:32:06</publishTime>
+    </File>
+    <File Include="Views/LICHSUKCB_TD/PopupLDXTPartial.cshtml">
+      <publishTime>01/18/2016 19:16:31</publishTime>
+    </File>
+    <File Include="Views/LoadingPanel/Index.cshtml">
+      <publishTime>02/24/2016 19:28:14</publishTime>
+    </File>
+    <File Include="Views/LoadingPanel/LoadingPanelPartial.cshtml">
+      <publishTime>02/25/2016 13:35:19</publishTime>
+    </File>
+    <File Include="Views/NHAPDM/GVDvktBVPartial.cshtml">
+      <publishTime>02/23/2016 17:34:31</publishTime>
+    </File>
+    <File Include="Views/NHAPDM/GVDvktTinhPartial.cshtml">
+      <publishTime>02/23/2016 17:34:31</publishTime>
+    </File>
+    <File Include="Views/NHAPDM/GVGiaDvktBVPartial.cshtml">
+      <publishTime>02/23/2016 17:34:31</publishTime>
+    </File>
+    <File Include="Views/NHAPDM/GVThuocBVPartial.cshtml">
+      <publishTime>02/23/2016 17:34:31</publishTime>
+    </File>
+    <File Include="Views/NHAPDM/GVVtytBVPartial.cshtml">
+      <publishTime>02/23/2016 17:34:31</publishTime>
+    </File>
+    <File Include="Views/NHAPDM/Index.cshtml">
+      <publishTime>02/23/2016 17:34:31</publishTime>
+    </File>
+    <File Include="Views/NHAPDM/PanelPartial.cshtml">
+      <publishTime>02/15/2016 19:25:32</publishTime>
+    </File>
+    <File Include="Views/PannelHide/Index.cshtml">
+      <publishTime>01/19/2016 15:01:43</publishTime>
+    </File>
+    <File Include="Views/PARAMETER/FilterView.cshtml">
+      <publishTime>01/29/2016 13:53:01</publishTime>
+    </File>
+    <File Include="Views/PARAMETER/Index.cshtml">
+      <publishTime>01/29/2016 13:53:01</publishTime>
+    </File>
+    <File Include="Views/PARAMETER/PARAMETERPartial.cshtml">
+      <publishTime>01/29/2016 13:53:01</publishTime>
+    </File>
+    <File Include="Views/Permission/Index.cshtml">
+      <publishTime>02/25/2016 09:00:38</publishTime>
+    </File>
+    <File Include="Views/Permission/PERMISSIONPartial.cshtml">
+      <publishTime>02/25/2016 09:00:38</publishTime>
+    </File>
+    <File Include="Views/Permisson/Index.cshtml">
+      <publishTime>02/13/2016 13:48:44</publishTime>
+    </File>
+    <File Include="Views/Permisson/PERMISSIONPartial.cshtml">
+      <publishTime>02/13/2016 13:48:44</publishTime>
+    </File>
+    <File Include="Views/QT_DICHVU_ICD/Default.cshtml">
+      <publishTime>01/19/2016 15:01:43</publishTime>
+    </File>
+    <File Include="Views/QT_DICHVU_ICD/DichVuComboBoxPartial.cshtml">
+      <publishTime>01/06/2016 13:38:15</publishTime>
+    </File>
+    <File Include="Views/QT_DICHVU_ICD/GV_DVKTPartial.cshtml">
+      <publishTime>01/07/2016 08:33:19</publishTime>
+    </File>
+    <File Include="Views/QT_DICHVU_ICD/GV_ICDPartial.cshtml">
+      <publishTime>01/07/2016 02:11:36</publishTime>
+    </File>
+    <File Include="Views/QT_DICHVU_ICD/HeaderView.cshtml">
+      <publishTime>01/07/2016 02:11:57</publishTime>
+    </File>
+    <File Include="Views/QT_DICHVU_ICD/ICDComboBoxPartial.cshtml">
+      <publishTime>01/06/2016 15:55:16</publishTime>
+    </File>
+    <File Include="Views/QT_DICHVU_ICD/Index.cshtml">
+      <publishTime>01/19/2016 15:01:43</publishTime>
+    </File>
+    <File Include="Views/QT_DICHVU_ICD/New.cshtml">
+      <publishTime>01/19/2016 15:01:43</publishTime>
+    </File>
+    <File Include="Views/QT_DICHVU_TD/CbDichVuPartial.cshtml">
+      <publishTime>01/06/2016 22:56:14</publishTime>
+    </File>
+    <File Include="Views/QT_DICHVU_TD/GV_DVKTPartial.cshtml">
+      <publishTime>01/06/2016 22:56:14</publishTime>
+    </File>
+    <File Include="Views/QT_DICHVU_TD/GV_DVKT_TDPartial.cshtml">
+      <publishTime>01/06/2016 22:56:14</publishTime>
+    </File>
+    <File Include="Views/QT_DICHVU_TD/HeaderView.cshtml">
+      <publishTime>01/05/2016 17:59:00</publishTime>
+    </File>
+    <File Include="Views/QT_DICHVU_TD/Index.cshtml">
+      <publishTime>01/19/2016 15:01:43</publishTime>
+    </File>
+    <File Include="Views/QT_DICHVU_TGT/CbDichVuPartial.cshtml">
+      <publishTime>01/06/2016 22:56:14</publishTime>
+    </File>
+    <File Include="Views/QT_DICHVU_TGT/GV_DVKTPartial.cshtml">
+      <publishTime>01/06/2016 16:57:05</publishTime>
+    </File>
+    <File Include="Views/QT_DICHVU_TGT/GV_NDVPartial.cshtml">
+      <publishTime>01/06/2016 22:56:14</publishTime>
+    </File>
+    <File Include="Views/QT_DICHVU_TGT/HeaderView.cshtml">
+      <publishTime>01/06/2016 16:57:05</publishTime>
+    </File>
+    <File Include="Views/QT_DICHVU_TGT/Index.cshtml">
+      <publishTime>01/19/2016 15:01:44</publishTime>
+    </File>
+    <File Include="Views/QT_THUOC_ICD/DM_THUOCLargeDatabaseDataCbbPartial.cshtml">
+      <publishTime>01/13/2016 11:59:19</publishTime>
+    </File>
+    <File Include="Views/QT_THUOC_ICD/HeaderView.cshtml">
+      <publishTime>01/13/2016 11:59:19</publishTime>
+    </File>
+    <File Include="Views/QT_THUOC_ICD/ICDPartial.cshtml">
+      <publishTime>01/13/2016 11:59:19</publishTime>
+    </File>
+    <File Include="Views/QT_THUOC_ICD/Index.cshtml">
+      <publishTime>01/19/2016 15:01:44</publishTime>
+    </File>
+    <File Include="Views/QT_THUOC_ICD/THUOCPartial.cshtml">
+      <publishTime>01/13/2016 11:59:19</publishTime>
+    </File>
+    <File Include="Views/QuanLyNguoiDung/CSKCBPartial.cshtml">
+      <publishTime>02/19/2016 22:27:30</publishTime>
+    </File>
+    <File Include="Views/QuanLyNguoiDung/DS_NguoiDungPartial.cshtml">
+      <publishTime>02/19/2016 22:27:30</publishTime>
+    </File>
+    <File Include="Views/QuanLyNguoiDung/FilterView.cshtml">
+      <publishTime>02/16/2016 20:10:18</publishTime>
+    </File>
+    <File Include="Views/QuanLyNguoiDung/Index.cshtml">
+      <publishTime>02/23/2016 12:42:41</publishTime>
+    </File>
+    <File Include="Views/QuanLyNguoiDung/RolesPartial.cshtml">
+      <publishTime>02/19/2016 22:27:30</publishTime>
+    </File>
+    <File Include="Views/QuanLyNguoiDung/TaoMoi_NguoiDungPartial.cshtml">
+      <publishTime>02/23/2016 12:42:41</publishTime>
+    </File>
+    <File Include="Views/QuanLyPhanQuyen/CSKCBPartial.cshtml">
+      <publishTime>02/10/2016 17:55:25</publishTime>
+    </File>
+    <File Include="Views/QuanLyPhanQuyen/DS_NguoiDungPartial.cshtml">
+      <publishTime>02/05/2016 10:30:29</publishTime>
+    </File>
+    <File Include="Views/QuanLyPhanQuyen/FilterView.cshtml">
+      <publishTime>02/03/2016 08:35:23</publishTime>
+    </File>
+    <File Include="Views/QuanLyPhanQuyen/Index.cshtml">
+      <publishTime>02/05/2016 10:30:29</publishTime>
+    </File>
+    <File Include="Views/QuanLyPhanQuyen/RolesPartial.cshtml">
+      <publishTime>02/04/2016 15:11:35</publishTime>
+    </File>
+    <File Include="Views/QuanLyPhanQuyen/TaoMoi_NguoiDungPartial.cshtml">
+      <publishTime>02/10/2016 17:55:25</publishTime>
+    </File>
+    <File Include="Views/QUYTAC/LargeDataComboBoxPartial.cshtml">
+      <publishTime>01/04/2016 16:53:37</publishTime>
+    </File>
+    <File Include="Views/QUYTAC/THUOCHeaderView.cshtml">
+      <publishTime>01/04/2016 16:53:37</publishTime>
+    </File>
+    <File Include="Views/QUYTAC/THUOCICDPartial.cshtml">
+      <publishTime>01/04/2016 16:53:37</publishTime>
+    </File>
+    <File Include="Views/QUYTAC/THUOCQUYTAC.cshtml">
+      <publishTime>01/04/2016 16:53:37</publishTime>
+    </File>
+    <File Include="Views/QUYTAC/THUOCQUYTACPartial.cshtml">
+      <publishTime>01/04/2016 16:53:37</publishTime>
+    </File>
+    <File Include="Views/Role/Index.cshtml">
+      <publishTime>02/25/2016 09:00:38</publishTime>
+    </File>
+    <File Include="Views/Role/PermissionPartial.cshtml">
+      <publishTime>02/25/2016 09:00:38</publishTime>
+    </File>
+    <File Include="Views/Role/RolePartial.cshtml">
+      <publishTime>02/25/2016 09:00:38</publishTime>
+    </File>
+    <File Include="Views/RoleManager/Index.cshtml">
+      <publishTime>02/02/2016 19:52:54</publishTime>
+    </File>
+    <File Include="Views/Shared/DisplayTemplates/Boolean.cshtml">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/Boolean.cshtml">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/DateTime.cshtml">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/Decimal.cshtml">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/EmailAddress.cshtml">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/MultilineText.cshtml">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/Password.cshtml">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/String.cshtml">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Views/Shared/FooterPartialView.cshtml">
+      <publishTime>12/29/2015 11:33:51</publishTime>
+    </File>
+    <File Include="Views/Shared/HeaderPartialView.cshtml">
+      <publishTime>02/04/2016 15:11:34</publishTime>
+    </File>
+    <File Include="Views/Shared/KyFilterView.cshtml">
+      <publishTime>02/24/2016 22:32:06</publishTime>
+    </File>
+    <File Include="Views/Shared/LogOnPartialView.cshtml">
+      <publishTime>02/13/2016 10:30:06</publishTime>
+    </File>
+    <File Include="Views/Shared/TimeView.cshtml">
+      <publishTime>02/17/2016 20:22:48</publishTime>
+    </File>
+    <File Include="Views/Shared/TimeView2.cshtml">
+      <publishTime>02/24/2016 13:35:09</publishTime>
+    </File>
+    <File Include="Views/Shared/TimeViewRadio.cshtml">
+      <publishTime>01/27/2016 15:16:57</publishTime>
+    </File>
+    <File Include="Views/Shared/TimeViewReport19.cshtml">
+      <publishTime>02/16/2016 20:10:17</publishTime>
+    </File>
+    <File Include="Views/Shared/TimeViewTreEmKhongThe.cshtml">
+      <publishTime>02/16/2016 20:10:17</publishTime>
+    </File>
+    <File Include="Views/Shared/TimeView_New.cshtml">
+      <publishTime>02/23/2016 20:43:51</publishTime>
+    </File>
+    <File Include="Views/Shared/_lightLayout.cshtml">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Views/Shared/_mainLayout.cshtml">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Views/Shared/_rootLayout.cshtml">
+      <publishTime>02/17/2016 19:42:42</publishTime>
+    </File>
+    <File Include="Views/TestProcessBar/Index.cshtml">
+      <publishTime>02/26/2016 11:59:46</publishTime>
+    </File>
+    <File Include="Views/ThongTinTaiKhoan/Form_ThongTinTaiKhoan.cshtml">
+      <publishTime>02/23/2016 16:28:03</publishTime>
+    </File>
+    <File Include="Views/ThongTinTaiKhoan/Form_ThongTinTaiKhoanCapDuoi.cshtml">
+      <publishTime>02/23/2016 16:28:03</publishTime>
+    </File>
+    <File Include="Views/ThongTinTaiKhoan/Index.cshtml">
+      <publishTime>02/23/2016 16:28:03</publishTime>
+    </File>
+    <File Include="Views/TH_KQGD_7980/cbCSKCBPartial.cshtml">
+      <publishTime>01/29/2016 17:08:11</publishTime>
+    </File>
+    <File Include="Views/TH_KQGD_7980/HeaderView.cshtml">
+      <publishTime>02/24/2016 22:32:07</publishTime>
+    </File>
+    <File Include="Views/TH_KQGD_7980/Index.cshtml">
+      <publishTime>01/27/2016 20:53:32</publishTime>
+    </File>
+    <File Include="Views/TH_KQGD_7980/TINHComboBoxPartial.cshtml">
+      <publishTime>01/27/2016 20:53:32</publishTime>
+    </File>
+    <File Include="Views/TH_KQGD_7980/TongHopKqPartial.cshtml">
+      <publishTime>02/24/2016 22:32:07</publishTime>
+    </File>
+    <File Include="Views/TK_VIPHAM/cbCSKCBPartial.cshtml">
+      <publishTime>01/29/2016 17:08:11</publishTime>
+    </File>
+    <File Include="Views/TK_VIPHAM/HeaderView.cshtml">
+      <publishTime>02/24/2016 22:32:07</publishTime>
+    </File>
+    <File Include="Views/TK_VIPHAM/Index.cshtml">
+      <publishTime>01/29/2016 13:53:05</publishTime>
+    </File>
+    <File Include="Views/TK_VIPHAM/TkViPhamPartial.cshtml">
+      <publishTime>02/05/2016 10:30:29</publishTime>
+    </File>
+    <File Include="Views/Unauthorised/Index.cshtml">
+      <publishTime>02/16/2016 20:10:18</publishTime>
+    </File>
+    <File Include="Views/User/Index.cshtml">
+      <publishTime>02/04/2016 15:11:35</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>12/23/2015 08:20:13</publishTime>
+    </File>
+    <File Include="Views/XACNHANKETQUA_GDTL/CSKCBComboBoxPartial.cshtml">
+      <publishTime>01/26/2016 16:34:34</publishTime>
+    </File>
+    <File Include="Views/XACNHANKETQUA_GDTL/FilterView.cshtml">
+      <publishTime>02/26/2016 16:15:41</publishTime>
+    </File>
+    <File Include="Views/XACNHANKETQUA_GDTL/Index.cshtml">
+      <publishTime>02/25/2016 20:37:45</publishTime>
+    </File>
+    <File Include="Views/XACNHANKETQUA_GDTL/KetQuaChonMauPartial.cshtml">
+      <publishTime>02/26/2016 13:54:22</publishTime>
+    </File>
+    <File Include="Views/XACNHANKETQUA_GDTL/KetQuaChonMauSauGDPartial.cshtml">
+      <publishTime>02/26/2016 13:54:22</publishTime>
+    </File>
+    <File Include="Views/XACNHANKETQUA_GDTL/KETQUAGIAMDINHTYLE.cshtml">
+      <publishTime>02/26/2016 13:54:22</publishTime>
+    </File>
+    <File Include="Views/XACNHANKETQUA_GDTL/PanelPartial.cshtml">
+      <publishTime>02/25/2016 20:37:45</publishTime>
+    </File>
+    <File Include="Views/XACNHANKETQUA_GDTL/PopupReport.cshtml">
+      <publishTime>02/26/2016 07:34:58</publishTime>
+    </File>
+    <File Include="Views/XACNHANKETQUA_GDTL/Report_XNKQ_GDTL.cshtml">
+      <publishTime>02/25/2016 20:37:45</publishTime>
+    </File>
+    <File Include="Views/XACNHANKETQUA_GDTL/XACNHANKETQUA_GDTLPartial.cshtml">
+      <publishTime>02/26/2016 16:15:41</publishTime>
+    </File>
+    <File Include="Views/XML1_9324/HeaderView.cshtml">
+      <publishTime>01/13/2016 20:56:40</publishTime>
+    </File>
+    <File Include="Views/XML1_9324/Index.cshtml">
+      <publishTime>01/19/2016 15:01:44</publishTime>
+    </File>
+    <File Include="Views/XML1_9324/ThongKePartial.cshtml">
+      <publishTime>01/05/2016 11:01:27</publishTime>
+    </File>
+    <File Include="Views/XML1_9324/XML1_9324Partial.cshtml">
+      <publishTime>01/13/2016 20:56:40</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>01/01/2016 11:44:16</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/24/2016 08:21:36</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

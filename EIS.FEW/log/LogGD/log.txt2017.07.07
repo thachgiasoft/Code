@@ -1,0 +1,253 @@
+﻿2017-07-07 09:46:27,430 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-07 09:46:27,454 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-07-07 09:46:27,561 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-07-07 09:46:27,562 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-07-07 09:46:27,562 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-07-07 09:46:27,717 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-07-07 09:46:27,724 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-07-07 09:46:57,219 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: select ID19_,TEN19_,LOAI19_ from ( select dm_loaithu0_.ID as ID19_, dm_loaithu0_.TEN as TEN19_, dm_loaithu0_.LOAI as LOAI19_ from DM_LOAITHUOC_GS dm_loaithu0_ order by dm_loaithu0_.ID desc ) where rownum <=:p0 
+Oracle.DataAccess.Client.OracleException ORA-00942: table or view does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-07-07 09:46:57,221 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00942: table or view does not exist 
+2017-07-07 09:46:57,230 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00942: table or view does not exist 
+2017-07-07 09:46:57,230 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00942: table or view does not exist 
+2017-07-07 09:48:30,276 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: select ID19_,TEN19_,LOAI19_ from ( select dm_loaithu0_.ID as ID19_, dm_loaithu0_.TEN as TEN19_, dm_loaithu0_.LOAI as LOAI19_ from DM_LOAITHUOC_GS dm_loaithu0_ order by dm_loaithu0_.ID desc ) where rownum <=:p0 
+Oracle.DataAccess.Client.OracleException ORA-00942: table or view does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-07-07 09:48:30,277 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00942: table or view does not exist 
+2017-07-07 09:48:30,291 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00942: table or view does not exist 
+2017-07-07 09:48:30,291 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00942: table or view does not exist 
+2017-07-07 16:18:58,194 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: select report0_.ID as ID12_, report0_.ACTIVE as ACTIVE12_, report0_.REPORT_DESCRIPTION as REPORT3_12_, report0_.REPORT_NAME as REPORT4_12_, report0_.REPORT_NAMESPACE as REPORT5_12_, report0_.REPORT_PROCEDURE as REPORT6_12_, report0_.ISTONGHOP as ISTONGHOP12_ from REPORT report0_ order by report0_.REPORT_NAME asc 
+Oracle.DataAccess.Client.OracleException ORA-00904: "REPORT0_"."ISTONGHOP": invalid identifier    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-07-07 16:18:58,259 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "REPORT0_"."ISTONGHOP": invalid identifier 
+2017-07-07 16:18:58,278 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "REPORT0_"."ISTONGHOP": invalid identifier 
+2017-07-07 16:18:58,279 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "REPORT0_"."ISTONGHOP": invalid identifier 
+2017-07-07 16:53:11,088 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Util.ThreadSafeDictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Type.TypeFactory.GetType(NullableType defaultUnqualifiedType, Int32 length, GetNullableTypeWithLength ctorDelegate)
+   at NHibernate.Type.TypeFactory.<RegisterDefaultNetTypes>b__c(Int32 l)
+   at NHibernate.Type.TypeFactory.BuiltInType(String typeName, Int32 length)
+   at NHibernate.Mapping.SimpleValue.GetHeuristicType()
+   at NHibernate.Mapping.SimpleValue.get_Type()
+   at NHibernate.Mapping.SimpleValue.IsValid(IMapping mapping)
+   at NHibernate.Mapping.PersistentClass.Validate(IMapping mapping)
+   at NHibernate.Mapping.RootClass.Validate(IMapping mapping)
+   at NHibernate.Cfg.Configuration.ValidateEntities()
+   at NHibernate.Cfg.Configuration.Validate()
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-07-07 16:53:13,859 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: Item has already been added. Key in dictionary: 'E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Config\NHibernateConfig.xml'  Key being added: 'E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Config\NHibernateConfig.xml'
+   at System.Collections.Hashtable.Insert(Object key, Object nvalue, Boolean add)
+   at System.Collections.Hashtable.Add(Object key, Object value)
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-07-07 16:53:49,244 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-07-07 16:53:49,263 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-07-07 16:53:49,333 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-07-07 16:53:49,334 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-07-07 16:53:49,334 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-07-07 16:53:49,448 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-07-07 16:53:49,449 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-07-07 17:20:18,070 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_NHOMDVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.GridDSNhomDichVuPartial() in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 60 
+2017-07-07 17:20:33,452 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_DVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.ft_TimKiem(Int64 nhomId, Int64 banggiaId) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 40 
+2017-07-07 17:20:38,124 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_DVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.ft_TimKiem(Int64 nhomId, Int64 banggiaId) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 40 
+2017-07-07 17:20:38,370 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_DVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.ft_TimKiem(Int64 nhomId, Int64 banggiaId) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 40 
+2017-07-07 17:21:13,690 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_NHOMDVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.GridDSNhomDichVuPartial() in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 60 
+2017-07-07 17:22:30,227 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_NHOMDVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.GridDSNhomDichVuPartial() in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 60 
+2017-07-07 17:33:17,116 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_NHOMDVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.GridDSNhomDichVuPartial() in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 60 
+2017-07-07 17:33:25,694 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_DVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.ft_TimKiem(Int64 nhomId, Int64 banggiaId) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 40 
+2017-07-07 17:33:25,830 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_DVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.ft_TimKiem(Int64 nhomId, Int64 banggiaId) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 40 
+2017-07-07 17:33:28,547 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_NHOMDVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.GridDSNhomDichVuPartial() in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 60 
+2017-07-07 17:36:54,126 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_NHOMDVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.GridDSNhomDichVuPartial() in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 60 
+2017-07-07 17:37:04,044 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_DVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.ft_TimKiem(Int64 nhomId, Int64 banggiaId) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 40 
+2017-07-07 17:37:06,703 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_DVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.ft_TimKiem(Int64 nhomId, Int64 banggiaId) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 40 
+2017-07-07 17:37:06,914 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_DVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.ft_TimKiem(Int64 nhomId, Int64 banggiaId) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 40 
+2017-07-07 17:37:07,109 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_DVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.ft_TimKiem(Int64 nhomId, Int64 banggiaId) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 40 
+2017-07-07 17:43:25,882 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_NHOMDVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.GridDSNhomDichVuPartial() in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 60 
+2017-07-07 17:43:37,044 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_NHOMDVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.GridDSNhomDichVuPartial() in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 60 
+2017-07-07 17:47:29,249 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_NHOMDVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.GridDSNhomDichVuPartial() in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 60 
+2017-07-07 17:47:43,472 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_NHOMDVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.GridDSNhomDichVuPartial() in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 60 
+2017-07-07 17:48:27,531 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_NHOMDVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.GridDSNhomDichVuPartial() in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 60 
+2017-07-07 17:48:32,145 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_DVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.ft_TimKiem(Int64 nhomId, Int64 banggiaId) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 40 
+2017-07-07 17:48:32,499 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_DVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.ft_TimKiem(Int64 nhomId, Int64 banggiaId) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 40 
+2017-07-07 17:48:32,936 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_DVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.ft_TimKiem(Int64 nhomId, Int64 banggiaId) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 40 
+2017-07-07 17:48:33,136 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_DVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.ft_TimKiem(Int64 nhomId, Int64 banggiaId) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 40 
+2017-07-07 17:48:40,632 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_DVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.ft_TimKiem(Int64 nhomId, Int64 banggiaId) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 40 
+2017-07-07 17:48:40,857 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_DVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.ft_TimKiem(Int64 nhomId, Int64 banggiaId) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 40 
+2017-07-07 17:48:41,081 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_DVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.ft_TimKiem(Int64 nhomId, Int64 banggiaId) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 40 
+2017-07-07 17:48:41,274 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_DVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.ft_TimKiem(Int64 nhomId, Int64 banggiaId) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 40 
+2017-07-07 17:49:49,904 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_NHOMDVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.GridDSNhomDichVuPartial() in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 60 
+2017-07-07 17:51:37,392 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_NHOMDVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.GridDSNhomDichVuPartial() in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 60 
+2017-07-07 17:52:09,555 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_NHOMDVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.GridDSNhomDichVuPartial() in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 60 
+2017-07-07 18:05:17,251 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-07-07 18:05:17,667 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-07-07 18:05:17,667 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-07-07 18:05:17,814 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-07-07 18:05:17,835 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-07-07 18:05:32,381 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_NHOMDVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.GridDSNhomDichVuPartial() in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 60 
+2017-07-07 18:06:49,180 ERROR EIS.FEW.Controllers.AccountController - message: No component for supporting the service EIS.Core.IService.IDM_NHOMDVKT_GSService was found
+ stacktrace:    at Castle.MicroKernel.DefaultKernel.Resolve(Type service)
+   at Castle.Windsor.WindsorContainer.Resolve[T]()
+   at FX.Core.IoC.Resolve[T]()
+   at EIS.FEW.Controllers.DM_DVKT_GSController.GridDSNhomDichVuPartial() in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\DM_DVKT_GSController.cs:line 60 

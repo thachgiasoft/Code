@@ -1,0 +1,231 @@
+﻿@model EIS.Core.CustomView.TimeFilter
+<style type="text/css">
+    /*------------HuyPB add--------------*/
+    .timeviewRadiolst {
+        margin-left: -5px;
+        
+    }
+</style>
+<script>
+    function cbx_ThoiGian_SelectedIndexChanged(s, e) {
+        var index = s.GetValue();
+        if (index == 0) {
+            $('#thang').hide();
+            $('#quy').hide();
+            $('#nam').show();
+            $('#tu_ngay').hide();
+            $('#den_ngay').hide();
+        } else if (index == 1) {
+            $('#thang').hide();
+            $('#quy').show();
+            $('#nam').show();
+            $('#tu_ngay').hide();
+            $('#den_ngay').hide();
+        } else if (index == 2) {
+            $('#thang').show();
+            $('#quy').hide();
+            $('#nam').show();
+            $('#tu_ngay').hide();
+            $('#den_ngay').hide();
+        } else if (index == 3) {
+            $('#thang').hide();
+            $('#quy').hide();
+            $('#nam').hide();
+            $('#tu_ngay').show();
+            $('#den_ngay').show();
+        }
+
+    }
+    $(document).ready(function () {
+        var today = new Date();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+
+        cbx_nam.SetValue(yyyy);
+        cbx_thang.SetValue(mm);
+        if (mm <= 3) {
+            cbx_quy.SetValue('I');
+        } else if (mm <= 6) {
+            cbx_quy.SetValue('II');
+        } else if (mm <= 9) {
+            cbx_quy.SetValue('III');
+        } else if (mm <= 12) {
+            cbx_quy.SetValue('IV');
+        }
+    });
+
+</script>
+<div style="width: 300px">
+    @Html.DevExpress().RadioButtonList(rbl =>
+            {
+                rbl.ControlStyle.CssClass = "timeviewRadiolst";
+
+                rbl.Name = "rdb_thoigian";
+                //rbl.Properties.Caption = "Kỳ báo cáo111";
+                rbl.Properties.TextAlign = TextAlign.Right;
+                rbl.Width = Unit.Percentage(100);
+                rbl.Properties.ValueField = "Key";
+                rbl.Properties.TextField = "Value";
+                rbl.Properties.RepeatLayout = RepeatLayout.Table;
+                rbl.Properties.RepeatDirection = RepeatDirection.Vertical;
+                rbl.Properties.RepeatColumns = 4;
+                rbl.Properties.ValueType = typeof(int?);
+                rbl.Properties.DataSource = EIS.Core.Common.Common.KyBaoCao;
+                rbl.ControlStyle.Border.BorderStyle = System.Web.UI.WebControls.BorderStyle.None;
+                rbl.Properties.ClientSideEvents.SelectedIndexChanged = "cbx_ThoiGian_SelectedIndexChanged";
+            }).BindList(EIS.Core.Common.Common.KyBaoCao).GetHtml()
+</div>
+<table style="width: 60%">
+    @*@Html.DevExpress().ComboBox(item =>
+        {
+            item.Width = Unit.Percentage(100);
+            item.Name = "cbx_thoigian";
+            item.Properties.Width = Unit.Percentage(100);
+            item.Properties.Caption = "Thời gian ";
+            item.Properties.ValueField = "Key";
+            item.Properties.TextField = "Value";
+            item.Properties.ValueType = typeof(int?);
+            item.SelectedIndex = 3;
+            item.Properties.ClientSideEvents.SelectedIndexChanged = "SelectedIndexChanged";
+        }).BindList(EIS.Core.Common.Common.thoiGians).GetHtml()*@
+    @*@Html.DevExpress().ComboBoxFor(model => model.thoiGian,
+        settings =>
+        {
+            settings.Width = Unit.Percentage(100);
+            settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+            settings.Name = "cbx_thoigian";
+            settings.SelectedIndex = 3;
+            settings.Properties.Width = Unit.Percentage(100);
+            settings.Properties.Caption = "Thời gian ";
+            settings.Properties.ValueField = "Key";
+            settings.Properties.TextField = "Value";
+            settings.Properties.ValueType = typeof(int?);
+            settings.Properties.ClientSideEvents.SelectedIndexChanged = "cbx_ThoiGian_SelectedIndexChanged";
+        }).BindList(EIS.Core.Common.Common.thoiGians).GetHtml()*@
+
+    <tr>
+        <td style="width: 25%; padding-right: 5px">
+            <div id="thang" style="display: none">
+                @*@Html.DevExpress().ComboBox(item =>
+                    {
+                        item.Width = Unit.Percentage(100);
+                        item.Name = "cbx_thang";
+                        item.Properties.ValueType = typeof(int?);
+                        item.Properties.NullText = "Tháng";
+                        item.Properties.Width = Unit.Percentage(100);
+                    }).BindList(EIS.Core.Common.Common.thangs).GetHtml()*@
+                @Html.DevExpress().ComboBoxFor(model => model.thang,
+                    settings =>
+                    {
+                        
+                        settings.Width = Unit.Percentage(100);
+                        settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                        settings.Name = "cbx_thang";
+                        settings.Properties.ValueType = typeof(int?);
+                        settings.Properties.NullText = "Tháng";
+                        settings.Properties.Width = Unit.Percentage(100);
+                    }).BindList(EIS.Core.Common.Common.thangs).GetHtml()
+            </div>
+            <div id="quy" style="display: none">
+                @*@Html.DevExpress().ComboBox(item =>
+                    {
+                        item.Width = Unit.Percentage(100);
+                        item.Name = "cbx_quy";
+                        item.Properties.Width = Unit.Percentage(100);
+                        item.Properties.ValueField = "key";
+                        item.Properties.TextField = "value";
+                        item.Properties.ValueType = typeof(int?);
+                        item.Properties.NullText = "Quý";
+                    }).BindList(EIS.Core.Common.Common.quys).GetHtml()*@
+                @Html.DevExpress().ComboBoxFor(model => model.quy,
+                    settings =>
+                    {
+                        settings.Width = Unit.Percentage(100);
+                        settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                        settings.Name = "cbx_quy";
+                        settings.Properties.Width = Unit.Percentage(100);
+                        settings.Properties.ValueField = "key";
+                        settings.Properties.TextField = "value";
+                        settings.Properties.ValueType = typeof(int?);
+                        settings.Properties.NullText = "Quý";
+                    }).BindList(EIS.Core.Common.Common.quys).GetHtml()
+            </div>
+            <div id="tu_ngay">
+                @*@Html.DevExpress().DateEdit(item =>
+                    {
+                        item.Width = Unit.Percentage(100);
+                        item.Name = "dt_tungay";
+                        item.Properties.Width = Unit.Percentage(100);
+                        item.Properties.EditFormat = EditFormat.Custom;
+                        item.Properties.DisplayFormatInEditMode = true;
+                        item.Properties.DisplayFormatString = "dd/MM/yyyy";
+                        item.Properties.EditFormatString = "dd/MM/yyyy";
+                        item.Properties.NullText = "Từ ngày";
+                        item.Date = System.DateTime.Today;
+                    }).GetHtml()*@
+                @Html.DevExpress().DateEditFor(model => model.tuNgay,
+                    settings =>
+                    {
+                        settings.Width = Unit.Percentage(100);
+                        settings.Name = "dt_tungay";
+                        settings.Properties.Width = Unit.Percentage(100);
+                        settings.Properties.EditFormat = EditFormat.Custom;
+                        settings.Properties.DisplayFormatInEditMode = true;
+                        settings.Properties.DisplayFormatString = "dd/MM/yyyy";
+                        settings.Properties.EditFormatString = "dd/MM/yyyy";
+                        settings.Properties.NullText = "Từ ngày";
+                    }).GetHtml()
+            </div>
+        </td>
+        <td style="width: 25%">
+            <div id="nam" style="display: none">
+                @*@Html.DevExpress().ComboBox(item =>
+                    {
+                        item.Width = Unit.Percentage(100);
+                        item.Name = "cbx_nam";
+                        item.Properties.Width = Unit.Percentage(100);
+                        item.Properties.ValueType = typeof(int?);
+                        item.Properties.NullText = "Năm";
+                        //item.SelectedIndex = System.DateTime.Today.Year;
+                    }).BindList(EIS.Core.Common.Common.nams).GetHtml()*@
+                @Html.DevExpress().ComboBoxFor(model => model.nam,
+                    settings =>
+                    {
+                        settings.Width = Unit.Percentage(100);
+                        settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                        settings.Name = "cbx_nam";
+                        settings.Properties.Width = Unit.Percentage(100);
+                        settings.Properties.ValueType = typeof(int?);
+                        settings.Properties.NullText = "Năm";
+                    }).BindList(EIS.Core.Common.Common.nams).GetHtml()
+            </div>
+            <div id="den_ngay">
+                @*@Html.DevExpress().DateEdit(item =>
+                    {
+                        item.Width = Unit.Percentage(100);
+                        item.Name = "dt_denngay";
+                        item.Properties.Width = Unit.Percentage(100);
+                        item.Properties.EditFormat = EditFormat.Custom;
+                        item.Properties.DisplayFormatInEditMode = true;
+                        item.Properties.DisplayFormatString = "dd/MM/yyyy";
+                        item.Properties.EditFormatString = "dd/MM/yyyy";
+                        item.Properties.NullText = "Đến ngày";
+                        item.Date = System.DateTime.Today;
+                    }).GetHtml()*@
+                @Html.DevExpress().DateEditFor(model => model.denNgay,
+                    settings =>
+                    {
+                        settings.Width = Unit.Percentage(100);
+                        settings.Name = "dt_denngay";
+                        settings.Properties.Width = Unit.Percentage(100);
+                        settings.Properties.EditFormat = EditFormat.Custom;
+                        settings.Properties.DisplayFormatInEditMode = true;
+                        settings.Properties.DisplayFormatString = "dd/MM/yyyy";
+                        settings.Properties.EditFormatString = "dd/MM/yyyy";
+                        settings.Properties.NullText = "Đến ngày";
+                    }).GetHtml()
+            </div>
+        </td>
+    </tr>
+
+</table>

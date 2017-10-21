@@ -1,0 +1,158 @@
+﻿@{
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+
+
+    var type_roll = FX.Core.IoC.Resolve<EIS.Core.IService.ITYPE_ROLEService>();
+    var nhomcn = FX.Core.IoC.Resolve<EIS.Core.IService.INHOMCHUCNANGService>();
+
+    var grid = Html.DevExpress().GridView(
+        settings =>
+        {
+            settings.Name = "gvEditing";
+            settings.KeyFieldName = "roleid";
+            settings.CallbackRouteValues = new { Controller = "RolePms", Action = "RolePartial" };
+            settings.SettingsEditing.Mode = EIS.FEW.Helper.GridViewEditingHelper.EditMode;
+            settings.Width = Unit.Percentage(60);
+            settings.Settings.ShowFilterRow = true;
+            settings.SettingsBehavior.AllowSelectByRowClick = true;
+            settings.Settings.ShowFilterRowMenu = true;
+
+            settings.SettingsPager.Position = PagerPosition.Bottom;
+            settings.SettingsPager.PageSizeItemSettings.Visible = true;
+            settings.SettingsPager.PageSizeItemSettings.Items = new string[] { "10", "15", "20", "25", "30" };
+
+            settings.Columns.Add(s =>
+            {
+                s.Caption = "STT";
+                s.ToolTip = "STT";
+                s.EditFormSettings.Visible = DefaultBoolean.False;
+                s.PropertiesEdit.EnableClientSideAPI = true;
+                s.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+                s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                s.Width = Unit.Percentage(3);
+            });
+            settings.CustomColumnDisplayText = (send, e) =>
+            {
+                if (e.Column.Caption == "STT")
+                {
+                    e.DisplayText = (e.VisibleRowIndex + 1).ToString();
+                }
+            };
+            settings.Columns.Add(col =>
+            {
+                col.FieldName = "roleid";
+                col.Caption = "ID";
+                col.PropertiesEdit.EnableClientSideAPI = true;
+                col.Width = 50;
+                col.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+                col.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                col.Visible = false;
+            });
+            settings.Columns.Add(col =>
+            {
+                col.Settings.AutoFilterCondition = AutoFilterCondition.Contains;
+                col.FieldName = "name";
+                col.Caption = "Tên";
+                col.PropertiesEdit.EnableClientSideAPI = true;
+                col.Width = Unit.Percentage(85);
+                col.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                col.CellStyle.Paddings.PaddingLeft = 50;
+            });
+
+            settings.Columns.Add(column =>
+            {
+                column.Width = Unit.Percentage(10);
+                column.SetDataItemTemplateContent(c =>
+                {
+                    var id = DataBinder.Eval(c.DataItem, "roleid");
+                    Html.DevExpress().HyperLink(hl =>
+                    {
+                        hl.Name = "hlEdit_" + id;
+                        hl.NavigateUrl = Url.Action("EditRole", "RolePms", new { roleId = id.ToString() });
+                        hl.Properties.ImageUrl = "~/Content/Images/Edit_16x16.png";
+                        hl.ToolTip = "Sửa nhóm quyền";
+                              
+                    }).Render();
+
+                    ViewContext.Writer.Write("  ");
+                    Html.DevExpress().HyperLink(hl =>
+                    {
+                        hl.Name = "hlDelete_" + id;
+                        hl.NavigateUrl = "javascript:;";
+                        hl.ToolTip = "Xóa nhóm quyền";
+
+                        int roleid = int.Parse(id.ToString());
+
+                        if ((bool)Session["CheckStatusAdminRoot"])
+                        {
+                            if (roleid != 76 && roleid != 77 && roleid != 79 && roleid != 183 && roleid != 184 && roleid != 203 && roleid != 204 && roleid != 205 && roleid != 206 && roleid != 207 && roleid != 208)
+                            {
+                                hl.Properties.ClientSideEvents.Click = string.Format("function(s, e) {{ if(confirm('Bạn có thực sự muốn xóa phân quyền này ?'))  DeleteRole(" + id.ToString() + ");   }}");
+                                hl.Properties.ImageUrl = "~/Content/Images/Delete_16x16.png";
+                            }
+                            else
+                            {
+                                hl.Properties.ImageUrl = "~/Content/Images/lockdeleteicon16x16.png";
+                            }
+                        }
+                        else
+                        {
+                            List<long> _lstGetTypeRole = (List<long>)Session["_lstGetTypeRole"];
+
+                            if (_lstGetTypeRole.Contains(roleid))
+                            {
+                                hl.Properties.ClientSideEvents.Click = string.Format("function(s, e) {{ if(confirm('Bạn có thực sự muốn xóa phân quyền này ?'))  DeleteRole(" + id.ToString() + ");   }}");
+                                hl.Properties.ImageUrl = "~/Content/Images/Delete_16x16.png";
+                            }
+                            else
+                            {
+                                hl.Properties.ImageUrl = "~/Content/Images/lockdeleteicon16x16.png";
+                            }
+                        }
+                    }).Render();
+
+                    ViewContext.Writer.Write("  ");
+                    Html.DevExpress().HyperLink(hl =>
+                    {
+
+                        hl.Name = "hlEditCoppy_" + id;
+                        hl.ToolTip = "Coppy quyền";
+
+                        var roleid = int.Parse(id.ToString());
+
+                        var itemtyperole = nhomcn.UserPhanQuyen(roleid);
+
+                        if (itemtyperole)
+                        {
+                            hl.NavigateUrl = Url.Action("EditRoleCoppy", "RolePms", new { roleId = id.ToString() });
+                            hl.Properties.ImageUrl = "~/Content/Images/icon_copy.png";
+                        }
+                        else
+                        {
+                            hl.Properties.ImageUrl = "~/Content/Images/lockdeleteicon16x16.png";
+                        }                        
+                        
+                    }).Render();
+                    
+                });
+                column.SetHeaderCaptionTemplateContent(c => Html.DevExpress().HyperLink(hl =>
+                {
+                    hl.Name = "hlNew";
+                    hl.NavigateUrl = Url.Action("AddNewRole", "RolePms");
+                    hl.ToolTip = "Tạo mới nhóm quyền";
+                    hl.Properties.ImageUrl = "~/Content/Images/add2.png";
+                }).Render());
+
+                column.Width = 50;
+                column.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                column.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+            });
+        });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()
+

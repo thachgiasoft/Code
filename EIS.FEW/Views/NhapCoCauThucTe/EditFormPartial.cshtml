@@ -1,0 +1,134 @@
+﻿@model EIS.FEW.Models.CoCauThucTeChiTietItem
+@{
+    FX.Core.IoC.Resolve<EIS.Core.IService.ICOCAUGIA_LOAIService>().GetAll();
+}
+@Html.DevExpress().FormLayout(settings =>
+{
+    settings.Name = "FormLayout";
+    settings.SettingsItems.ShowCaption = DefaultBoolean.True;
+    settings.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Left;
+    settings.ColCount = 3;
+
+    settings.Items.Add(i =>
+    {
+        i.FieldName = "IDLoai";
+        i.Caption = "Loại";
+        i.ColSpan = 3;
+        i.NestedExtension().ComboBox(s =>
+        {
+            s.Properties.TextField = "TEN";
+            s.Properties.ValueField = "ID";
+            s.Properties.ValueType = typeof(string);
+            s.Properties.DataSource = FX.Core.IoC.Resolve<EIS.Core.IService.ICOCAUGIA_LOAIService>().GetAll();
+            s.Width = Unit.Percentage(100);
+        });
+    });
+
+    settings.Items.Add(i =>
+    {
+        i.FieldName = "MaCoCau";
+        i.Caption = "Mã";
+        i.ColSpan = 3;
+        i.NestedExtension().TextBox(s =>
+        {
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            s.ShowModelErrors = true;
+            s.Width = Unit.Percentage(100);
+        });
+    });
+    settings.Items.Add(i =>
+    {
+        i.FieldName = "TenCoCauOld";
+        i.Caption = "Tên Cơ Câu 37";
+        i.NestedExtension().TextBox(s =>
+        {
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            s.ShowModelErrors = true;
+            s.Width = Unit.Percentage(100);
+        });
+    });
+    settings.Items.Add(i =>
+    {
+        i.FieldName = "SoLuongOld";
+        i.Caption = "Số lượng Cơ Câu 37";
+        i.NestedExtension().TextBox(s =>
+        {
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            s.ShowModelErrors = true;
+            s.Width = Unit.Percentage(100);
+        });
+    });
+    settings.Items.Add(i =>
+    {
+        i.FieldName = "DonGiaOld";
+        i.Caption = "Đơn giá Cơ Cấu 37";
+        i.NestedExtension().TextBox(s =>
+        {
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            s.ShowModelErrors = true;
+            s.Width = Unit.Percentage(100);
+        });
+    });
+    settings.Items.Add(i =>
+    {
+        i.FieldName = "TenCoCauNew";
+        i.Caption = "Tên Cơ Câu Thực Tế";
+        i.NestedExtension().TextBox(s =>
+        {
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            s.ShowModelErrors = true;
+            s.Width = Unit.Percentage(100);
+        });
+    });
+
+    settings.Items.Add(i =>
+    {
+        i.FieldName = "SoLuongNew";
+        i.Caption = "Số lượng thực tế";
+        i.NestedExtension().TextBox(s =>
+        {
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            s.ShowModelErrors = true;
+            s.Width = Unit.Percentage(100);
+        });
+    });
+
+    settings.Items.Add(i =>
+    {
+        i.FieldName = "DonGiaNew";
+        i.Caption = "Đơn giá thực tế";
+        i.NestedExtension().TextBox(s =>
+        {
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            s.ShowModelErrors = true;
+            s.Width = Unit.Percentage(100);
+        });
+    });
+
+    settings.Items.Add(i =>
+    {
+        i.ShowCaption = DefaultBoolean.False;
+    }).SetNestedContent(() =>
+    {
+        ViewContext.Writer.Write("<div style='margin-left: 130px;'>");
+        Html.DevExpress().Button(
+            btnSettings =>
+            {
+                btnSettings.Name = "btnUpdate";
+                btnSettings.Text = "Lưu";
+                btnSettings.ClientSideEvents.Click = "function(s, e){ gvChiTietDichVu.UpdateEdit(); }";
+            }).Render();
+        Html.DevExpress().Button(
+            btnSettings =>
+            {
+                btnSettings.Name = "btnCancel";
+                btnSettings.Text = "Hủy";
+                btnSettings.Style[HtmlTextWriterStyle.MarginLeft] = "5px";
+                btnSettings.ClientSideEvents.Click = "function(s, e){ gvChiTietDichVu.CancelEdit(); }";
+            }).Render();
+        ViewContext.Writer.Write("</div>");
+    });
+}).GetHtml();
+
+
+

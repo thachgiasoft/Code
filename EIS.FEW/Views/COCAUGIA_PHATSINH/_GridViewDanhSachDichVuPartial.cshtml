@@ -1,0 +1,69 @@
+﻿@{
+    FX.Core.IoC.Resolve<EIS.Core.IService.IDMTINHTHANHService>();
+}
+
+@{
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+    var grid = Html.DevExpress().GridView(
+         settings =>
+         {
+             settings.Name = "gridviewDanhSach";
+             settings.KeyFieldName = "ID";
+             settings.CallbackRouteValues = new { Controller = "COCAUGIA_PHATSINH", Action = "_GridViewDanhSachDichVuPartial" };
+             settings.CustomActionRouteValues = new { Controller = "COCAUGIA_PHATSINH", Action = "_GridViewDanhSachDichVuFilter", };
+             settings.ClientSideEvents.FocusedRowChanged = "FilterChiTiet";
+             
+             settings.SettingsBehavior.AllowSelectByRowClick = true;
+             settings.SettingsBehavior.EnableCustomizationWindow = true;
+             settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.Control;
+
+             settings.SettingsPager.PageSize = 100;
+             settings.SettingsPager.Visible = false;
+             
+             settings.Settings.VerticalScrollBarMode = ScrollBarMode.Auto;
+             settings.Settings.HorizontalScrollBarMode = ScrollBarMode.Auto;
+             settings.Settings.VerticalScrollableHeight = 380;
+             settings.Settings.ShowFilterRow = true;
+             settings.Styles.EmptyDataRow.CssClass = "emptyRow";
+
+             settings.Settings.ShowFilterRowMenu = true;
+             settings.SettingsContextMenu.Enabled = true;
+             settings.SettingsBehavior.AllowSelectByRowClick = true;
+             settings.EncodeHtml = false;
+             
+             settings.SettingsBehavior.AllowFocusedRow = true;
+
+             settings.Width = Unit.Percentage(100);
+             
+             settings.Columns.Add(s =>
+             {
+                 s.FieldName = "MA_DICHVU21";
+                 s.Caption = "Mã";
+                 s.Width = Unit.Percentage(30);
+             });
+             settings.Columns.Add(s =>
+             {
+                 s.FieldName = "TEN_DICHVU21";
+                 s.Caption = "Tên";
+                 s.Width = Unit.Percentage(70);
+             });
+
+             //settings.CommandColumn.FixedStyle = GridViewColumnFixedStyle.Left;
+             //settings.CommandColumn.ShowSelectCheckbox = true;
+             //settings.CommandColumn.Visible = true;
+             //settings.CommandColumn.Width = 30;
+             //settings.CommandColumn.SelectAllCheckboxMode = EIS.FEW.Helper.GridViewSelectionHelper.SelectAllButtonMode;
+
+             settings.Settings.ShowTitlePanel = true;
+             settings.SetTitlePanelTemplateContent(c =>
+             {
+                 ViewContext.Writer.Write(string.Format("<span>Danh sách dịch vụ</span>"));
+             });
+         });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

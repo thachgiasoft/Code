@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu>
+  <item Text="" ImageUrl="~/Content/Images/Icon/logo_bhxh.png" NavigateUrl="/Home" />
+  <group Text="Trợ giúp">
+    <item Text="Câu hỏi thường gặp" NavigateUrl="" />
+    <item Text="Giới thiệu" NavigateUrl="" />
+  </group>
+</menu>

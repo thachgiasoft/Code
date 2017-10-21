@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+<class name="EIS.Core.Domain.DM_TINHTHANH, EIS.Core" table="DM_TINHTHANH" >
+  <id name="ID" column="ID">
+    <generator class="sequence-identity">
+      <param name="sequence">DM_TINHTHANH_SEQ</param>
+    </generator>
+  </id>
+  <property name="TEN" column="TEN" type="string" length="255" />
+  <property name="MA" column="MA" type="string" length="50" />
+  <property name="QUOCGIA_ID" column="QUOCGIA_ID" type="Int64"/>
+  <property name="HIEULUC" column="HIEULUC" type="bool"/>
+  <property name="STT" column="STT" type="int"/>
+  <property name="MIEUTA" column="MIEUTA" type="string" length="2000"/>
+  <property name="KHUVUC_ID" column="KHUVUC_ID" type="Int64"/>
+
+  <!--<many-to-one name="DM_QUOCGIA" class="EIS.Core.Domain.DM_QUOCGIA, EIS.Core" insert="false" update="false">
+    <column name="QUOCGIA_ID" not-null="false"/>
+  </many-to-one>-->
+
+  <!--<bag name="DM_QUANHUYENs" inverse="true" cascade="all" lazy="false">
+    <key>
+      <column name="TINHTHANH_ID" />
+    </key>
+    <one-to-many class="EIS.Core.Domain.DM_QUANHUYEN, EIS.Core"/>
+  </bag>-->
+</class>
+</hibernate-mapping>

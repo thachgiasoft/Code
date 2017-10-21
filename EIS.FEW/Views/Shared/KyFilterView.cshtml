@@ -1,0 +1,254 @@
+﻿@model EIS.Core.CustomView.KyFilter
+<script>
+    //$(document).ready(function () {
+    //    //$('#thang').hide();
+    //    //$('#quy').hide();
+    //    //$('#nam').hide();
+    //    //$('#giai_doan').hide();
+    //    //$('#tu_ngay').hide();
+    //    //$('#den_ngay').hide();
+    //    cbx_ThoiGian_SelectedIndexChanged(cbx_thoigian, 1);
+    //});
+
+    $(document).ready(function () {
+        var thoiGian = cbx_thoigian.GetValue();
+        showHide(thoiGian);
+    });
+    function cbx_tuthag_ValueChanged() {
+        if (cbx_tuthag.GetValue() != null && cbx_tuthag.GetValue() != null && parseInt(cbx_tuthag.GetValue()) > parseInt(cbx_denthag.GetValue())) {
+            pupNoteKyFilter.SetContentHtml("Từ tháng phải nhỏ hơn hoặc bằng đến tháng!")
+            pupNoteKyFilter.Show();
+            cbx_tuthag.SetValue(1);
+        }
+    }
+    function cbx_denthag_ValueChanged() {
+        if (cbx_tuthag.GetValue() != null && cbx_tuthag.GetValue() != null && parseInt(cbx_tuthag.GetValue()) > parseInt(cbx_denthag.GetValue())) {
+            pupNoteKyFilter.SetContentHtml("Đến tháng phải lớn hơn hoặc bằng từ tháng!")
+            pupNoteKyFilter.Show();
+            cbx_denthag.SetValue(12);
+        }
+    }
+    function cbx_ThoiGian_SelectedIndexChanged(s, e) {
+        var thoiGian = s.GetValue();
+        showHideChange(thoiGian);
+    }
+    function showHide(thoiGian) {
+        switch (thoiGian) {
+            case 0: { //Nam
+                $('#thang').hide();
+                $('#quy').hide();
+                $('#nam').show();
+                $('#giai_doan').hide();
+                $('#tu_thang').hide();
+                $('#den_thang').hide();
+                break;
+            }
+            case 1: { //quý
+                $('#thang').hide();
+                $('#quy').show();
+                $('#nam').show();
+                $('#giai_doan').hide();
+                $('#tu_thang').hide();
+                $('#den_thang').hide();
+                break;
+            }
+            case 2: { //thang
+                $('#thang').show();
+                $('#quy').hide();
+                $('#nam').show();
+                $('#giai_doan').hide();
+                $('#tu_thang').hide();
+                $('#den_thang').hide();
+                break;
+            }
+            case 3: { //tuthang - den thang
+                $('#thang').hide();
+                $('#quy').hide();
+                $('#nam').show();
+                $('#giai_doan').show();
+                $('#tu_thang').show();
+                $('#den_thang').show();
+                break;
+            }
+            default: {
+                $('#thang').hide();
+                $('#quy').hide();
+                $('#nam').hide();
+                $('#giai_doan').hide();
+                $('#tu_thang').hide();
+                $('#den_thang').hide();
+            }
+        }
+    }
+
+    function showHideChange(thoiGian) {
+        var now = new Date();
+        switch (thoiGian) {
+            case 0: { //Nam
+                $('#thang').hide();
+                $('#quy').hide();
+                $('#nam').show();
+                $('#giai_doan').hide();
+                $('#tu_thang').hide();
+                $('#den_thang').hide();
+                //cbx_thang.SetValue(now.getMonth() + 1)
+                cbx_nam.SetValue(now.getFullYear());
+                break;
+            }
+            case 1: { //quý
+                $('#thang').hide();
+                $('#quy').show();
+                $('#nam').show();
+                $('#giai_doan').hide();
+                $('#tu_thang').hide();
+                $('#den_thang').hide();
+                cbx_quy.SetValue(Math.floor(now.getMonth() / 3) + 1)
+                cbx_nam.SetValue(now.getFullYear());
+                break;
+            }
+            case 2: { //thang
+                $('#thang').show();
+                $('#quy').hide();
+                $('#nam').show();
+                $('#giai_doan').hide();
+                $('#tu_thang').hide();
+                $('#den_thang').hide();
+                cbx_thang.SetValue(now.getMonth() + 1);
+                cbx_nam.SetValue(now.getFullYear());
+                break;
+            }
+            case 3: { //tuthang - den thang
+                $('#thang').hide();
+                $('#quy').hide();
+                $('#nam').show();
+                $('#giai_doan').show();
+                $('#tu_thang').show();
+                $('#den_thang').show();
+                cbx_tuthag.SetValue(now.getMonth() + 1);
+                cbx_denthag.SetValue(now.getMonth() + 1);
+                cbx_nam.SetValue(now.getFullYear());
+                break;
+            }
+            default: {
+                $('#thang').hide();
+                $('#quy').hide();
+                $('#nam').hide();
+                $('#giai_doan').hide();
+                $('#tu_thang').hide();
+                $('#den_thang').hide();
+            }
+        }
+    }
+</script>
+
+<table style="width:100%">
+    <tr>
+        <td style="width: 40%; padding-right:5px">
+           @Html.DevExpress().ComboBoxFor(model => model.thoiGian,
+                settings =>
+                {
+                    settings.Width = Unit.Percentage(100);
+                    settings.Properties.DropDownStyle = DropDownStyle.DropDownList;
+                    settings.Name = "cbx_thoigian";
+                    settings.Properties.Width = Unit.Percentage(100);
+                    settings.Properties.Caption = "";
+                    settings.Properties.ValueField = "Key";
+                    settings.Properties.TextField = "Value";
+                    settings.Properties.ValueType = typeof(int?);
+                    settings.Properties.ClientSideEvents.SelectedIndexChanged = "cbx_ThoiGian_SelectedIndexChanged";
+                }).BindList(EIS.Core.Common.Common.thoiGians).GetHtml()
+        </td>
+        <td style="width: 30%; padding-right: 5px">
+            <div id="thang" style="display:none">
+                @Html.DevExpress().ComboBoxFor(model => model.thang,
+                   settings =>
+                   {
+                       settings.Width = Unit.Percentage(100);
+                       settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                       settings.Name = "cbx_thang";
+                       settings.Properties.ValueType = typeof(int?);
+                       settings.Properties.NullText = "Tháng";
+                       settings.Properties.Width = Unit.Percentage(100);
+                   }).BindList(EIS.Core.Common.Common.thangs).GetHtml()
+            </div>
+            <div id="quy" style="display:none">
+                @Html.DevExpress().ComboBoxFor(model => model.quy,
+                   settings =>
+                   {
+                       settings.Width = Unit.Percentage(100);
+                       settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                       settings.Name = "cbx_quy";
+                       settings.Properties.Width = Unit.Percentage(100);
+                       settings.Properties.ValueField = "key";
+                       settings.Properties.TextField = "value";
+                       settings.Properties.ValueType = typeof(int?);
+                       settings.Properties.NullText = "Quý";
+                   }).BindList(EIS.Core.Common.Common.quys).GetHtml()
+            </div>
+            <table id="giai_doan" style="display:none">
+                <tr>
+                    <td style="padding-right:3px">
+                        <div id="tu_thang">
+                            @Html.DevExpress().ComboBoxFor(model => model.tuthang,
+                   settings =>
+                   {
+                       settings.Width = Unit.Percentage(100);
+                       settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                       settings.Name = "cbx_tuthag";
+                       settings.Properties.ValueType = typeof(int?);
+                       settings.Properties.NullText = "Từ tháng";
+                       settings.Properties.Width = Unit.Percentage(100);
+                       settings.Properties.ClientSideEvents.ValueChanged = "cbx_tuthag_ValueChanged";
+                   }).BindList(EIS.Core.Common.Common.thangs).GetHtml()
+                        </div>
+                    </td>
+                    <td style="padding-left:2px">
+                        <div id="den_thang">
+                            @Html.DevExpress().ComboBoxFor(model => model.denthang,
+                   settings =>
+                   {
+                       settings.Width = Unit.Percentage(100);
+                       settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                       settings.Name = "cbx_denthag";
+                       settings.Properties.ValueType = typeof(int?);
+                       settings.Properties.NullText = "đến tháng";
+                       settings.Properties.Width = Unit.Percentage(100);
+                       settings.Properties.ClientSideEvents.ValueChanged = "cbx_denthag_ValueChanged";
+                   }).BindList(EIS.Core.Common.Common.thangs).GetHtml()
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td style="width:30%">
+            <div id="nam" style="display:none">
+                @Html.DevExpress().ComboBoxFor(model => model.nam,
+                settings =>
+                {
+                    settings.Width = Unit.Percentage(100);
+                    settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                    settings.Name = "cbx_nam";
+                    settings.Properties.Width = Unit.Percentage(100);
+                    settings.Properties.ValueType = typeof(int?);
+                    settings.Properties.NullText = "Năm";
+                }).BindList(EIS.Core.Common.Common.nams).GetHtml()
+            </div>
+
+        </td>
+    </tr>
+</table>
+@Html.DevExpress().PopupControl(
+    settings =>
+    {
+        settings.Name = "pupNoteKyFilter";
+        settings.HeaderText = "Thông báo";
+        //settings.SetContent("");
+        settings.Width = 300;
+        settings.Height = 100;
+        settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+        settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+        settings.CloseOnEscape = true;
+        settings.Modal = true;
+        settings.AllowDragging = true;
+        settings.CloseAction = CloseAction.OuterMouseClick;
+    }).GetHtml()

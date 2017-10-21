@@ -1,0 +1,52 @@
+﻿@using IdentityManagement.Domain
+@using EIS.Core.CustomView
+@model UserNonGroupViewModel
+
+@Html.DevExpress().GridView(g =>
+{
+    g.Name = "UsersOfGroups";
+    g.KeyFieldName = "userid";
+    g.CallbackRouteValues = new { Controller = "GroupUser", Action = "LoadUserNonOfGroup" };
+    g.CustomActionRouteValues = new { Controller = "GroupUser", Action = "LoadUserNonOfGroupCustom" };
+    g.CommandColumn.Visible = true;
+    g.CommandColumn.SelectAllCheckboxMode = GridViewSelectAllCheckBoxMode.Page;
+    g.CommandColumn.ShowSelectCheckbox = true;
+    g.CommandColumn.Width = Unit.Pixel(30);
+    g.SettingsLoadingPanel.Text = @"Vui lòng đợi trong giây lát!";
+    g.CommandColumn.Caption = " ";
+    g.Settings.ShowFilterRow = true;
+    g.Settings.ShowFilterRowMenu = true;
+    //g.SettingsBehavior.FilterRowMode = GridViewFilterRowMode.Auto;
+    g.SettingsPager.PageSize = 10;
+    g.Width = Unit.Percentage(98);
+
+    g.Columns.Add(s =>
+    {
+        s.FieldName = "username";
+        s.Caption = "Tên đăng nhập";
+        s.Settings.AutoFilterCondition = AutoFilterCondition.Contains;
+        s.CellStyle.HorizontalAlign = HorizontalAlign.Left;
+        s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+    });
+    //g.Width = Unit.Pixel(200);
+    g.AfterPerformCallback += (s, e) =>
+    {
+        var grid = s as MVCxGridView;
+        if (Model.userIdOfGroup.Count > 0)
+        {
+            foreach (var userId in Model.userIdOfGroup)
+            {
+                grid.Selection.SetSelectionByKey(userId, true);
+            }
+        }
+        //else
+        //{
+        //    grid.Selection.UnselectAll();
+        //}
+    };
+}).Bind(Model.users).GetHtml()
+@*.BindToLINQ(string.Empty, string.Empty, (s, e) =>
+ {
+     e.KeyExpression = "userid";
+     e.QueryableSource = Model.users.AsQueryable();
+ }).GetHtml()*@

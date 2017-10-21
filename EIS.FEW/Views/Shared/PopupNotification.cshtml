@@ -1,0 +1,61 @@
+﻿
+@Html.DevExpress().PopupControl(settings =>
+{
+    settings.Name = "PopupNotification";
+    settings.ShowHeader = true;
+    settings.AllowDragging = true;
+    settings.AllowResize = true;
+    settings.Width = Unit.Pixel(300);
+    settings.PopupAction = PopupAction.None;
+    settings.PopupElementID = "GridView1";
+    settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.HeaderText = "Cảnh báo!";
+    settings.SetContent(() =>
+    {
+        ViewContext.Writer.Write("<table style='width:460px'><tr><td style='padding : 5px; text-align: center;'>");
+        ViewContext.Writer.Write("<img src=\"/Content/Images/Icon-flat/warning-32.png\" height=\"24\" width=\"24\"></td>");
+        ViewContext.Writer.Write("<td style='padding : 5px; text-align: left;'><span id=\"noidung\"></span></td></tr>");
+        ViewContext.Writer.Write("<tr><td colspan='2' style='padding : 5px; text-align: right;'>");
+        @Html.DevExpress().Button(buttonSettings =>
+        {
+            buttonSettings.Name = "ButtonYes1";
+            buttonSettings.Text = "Có";
+            buttonSettings.UseSubmitBehavior = false;
+            buttonSettings.ClientSideEvents.Click = "OnClickYes1";
+        }).Render();
+        @Html.DevExpress().Button(buttonSettings =>
+        {
+            buttonSettings.Name = "ButtonNo1";
+            buttonSettings.Text = "Không";
+            buttonSettings.UseSubmitBehavior = false;
+            buttonSettings.ClientSideEvents.Click = "function(s, e) {PopupNotification.Hide();}";
+        }).Render();
+        ViewContext.Writer.Write("</td></tr></table>");
+    });
+}).GetHtml()
+
+@Html.DevExpress().PopupControl(
+    settings =>
+    {
+        settings.Name = "popup_message";
+        settings.HeaderText = "Thông báo";
+        settings.Width = 400;
+        settings.Height = 100;
+        settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+        settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+        settings.CloseOnEscape = true;
+        settings.Modal = true;
+        settings.AllowDragging = true;
+        settings.CloseAction = CloseAction.OuterMouseClick;
+    }).GetHtml()
+
+@Html.DevExpress().LoadingPanel(
+    settings =>
+    {
+        settings.Name = "LoadingPanelNotification";
+        settings.Modal = true;
+        settings.ControlStyle.HorizontalAlign = HorizontalAlign.Center;
+        settings.Text = "Xin vui lòng đợi trong giây lát";
+    }
+).GetHtml()

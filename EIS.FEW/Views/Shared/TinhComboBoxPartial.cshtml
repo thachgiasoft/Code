@@ -1,0 +1,23 @@
+﻿@{
+    var filter = new EIS.FEW.Helper.DM_KHOALargeDatabaseDataProvider();
+}
+
+@Html.DevExpress().ComboBox(
+    settings =>
+    {
+        settings.Name = "cbc_cosokcb";
+        settings.Width = 230;
+        settings.Properties.DropDownWidth = 350;
+        settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+        settings.CallbackRouteValues = new { Controller = "BHYT_15Report", Action = "CSKCBComboBoxPartial" };
+        settings.Properties.CallbackPageSize = 15;
+        settings.Properties.TextField = "ID";
+        settings.Properties.TextFormatString = "{0} {1}";
+        settings.Properties.ValueField = "ID";
+        settings.Properties.ValueType = typeof(string);
+        settings.Properties.FilterMinLength = 0;
+        settings.Properties.Caption = "Cơ sở KCB";
+        settings.Properties.Columns.Add("MA", "Mã", 50);
+        settings.Properties.Columns.Add("TEN", "Tên", 200);
+        settings.Properties.DataSource = ViewBag.CSKCB;
+    }).BindList(ViewBag.CSKCB).GetHtml()

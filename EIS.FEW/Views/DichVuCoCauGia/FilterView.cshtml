@@ -1,0 +1,193 @@
+﻿@model EIS.FEW.Models.COCAUGIA_DICHVU_FILTER
+
+@Html.DevExpress().FormLayout(settings =>
+{
+    settings.Name = "formLayout";
+    settings.EncodeHtml = false;
+    settings.Width = Unit.Percentage(95);
+    settings.ColCount = 9;
+    
+    settings.Items.Add(item =>
+    {
+        item.FieldName = "MA_TINHTHANH";
+        item.Caption = "Tỉnh thành";
+        item.Width = Unit.Percentage(20);
+        item.NestedExtensionType = FormLayoutNestedExtensionItemType.ComboBox;
+        item.NestedExtension().ComboBox(cb =>
+        {
+            cb.Name = "cbx_tinh";
+            cb.Width = Unit.Percentage(50);
+            //cb.ControlStyle.CssClass = "form-control";
+            cb.Properties.ClearButton.DisplayMode = ClearButtonDisplayMode.Always;
+            cb.Properties.NullText = "Toàn quốc";
+            cb.Properties.ValueField = "MA";
+            cb.Properties.TextField = "TEN";
+            cb.Properties.ValueType = typeof(string);
+            cb.Properties.DataSource = FX.Core.IoC.Resolve<EIS.Core.IService.IDMTINHTHANHService>().GetAll();
+        });
+    });
+
+    settings.Items.Add(item =>
+    {
+        item.FieldName = "TRANG_THAI";
+        item.Caption = "Trạng thái";
+        item.Width = Unit.Percentage(20);
+        item.NestedExtensionType = FormLayoutNestedExtensionItemType.ComboBox;
+        item.NestedExtension().ComboBox(cb =>
+        {
+            cb.Name = "cbx_TrangThai";
+            cb.Width = Unit.Percentage(50);
+            //cb.ControlStyle.CssClass = "form-control";
+            cb.Properties.NullText = "Tất cả";
+            cb.Properties.ValueType = typeof(string);
+            cb.Properties.DataSource = new string[] { "Chờ duyệt", "Đã duyệt"};
+        });
+    });
+    
+    settings.Items.Add(bt =>
+    {
+        bt.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+        bt.Caption = @" ";
+        bt.Width = Unit.Percentage(5);
+        bt.CaptionSettings.Location = LayoutItemCaptionLocation.Right;
+        bt.NestedExtension().Button(s =>
+        {
+            s.Name = "bt_TimKiem";
+            s.EnableTheming = false;
+            s.Text = "";
+            s.AllowFocus = false;
+            s.RenderMode = ButtonRenderMode.Link;
+            s.Images.Image.SpriteProperties.CssClass = "btnSearch";
+            s.Images.Image.SpriteProperties.HottrackedCssClass = "btnSearchHottracked";
+            s.Images.Image.SpriteProperties.PressedCssClass = "btnSearchPressed";
+            s.ToolTip = "Tìm kiếm";
+            s.ClientSideEvents.Click = "Filter";
+        });
+    });
+
+    settings.Items.Add(bt =>
+    {
+        bt.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+        bt.Caption = @" ";
+        bt.Width = Unit.Percentage(5);
+        bt.CaptionSettings.Location = LayoutItemCaptionLocation.Right;
+        bt.NestedExtension().Button(s =>
+        {
+            s.Name = "bt_ThemMoi";
+            s.EnableTheming = false;
+            s.Text = "";
+            s.AllowFocus = false;
+            s.RenderMode = ButtonRenderMode.Link;
+            s.Images.Image.SpriteProperties.CssClass = "btnAdd";
+            s.Images.Image.SpriteProperties.HottrackedCssClass = "btnAddHottracked";
+            s.Images.Image.SpriteProperties.PressedCssClass = "btnAddPressed";
+            s.ToolTip = "Thêm mới";
+            s.ClientSideEvents.Click = "Add";
+        });
+    });
+
+    settings.Items.Add(bt =>
+    {
+        bt.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+        bt.Caption = @" ";
+        bt.Width = Unit.Percentage(5);
+        bt.CaptionSettings.Location = LayoutItemCaptionLocation.Right;
+        bt.NestedExtension().Button(s =>
+        {
+            s.Name = "bt_Duyet";
+            s.EnableTheming = false;
+            s.Text = "";
+            s.AllowFocus = false;
+            s.RenderMode = ButtonRenderMode.Link;
+            s.Images.Image.SpriteProperties.CssClass = "btnDuyet";
+            s.Images.Image.SpriteProperties.HottrackedCssClass = "btnDuyetHottracked";
+            s.Images.Image.SpriteProperties.PressedCssClass = "btnDuyetPressed";
+            s.ToolTip = "Duyệt";
+            s.ClientSideEvents.Click = "Duyet";
+        });
+    });
+
+    settings.Items.Add(bt =>
+    {
+        bt.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+        bt.Caption = @" ";
+        bt.Width = Unit.Percentage(5);
+        bt.CaptionSettings.Location = LayoutItemCaptionLocation.Right;
+        bt.NestedExtension().Button(s =>
+        {
+            s.Name = "bt_DuyetAll";
+            s.EnableTheming = false;
+            s.Text = "";
+            s.AllowFocus = false;
+            s.RenderMode = ButtonRenderMode.Link;
+            s.Images.Image.SpriteProperties.CssClass = "btnCheckAll";
+            s.Images.Image.SpriteProperties.HottrackedCssClass = "btnCheckAllHottracked";
+            s.Images.Image.SpriteProperties.PressedCssClass = "btnCheckAllPressed";
+            s.ToolTip = "Duyệt tất cả";
+            s.ClientSideEvents.Click = "DuyetAll";
+        });
+    });
+
+    settings.Items.Add(bt =>
+    {
+        bt.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+        bt.Caption = @" ";
+        bt.Width = Unit.Percentage(5);
+        bt.CaptionSettings.Location = LayoutItemCaptionLocation.Right;
+        bt.NestedExtension().Button(s =>
+        {
+            s.Name = "bt_HuyDuyet";
+            s.EnableTheming = false;
+            s.Text = "";
+            s.AllowFocus = false;
+            s.RenderMode = ButtonRenderMode.Link;
+            s.Images.Image.SpriteProperties.CssClass = "btnTuChoiAll";
+            s.Images.Image.SpriteProperties.HottrackedCssClass = "btnTuChoiAllHottracked";
+            s.Images.Image.SpriteProperties.PressedCssClass = "btnTuChoiAllPressed";
+            s.ToolTip = "Huỷ duyệt";
+            s.ClientSideEvents.Click = "HuyDuyet";
+        });
+    });
+
+    settings.Items.Add(bt =>
+    {
+        bt.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+        bt.Caption = @" ";
+        bt.Width = Unit.Percentage(5);
+        bt.CaptionSettings.Location = LayoutItemCaptionLocation.Right;
+        bt.NestedExtension().Button(s =>
+        {
+            s.Name = "bt_Xoa";
+            s.EnableTheming = false;
+            s.Text = "";
+            s.AllowFocus = false;
+            s.RenderMode = ButtonRenderMode.Link;
+            s.Images.Image.SpriteProperties.CssClass = "btnTrash";
+            s.Images.Image.SpriteProperties.HottrackedCssClass = "btnTrashHottracked";
+            s.Images.Image.SpriteProperties.PressedCssClass = "btnTrashPressed";
+            s.ToolTip = "Xoá";
+            s.ClientSideEvents.Click = "Xoa";
+        });
+    });
+
+    settings.Items.Add(bt =>
+    {
+        bt.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+        bt.Caption = @" ";
+        bt.Width = Unit.Percentage(5);
+        bt.CaptionSettings.Location = LayoutItemCaptionLocation.Right;
+        bt.NestedExtension().Button(s =>
+        {
+            s.Name = "bt_TuChoi";
+            s.EnableTheming = false;
+            s.Text = "";
+            s.AllowFocus = false;
+            s.RenderMode = ButtonRenderMode.Link;
+            s.Images.Image.SpriteProperties.CssClass = "btnTuChoi";
+            s.Images.Image.SpriteProperties.HottrackedCssClass = "btnTuChoiHottracked";
+            s.Images.Image.SpriteProperties.PressedCssClass = "btnTuChoiPressed";
+            s.ToolTip = "Từ chối";
+            s.ClientSideEvents.Click = "TuChoi";
+        });
+    });
+}).GetHtml()

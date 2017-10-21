@@ -1,0 +1,245 @@
+﻿@{
+    FX.Core.IoC.Resolve<EIS.Core.IService.ICOCAUGIA_LOAIService>();
+}
+@{
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+    var grid = Html.DevExpress().GridView(
+         settings =>
+         {
+             settings.Name = "gridviewChiTiet";
+             settings.KeyFieldName = "ID";
+             settings.CallbackRouteValues = new { Controller = "COCAUGIA_DICHVU21", Action = "_GridViewChiTietDichVuPartial" };
+             settings.CustomActionRouteValues = new { Controller = "COCAUGIA_DICHVU21", Action = "_GridViewChiTietDichVuFilter" };
+             settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "COCAUGIA_DICHVU21", Action = "UpdateChiTiet" };
+             settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "COCAUGIA_DICHVU21", Action = "AddNewChiTiet" };
+             settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "COCAUGIA_DICHVU21", Action = "DeleteChiTiet" };
+             settings.ClientSideEvents.BeginCallback = "OnBeginCallback";
+             
+             settings.SettingsBehavior.AllowSelectByRowClick = true;
+             settings.SettingsBehavior.EnableCustomizationWindow = true;
+             settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.Control;
+
+             settings.SettingsPager.PageSizeItemSettings.Visible = true;
+             settings.SettingsPager.PageSizeItemSettings.Items = new string[] { "10", "15", "20", "30", "50" };
+             settings.SettingsPager.PageSize = 15;
+             
+             settings.Settings.VerticalScrollBarMode = ScrollBarMode.Auto;
+             settings.Settings.HorizontalScrollBarMode = ScrollBarMode.Auto;
+             settings.Settings.VerticalScrollableHeight = 340;
+             settings.Settings.ShowFilterRow = true;
+             settings.Styles.EmptyDataRow.CssClass = "emptyRow";
+             
+             settings.Settings.ShowFilterRowMenu = true;
+             settings.SettingsContextMenu.Enabled = true;
+             settings.SettingsBehavior.AllowSelectByRowClick = true;
+             settings.EncodeHtml = false;
+             
+             settings.EditFormLayoutProperties.EncodeHtml = false;
+             settings.SettingsContextMenu.RowMenuItemVisibility.NewRow = true;
+             settings.SettingsContextMenu.RowMenuItemVisibility.Refresh = false;
+             settings.SettingsContextMenu.RowMenuItemVisibility.EditRow = true;
+             settings.SettingsContextMenu.RowMenuItemVisibility.DeleteRow = true;
+             settings.SettingsBehavior.AllowFocusedRow = true;
+
+             settings.SettingsEditing.Mode = EIS.FEW.Helper.GridViewEditingHelper.EditMode;
+             settings.SettingsPopup.EditForm.Width = 800;
+             settings.SettingsPopup.EditForm.HorizontalAlign = PopupHorizontalAlign.WindowCenter;
+             settings.SettingsPopup.EditForm.VerticalAlign = PopupVerticalAlign.WindowCenter;
+             settings.SettingsText.CommandUpdate = "Lưu";
+             settings.SettingsText.CommandCancel = "Hủy";
+             settings.SettingsText.PopupEditFormCaption = "Cập nhật cơ cấu giá";
+             settings.SettingsText.ContextMenuEditRow = "Sửa";
+             settings.SettingsText.ContextMenuNewRow = "Thêm mới";
+             settings.SettingsText.ContextMenuDeleteRow = "Xoá";
+             settings.InitNewRow += (s, e) =>
+             {
+                 e.NewValues["MA_CC"] = "ABD";
+             };
+             settings.SetEditFormTemplateContent(c =>
+             {
+                 dynamic data = ViewData["EditableQuy"] != null ? ViewData["EditableQuy"] : c.DataItem;
+
+                 Html.DevExpress().FormLayout(formLayoutSettings =>
+                 {
+                     formLayoutSettings.Name = "FormLayoutProducts";
+                     formLayoutSettings.Width = Unit.Percentage(100);
+                     formLayoutSettings.ColCount = 3;
+
+                     formLayoutSettings.Items.Add(i =>
+                     {
+                         i.FieldName = "LOAI_CC.ID";
+                         i.Caption = "Loại";
+                         i.ColSpan = 3;                    
+                         i.NestedExtension().ComboBox(s =>
+                         {
+                             s.Properties.TextField = "TEN";
+                             s.Properties.ValueField = "ID";
+                             s.Properties.ValueType = typeof(string);
+                             s.Properties.DataSource = FX.Core.IoC.Resolve<EIS.Core.IService.ICOCAUGIA_LOAIService>().GetAll();
+                             s.Width = Unit.Percentage(100);
+                         });
+                     });
+                     
+                     formLayoutSettings.Items.Add(i =>
+                     {
+                         i.FieldName = "MA_CC";
+                         i.Caption = "Mã";
+                         i.NestedExtension().TextBox(s =>
+                         {
+                             s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+                             s.ShowModelErrors = true;
+                             s.Width = Unit.Percentage(100);
+                         });
+                     });
+                     formLayoutSettings.Items.Add(i =>
+                     {
+                         i.FieldName = "TEN_CC";
+                         i.Caption = "Tên";
+                         i.ColSpan = 2;
+                         i.NestedExtension().TextBox(s =>
+                         {
+                             s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+                             s.ShowModelErrors = true;
+                             s.Width = Unit.Percentage(100);
+                         });
+                     });
+                     formLayoutSettings.Items.Add(i =>
+                     {
+                         i.FieldName = "SOLUONG_CC";
+                         i.Caption = "Số lượng CC";
+                         i.NestedExtension().TextBox(s =>
+                         {
+                             s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+                             s.ShowModelErrors = true;
+                             s.Width = Unit.Percentage(100);
+                         });
+                     });
+                     formLayoutSettings.Items.Add(i =>
+                     {
+                         i.FieldName = "DONGIA_CC";
+                         i.Caption = "Đơn giá CC";
+                         i.NestedExtension().TextBox(s =>
+                         {
+                             s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+                             s.ShowModelErrors = true;
+                             s.Width = Unit.Percentage(100);
+                         });
+                     });
+                     formLayoutSettings.Items.Add(i =>
+                     {
+                         i.FieldName = "THANHTIEN_CC";
+                         i.Caption = "Thành tiền CC";
+                         i.NestedExtension().TextBox(s =>
+                         {
+                             s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+                             s.ShowModelErrors = true;
+                             s.Width = Unit.Percentage(100);
+                         });
+                     });
+                     formLayoutSettings.Items.AddEmptyItem();
+                     formLayoutSettings.Items.Add(i =>
+                     {
+                         i.ShowCaption = DefaultBoolean.False;
+                         i.ColSpan = 3;
+                     }).SetNestedContent(() =>
+                     {
+                         ViewContext.Writer.Write("<div style='float:right'>");
+                         Html.DevExpress().Button(
+                             btnSettings =>
+                             {
+                                 btnSettings.Name = "btnUpdate";
+                                 btnSettings.Text = "Lưu";
+                                 btnSettings.ClientSideEvents.Click = "function(s, e){ gridviewChiTiet.UpdateEdit(); }";
+                             }).Render();
+                         Html.DevExpress().Button(
+                             btnSettings =>
+                             {
+                                 btnSettings.Name = "btnCancel";
+                                 btnSettings.Text = "Hủy";
+                                 btnSettings.Style[HtmlTextWriterStyle.MarginLeft] = "5px";
+                                 btnSettings.ClientSideEvents.Click = "function(s, e){ gridviewChiTiet.CancelEdit(); }";
+                             }).Render();
+                         ViewContext.Writer.Write("</div>");
+                     });
+                 })
+                 .Bind(data)
+                 .Render();
+             });
+
+             settings.Width = Unit.Percentage(100);
+
+             settings.Columns.Add(s =>
+             {
+                 s.FieldName = "MA_CC";
+                 s.Caption = "Mã";
+                 s.Width = Unit.Percentage(10);
+             });
+             settings.Columns.Add(s =>
+             {
+                 s.FieldName = "TEN_CC";
+                 s.Caption = "Tên";
+                 s.Width = Unit.Percentage(30);
+             });
+             settings.Columns.Add(s =>
+             {
+                 s.FieldName = "DONVITINH_CC";
+                 s.Caption = "Đơn vị tính";
+                 s.Width = Unit.Percentage(10);
+             });
+             settings.Columns.Add(s =>
+             {
+                 s.FieldName = "DONGIA_CC";
+                 s.Caption = "Đơn giá";
+                 s.Width = Unit.Percentage(10);
+             });
+             settings.Columns.Add(s =>
+             {
+                 s.FieldName = "SOLUONG_CC";
+                 s.Caption = "Số lượng";
+                 s.Width = Unit.Percentage(10);
+             });
+             settings.Columns.Add(s =>
+             {
+                 s.FieldName = "THANHTIEN_CC";
+                 s.Caption = "Thành tiền";
+                 s.Width = Unit.Percentage(20);
+             });
+             //settings.Columns.Add(s =>
+             //{
+             //    s.FieldName = "GHICHU";
+             //    s.Caption = "Ghi chú";
+             //    s.Width = Unit.Percentage(20);
+             //});
+             settings.Columns.Add(s =>
+             {
+                 s.FieldName = "LOAI_CC.TEN";
+                 s.Caption = "Loại";
+                 s.Width = Unit.Percentage(20);
+                 s.GroupIndex = 0;
+             });
+
+             //settings.CommandColumn.FixedStyle = GridViewColumnFixedStyle.Left;
+             //settings.CommandColumn.Visible = true;
+             //settings.CommandColumn.Width = 30;
+             //settings.CommandColumn.ShowSelectCheckbox = true;
+             //settings.CommandColumn.SelectAllCheckboxMode = EIS.FEW.Helper.GridViewSelectionHelper.SelectAllButtonMode;
+
+             settings.Settings.ShowTitlePanel = true;
+             settings.SetTitlePanelTemplateContent(c =>
+             {
+                 ViewContext.Writer.Write(string.Format("<a href='#' onclick='AddChiTiet();'><img style='float:left' title='Click vào để thêm chi tiết' src={0}></a><span class='ChiTietNhom'></span>", Url.Content("~/Content/Images/add2.png")));
+             });
+             
+             settings.BeforeGetCallbackResult = (sender, e) =>
+             {
+                 MVCxGridView gridView = (MVCxGridView)sender;
+                 gridView.ExpandAll();
+             };
+         });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

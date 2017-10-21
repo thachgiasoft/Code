@@ -1,0 +1,34 @@
+﻿<div id="Panel">
+    @Html.DevExpress().PopupControl(
+    settings =>
+    {
+        settings.Name = "Message_Success";
+        settings.Width = 100;
+        settings.AllowDragging = true;
+        settings.CloseAction = CloseAction.CloseButton;
+        settings.CloseOnEscape = true;
+        settings.PopupAnimationType = AnimationType.Fade;
+        settings.HeaderText = "Thông báo";
+        settings.Modal = true;
+        settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+        settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+        settings.SetContent(() =>
+        {
+            ViewContext.Writer.Write("<table style='width:260px'><tr><td style='padding : 5px; text-align: center;'>");
+            ViewContext.Writer.Write("<img src=\"/Content/Images/Icon-flat/Check.png\" height=\"16\" width=\"16\"></td>");
+            ViewContext.Writer.Write("<td style='padding : 5px; text-align: left;'><span id=\"noidung_success\"></span></td></tr>");
+            ViewContext.Writer.Write("<tr><td colspan='2' style='padding : 5px; text-align: right;'>");
+            Html.DevExpress().Button(
+                    buttonSettings =>
+                    {
+                        buttonSettings.Name = "btnOK_Success";
+                        buttonSettings.Width = 80;
+                        buttonSettings.Text = "OK";
+                        buttonSettings.ClientSideEvents.Click = "function(s, e){ Message_Success.Hide(); }";
+                    }
+                ).Render();
+            ViewContext.Writer.Write("</td></tr></table>");
+        });
+    }).GetHtml()
+</div>
+

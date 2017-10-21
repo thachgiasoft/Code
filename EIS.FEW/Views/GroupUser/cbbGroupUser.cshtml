@@ -1,0 +1,63 @@
+﻿@using EIS.Core.CustomView
+@model UserGroupModelDetail
+<table style="margin-top: 3%;width: 35%;float: left;">
+    <tr>
+        <td style="float: left;">
+            @Html.DevExpress().ComboBox(cbb =>
+            {
+                cbb.Name = "cbbGroup";
+                cbb.CallbackRouteValues = new { Action = "CbbGroupCallBack", Controller = "GroupUser" };
+                cbb.Properties.EnableClientSideAPI = true;
+                cbb.Properties.ValueField = "ID";
+                cbb.Properties.TextField = "GROUP_NAME";
+                cbb.Properties.Caption = "Nhóm người dùng";
+                cbb.SelectedIndex = 0;
+                cbb.Properties.ClientSideEvents.EndCallback = "endCbbGroup";
+                cbb.Properties.DropDownStyle = DropDownStyle.DropDownList;
+                cbb.ControlStyle.CssClass = "fixLeft";
+                cbb.Properties.ClientSideEvents.SelectedIndexChanged = "funcCbbGroupUserChange";
+
+            }).BindList(Model.Groups.ToList()).GetHtml()
+            <div style="padding-bottom: 35px;"></div>
+            @*@Html.Partial("UserOfGroupPartial", Model.usersOfGroup);*@
+            @Html.DevExpress().ListBox(lb =>
+       {
+           lb.Name = "lbUsers";
+           lb.CallbackRouteValues = new { controller = "GroupUser", action = "LoadUserOfGroup" };
+           lb.Width = Unit.Pixel(400);
+           lb.Height = Unit.Pixel(250);
+           lb.Properties.ValueType = typeof(int);
+           lb.Properties.ValueField = "userid";
+           lb.Properties.TextField = "username";
+           //lb.Properties.ClientSideEvents.EndCallback = "endCbbUser";
+           lb.Properties.DataSource = ViewBag.LoaduserGroup;
+           lb.Properties.Caption = "Người dùng của nhóm";
+       }).BindList(Model.usersOfGroup.ToList()).GetHtml()
+            <div style="padding-top: 15px; margin-left: 25%;">
+                @Html.DevExpress().Button(btn =>
+                    {
+                        btn.Name = "btnAddGroup";
+                        btn.Text = "Thêm nhóm";
+                        btn.ClientSideEvents.Click = "funcAddGroup";
+                        btn.Images.Image.IconID = IconID.ActionsAdd16x16;
+                    }).GetHtml()
+
+                @Html.DevExpress().Button(btn =>
+                    {
+                        btn.Name = "btnEditGroup";
+                        btn.Text = "Sửa nhóm";
+                        btn.ClientSideEvents.Click = "funcEditGroup";
+                        btn.Images.Image.IconID = IconID.ActionsEdit16x16devav;
+                    }).GetHtml()
+
+                @Html.DevExpress().Button(btn =>
+                    {
+                        btn.Name = "btnDeleteGroup";
+                        btn.Text = "Xóa nhóm";
+                        btn.ClientSideEvents.Click = "funcDeleteGroup";
+                        btn.Images.Image.IconID = IconID.ActionsDelete16x16devav;
+                    }).GetHtml()
+            </div>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,23 @@
+﻿@using EIS.Core.CustomView
+@model UserGroupModelDetail
+<table style="width:100%">
+    <tr>
+        <td style="float:left;padding-top: 15px;width: 100%;">
+            @Html.Partial("RolesPartialView", Model.Roles)
+        </td>
+        <td>
+            @Html.DevExpress().Button(btn =>
+                {
+                    btn.Name = "buttonChuyenHuong";
+                    btn.ToolTip = "Tạo mới nhóm quyền";
+                    btn.Text = "";
+                    btn.ControlStyle.CssClass = "float_left_pms";
+                    btn.ControlStyle.Font.Underline = false;
+                    btn.ControlStyle.BackColor = System.Drawing.Color.Transparent;
+                    btn.ControlStyle.Border.BorderStyle = BorderStyle.None;
+                    btn.Images.Image.Url = "~/Content/Images/Icon-flat/Add.png";
+                    btn.ClientSideEvents.Click = "ChuyenhuongAddRolePms";
+                }).GetHtml()
+        </td>
+    </tr>
+</table>

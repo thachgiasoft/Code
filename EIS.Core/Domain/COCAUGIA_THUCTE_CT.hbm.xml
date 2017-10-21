@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="EIS.Core.Domain.COCAUGIA_THUCTE_CT, EIS.Core" table="COCAUGIA_THUCTE_CT" >
+    <id name="ID" column="ID">
+      <generator class="sequence-identity">
+        <param name="sequence">COCAUGIA_THUCTE_CT_SEQ</param>
+      </generator>
+    </id>
+    <property name="MA_COCAU" column="MA_COCAU" type="string"  length="100"/>
+    <property name="TEN_COCAU_OLD" column="TEN_COCAU_OLD" type="string"  length="1000"/>
+    <property name="SO_LUONG_OLD" column="SO_LUONG_OLD" type="double" />
+    <property name="DONGIA_OLD" column="DONGIA_OLD" type="double" />
+    <property name="TEN_COCAU_NEW" column="TEN_COCAU_NEW" type="string" length="1000" />
+    <property name="SO_LUONG_NEW" column="SO_LUONG_NEW" type="double" />
+    <property name="DONGIA_NEW" column="DONGIA_NEW" type="double" />
+
+    <many-to-one name="LOAI" class="EIS.Core.Domain.COCAUGIA_LOAI, EIS.Core" insert="true" update="true">
+      <column name="ID_LOAI"/>
+    </many-to-one>
+
+    <many-to-one name="THUCTE" class="EIS.Core.Domain.COCAUGIA_THUCTE, EIS.Core" insert="true" update="true">
+      <column name="ID_THUCTE"/>
+    </many-to-one>
+
+  </class>
+</hibernate-mapping>

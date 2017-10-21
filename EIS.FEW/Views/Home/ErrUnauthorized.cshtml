@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "EIS v" + EIS.FEW.RouteConfig.Version + " | Thông báo";
+    Layout = "~/Views/Shared/_mainLayoutLogin.cshtml";
+}
+@section HeadResources{
+    @Html.Partial("HeadResourcesPartial")
+}
+@Html.DevExpress().RoundPanel(settings =>
+       {
+           settings.Name = "roundPanel";
+           settings.AllowCollapsingByHeaderClick = false;
+
+           settings.ShowCollapseButton = false;
+           settings.EnableAnimation = false;
+           settings.HeaderText = "THÔNG BÁO";
+           settings.Width = Unit.Percentage(90);
+           settings.Styles.Header.Height = 50;
+       }).GetHtml()
+<style>
+    .ma-top-20 {
+        width: 50px;
+        clear: both;
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .height-20 {
+        width: 100%;
+        height: 20px;
+        clear: both;
+    }
+
+    .txt-anone {
+        color: #0093DD !important;
+        font-weight: bold;
+    }
+</style>
+@{
+    var nguoidung = ((EIS.Core.EISContext)FX.Context.FXContext.Current).CurrentNguoidung;
+    if (nguoidung != null)
+    {
+        <div class="height-20"></div>
+        <div class="ma-top-20">
+            <p>
+                Bạn không được cấp quyền truy cập trang, vui lòng thông báo tới Quản trị để biết thêm chi tiết
+            </p>
+            <p>
+                <a href="javascript:history.go(-1)" class="txt-anone">Quay lại trang trước</a>
+            </p>
+        </div>
+    }
+    else
+    {
+        <div class="height-20"></div>
+        <div class="ma-top-20">
+            <p>
+                Bạn chưa đăng nhập. Hãy <a href=@Url.Action("Index", "Account") class="txt-anone">đăng nhập</a> để tiếp tục sử dụng
+            </p>
+            <p>
+                <a href=@Url.Action("Index", "Account") class="txt-anone">Về trang Đăng nhập</a>
+            </p>
+        </div>
+    }
+}

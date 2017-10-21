@@ -1,0 +1,13 @@
+﻿@Html.DevExpress().ComboBox(cbb =>
+{
+    cbb.Name = "cbbGroup";
+    cbb.CallbackRouteValues = new { Action = "CbbGroupCallBack", Controller = "GroupUser" };
+    cbb.Properties.ValueField = "ID";
+    cbb.Properties.TextField = "GROUP_NAME";
+    cbb.Properties.Caption = "Nhóm người dùng";
+    cbb.ControlStyle.CssClass = "fixLeft";
+    cbb.Properties.DropDownStyle = DropDownStyle.DropDownList;
+    cbb.SelectedIndex = 0;
+    cbb.Properties.ClientSideEvents.EndCallback = "endCbbGroup";
+    cbb.Properties.ClientSideEvents.SelectedIndexChanged = "funcCbbGroupUserChange";
+}).BindList(Model).GetHtml()

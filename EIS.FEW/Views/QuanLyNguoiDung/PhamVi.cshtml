@@ -1,0 +1,19 @@
+﻿<table style="width:100%">
+    <tr>
+        <td style="width:60%">
+            @Html.Partial("CSKCBPartial", HttpContext.Current.Session["CSKCB_QLPQ"])
+        </td>
+        <td style="width:40%; padding-right: 26px">
+            @Html.DevExpress().ListBox(
+            settings =>
+            {
+                settings.Name = "SelectedRows";
+                settings.Width = Unit.Percentage(100);
+                //settings.Height = 255;
+                settings.Properties.EnableClientSideAPI = true;
+                settings.Properties.ClientSideEvents.ItemDoubleClick = "DoubleClick";
+            }).GetHtml()
+        </td>
+    </tr>
+
+</table>

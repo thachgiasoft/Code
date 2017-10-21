@@ -1,0 +1,406 @@
+﻿@{
+    ViewBag.Title = "EIS v" + EIS.FEW.RouteConfig.Version + " | Tạo mới người dùng";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+@section HeadResources{
+    @Html.Partial("HeadResourcesPartial")
+}
+@{
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+}
+<script>
+    $(document).ready(function () {
+        if ($("#hidden_ID").val() != 0)
+        {
+            window.UserName.GetInputElement().setAttribute('style', 'background:#CCCCCC;');
+            window.UserName.GetInputElement().readOnly = true;
+        } else {
+            window.UserName.GetInputElement().setAttribute('style', 'background: white;');
+            window.UserName.GetInputElement().readOnly = false;
+        }
+        //if (gvCSKCB.GetVisibleRowsOnPage() == 0) {
+        //    gvCSKCB.SetHeight(105);
+        //    SelectedRows.SetHeight(105);
+        //}
+    });
+
+    function StoreRole() {
+        $("#hidden_Roles").val(window.selectedRoles.GetSelectedValues());
+    }
+
+    function OnSelectionChanged(s) {
+        s.GetSelectedFieldValues("ID;TEN", GetSelectedFieldValuesCallback);
+    }
+
+    function GetSelectedFieldValuesCallback(values) {
+        //Capture all selected keys
+        var list = Array();
+        SelectedRows.BeginUpdate();
+        try {
+            SelectedRows.ClearItems();
+            for (var i = 0; i < values.length; i++) {
+                SelectedRows.AddItem(values[i][1], values[i][0]);
+                list[i] = values[i][0];
+            }
+        } finally {
+            SelectedRows.EndUpdate();
+        }
+        $("#hidden_CSKCB").val(list.join(','));
+    }
+
+    function DoubleClick(s, e) {
+        var id = s.GetValue();
+        SelectedRows.RemoveItem(s.GetSelectedIndex());
+        gvCSKCB.UnselectRowsByKey(id);
+    }
+
+    function BackPage() {
+        window.location.href = '@Url.Action("Index","QuanLyNguoiDung")';
+    }
+
+    function OnInit_PopupError(s) {
+        var value = '@ViewData["EditError"]';
+        if (value != '') {
+            s.SetContentHtml(value);
+            s.Show();
+        }
+    }
+    function CSKCBInit(s, e) {
+        var hieght = window.gvCSKCB.GetHeight();
+        window.SelectedRows.SetHeight(hieght);
+    }
+    function ChuyenhuongAddRolePms() {
+        window.location.href = '@Url.Action("Index","RolePms")';
+    }
+</script>
+<style>
+    .formLayout {
+        max-width: 1300px;
+        margin: auto;
+    }
+    .checkboxclass {
+        color: blue;
+        width: 16px;
+        height: 16px;
+    }
+    .cssLstpq:hover{
+        text-decoration:underline;
+    }
+</style>
+@model EIS.Core.CustomView.QuanLyNguoiDungModels
+@using (Html.BeginForm("Add", "QuanLyNguoiDung", FormMethod.Post))
+{
+    <div style="width: 100%; margin:0 auto">
+        @{
+            var title = ViewBag.IsAdd ? "TẠO MỚI NGƯỜI DÙNG" : "SỬA THÔNG TIN NGƯỜI DÙNG";
+            if (ViewBag.IsAdmin == false)
+            {
+                title = "PHÂN QUYỀN NGƯỜI DÙNG";
+            }
+        }
+        <h2 style="text-align: center; color: #0093DD; font-size: 16px">@title</h2>
+        @Html.DevExpress().FormLayout(settings =>
+        {
+            settings.Name = "frm_NguoiDung";
+            settings.EncodeHtml = false;
+            settings.ColCount = 2;
+            settings.Width = Unit.Percentage(80);
+            settings.ControlStyle.CssClass = "formLayout";
+            settings.Items.Add(item =>
+            {
+                item.Caption = @"Tên tài khoản";
+                item.FieldName = @"UserName";
+                item.ColSpan = 2;
+                item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
+                item.NestedExtension().TextBox(x =>
+                {
+                    x.Width = Unit.Percentage(100);
+                    x.ShowModelErrors = true;
+                    x.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+                });
+            });
+
+            //Admin - tạo tài khoản
+            if (ViewBag.IsAdmin == true)
+            {
+
+                settings.Items.Add(item =>
+                {
+                    item.Caption = @"Tên người dùng<span style='color:red;'>*</span>";
+                    item.FieldName = @"Ten";
+                    item.ColSpan = 2;
+                    item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
+                    item.NestedExtension().TextBox(x =>
+                    {
+                        x.Width = Unit.Percentage(100);
+                        x.ShowModelErrors = true;
+                        x.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+                    });
+                });
+
+                settings.Items.Add(item =>
+                {
+                    item.Caption = @"Mật khẩu<span style='color:red;'>*</span>";
+                    item.FieldName = @"Password";
+                    item.ColSpan = 2;
+                    item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
+                    item.NestedExtension().TextBox(x =>
+                    {
+                        x.Width = Unit.Percentage(100);
+                        x.ShowModelErrors = true;
+                        x.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+                        x.Properties.Password = true;
+                    });
+                });
+
+                settings.Items.Add(item =>
+                {
+                    item.Caption = @"Nhập lại mật khẩu";
+                    item.FieldName = @"PasswordRe";
+                    item.ColSpan = 2;
+                    item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
+                    item.NestedExtension().TextBox(x =>
+                    {
+                        x.Width = Unit.Percentage(100);
+                        x.ShowModelErrors = true;
+                        x.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+                        x.Properties.Password = true;
+                    });
+                });
+
+                settings.Items.Add(item =>
+                {
+                    item.Caption = @"Nhập địa chỉ email<span style='color:red;'>*</span>";
+                    item.FieldName = @"Email";
+                    item.ColSpan = 2;
+                    item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
+                    item.NestedExtension().TextBox(x =>
+                    {
+                        x.Width = Unit.Percentage(100);
+                        x.ShowModelErrors = true;
+                        x.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+                    });
+                });
+                settings.Items.Add(item =>
+                {
+                    item.Caption = @"Số điện thoại";
+                    item.FieldName = @"SDT";
+                    item.ColSpan = 2;
+                    item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
+                    item.NestedExtension().TextBox(x =>
+                    {
+                        x.Width = Unit.Percentage(100);
+                        x.ShowModelErrors = true;
+                        x.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+                    });
+                });
+                settings.Items.Add(item =>
+                {
+                    item.Caption = @"Số CMND";
+                    item.FieldName = @"SoCMND";
+                    item.ColSpan = 2;
+                    item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
+                    item.NestedExtension().TextBox(x =>
+                    {
+                        x.Width = Unit.Percentage(100);
+                        x.ShowModelErrors = true;
+                        x.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+                    });
+                });
+                settings.Items.Add(item =>
+                {
+                    item.Caption = @"Địa chỉ";
+                    item.FieldName = @"DiaChi";
+                    item.ColSpan = 2;
+                    item.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
+                    item.NestedExtension().TextBox(x =>
+                    {
+                        x.Width = Unit.Percentage(100);
+                        x.ShowModelErrors = true;
+                        x.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+                    });
+                });
+
+                settings.Items.Add(item =>
+                {
+                    item.ColSpan = 2;
+                    item.Caption = @"Kích hoạt";
+                    item.FieldName = @"IsApproved";
+                    item.NestedExtensionType = FormLayoutNestedExtensionItemType.CheckBox;
+                });
+
+                settings.Items.Add(item =>
+                {
+                    item.Caption = @"Khóa";
+                    item.ColSpan = 2;
+                    item.FieldName = @"IsLockedOut";
+                    item.NestedExtensionType = FormLayoutNestedExtensionItemType.CheckBox;
+                });
+                if (ViewBag.QLNDCHECK == null)
+                {
+                    settings.Items.Add(item =>
+                    {
+                        item.Caption = @"Admin";
+                        item.ColSpan = 2;
+                        item.FieldName = @"IsAdmin";
+                        item.NestedExtensionType = FormLayoutNestedExtensionItemType.CheckBox;
+                    });
+                }
+
+                settings.Items.Add(item =>
+                    {
+                        item.ColSpan = 2;
+                        item.Caption = @"Cho phép phân quyền";
+                        item.FieldName = @"IsPQ";
+                        item.NestedExtensionType = FormLayoutNestedExtensionItemType.CheckBox;
+                    });
+
+                settings.Items.Add(item =>
+                {
+                    item.Caption = @"Đơn vị<span style='color:red;'>*</span>";
+                    item.ColSpan = 2;
+                    item.FieldName = @"DonVi_ID";
+                    item.NestedExtensionType = FormLayoutNestedExtensionItemType.ComboBox;
+                    var comboboxSetting = item.NestedExtensionSettings as ComboBoxSettings;
+                    if (comboboxSetting != null)
+                    {
+                        comboboxSetting.Width = Unit.Percentage(100);
+                        comboboxSetting.Properties.DropDownStyle = DropDownStyle.DropDown;
+                        comboboxSetting.Properties.TextFormatString = @"{0} | {1}";
+                        comboboxSetting.Properties.ValueField = "ID";
+                        comboboxSetting.Properties.ValueType = typeof(long);
+                        comboboxSetting.Properties.FilterMinLength = 0;
+                        comboboxSetting.Properties.Columns.Add("MA", "Mã", Unit.Percentage(30));
+                        comboboxSetting.Properties.Columns.Add("TEN", "Tên", Unit.Percentage(70));
+                        comboboxSetting.Properties.DataSource = HttpContext.Current.Session["DonVi_QLPQ"];
+                        comboboxSetting.ShowModelErrors = true;
+                        comboboxSetting.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+                    }
+                });
+
+            }
+            else
+            {
+                settings.Items.Add(item =>
+                    {
+                        item.ColSpan = 1;
+                        item.Caption = @"Quyền truy cập";
+                        item.Width = Unit.Percentage(100);
+                        item.FieldName = @"Roles";
+                        item.SetNestedContent(() => Html.RenderPartial("RolesPartial", Model));
+                    });
+                settings.Items.Add(item =>
+                    {
+                        item.Caption = @"";
+                        item.ColSpan = 1;
+                        item.Width = Unit.Percentage(3);
+                        item.NestedExtension().Button(s =>
+                        {
+                            s.Name = "buttonChuyenHuong";
+                            s.ToolTip = "Tạo mới nhóm quyền";
+                            s.Width = Unit.Percentage(100);
+                            s.Text = "";
+                            s.RenderMode = ButtonRenderMode.Link;
+                            s.ControlStyle.Font.Underline = false;
+                            s.ControlStyle.BackColor = System.Drawing.Color.Transparent;
+                            s.Images.Image.Url = "~/Content/Images/Icon-flat/Add.png";
+                            s.ClientSideEvents.Click = "ChuyenhuongAddRolePms";
+                            //s.Width = Unit.Percentage(100);
+
+                            //s.EnableTheming = false;
+                            //s.AllowFocus = false;
+
+                        });
+                    });
+
+                settings.Items.Add(item =>
+                {
+                    item.ColSpan = 2;
+                    item.Caption = @"Vai trò<span style='color:red;'>*</span>";
+                    item.FieldName = @"VaiTro_ID";
+                    item.Width = Unit.Percentage(100);
+                    item.NestedExtensionType = FormLayoutNestedExtensionItemType.ComboBox;
+                    item.NestedExtension().ComboBox(x =>
+                    {
+                        x.Width = Unit.Percentage(100);
+                        x.Properties.Items.Add("Nhân viên", 0);
+                        x.Properties.Items.Add("Trưởng nhóm", 1);
+                        x.Properties.Items.Add("Lãnh đạo", 2);
+                        x.ShowModelErrors = true;
+                        x.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+                    });
+                });
+
+                settings.Items.Add(item =>
+                {
+                    item.Caption = @"Phạm vi";
+                    item.ColSpan = 2;
+                    item.FieldName = @"COSO_KCBID";
+                    item.Width = Unit.Percentage(100);
+                    item.SetNestedContent(() => Html.RenderPartial("PhamVi"));
+                    //item.SetNestedContent(() => Html.RenderPartial("CSKCBPartial", HttpContext.Current.Session["CSKCB_QLPQ"]));
+                });
+
+
+            }
+                settings.Items.AddGroupItem(x =>
+                {
+                    x.ColCount = 2;
+                    x.Name = "bt_group";
+                    x.ColSpan = 2;
+                    x.HorizontalAlign = FormLayoutHorizontalAlign.Center;
+                    x.GroupBoxDecoration = GroupBoxDecoration.None;
+                    x.Items.Add(item =>
+                    {
+                        item.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+                        item.HorizontalAlign = FormLayoutHorizontalAlign.Right;
+                        item.Caption = @"";
+                        item.NestedExtension().Button(s =>
+                        {
+                            s.UseSubmitBehavior = true;
+                            s.ControlStyle.CssClass = "button";
+                            s.Name = "bt_CapNhat";
+                            s.Text = "Cập nhật";
+                            s.Images.Image.IconID = IconID.SaveSave16x16;
+                        });
+                    });
+                    x.Items.Add(item =>
+                    {
+                        item.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+                        item.HorizontalAlign = FormLayoutHorizontalAlign.Left;
+                        item.Caption = @" ";
+                        item.NestedExtension().Button(s =>
+                        {
+                            s.Name = "bt_back";
+                            s.Text = "Quay lại";
+                            s.ClientSideEvents.Click = "BackPage";
+                            s.ControlStyle.CssClass = "button";
+                            s.Images.Image.IconID = IconID.NavigationBackward16x16;
+                        });
+                    });
+                });
+
+        }).Bind(Model).GetHtml()
+
+    </div>
+    @Html.HiddenFor(x => x.ID, new { id = "hidden_ID" })
+    @Html.HiddenFor(x => x.NguoiDungId)
+    @Html.HiddenFor(x => x.Roles, new { id = "hidden_Roles" })
+    @Html.HiddenFor(x => x.COSO_KCBID, new { id = "hidden_CSKCB" })
+
+    @Html.DevExpress().PopupControl(
+        settings =>
+        {
+            settings.Name = "Popup_Error";
+            settings.HeaderText = "Thông báo lỗi";
+            settings.Width = Unit.Pixel(300);
+            settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+            settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+            settings.CloseOnEscape = true;
+            settings.Modal = true;
+            settings.AllowDragging = true;
+            settings.CloseAction = CloseAction.CloseButton;
+            settings.ClientSideEvents.Init = "OnInit_PopupError";
+        }).GetHtml()
+}

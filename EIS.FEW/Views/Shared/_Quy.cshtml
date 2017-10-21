@@ -1,0 +1,19 @@
+﻿@model EIS.Core.CustomView.TimeFilter
+<table style="width:100%">
+    <tr>
+        <td>
+            @Html.DevExpress().ComboBoxFor(model => model.quy,
+                settings =>
+                {
+                    settings.Width = Unit.Percentage(100);
+                    settings.Name = "cbx_quy";
+                    settings.Properties.Width = Unit.Percentage(100);
+                    settings.Properties.ValueField = "key";
+                    settings.Properties.TextField = "value";
+                    settings.Properties.DisplayFormatString = "{0}";
+                    settings.Properties.ValueType = typeof(int?);
+                }).BindList(EIS.Core.Common.Common.quys).GetHtml()
+
+        </td>
+    </tr>
+</table>

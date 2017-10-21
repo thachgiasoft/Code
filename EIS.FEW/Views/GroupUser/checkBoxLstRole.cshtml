@@ -1,0 +1,41 @@
+﻿
+@{ 
+
+    var a = (List<int>)ViewBag.DSUSER;
+}
+
+@Html.DevExpress().CheckBoxList(s =>
+{
+    s.Name = "selectedRoles";
+    s.Properties.Caption = @" ";
+    s.Properties.ValueField = "roleid";
+    s.Properties.TextField = "name";
+    s.ControlStyle.CssClass = "float_left_pms";
+    s.Properties.CaptionSettings.Position = EditorCaptionPosition.Top;
+    s.Properties.CheckedImage.IconID = IconID.ContentCheckbox16x16;
+    s.Properties.RepeatColumns = 2;
+    s.Properties.CaptionStyle.Font.Bold = true;
+    s.Properties.RepeatLayout = RepeatLayout.Table;
+    s.Properties.RepeatDirection = RepeatDirection.Vertical;
+    s.Width = Unit.Percentage(100);
+    s.ControlStyle.Border.BorderWidth = 1;
+    s.ControlStyle.Border.BorderStyle = BorderStyle.Solid;
+    s.ControlStyle.Border.BorderColor = System.Drawing.Color.FromArgb(0, 147, 221);
+    s.Properties.CheckBoxStyle.Border.BorderWidth = 1;
+    s.Properties.CheckBoxStyle.Border.BorderStyle = BorderStyle.Solid;
+    s.Properties.CheckBoxStyle.Border.BorderColor = System.Drawing.Color.FromArgb(0, 147, 221);
+    s.Properties.UncheckedImage.SpriteProperties.CssClass = "checkboxclass";
+
+    s.EncodeHtml = false;
+    s.PreRender = (sender, e) =>
+    {
+        ASPxCheckBoxList cbl = (ASPxCheckBoxList)sender;
+        foreach (ListEditItem item in cbl.Items)
+        {
+            if (a!=null && a.Contains(int.Parse(item.Value.ToString())))
+                item.Selected = true;
+            item.Text =string.Format("<span class='cssLstpq' ><a  style='text-decoration: none;color: #0093DD; ' href={0}>{1}</a></span>", Url.RouteUrl(new { controller = "RolePms", action = "EditRole", roleId = item.Value }),item.Text);
+        }
+    };
+
+}).BindList(Model).GetHtml()

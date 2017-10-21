@@ -1,0 +1,62 @@
+﻿@Html.DevExpress().FormLayout(settings =>
+{
+    settings.Name = "formLayout";
+    settings.EncodeHtml = false;
+    settings.Width = Unit.Percentage(100);
+    settings.ColCount = 3;
+
+    settings.Items.Add(txt =>
+    {
+        txt.Caption = @"Tên tài khoản ";
+        txt.Name = "str_TimKiem";
+        txt.ColSpan = 1;
+        txt.Width = Unit.Percentage(50);
+        txt.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
+        txt.NestedExtension().TextBox(tb =>
+        {
+            tb.Properties.NullText = @"Nhập từ khóa tìm kiếm theo tên tài khoản . . .";
+            tb.Properties.ClientSideEvents.KeyDown = "OnTextBoxKeyDown";
+            tb.Width = Unit.Percentage(100);
+        });
+    });
+
+    settings.Items.Add(bt =>
+    {
+        bt.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+        bt.Caption = @" ";
+        bt.ColSpan = 1;
+        bt.CaptionSettings.Location = LayoutItemCaptionLocation.Right;
+        bt.NestedExtension().Button(s =>
+        {
+            s.Name = "bt_TimKiem";
+            s.EnableTheming = false;
+            s.Text = "";
+            s.AllowFocus = false;
+            s.RenderMode = ButtonRenderMode.Link;
+            s.Images.Image.SpriteProperties.CssClass = "btnSearch";
+            s.Images.Image.SpriteProperties.HottrackedCssClass = "btnSearchHottracked";
+            s.Images.Image.SpriteProperties.PressedCssClass = "btnSearchPressed";
+            s.ToolTip = "Tìm kiếm";
+            s.ClientSideEvents.Click = "Filter";
+        });
+    });
+
+    settings.Items.Add(bt =>
+    {
+        if ((bool)System.Web.HttpContext.Current.Session["IsPQ_QLPQ"] == true)
+        {
+            bt.ClientVisible = true;
+        }
+        else
+        {
+            bt.ClientVisible = false;
+        }
+        bt.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+        bt.Caption = " ";
+        var button = (ButtonSettings)bt.NestedExtensionSettings;
+        button.Name = "continueButton";
+        button.Text = "Phân quyền nhóm người dùng";
+        button.ClientSideEvents.Click = "LinkGroup";
+
+    });
+}).GetHtml()

@@ -1,0 +1,140 @@
+﻿@{
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+    var grid = Html.DevExpress().GridView(
+        settings =>
+        {
+            settings.Name = "gvEditing";
+            settings.KeyFieldName = "NHOMCHUCNANGID";
+            settings.CallbackRouteValues = new { Controller = "NHOMCHUCNANG", Action = "NHOMCHUCNANGPartial" };
+            settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "NHOMCHUCNANG", Action = "AddNHOMCHUCNANG" };
+            settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "NHOMCHUCNANG", Action = "UpdateNHOMCHUCNANG" };
+            settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "NHOMCHUCNANG", Action = "DeleteNHOMCHUCNANG" };
+            settings.SettingsEditing.Mode = EIS.FEW.Helper.GridViewEditingHelper.EditMode;
+            settings.SettingsBehavior.ConfirmDelete = true;
+            settings.SettingsPopup.EditForm.Width = 800;
+            settings.SettingsPopup.EditForm.HorizontalAlign = PopupHorizontalAlign.Center;
+            settings.SettingsPopup.EditForm.AllowResize = true;
+            settings.SettingsText.PopupEditFormCaption = "Nhóm chức năng";
+            settings.SettingsPopup.EditForm.VerticalAlign = PopupVerticalAlign.Below;
+            settings.SettingsCommandButton.UpdateButton.Text = "Lưu";
+            settings.SettingsCommandButton.UpdateButton.Image.IconID = IconID.SaveSave16x16;
+            settings.SettingsCommandButton.CancelButton.Text = "Hủy";
+            settings.SettingsCommandButton.CancelButton.Image.IconID = IconID.ActionsCancel16x16;
+            settings.Width = Unit.Percentage(80);
+            settings.Settings.ShowFilterRow = true;
+            settings.Settings.ShowFilterRowMenu = true;
+
+            settings.SettingsSearchPanel.Visible = true;
+            settings.SettingsSearchPanel.HighlightResults = true;
+            settings.SettingsText.SearchPanelEditorNullText = "Nhập từ khóa cần tìm kiếm...";
+            settings.SettingsSearchPanel.ShowApplyButton = true;
+            settings.SettingsCommandButton.SearchPanelApplyButton.ButtonType = GridCommandButtonRenderMode.Image;
+            settings.SettingsCommandButton.SearchPanelApplyButton.Image.SpriteProperties.CssClass = "btnSearch";
+
+            settings.SettingsContextMenu.Enabled = true;
+            settings.SettingsPager.Position = PagerPosition.Bottom;
+            settings.SettingsPager.PageSizeItemSettings.Visible = true;
+            settings.SettingsPager.PageSizeItemSettings.Items = new string[] { "10", "15", "20", "25", "30" };
+            settings.SettingsBehavior.AllowFocusedRow = false;
+            settings.SettingsBehavior.AllowSelectByRowClick = true;
+            settings.SettingsContextMenu.RowMenuItemVisibility.Refresh = false;
+            settings.CommandColumn.Visible = true;
+            settings.CommandColumn.VisibleIndex = 99;
+            settings.CommandColumn.ShowNewButtonInHeader = true;
+            settings.CommandColumn.ShowEditButton = true;
+            settings.SettingsCommandButton.NewButton.Image.Url = "~/Content/Images/add2.png";
+            settings.SettingsCommandButton.NewButton.Text = "Tạo mới";
+            settings.SettingsCommandButton.NewButton.Styles.Style.ForeColor = System.Drawing.Color.White;
+            settings.SettingsCommandButton.DeleteButton.Image.Url = "~/Content/Images/Delete_16x16.png";
+            settings.SettingsCommandButton.EditButton.Image.Url = "~/Content/Images/Edit_16x16.png";
+            settings.CommandColumn.Width = Unit.Percentage(5);
+            settings.CommandColumn.ShowDeleteButton = true;
+
+            if (ViewData["EditErrorDelete"] != null)
+            {
+                settings.SetFooterRowTemplateContent(c =>
+                {
+                    Html.ViewContext.Writer.Write(ViewData["EditErrorDelete"]);
+                });
+            }
+
+            settings.BeforeGetCallbackResult = (s, e) =>
+            {
+                if (ViewData["EditErrorDelete"] != null)
+                {
+                    MVCxGridView gridView = (MVCxGridView)s;
+                    gridView.Settings.ShowFooter = true;
+                }
+            };
+
+            settings.Columns.Add(s =>
+            {
+                s.Caption = "STT";
+                s.ToolTip = "STT";
+                s.EditFormSettings.Visible = DefaultBoolean.False;
+                s.PropertiesEdit.EnableClientSideAPI = true;
+                s.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+                s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                s.Width = Unit.Percentage(3);
+            });
+            settings.CustomColumnDisplayText = (send, e) =>
+            {
+                if (e.Column.Caption == "STT")
+                {
+                    e.DisplayText = (e.VisibleRowIndex + 1).ToString();
+                }
+            };
+
+            settings.Columns.Add(col =>
+            {
+                col.FieldName = "ChucnangDESCRIPTION";
+                col.Caption = "Tên nhóm chức năng";
+                col.PropertiesEdit.EnableClientSideAPI = true;
+                col.Width = Unit.Percentage(35);
+                col.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                col.CellStyle.Paddings.PaddingLeft = 10;
+                col.Settings.AutoFilterCondition = AutoFilterCondition.Contains;
+                col.ColumnType = MVCxGridViewColumnType.TextBox;
+                var colP = col.PropertiesEdit as TextBoxProperties;
+                colP.MaxLength = 100;
+            });
+         
+            settings.Columns.Add(s =>
+            {
+                s.FieldName = "MODULEID";
+                s.Caption = "Module";
+                s.ToolTip = "Module";
+                s.CellStyle.Font.Bold = true;
+                s.CellStyle.Paddings.PaddingLeft = 10;
+                s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                s.PropertiesEdit.EnableClientSideAPI = true;
+                s.ColumnType = MVCxGridViewColumnType.ComboBox;
+                s.Width = Unit.Pixel(250);
+                var comboPro = s.PropertiesEdit as ComboBoxProperties;
+                comboPro.Width = Unit.Percentage(100);
+                comboPro.DataSource = Session["MODULEList"];
+                comboPro.ValueField = "MODULEID";
+                comboPro.TextField = "DESCRIPTION";
+                comboPro.Columns.Add("DESCRIPTION", "Chọn một Module", Unit.Percentage(100));
+                comboPro.TextFormatString = "{0}";
+                comboPro.DisplayFormatString = "{0}";
+                comboPro.ValueType = typeof(string);
+                comboPro.DropDownStyle = DropDownStyle.DropDown;
+                s.Settings.AllowAutoFilterTextInputTimer = DefaultBoolean.False;
+                s.Settings.AutoFilterCondition = AutoFilterCondition.Contains;
+            });
+
+            settings.PreRender = (sender, e) =>
+            {
+                ((MVCxGridView)sender).StartEdit(-1);
+
+            };
+        });
+
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

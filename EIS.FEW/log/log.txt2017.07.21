@@ -1,0 +1,97 @@
+﻿2017-07-21 09:43:13,898 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-07-21 09:43:13,909 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-07-21 09:43:13,910 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-07-21 09:43:13,985 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.2: End -Function AuthenUser  
+2017-07-21 09:43:31,745 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-07-21 09:43:31,745 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-07-21 09:43:31,745 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-07-21 09:43:31,814 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-07-21 09:43:31,820 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-07-21 09:43:39,264 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-07-21 09:43:39,264 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-07-21 09:43:39,264 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-07-21 09:43:39,621 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-07-21 09:43:39,621 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-07-21 10:46:21,337 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Util.ThreadSafeDictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Type.TypeFactory.GetType(NullableType defaultUnqualifiedType, Int32 length, GetNullableTypeWithLength ctorDelegate)
+   at NHibernate.Type.TypeFactory.<RegisterDefaultNetTypes>b__c(Int32 l)
+   at NHibernate.Type.TypeFactory.BuiltInType(String typeName, Int32 length)
+   at NHibernate.Mapping.SimpleValue.GetHeuristicType()
+   at NHibernate.Mapping.SimpleValue.get_Type()
+   at NHibernate.Mapping.SimpleValue.IsValid(IMapping mapping)
+   at NHibernate.Mapping.PersistentClass.Validate(IMapping mapping)
+   at NHibernate.Mapping.RootClass.Validate(IMapping mapping)
+   at NHibernate.Cfg.Configuration.ValidateEntities()
+   at NHibernate.Cfg.Configuration.Validate()
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-07-21 10:50:38,931 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-07-21 10:50:38,943 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-07-21 10:50:38,943 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-07-21 10:50:39,035 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-07-21 10:50:39,039 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-07-21 15:25:06,829 ERROR EIS.FEW.Controllers.ADNEW_NHOMTHUOCController - PanelPartial - message:Could not parse expression 'value(System.Collections.Generic.List`1[EIS.Core.Domain.DM_NHOMHOATCHAT]).Select(r => r.ID).ToList()': This overload of the method 'System.Linq.Enumerable.ToList' is currently not supported.
+ -    at Remotion.Data.Linq.Parsing.Structure.MethodCallExpressionParser.GetNodeType(MethodCallExpression expressionToParse)
+   at Remotion.Data.Linq.Parsing.Structure.MethodCallExpressionParser.Parse(String associatedIdentifier, IExpressionNode source, IEnumerable`1 arguments, MethodCallExpression expressionToParse)
+   at Remotion.Data.Linq.Parsing.Structure.ExpressionTreeParser.ParseMethodCallExpression(MethodCallExpression methodCallExpression, String associatedIdentifier)
+   at Remotion.Data.Linq.Parsing.Structure.ExpressionTreeParser.ParseNode(Expression expression, String associatedIdentifier)
+   at Remotion.Data.Linq.Parsing.Structure.ExpressionTreeParser.ParseMethodCallExpression(MethodCallExpression methodCallExpression, String associatedIdentifier)
+   at Remotion.Data.Linq.Parsing.Structure.ExpressionTreeParser.ParseNode(Expression expression, String associatedIdentifier)
+   at Remotion.Data.Linq.Parsing.Structure.ExpressionTreeParser.ParseTree(Expression expressionTree)
+   at Remotion.Data.Linq.Parsing.Structure.QueryParser.GetParsedQuery(Expression expressionTreeRoot)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitors.SubQueryFindingExpressionTreeVisitor.CreateSubQueryNode(MethodCallExpression methodCallExpression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitors.SubQueryFindingExpressionTreeVisitor.VisitExpression(Expression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitLambdaExpression(LambdaExpression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitExpression(Expression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitors.SubQueryFindingExpressionTreeVisitor.VisitExpression(Expression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitors.SubQueryFindingExpressionTreeVisitor.Process(Expression expressionTree, INodeTypeProvider nodeTypeProvider)
+   at Remotion.Data.Linq.Parsing.Structure.MethodCallExpressionParser.ProcessArgumentExpression(Expression argumentExpression)
+   at Remotion.Data.Linq.Parsing.Structure.MethodCallExpressionParser.<Parse>b__0(Expression expr)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Remotion.Data.Linq.Parsing.Structure.MethodCallExpressionParser.Parse(String associatedIdentifier, IExpressionNode source, IEnumerable`1 arguments, MethodCallExpression expressionToParse)
+   at Remotion.Data.Linq.Parsing.Structure.ExpressionTreeParser.ParseMethodCallExpression(MethodCallExpression methodCallExpression, String associatedIdentifier)
+   at Remotion.Data.Linq.Parsing.Structure.ExpressionTreeParser.ParseNode(Expression expression, String associatedIdentifier)
+   at Remotion.Data.Linq.Parsing.Structure.ExpressionTreeParser.ParseTree(Expression expressionTree)
+   at Remotion.Data.Linq.Parsing.Structure.QueryParser.GetParsedQuery(Expression expressionTreeRoot)
+   at NHibernate.Linq.NhLinqExpression.Translate(ISessionFactoryImplementor sessionFactory)
+   at NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory.CreateQueryTranslators(String queryIdentifier, IQueryExpression queryExpression, String collectionRole, Boolean shallow, IDictionary`2 filters, ISessionFactoryImplementor factory)
+   at NHibernate.Engine.Query.QueryPlanCache.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow, IDictionary`2 enabledFilters)
+   at NHibernate.Impl.AbstractSessionImpl.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow)
+   at NHibernate.Impl.AbstractSessionImpl.CreateQuery(IQueryExpression queryExpression)
+   at NHibernate.Linq.NhQueryProvider.PrepareQuery(Expression expression, IQuery& query, NhLinqExpression& nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute(Expression expression)
+   at Remotion.Data.Linq.QueryableBase`1.System.Collections.IEnumerable.GetEnumerator()
+   at DevExpress.Web.Internal.DataUtils.ConvertEnumerableToList(IEnumerable source)
+   at DevExpress.Web.Data.WebDataProxy.SetDataSource(Object dataSource)
+   at DevExpress.Web.ASPxGridBase.PerformDataBinding(String dataHelperName, IEnumerable data)
+   at DevExpress.Web.Internal.DataHelper.PerformDataBinding(IEnumerable data)
+   at DevExpress.Web.Internal.DataHelper.OnDataSourceViewSelectCallback(IEnumerable data)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at DevExpress.Web.Internal.DataHelper.PerformSelect()
+   at DevExpress.Web.Internal.GridDataHelper.PerformSelect()
+   at DevExpress.Web.Internal.DataContainer.PerformSelect()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindCore()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at DevExpress.Web.ASPxGridBase.DataBind()
+   at DevExpress.Web.Mvc.ExtensionBase.BindToDataSource(Object dataSource)
+   at DevExpress.Web.Mvc.GridViewExtension.Bind(Object dataObject)
+   at ASP._Page_Views_ADNEW_NHOMTHUOC__GridViewTanDuocPartial_cshtml.Execute() in e:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Views\ADNEW_NHOMTHUOC\_GridViewTanDuocPartial.cshtml:line 318
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at EIS.FEW.Controllers.ADNEW_NHOMTHUOCController.RenderRazorViewToString(String viewName, Object model) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\ADNEW_NHOMTHUOCController.cs:line 157
+   at EIS.FEW.Controllers.ADNEW_NHOMTHUOCController.PanelPartial(Nullable`1 treelistId, Nullable`1 loaithuocId, String textTK) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\ADNEW_NHOMTHUOCController.cs:line 106 

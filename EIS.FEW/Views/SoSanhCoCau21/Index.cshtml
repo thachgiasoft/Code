@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+@section HeadResources{
+    @Html.Partial("HeadResourcesPartial")
+}
+
+@model EIS.FEW.Models.COCAUGIA_DICHVU
+
+<script type="text/javascript">
+
+    function Filter() {
+        gridviewDanhSach.PerformCallback({ month: cbx_month.GetValue(), year: cbx_year.GetValue(), maCskcb: cbo_cskcb.GetValue() });
+    }
+
+    function FilterChiTiet(s, e) {
+        if (gridviewDanhSach.pageRowCount > 0) {
+            gridviewChiTiet.PerformCallback({ maDichVu: gridviewDanhSach.GetRowKey(gridviewDanhSach.GetFocusedRowIndex()) });
+            //gridviewChiTiet.ExpandAll();
+        }
+    }
+</script>
+@Html.Hidden("selectedIDsHF");
+@Html.DevExpress().RoundPanel(settings =>
+{
+    settings.Name = "roundPanel";
+    settings.AllowCollapsingByHeaderClick = true;
+    settings.ShowCollapseButton = true;
+    settings.EnableAnimation = true;
+    settings.Width = Unit.Percentage(100);
+    settings.HeaderText = "SO SÁNH CƠ CẤU 21";
+    settings.Height = Unit.Pixel(50);
+    settings.SetContent(() =>
+    {
+        Html.RenderPartial("FilterView");
+    });
+}).GetHtml()
+
+@Html.DevExpress().Splitter(
+    settings =>
+    {
+        settings.Name = "splClientSideEvents";
+        settings.FullscreenMode = true;
+        settings.Orientation = Orientation.Horizontal;
+        settings.ShowCollapseBackwardButton = true;
+        settings.ShowCollapseForwardButton = true;
+
+        settings.Panes.Add(pane =>
+        {
+            pane.Name = "GvDanhSachDichVu";
+            pane.Size = Unit.Percentage(30);
+            pane.SetContent(() => ViewContext.Writer.Write(Html.Action("_GridViewDanhSachDichVuPartial")));
+        });
+
+        settings.Panes.Add(pane =>
+        {
+            pane.Name = "GvChiTietDichVu";
+            pane.Size = Unit.Percentage(70);
+            pane.SetContent(() => ViewContext.Writer.Write(Html.Action("_GridViewChiTietDichVuPartial")));
+        });
+    }
+).GetHtml()
+<h2>Index</h2>

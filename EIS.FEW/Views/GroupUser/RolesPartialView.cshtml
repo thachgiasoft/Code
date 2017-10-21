@@ -1,0 +1,15 @@
+﻿@using IdentityManagement.Domain;
+@model List<role>
+
+@Html.DevExpress().CallbackPanel(
+    settings =>
+    {
+        settings.Name = "CallbackPanel";
+        settings.CallbackRouteValues = new { Controller = "GroupUser", Action = "UserRoleCallbackPanel" };
+        settings.Width = Unit.Percentage(100);
+        settings.SetContent(() =>
+        {
+            if (ViewBag.Content != null)
+                ViewContext.Writer.Write(ViewBag.Content);
+        });
+    }).GetHtml()

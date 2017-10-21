@@ -1,0 +1,169 @@
+﻿@model EIS.FEW.Models.UserModel
+@{
+    ViewBag.Title = "EIS v" + EIS.FEW.RouteConfig.Version + " | Thay đổi mật khẩu";
+    //Layout = "~/Views/Shared/_mainLayoutAccountInfo.cshtml";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+@{
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+}
+@section HeadResources{
+    @Html.Partial("HeadResourcesPartial")
+}
+
+<style>
+    .dxgvTable_EIS {
+        border-right: 1px solid #c0c0c0;
+    }
+
+    #gvEditing_tcFooterRow {
+        color: red !important;
+    }
+
+    .form_ChangePW {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .height_20 {
+        height: 20px;
+        clear: both;
+    }
+</style>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#editMode").change(function () {
+            gvEditing.PeformCallback({ editMode: $("#editMode").val() });
+        });
+
+        var _IsAdmin = $("#hd_IsAdmin").val();
+        if (_IsAdmin == "0")
+            $("#rp2").hide();
+    });
+    function UpdateUser() {
+        var p1 = Password.GetValue();
+        var p2 = NewPassword.GetValue();
+        var p3 = NewPasswordRe.GetValue();
+        p1 = $.trim(p1);
+        p2 = $.trim(p2);
+        p3 = $.trim(p3);
+        var _checkpw = $("#pw").val();
+        if (p1 == "") {
+            popup_message.Show(); popup_message.SetContentHtml(IDrawMessageTable("error", "Bạn phải nhập mật khẩu hiện tại!"));
+            return false;
+        }
+        if (p2 == "") {
+            popup_message.Show(); popup_message.SetContentHtml(IDrawMessageTable("error", "Bạn phải nhập mật khẩu mới!"));
+            return false;
+        }
+      
+        var regex = /(?=.*\d)(?=.*[A-Z])(?=.*\W).{8,100}/;
+        if (regex.test(p2) == false) {
+            popup_message.Show(); popup_message.SetContentHtml(IDrawMessageTable("error", "Mật khẩu mới phải chứa tối thiểu 8 kí tự, ít nhất một kí tự HOA, một số và một kí tự đặc biệt!"));
+            return false;
+        }
+
+        if (p2 != p3) {
+            popup_message.Show(); popup_message.SetContentHtml(IDrawMessageTable("error", "Mật khẩu mới và nhập lại mật khẩu mới không giống nhau!"));
+            return false;
+        }
+
+        if (_checkpw == "fail") {
+            popup_message.Show(); popup_message.SetContentHtml(IDrawMessageTable("error", "Mật khẩu hiện tại bạn nhập không đúng!"));
+            return false;
+        }
+
+        var data = { _password: Password.GetValue(), _newpasswordRe: NewPasswordRe.GetValue(), _newpassword: NewPassword.GetValue() };
+
+        $.get('/ThongTinTaiKhoan/UpdateUser',
+            data,
+            function (response) {
+                if (response == "ok") {
+                    alert("Bạn cập nhật mật khẩu thành công, đăng nhập lại với mất khẩu mới!");
+                    window.location.href = '@Url.Action("LogOff", "Account")';
+                } else {
+                    window.location.href = '@Url.Action("Index", "ThongTinTaiKhoan")';
+                }
+            },
+            'json'
+        );
+    }
+
+    function checkpw(pass) {
+        var data = { pw: pass };
+        $.get('/ThongTinTaiKhoan/CheckPW',
+            data,
+            function (response) {
+                $("#pw").val(response);
+            },
+            'json'
+        );
+    }
+
+    function OnPWValidation(s, e) {
+        var pass = Password.GetValue();
+        pass = $.trim(pass);
+        if (pass != "") {
+            checkpw(pass);
+        }
+    }
+</script>
+<div class="height_20"></div>
+
+@Html.Hidden("pw")
+@Html.Hidden("repw")
+<div>
+    @Html.DevExpress().RoundPanel(settings =>
+{
+    settings.Name = "roundPanel";
+    settings.AllowCollapsingByHeaderClick = true;
+    settings.ShowCollapseButton = true;
+    settings.EnableAnimation = true;
+    //settings.Width = Unit.Percentage(50);
+    settings.Width = Unit.Pixel(900);
+    settings.HeaderText = "THÔNG TIN TÀI KHOẢN";
+    settings.Styles.Header.Height = 50;
+    settings.Height = Unit.Pixel(30);
+    settings.ControlStyle.Border.BorderWidth = 1;
+    settings.ControlStyle.Border.BorderStyle = BorderStyle.Solid;
+    settings.ControlStyle.Border.BorderColor = System.Drawing.Color.FromArgb(0, 147, 221);
+    settings.SetContent(() => Html.RenderPartial("Form_ThongTinTaiKhoan", Model.currentUserRecord));
+}).GetHtml()
+    <br />
+</div>
+<div id="rp2">
+    @Html.DevExpress().RoundPanel(settings =>
+{
+    settings.Name = "roundPanel2";
+    settings.AllowCollapsingByHeaderClick = true;
+    settings.ShowCollapseButton = true;
+    settings.EnableAnimation = true;
+    //  settings.Width = Unit.Percentage(50);
+    settings.Width = Unit.Pixel(900);
+    settings.HeaderText = "THÔNG TIN TÀI KHOẢN CẤP DƯỚI";
+    settings.Styles.Header.Height = 50;
+    settings.Height = Unit.Pixel(30);
+    settings.ControlStyle.Border.BorderWidth = 1;
+    settings.ControlStyle.Border.BorderStyle = BorderStyle.Solid;
+    settings.ControlStyle.Border.BorderColor = System.Drawing.Color.FromArgb(0, 147, 221);
+    settings.SetContent(() => Html.RenderPartial("Form_ThongTinTaiKhoanCapDuoi", Model.lstUserModelView));
+}).GetHtml()
+    <br />
+</div>
+@Html.DevExpress().PopupControl(
+settings =>
+{
+    settings.Name = "popup_message";
+    settings.HeaderText = "Thông báo";
+    settings.Width = Unit.Pixel(400);
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+    settings.CloseOnEscape = true;
+    settings.Modal = true;
+    settings.AllowDragging = true;
+    settings.CloseAction = CloseAction.OuterMouseClick;
+}).GetHtml()
+
+<input type="hidden" value="@ViewBag.IsAdmin" id="hd_IsAdmin" />

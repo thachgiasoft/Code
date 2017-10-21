@@ -1,0 +1,14 @@
+﻿@model List<IdentityManagement.Domain.user>
+@Html.DevExpress().ListBox(lb =>
+{
+    lb.Name = "lbUsers";
+    lb.CallbackRouteValues = new { controller = "GroupUser", action = "LoadUserOfGroup" };
+    lb.Width = Unit.Pixel(200);
+    lb.Height = Unit.Pixel(250);
+    lb.Properties.ValueField = "userid";
+    lb.Properties.TextField = "username";
+   // lb.Properties.DataSource = ViewBag.LoaduserGroup;
+    lb.Properties.Caption = "Người dùng của nhóm";
+    //lb.Properties.ClientSideEvents.EndCallback = "endCbbUser";
+    lb.Properties.ValueType = typeof(int);
+}).BindList(Model).GetHtml()

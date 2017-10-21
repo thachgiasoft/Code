@@ -1,0 +1,19 @@
+﻿@{
+    FX.Core.IoC.Resolve<EIS.Core.IService.IDMCOSOKCBService>();
+}
+
+@Html.DevExpress().ComboBox(settings =>
+{
+    settings.Name = "cbx_cskcb";
+    settings.CallbackRouteValues = new { Controller = "NhapCoCauThucTe", Action = "ComboBoxCoSoKCBPartial" };
+    settings.Properties.CallbackPageSize = 10;
+    settings.Properties.NullDisplayText = "Chọn cơ sở khảm chữa bệnh";
+    settings.Properties.TextField = "TEN";
+    settings.Properties.TextFormatString = "{0} {1}";
+    settings.Properties.ValueField = "MA";
+    settings.Properties.ValueType = typeof(string);
+    settings.Properties.FilterMinLength = 0;
+}).BindList(FX.Core.IoC.Resolve<EIS.Core.IService.IDMCOSOKCBService>().GetDM_COSOKCBRange, FX.Core.IoC.Resolve<EIS.Core.IService.IDMCOSOKCBService>().GetDM_COSOKCBByID).GetHtml();
+
+
+

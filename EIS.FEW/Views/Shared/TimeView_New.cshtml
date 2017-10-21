@@ -1,0 +1,168 @@
+﻿<script>
+    $(document).ready(function () {
+        $('#thang').hide();
+        $('#quy').hide();
+        $('#nam').hide();
+        $('#giai_doan').hide();
+        $('#tu_ngay').hide();
+        $('#den_ngay').hide();
+    });
+
+    function cbx_ThoiGian_SelectedIndexChanged(s, e) {
+        var thoiGian = s.GetValue();
+        showHideChange(thoiGian);
+    }
+
+    function showHideChange(thoiGian) {
+        var now = new Date();
+        switch (thoiGian) {
+            case 0: { //thag
+                $('#thang').show();
+                $('#quy').hide();
+                $('#nam').show();
+                $('#giai_doan').hide();
+                $('#tu_thang').hide();
+                $('#den_thang').hide();
+                cbx_thang.SetValue(now.getMonth() + 1)
+                cbx_nam.SetValue(now.getFullYear());
+                break;
+            }
+            case 1: { //quý
+                $('#thang').hide();
+                $('#quy').show();
+                $('#nam').show();
+                $('#giai_doan').hide();
+                $('#tu_thang').hide();
+                $('#den_thang').hide();
+                cbx_quy.SetValue(Math.floor(now.getMonth() / 3) + 1)
+                cbx_nam.SetValue(now.getFullYear());
+                break;
+            }
+            case 2: { //nam
+                $('#thang').hide();
+                $('#quy').hide();
+                $('#nam').show();
+                $('#giai_doan').hide();
+                $('#tu_thang').hide();
+                $('#den_thang').hide();
+                cbx_nam.SetValue(now.getFullYear());
+                break;
+            }
+            case 3: { //tuthang - den thang
+                $('#thang').hide();
+                $('#quy').hide();
+                $('#nam').show();
+                $('#giai_doan').show();
+                $('#tu_thang').show();
+                $('#den_thang').show();
+
+                cbx_tuthag.SetValue(now);
+                cbx_denthag.SetValue(now);
+                break;
+            }
+            default: {
+                $('#thang').hide();
+                $('#quy').hide();
+                $('#nam').hide();
+                $('#giai_doan').hide();
+                $('#tu_thang').hide();
+                $('#den_thang').hide();
+            }
+        }
+    }
+</script>
+
+<table style="width:100%">
+    <tr>
+        <td style="width: 40%; padding-right:5px">
+            @Html.DevExpress().ComboBox(settings =>
+                {
+                    settings.Width = Unit.Percentage(100);
+                    settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                    settings.Name = "cbx_thoigian";
+                    settings.Properties.Width = Unit.Percentage(100);
+                    settings.Properties.Caption = "";
+                    settings.Properties.ValueField = "Key";
+                    settings.Properties.TextField = "Value";
+                    settings.Properties.ValueType = typeof(int?);
+                    settings.Properties.EnableClientSideAPI = true;
+                    settings.Properties.ClientSideEvents.SelectedIndexChanged = "cbx_ThoiGian_SelectedIndexChanged";
+                }).BindList(EIS.Core.Common.Common.thoiGianNews).GetHtml()
+        </td>
+        <td style="width: 30%; padding-right: 5px">
+            <div id="thang" style="display:none">
+                @Html.DevExpress().ComboBox(
+                   settings =>
+                   {
+                       settings.Width = Unit.Percentage(100);
+                       settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                       settings.Name = "cbx_thang";
+                       settings.Properties.ValueType = typeof(int?);
+                       settings.Properties.NullText = "Tháng";
+                       settings.Properties.Width = Unit.Percentage(100);
+                   }).BindList(EIS.Core.Common.Common.thangs).GetHtml()
+            </div>
+            <div id="quy" style="display:none">
+                @Html.DevExpress().ComboBox(
+                   settings =>
+                   {
+                       settings.Width = Unit.Percentage(100);
+                       settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                       settings.Name = "cbx_quy";
+                       settings.Properties.Width = Unit.Percentage(100);
+                       settings.Properties.ValueField = "key";
+                       settings.Properties.TextField = "value";
+                       settings.Properties.ValueType = typeof(int?);
+                       settings.Properties.NullText = "Quý";
+                   }).BindList(EIS.Core.Common.Common.quys).GetHtml()
+            </div>
+            <table id="giai_doan" style="display:none">
+                <tr>
+                    <td style="padding-right:3px">
+                        <div id="tu_thang">
+                            @Html.DevExpress().ComboBox(
+                   settings =>
+                   {
+                       settings.Width = Unit.Percentage(100);
+                       settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                       settings.Name = "cbx_tuthag";
+                       settings.Properties.ValueType = typeof(int?);
+                       settings.Properties.NullText = "Từ tháng";
+                       settings.Properties.Width = Unit.Percentage(100);
+                   }).BindList(EIS.Core.Common.Common.thangs).GetHtml()
+                        </div>
+                    </td>
+                    <td style="padding-left:2px">
+                        <div id="den_thang">
+                            @Html.DevExpress().ComboBox(
+                   settings =>
+                   {
+                       settings.Width = Unit.Percentage(100);
+                       settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                       settings.Name = "cbx_denthag";
+                       settings.Properties.ValueType = typeof(int?);
+                       settings.Properties.NullText = "đến tháng";
+                       settings.Properties.Width = Unit.Percentage(100);
+                   }).BindList(EIS.Core.Common.Common.thangs).GetHtml()
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td style="width:30%">
+            <div id="nam" style="display:none">
+                @Html.DevExpress().ComboBox(
+                settings =>
+                {
+                    settings.Width = Unit.Percentage(100);
+                    settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                    settings.Name = "cbx_nam";
+                    settings.Properties.Width = Unit.Percentage(100);
+                    settings.Properties.ValueType = typeof(int?);
+                    settings.Properties.NullText = "Năm";
+                }).BindList(EIS.Core.Common.Common.nams).GetHtml()
+            </div>
+
+        </td>
+    </tr>
+</table>

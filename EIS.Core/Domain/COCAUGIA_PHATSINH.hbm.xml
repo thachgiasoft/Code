@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+<class name="EIS.Core.Domain.COCAUGIA_PHATSINH, EIS.Core" table="COCAUGIA_PHATSINH" >
+  <id name="ID" column="ID">
+    <generator class="sequence-identity">
+      <param name="sequence">CHITIET_COCAUGIA_SEQ</param>
+    </generator>
+  </id>
+  <property name="CHITIET_ID" column="CHITIET_ID" type="int" length="22" />
+  <property name="SOLUONG_PS" column="SOLUONG_PS" type="int" length="22" />
+  <property name="DONGIA_PS" column="DONGIA_PS" type="double" length="22" />
+  <property name="THANHTIEN_PS" column="THANHTIEN_PS" type="double" length="22" />
+  <property name="COSOKCB_ID" column="COSOKCB_ID" type="double" length="22" />
+  <property name="SP_HSBA" column="SP_HSBA" type="string" length="120" />
+  <property name="NGUOITAO" column="NGUOITAO" type="string" length="100" />
+  <property name="NGAYTAO" column="NGAYTAO" type="DateTime" length="7" />
+  <property name="NGUOICAPNHAT" column="NGUOICAPNHAT" type="string" length="100" />
+  <property name="NGAYCAPNHAT" column="NGAYCAPNHAT" type="DateTime" length="7" />
+</class>
+</hibernate-mapping>

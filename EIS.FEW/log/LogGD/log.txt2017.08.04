@@ -1,0 +1,174 @@
+﻿2017-08-04 10:37:12,458 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-08-04 10:37:12,466 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-08-04 10:37:12,466 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-08-04 10:37:12,610 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-08-04 10:37:12,616 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-08-04 11:11:13,963 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: select user0_.userid as userid63_, user0_.username as username63_, user0_.password as password63_, user0_.PasswordFormat as Password4_63_, user0_.PasswordSalt as Password5_63_, user0_.email as email63_, user0_.PasswordQuestion as Password7_63_, user0_.PasswordAnswer as Password8_63_, user0_.IsApproved as IsApproved63_, user0_.IsLockedOut as IsLocke10_63_, user0_.CreateDate as CreateDate63_, user0_.LastLoginDate as LastLog12_63_, user0_.LastPasswordChangedDate as LastPas13_63_, user0_.LastLockoutDate as LastLoc14_63_, user0_.FailedPassAttemptCount as FailedP15_63_, user0_.FailedPassAnswerAttemptCount as FailedP16_63_, user0_.FailedPassAttemptWindowStart as FailedP17_63_, user0_.FailedPassAnswerAttemptStart as FailedP18_63_, user0_.GroupName as GroupName63_, user0_.ISADMIN as ISADMIN63_ from userdata user0_ inner join APP_USER applicatio1_ on user0_.userid=applicatio1_.UserID inner join Applications applicatio2_ on applicatio1_.AppID=applicatio2_.AppID where user0_.username=:p0 and applicatio2_.AppID=:p1 
+Oracle.DataAccess.Client.OracleException ORA-03113: end-of-file on communication channel
+Process ID: 20266
+Session ID: 84 Serial number: 395    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-08-04 11:11:13,984 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03113: end-of-file on communication channel
+Process ID: 20266
+Session ID: 84 Serial number: 395 
+2017-08-04 11:11:13,993 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03113: end-of-file on communication channel
+Process ID: 20266
+Session ID: 84 Serial number: 395 
+2017-08-04 11:11:13,994 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03113: end-of-file on communication channel
+Process ID: 20266
+Session ID: 84 Serial number: 395 
+2017-08-04 11:11:13,996 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - GetNumberOfUsersOnline Error Application EIS 
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select user0_.userid as userid63_, user0_.username as username63_, user0_.password as password63_, user0_.PasswordFormat as Password4_63_, user0_.PasswordSalt as Password5_63_, user0_.email as email63_, user0_.PasswordQuestion as Password7_63_, user0_.PasswordAnswer as Password8_63_, user0_.IsApproved as IsApproved63_, user0_.IsLockedOut as IsLocke10_63_, user0_.CreateDate as CreateDate63_, user0_.LastLoginDate as LastLog12_63_, user0_.LastPasswordChangedDate as LastPas13_63_, user0_.LastLockoutDate as LastLoc14_63_, user0_.FailedPassAttemptCount as FailedP15_63_, user0_.FailedPassAnswerAttemptCount as FailedP16_63_, user0_.FailedPassAttemptWindowStart as FailedP17_63_, user0_.FailedPassAnswerAttemptStart as FailedP18_63_, user0_.GroupName as GroupName63_, user0_.ISADMIN as ISADMIN63_ from userdata user0_ inner join APP_USER applicatio1_ on user0_.userid=applicatio1_.UserID inner join Applications applicatio2_ on applicatio1_.AppID=applicatio2_.AppID where user0_.username=:p0 and applicatio2_.AppID=:p1 ]
+  Name:username - Value:admin  Name:AppID - Value:1
+[SQL: select user0_.userid as userid63_, user0_.username as username63_, user0_.password as password63_, user0_.PasswordFormat as Password4_63_, user0_.PasswordSalt as Password5_63_, user0_.email as email63_, user0_.PasswordQuestion as Password7_63_, user0_.PasswordAnswer as Password8_63_, user0_.IsApproved as IsApproved63_, user0_.IsLockedOut as IsLocke10_63_, user0_.CreateDate as CreateDate63_, user0_.LastLoginDate as LastLog12_63_, user0_.LastPasswordChangedDate as LastPas13_63_, user0_.LastLockoutDate as LastLoc14_63_, user0_.FailedPassAttemptCount as FailedP15_63_, user0_.FailedPassAnswerAttemptCount as FailedP16_63_, user0_.FailedPassAttemptWindowStart as FailedP17_63_, user0_.FailedPassAnswerAttemptStart as FailedP18_63_, user0_.GroupName as GroupName63_, user0_.ISADMIN as ISADMIN63_ from userdata user0_ inner join APP_USER applicatio1_ on user0_.userid=applicatio1_.UserID inner join Applications applicatio2_ on applicatio1_.AppID=applicatio2_.AppID where user0_.username=:p0 and applicatio2_.AppID=:p1] ---> Oracle.DataAccess.Client.OracleException: ORA-03113: end-of-file on communication channel
+Process ID: 20266
+Session ID: 84 Serial number: 395
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- End of inner exception stack trace ---
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Hql.Ast.ANTLR.Loader.QueryLoader.List(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Hql.Ast.ANTLR.QueryTranslatorImpl.List(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Engine.Query.HQLQueryPlan.PerformList(QueryParameters queryParameters, ISessionImplementor session, IList results)
+   at NHibernate.Impl.SessionImpl.List(String query, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List[T](String query, QueryParameters parameters)
+   at NHibernate.Impl.QueryImpl.List[T]()
+   at FX.Data.BaseService`2.GetbyHQuery(String Query, SQLParam[] _params)
+   at IdentityManagement.ImplementService.userService.GetByName(String mUserName, Int32 AppID)
+   at IdentityManagement.WebProviders.RBACMembershipProvider.GetUser(String username, Boolean userIsOnline)
+2017-08-04 11:11:46,726 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-08-04 11:11:46,726 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-08-04 11:11:46,726 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-08-04 11:11:46,760 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-08-04 11:11:46,760 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-08-04 15:56:41,159 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Util.ThreadSafeDictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Type.TypeFactory.GetType(NullableType defaultUnqualifiedType, Int32 length, GetNullableTypeWithLength ctorDelegate)
+   at NHibernate.Type.TypeFactory.<RegisterDefaultNetTypes>b__c(Int32 l)
+   at NHibernate.Type.TypeFactory.BuiltInType(String typeName, Int32 length)
+   at NHibernate.Mapping.SimpleValue.GetHeuristicType()
+   at NHibernate.Mapping.SimpleValue.get_Type()
+   at NHibernate.Mapping.SimpleValue.IsValid(IMapping mapping)
+   at NHibernate.Mapping.PersistentClass.Validate(IMapping mapping)
+   at NHibernate.Mapping.RootClass.Validate(IMapping mapping)
+   at NHibernate.Cfg.Configuration.ValidateEntities()
+   at NHibernate.Cfg.Configuration.Validate()
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-08-04 16:23:20,046 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Util.ThreadSafeDictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Type.TypeFactory.GetType(NullableType defaultUnqualifiedType, Int32 length, GetNullableTypeWithLength ctorDelegate)
+   at NHibernate.Type.TypeFactory.<RegisterDefaultNetTypes>b__c(Int32 l)
+   at NHibernate.Type.TypeFactory.BuiltInType(String typeName, Int32 length)
+   at NHibernate.Mapping.SimpleValue.GetHeuristicType()
+   at NHibernate.Mapping.SimpleValue.get_Type()
+   at NHibernate.Mapping.SimpleValue.IsValid(IMapping mapping)
+   at NHibernate.Mapping.PersistentClass.Validate(IMapping mapping)
+   at NHibernate.Mapping.RootClass.Validate(IMapping mapping)
+   at NHibernate.Cfg.Configuration.ValidateEntities()
+   at NHibernate.Cfg.Configuration.Validate()
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-08-04 16:24:32,938 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-08-04 16:24:32,939 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-08-04 16:24:32,939 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-08-04 16:24:32,982 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-08-04 16:24:32,984 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-08-04 16:47:01,683 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Util.ThreadSafeDictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Type.TypeFactory.GetType(NullableType defaultUnqualifiedType, Int32 length, GetNullableTypeWithLength ctorDelegate)
+   at NHibernate.Type.TypeFactory.<RegisterDefaultNetTypes>b__c(Int32 l)
+   at NHibernate.Type.TypeFactory.BuiltInType(String typeName, Int32 length)
+   at NHibernate.Mapping.SimpleValue.GetHeuristicType()
+   at NHibernate.Mapping.SimpleValue.get_Type()
+   at NHibernate.Mapping.SimpleValue.IsValid(IMapping mapping)
+   at NHibernate.Mapping.PersistentClass.Validate(IMapping mapping)
+   at NHibernate.Mapping.RootClass.Validate(IMapping mapping)
+   at NHibernate.Cfg.Configuration.ValidateEntities()
+   at NHibernate.Cfg.Configuration.Validate()
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-08-04 17:57:33,044 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Util.ThreadSafeDictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Type.TypeFactory.GetType(NullableType defaultUnqualifiedType, Int32 length, GetNullableTypeWithLength ctorDelegate)
+   at NHibernate.Type.TypeFactory.<RegisterDefaultNetTypes>b__c(Int32 l)
+   at NHibernate.Type.TypeFactory.BuiltInType(String typeName, Int32 length)
+   at NHibernate.Mapping.SimpleValue.GetHeuristicType()
+   at NHibernate.Mapping.SimpleValue.get_Type()
+   at NHibernate.Mapping.SimpleValue.IsValid(IMapping mapping)
+   at NHibernate.Mapping.PersistentClass.Validate(IMapping mapping)
+   at NHibernate.Mapping.RootClass.Validate(IMapping mapping)
+   at NHibernate.Cfg.Configuration.ValidateEntities()
+   at NHibernate.Cfg.Configuration.Validate()
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-08-04 18:46:47,612 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: select dm_nhomdtb0_.ID as ID3_, dm_nhomdtb0_.MA as MA3_ from DM_NHOMDTBHYT dm_nhomdtb0_ order by dm_nhomdtb0_.MA asc 
+Oracle.DataAccess.Client.OracleException ORA-03113: end-of-file on communication channel
+Process ID: 448871
+Session ID: 1177 Serial number: 42479    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-08-04 18:46:48,050 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03113: end-of-file on communication channel
+Process ID: 448871
+Session ID: 1177 Serial number: 42479 
+2017-08-04 18:46:48,055 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03113: end-of-file on communication channel
+Process ID: 448871
+Session ID: 1177 Serial number: 42479 
+2017-08-04 18:46:48,055 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03113: end-of-file on communication channel
+Process ID: 448871
+Session ID: 1177 Serial number: 42479 
+2017-08-04 21:10:04,251 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-08-04 21:10:04,614 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-08-04 21:10:04,614 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-08-04 21:10:04,997 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-08-04 21:10:05,005 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  

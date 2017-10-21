@@ -1,0 +1,130 @@
+﻿@{
+    FX.Core.IoC.Resolve<EIS.Core.IService.ICOCAUGIA_LOAIService>();
+    FX.Core.IoC.Resolve<EIS.Core.IService.ICOCAUGIA_CHITIETService>();
+}
+
+@Html.DevExpress().FormLayout(settings =>
+{
+    settings.Name = "formLayoutAdd";
+    settings.EncodeHtml = false;
+    settings.Width = Unit.Percentage(100);
+    settings.ColCount = 3;
+    settings.Items.Add(i =>
+    {
+        i.FieldName = "DICHVU21_ID.MA_DV";
+        i.Caption = "Mã dịch vụ";
+        i.NestedExtension().TextBox(s =>
+        {
+            s.Name = "txt_ma";
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            s.ShowModelErrors = true;
+            s.Width = Unit.Percentage(100);
+        });
+    });
+    settings.Items.Add(i =>
+    {
+        i.FieldName = "DICHVU21_ID.TEN_DV";
+        i.Caption = "Tên dịch vụ";
+        i.ColSpan = 2;
+        i.NestedExtension().TextBox(s =>
+        {
+            s.Name = "txt_ten";
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            s.ShowModelErrors = true;
+            s.Width = Unit.Percentage(100);
+        });
+    });
+    settings.Items.Add(i =>
+    {
+        i.FieldName = "LOAI_CC.ID";
+        i.Caption = "Loại";
+        i.ColSpan = 3;
+        i.NestedExtension().ComboBox(s =>
+        {
+            s.Name = "cbo_loai";
+            s.Properties.TextField = "TEN";
+            s.Properties.ValueField = "ID";
+            s.Properties.ValueType = typeof(string);
+            s.Properties.DataSource = FX.Core.IoC.Resolve<EIS.Core.IService.ICOCAUGIA_LOAIService>().GetAll();
+            s.Width = Unit.Percentage(100);
+        });
+    });
+    settings.Items.Add(i =>
+    {
+        i.FieldName = "CHITIET_CC";
+        i.Caption = "Chi tiết CC";
+        i.ColSpan = 3;
+        i.SetNestedContent(() =>
+        {
+            ViewContext.Writer.Write(Html.Partial("_ComboBoxChitietCCPartial"));
+        });
+    });
+    settings.Items.Add(i =>
+    {
+        i.FieldName = "MA_CC";
+        i.Caption = "Mã";
+        i.NestedExtension().TextBox(s =>
+        {
+            s.Name = "txt_macc";
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            s.ShowModelErrors = true;
+            s.Width = Unit.Percentage(100);
+        });
+    });
+    settings.Items.Add(i =>
+    {
+        i.FieldName = "TEN_CC";
+        i.Caption = "Tên";
+        i.ColSpan = 2;
+        i.NestedExtension().TextBox(s =>
+        {
+            s.Name = "txt_tencc";
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            s.ShowModelErrors = true;
+            s.Width = Unit.Percentage(100);
+        });
+    });
+    settings.Items.Add(i =>
+    {
+        i.FieldName = "SOLUONG_CC";
+        i.Caption = "Số lượng CC";
+        i.NestedExtension().TextBox(s =>
+        {
+            s.Name = "txt_soluongcc";
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            s.ShowModelErrors = true;
+            s.Width = Unit.Percentage(100);
+            s.Properties.ClientSideEvents.TextChanged = "UpdateThanhTien";
+        });
+    });
+    settings.Items.Add(i =>
+    {
+        i.FieldName = "DONGIA_CC";
+        i.Caption = "Đơn giá CC";
+        i.NestedExtension().TextBox(s =>
+        {
+            s.Name = "txt_dongiacc";
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            s.ShowModelErrors = true;
+            s.Width = Unit.Percentage(100);
+            s.Properties.ClientSideEvents.TextChanged = "UpdateThanhTien";
+        });
+    });
+    settings.Items.Add(i =>
+    {
+        i.FieldName = "THANHTIEN_CC";
+        i.Caption = "Thành tiền CC";
+        i.NestedExtension().TextBox(s =>
+        {
+            s.Name = "txt_thanhtiencc";
+            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            s.ShowModelErrors = true;
+            s.Width = Unit.Percentage(100);
+            s.Enabled = false;
+        });
+    });
+}).GetHtml()
+
+@{
+    ViewContext.Writer.Write(Html.Action("_GridViewChiTietDichVuPartial"));
+}

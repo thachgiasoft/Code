@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="vi-VN">
+	<Title Visible="false" Text="BIỂU ĐỒ THỐNG KÊ" />
+	<DataSources>
+		<SqlDataSource ComponentName="dashboardSqlDataSource1">
+			<Name>SQL Data Source 1</Name>
+			<Connection Name="118.70.211.66:1521/orcl_Connection" ProviderKey="Oracle">
+				<Parameters>
+					<Parameter Name="server" Value="118.70.211.66:1521/orcl" />
+					<Parameter Name="database" Value="" />
+					<Parameter Name="read only" Value="1" />
+					<Parameter Name="generateConnectionHelper" Value="false" />
+					<Parameter Name="userid" Value="TecaOne" />
+					<Parameter Name="password" Value="TecaOne" />
+				</Parameters>
+			</Connection>
+			<Query Type="CustomSqlQuery" Name="XML1_9324">
+				<Sql>select 
+"XML1_9324"."COSOKCB_ID",
+"XML1_9324"."THANG_QT",
+"XML1_9324"."NAM_QT",
+(CASE WHEN "XML1_9324"."LOAI_BN" = 1 THEN 'Bệnh nhân nội tỉnh KCB ban đầu'
+	WHEN "XML1_9324"."LOAI_BN" = 2 THEN 'Bệnh nhân nội tỉnh đến'
+	WHEN "XML1_9324"."LOAI_BN" = 3 THEN 'Bệnh nhân ngoại tỉnh đến' ELSE 'Không có dữ liệu' END) AS LOAIBN,
+
+"XML1_9324"."XUATTOAN",
+("XML1_9324"."K_XETNGHIEM_QT"+
+"XML1_9324"."K_CDHATDCN_QT"+
+"XML1_9324"."K_THUOC_QT"+
+"XML1_9324"."K_MAU_QT"+
+"XML1_9324"."K_PTTT_QT"+
+"XML1_9324"."K_VTYT_QT"+
+"XML1_9324"."H_DVKT_QT"+
+"XML1_9324"."H_THUOC_QT"+
+"XML1_9324"."H_VTYT_QT"+
+"XML1_9324"."VANCHUYEN_QT"+
+"XML1_9324"."TIENGIUONG_QT"+
+"XML1_9324"."TIENKHAM_QT") AS QUYETTOAN
+from "XML1_9324" "XML1_9324"
+where "XML1_9324"."COSOKCB_ID" = {1} and "XML1_9324"."NAM_QT" = {2} and not ("XML1_9324"."LOAI_BN" is null)
+</Sql>
+			</Query>
+			<Query Type="CustomSqlQuery" Name="CustomSqlQuery">
+				<Sql>select 
+"XML1_9324"."COSOKCB_ID",
+"XML1_9324"."THANG_QT",
+"XML1_9324"."NAM_QT",
+("XML1_9324"."K_XETNGHIEM_QT"+
+"XML1_9324"."K_CDHATDCN_QT"+
+"XML1_9324"."K_PTTT_QT"+
+"XML1_9324"."H_DVKT_QT"+
+"XML1_9324"."VANCHUYEN_QT"+
+"XML1_9324"."TIENGIUONG_QT"+
+"XML1_9324"."TIENKHAM_QT") AS DICHVU,
+("XML1_9324"."K_THUOC_QT"+
+"XML1_9324"."K_MAU_QT"+
+"XML1_9324"."H_THUOC_QT") AS THUOC,
+("XML1_9324"."K_VTYT_QT"+
+"XML1_9324"."H_VTYT_QT") AS VATTU
+from "XML1_9324" "XML1_9324"
+where "XML1_9324"."COSOKCB_ID" = {1} and "XML1_9324"."NAM_QT" = {2} and not ("XML1_9324"."LOAI_BN" is null)
+</Sql>
+			</Query>
+			<ResultSchema>
+				<DataSet Name="SQL Data Source 1">
+					<View Name="CustomSqlQuery">
+						<Field Name="COSOKCB_ID" Type="Int32" />
+						<Field Name="THANG_QT" Type="Int32" />
+						<Field Name="NAM_QT" Type="Int32" />
+						<Field Name="DICHVU" Type="Decimal" />
+						<Field Name="THUOC" Type="Decimal" />
+						<Field Name="VATTU" Type="Decimal" />
+					</View>
+					<View Name="XML1_9324">
+						<Field Name="COSOKCB_ID" Type="Int32" />
+						<Field Name="THANG_QT" Type="Int32" />
+						<Field Name="NAM_QT" Type="Int32" />
+						<Field Name="LOAIBN" Type="String" />
+						<Field Name="XUATTOAN" Type="Int64" />
+						<Field Name="QUYETTOAN" Type="Decimal" />
+					</View>
+				</DataSet>
+			</ResultSchema>
+		</SqlDataSource>
+	</DataSources>
+	<Parameters>
+		<Parameter Name="TUTHANG" Type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Value="{3}" />
+		<Parameter Name="DENTHANG" Type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Value="{4}" />
+	</Parameters>
+	<Items>
+		<ListBox ComponentName="listBoxDashboardItem1" Name="Bộ lọc" ShowCaption="false" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="XML1_9324">
+			<InteractivityOptions IgnoreMasterFilters="false" />
+			<DataItems>
+				<Dimension DataMember="LOAIBN" UniqueName="DataItem0" />
+				<Dimension DataMember="NAM_QT" UniqueName="DataItem1" />
+				<Dimension DataMember="COSOKCB_ID" UniqueName="DataItem2" />
+				<Dimension DataMember="THANG_QT" UniqueName="DataItem3" />
+			</DataItems>
+			<HiddenDimensions>
+				<Dimension UniqueName="DataItem1" />
+				<Dimension UniqueName="DataItem2" />
+				<Dimension UniqueName="DataItem3" />
+			</HiddenDimensions>
+			<FilterDimensions>
+				<Dimension UniqueName="DataItem0" />
+			</FilterDimensions>
+		</ListBox>
+		<Chart ComponentName="chartDashboardItem2" Name="Chart 1" ShowCaption="false" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="XML1_9324">
+			<ColoringOptions UseGlobalColors="false" />
+			<DataItems>
+				<Dimension DataMember="THANG_QT" IsDiscreteScale="true" UniqueName="DataItem4">
+					<NumericFormat FormatType="Number" Precision="0" Unit="Ones" />
+				</Dimension>
+				<Dimension DataMember="LOAIBN" UniqueName="DataItem5" />
+				<Dimension DataMember="COSOKCB_ID" UniqueName="DataItem3" />
+				<Dimension DataMember="NAM_QT" UniqueName="DataItem6" />
+				<Measure DataMember="QUYETTOAN" Name="Quyết toán (Tổng)" UniqueName="DataItem0" />
+				<Measure DataMember="XUATTOAN" Name="Xuất toán (Tổng)" UniqueName="DataItem1" />
+			</DataItems>
+			<HiddenDimensions>
+				<Dimension UniqueName="DataItem3" />
+				<Dimension UniqueName="DataItem6" />
+			</HiddenDimensions>
+			<SeriesDimensions>
+				<SeriesDimension UniqueName="DataItem5" />
+			</SeriesDimensions>
+			<Arguments>
+				<Argument UniqueName="DataItem4" />
+			</Arguments>
+			<ColorSheme>
+				<Entry DataSource="dashboardSqlDataSource1" DataMember="XML1_9324" Color="-4567727">
+					<MeasureKey>
+						<Definition DataMember="QUYETTOAN" />
+					</MeasureKey>
+					<DimensionKeys>
+						<DimensionKey>
+							<Definition DataMember="LOAIBN" />
+							<Value Type="System.String" Value="Bệnh nhân nội tỉnh đến" />
+						</DimensionKey>
+					</DimensionKeys>
+				</Entry>
+				<Entry DataSource="dashboardSqlDataSource1" DataMember="XML1_9324" Color="-5482852">
+					<MeasureKey>
+						<Definition DataMember="QUYETTOAN" />
+					</MeasureKey>
+					<DimensionKeys>
+						<DimensionKey>
+							<Definition DataMember="LOAIBN" />
+							<Value Type="System.String" Value="Bệnh nhân nội tỉnh KCB ban đầu" />
+						</DimensionKey>
+					</DimensionKeys>
+				</Entry>
+				<Entry DataSource="dashboardSqlDataSource1" DataMember="XML1_9324" Color="-1857965">
+					<MeasureKey>
+						<Definition DataMember="QUYETTOAN" />
+					</MeasureKey>
+					<DimensionKeys>
+						<DimensionKey>
+							<Definition DataMember="LOAIBN" />
+							<Value Type="System.String" Value="Bệnh nhân ngoại tỉnh đến" />
+						</DimensionKey>
+					</DimensionKeys>
+				</Entry>
+				<Entry DataSource="dashboardSqlDataSource1" DataMember="XML1_9324" Color="-11886166">
+					<MeasureKey>
+						<Definition DataMember="XUATTOAN" />
+					</MeasureKey>
+					<DimensionKeys>
+						<DimensionKey>
+							<Definition DataMember="LOAIBN" />
+							<Value Type="System.String" Value="Bệnh nhân nội tỉnh đến" />
+						</DimensionKey>
+					</DimensionKeys>
+				</Entry>
+				<Entry DataSource="dashboardSqlDataSource1" DataMember="XML1_9324" Color="-10523243">
+					<MeasureKey>
+						<Definition DataMember="XUATTOAN" />
+					</MeasureKey>
+					<DimensionKeys>
+						<DimensionKey>
+							<Definition DataMember="LOAIBN" />
+							<Value Type="System.String" Value="Bệnh nhân nội tỉnh KCB ban đầu" />
+						</DimensionKey>
+					</DimensionKeys>
+				</Entry>
+				<Entry DataSource="dashboardSqlDataSource1" DataMember="XML1_9324" Color="-6446931">
+					<MeasureKey>
+						<Definition DataMember="XUATTOAN" />
+					</MeasureKey>
+					<DimensionKeys>
+						<DimensionKey>
+							<Definition DataMember="LOAIBN" />
+							<Value Type="System.String" Value="Bệnh nhân ngoại tỉnh đến" />
+						</DimensionKey>
+					</DimensionKeys>
+				</Entry>
+			</ColorSheme>
+			<Panes>
+				<Pane Name="Pane 1">
+					<AxisY Title="Tổng tiền" />
+					<Series>
+						<Simple>
+							<Value UniqueName="DataItem0" />
+						</Simple>
+						<Simple>
+							<Value UniqueName="DataItem1" />
+						</Simple>
+					</Series>
+				</Pane>
+			</Panes>
+			<AxisX TitleVisible="true" Title="Tháng QT" />
+		</Chart>
+		<Pie ComponentName="pieDashboardItem1" Name="Pies 1" ShowCaption="false" Group="dashboardItemGroup2" DataSource="dashboardSqlDataSource1" DataMember="CustomSqlQuery" FilterString="[DataItem2] &gt;= ?TUTHANG And [DataItem2] &lt;= ?DENTHANG" ContentArrangementMode="FixedColumnCount" ContentLineCount="2">
+			<DataItems>
+				<Dimension DataMember="NAM_QT" UniqueName="DataItem0" />
+				<Dimension DataMember="COSOKCB_ID" UniqueName="DataItem1" />
+				<Measure DataMember="DICHVU" Name="Dịch vụ (Tổng)" UniqueName="DataItem3" />
+				<Measure DataMember="THUOC" Name="Thuốc (Tổng)" UniqueName="DataItem4" />
+				<Measure DataMember="VATTU" Name="Vật tư (Tổng)" UniqueName="DataItem5" />
+				<Dimension DataMember="THANG_QT" UniqueName="DataItem2" />
+			</DataItems>
+			<HiddenDimensions>
+				<Dimension UniqueName="DataItem0" />
+				<Dimension UniqueName="DataItem1" />
+			</HiddenDimensions>
+			<SeriesDimensions>
+				<SeriesDimension UniqueName="DataItem2" />
+			</SeriesDimensions>
+			<Values>
+				<Value UniqueName="DataItem3" />
+				<Value UniqueName="DataItem4" />
+				<Value UniqueName="DataItem5" />
+			</Values>
+		</Pie>
+		<Chart ComponentName="chartDashboardItem1" Name="Chart 1" ShowCaption="false" Group="dashboardItemGroup3" DataSource="dashboardSqlDataSource1" DataMember="XML1_9324">
+			<ColoringOptions UseGlobalColors="false" />
+			<DataItems>
+				<Dimension DataMember="THANG_QT" IsDiscreteScale="true" UniqueName="DataItem4">
+					<NumericFormat FormatType="Number" Precision="0" Unit="Ones" />
+				</Dimension>
+				<Dimension DataMember="COSOKCB_ID" UniqueName="DataItem3" />
+				<Dimension DataMember="NAM_QT" UniqueName="DataItem6" />
+				<Measure DataMember="QUYETTOAN" Name="Quyết toán (Tổng)" UniqueName="DataItem0" />
+				<Measure DataMember="XUATTOAN" Name="Xuất toán (Tổng)" UniqueName="DataItem1" />
+			</DataItems>
+			<HiddenDimensions>
+				<Dimension UniqueName="DataItem3" />
+				<Dimension UniqueName="DataItem6" />
+			</HiddenDimensions>
+			<Arguments>
+				<Argument UniqueName="DataItem4" />
+			</Arguments>
+			<ColorSheme>
+				<Entry DataSource="dashboardSqlDataSource1" DataMember="XML1_9324" Color="-4567727">
+					<MeasureKey>
+						<Definition DataMember="QUYETTOAN" />
+					</MeasureKey>
+					<DimensionKeys>
+						<DimensionKey>
+							<Definition DataMember="LOAIBN" />
+							<Value Type="System.String" Value="Bệnh nhân nội tỉnh đến" />
+						</DimensionKey>
+					</DimensionKeys>
+				</Entry>
+				<Entry DataSource="dashboardSqlDataSource1" DataMember="XML1_9324" Color="-5482852">
+					<MeasureKey>
+						<Definition DataMember="QUYETTOAN" />
+					</MeasureKey>
+					<DimensionKeys>
+						<DimensionKey>
+							<Definition DataMember="LOAIBN" />
+							<Value Type="System.String" Value="Bệnh nhân nội tỉnh KCB ban đầu" />
+						</DimensionKey>
+					</DimensionKeys>
+				</Entry>
+				<Entry DataSource="dashboardSqlDataSource1" DataMember="XML1_9324" Color="-1857965">
+					<MeasureKey>
+						<Definition DataMember="QUYETTOAN" />
+					</MeasureKey>
+					<DimensionKeys>
+						<DimensionKey>
+							<Definition DataMember="LOAIBN" />
+							<Value Type="System.String" Value="Bệnh nhân ngoại tỉnh đến" />
+						</DimensionKey>
+					</DimensionKeys>
+				</Entry>
+				<Entry DataSource="dashboardSqlDataSource1" DataMember="XML1_9324" Color="-11886166">
+					<MeasureKey>
+						<Definition DataMember="XUATTOAN" />
+					</MeasureKey>
+					<DimensionKeys>
+						<DimensionKey>
+							<Definition DataMember="LOAIBN" />
+							<Value Type="System.String" Value="Bệnh nhân nội tỉnh đến" />
+						</DimensionKey>
+					</DimensionKeys>
+				</Entry>
+				<Entry DataSource="dashboardSqlDataSource1" DataMember="XML1_9324" Color="-10523243">
+					<MeasureKey>
+						<Definition DataMember="XUATTOAN" />
+					</MeasureKey>
+					<DimensionKeys>
+						<DimensionKey>
+							<Definition DataMember="LOAIBN" />
+							<Value Type="System.String" Value="Bệnh nhân nội tỉnh KCB ban đầu" />
+						</DimensionKey>
+					</DimensionKeys>
+				</Entry>
+				<Entry DataSource="dashboardSqlDataSource1" DataMember="XML1_9324" Color="-6446931">
+					<MeasureKey>
+						<Definition DataMember="XUATTOAN" />
+					</MeasureKey>
+					<DimensionKeys>
+						<DimensionKey>
+							<Definition DataMember="LOAIBN" />
+							<Value Type="System.String" Value="Bệnh nhân ngoại tỉnh đến" />
+						</DimensionKey>
+					</DimensionKeys>
+				</Entry>
+			</ColorSheme>
+			<Panes>
+				<Pane Name="Pane 1">
+					<AxisY Title="Tổng tiền" />
+					<Series>
+						<Simple SeriesType="StackedSplineArea">
+							<Value UniqueName="DataItem0" />
+						</Simple>
+						<Simple SeriesType="StackedSplineArea">
+							<Value UniqueName="DataItem1" />
+						</Simple>
+					</Series>
+				</Pane>
+			</Panes>
+			<AxisX TitleVisible="true" Title="Tháng QT" />
+		</Chart>
+	</Items>
+	<Groups>
+		<Group ComponentName="dashboardItemGroup1" Name="BIỂU ĐỒ SỐ LIỆU CHI PHÍ THANH TOÁN CỦA {0} THEO LOẠI BỆNH NHÂN">
+			<InteractivityOptions IgnoreMasterFilters="false" IsMasterFilter="true" />
+		</Group>
+		<Group ComponentName="dashboardItemGroup2" Name="BIỂU ĐỒ SỐ LIỆU CHI PHÍ THANH TOÁN BHXH {0}" />
+		<Group ComponentName="dashboardItemGroup3" Name="BIÊU ĐỒ THÔNG KÊ CHI PHÍ THANH TOÁN {0} TRONG NĂM" />
+	</Groups>
+	<LayoutTree>
+		<LayoutGroup Orientation="Vertical">
+			<LayoutGroup DashboardItem="dashboardItemGroup1" Weight="56.546489563567363">
+				<LayoutItem DashboardItem="listBoxDashboardItem1" Weight="22.950819672131146" />
+				<LayoutItem DashboardItem="chartDashboardItem2" Weight="77.049180327868854" />
+			</LayoutGroup>
+			<LayoutGroup Weight="43.453510436432637">
+				<LayoutGroup Orientation="Vertical" DashboardItem="dashboardItemGroup2" Weight="38.288770053475936">
+					<LayoutItem DashboardItem="pieDashboardItem1" Weight="100" />
+				</LayoutGroup>
+				<LayoutGroup Orientation="Vertical" DashboardItem="dashboardItemGroup3" Weight="61.711229946524064">
+					<LayoutItem DashboardItem="chartDashboardItem1" Weight="100" />
+				</LayoutGroup>
+			</LayoutGroup>
+		</LayoutGroup>
+	</LayoutTree>
+</Dashboard>

@@ -1,0 +1,65 @@
+﻿@model EIS.FEW.Models.COCAUGIA_DICHVU_FILTER
+
+@Html.DevExpress().FormLayout(settings =>
+{
+    settings.Name = "formLayout";
+    settings.EncodeHtml = false;
+    settings.Width = Unit.Percentage(40);
+    settings.ColCount = 9;
+    settings.Items.Add(item =>
+    {
+        item.FieldName = "THONGTU";
+        item.Caption = "Lấy dịch vụ theo";
+        item.Width = Unit.Percentage(50);
+        item.NestedExtensionType = FormLayoutNestedExtensionItemType.ComboBox;
+        item.NestedExtension().ComboBox(cb =>
+        {
+            cb.Name = "cbx_thongtu";
+            cb.Width = Unit.Percentage(90);
+            cb.SelectedIndex = 0;
+            cb.Properties.ValueType = typeof(string);
+            cb.Properties.DataSource = new string[] { "Thông tư 37", "Thông tư 50", "Thông tư 42", "Ngoài thông tư" };
+        });
+    });
+    settings.Items.Add(bt =>
+    {
+        bt.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+        bt.Caption = @" ";
+        bt.Width = Unit.Percentage(5);
+        bt.CaptionSettings.Location = LayoutItemCaptionLocation.Right;
+        bt.NestedExtension().Button(s =>
+        {
+            s.Name = "bt_TimKiem";
+            s.EnableTheming = false;
+            s.Text = "";
+            s.AllowFocus = false;
+            s.RenderMode = ButtonRenderMode.Link;
+            s.Images.Image.SpriteProperties.CssClass = "btnSearch";
+            s.Images.Image.SpriteProperties.HottrackedCssClass = "btnSearchHottracked";
+            s.Images.Image.SpriteProperties.PressedCssClass = "btnSearchPressed";
+            s.ToolTip = "Tìm kiếm";
+            s.ClientSideEvents.Click = "Filter";
+        });
+    });
+    
+    settings.Items.Add(bt =>
+    {
+        bt.NestedExtensionType = FormLayoutNestedExtensionItemType.Button;
+        bt.Caption = @" ";
+        bt.Width = Unit.Percentage(5);
+        bt.CaptionSettings.Location = LayoutItemCaptionLocation.Right;
+        bt.NestedExtension().Button(s =>
+        {
+            s.Name = "bt_luu";
+            s.EnableTheming = false;
+            s.Text = "";
+            s.AllowFocus = false;
+            s.RenderMode = ButtonRenderMode.Link;
+            s.Images.Image.SpriteProperties.CssClass = "btnSave";
+            s.Images.Image.SpriteProperties.HottrackedCssClass = "btnSaveHottracked";
+            s.Images.Image.SpriteProperties.PressedCssClass = "btnSavePressed";
+            s.ToolTip = "Lưu";
+            s.ClientSideEvents.Click = "Save";
+        });
+    });
+}).GetHtml()

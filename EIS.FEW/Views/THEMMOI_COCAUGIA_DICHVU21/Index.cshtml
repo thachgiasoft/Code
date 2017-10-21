@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+@section HeadResources{
+    @Html.Partial("HeadResourcesPartial")
+}
+
+@model EIS.FEW.Models.COCAUGIA_DICHVU
+
+<script type="text/javascript">
+    function FilterChiTiet() {
+        if (gridviewDanhSach.pageRowCount > 0) {
+            gridviewDanhSach.GetRowValues(gridviewDanhSach.GetFocusedRowIndex(), 'MA_DICHVU21;TEN_DICHVU21', function (result) {
+                if (result.length > 0) {
+                    gridviewChiTiet.PerformCallback({ maNhomdv: result[0], tenNhomdv: result[1] });
+                    txt_ma.SetValue(result[0]);
+                    txt_ten.SetValue(result[1]);
+                    if (cbx_thongtu.GetValue() != 'Ngoài thông tư') {
+                        txt_ma.SetEnabled(false);
+                        txt_ten.SetEnabled(false);
+                    }
+                }
+            });
+        }
+        //gridviewChiTiet.ExpandAll();
+    }
+    function Filter() {
+        if (cbx_thongtu.GetValue() == 'Ngoài thông tư') {
+            txt_ma.SetEnabled(true);
+            txt_ten.SetEnabled(true);
+        }
+        gridviewChiTiet.UnselectAllRowsOnPage();
+        gridviewDanhSach.PerformCallback({ nguonDuLieu: cbx_thongtu.GetValue() });
+    }
+    function Save() {
+        //gridviewDanhSach.PerformCallback({ nhomdvId: "" });
+        alert('Đã lưu dữ liệu');
+    }
+    function UpdateThanhTien() {
+        txt_thanhtiencc.SetText(txt_soluongcc.GetValue() * txt_dongiacc.GetValue());
+    }
+    function ThemMoiChiTiet() {
+        $.ajax({
+            type: 'POST',
+            url: '/THEMMOI_COCAUGIA_DICHVU21/AddNewChiTiet',
+            contentType: 'application/json',
+            datatype : 'json',
+            data: JSON.stringify({
+                'MA_DICHVU21': txt_ma.GetValue(),
+                'TEN_DICHVU21': txt_ten.GetValue(),
+                'LOAI_CC_ID': cbo_loai.GetValue(),
+                'MA_CC': txt_macc.GetValue(),
+                'TEN_CC': txt_tencc.GetValue(),
+                'SOLUONG_CC': txt_soluongcc.GetValue(),
+                'DONGIA_CC': txt_dongiacc.GetValue(),
+                'THANHTIEN_CC': txt_thanhtiencc.GetValue(),
+            }),
+            success: function (response) {
+                if (response.mess == "1") FilterChiTiet();
+                if (response.mess == "2") gridviewDanhSach.PerformCallback({ nguonDuLieu: cbx_thongtu.GetValue() });
+            }
+        });
+    }
+</script>
+
+@Html.DevExpress().RoundPanel(settings =>
+{
+    settings.Name = "roundPanel";
+    settings.AllowCollapsingByHeaderClick = true;
+    settings.ShowCollapseButton = true;
+    settings.EnableAnimation = true;
+    settings.Width = Unit.Percentage(100);
+    settings.HeaderText = "THÊM MỚI CƠ CẤU GIÁ";
+    settings.Height = Unit.Pixel(50);
+    settings.SetContent(() =>
+    {
+        Html.RenderPartial("FilterView", Model.Filter);
+    });
+}).GetHtml()
+
+@Html.DevExpress().Splitter(
+    settings =>
+    {
+        settings.Name = "splClientSideEvents";
+        settings.FullscreenMode = true;
+        settings.Width = Unit.Percentage(100);
+        settings.Orientation = Orientation.Horizontal;
+        settings.ShowCollapseBackwardButton = true;
+        settings.ShowCollapseForwardButton = true;
+        
+        settings.Panes.Add(pane =>
+        {
+            pane.Name = "GvDanhSachDichVu";
+            pane.Size = Unit.Percentage(35);
+            pane.SetContent(() => ViewContext.Writer.Write(Html.Action("_GridViewDanhSachDichVuPartial")));
+        });
+        settings.Panes.Add(pane =>
+        {
+            pane.Name = "ChiTietDichVu";
+            pane.Size = Unit.Percentage(65);
+            pane.SetContent(() => Html.RenderPartial("_ThemChiTietPartial"));
+        });
+    }).GetHtml()

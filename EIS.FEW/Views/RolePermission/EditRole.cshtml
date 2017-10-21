@@ -1,0 +1,225 @@
+﻿@model EIS.FEW.Models.RoleObjectPms
+@{
+    ViewBag.Title = "EIS v" + EIS.FEW.RouteConfig.Version + " | Quản lý Phân quyền - quyền";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+@section HeadResources{
+    @Html.Partial("HeadResourcesPartial")
+}
+
+<style type="text/css">
+    .margin-10 {
+        margin-bottom: 10px;
+    }
+
+    .float-right {
+        float: right;
+        clear: both;
+    }
+
+    .mg-left {
+        margin-left: 0px !important;
+    }
+
+    .float-r10 {
+        margin-right: 10px;
+        float: right;
+    }
+
+    #divUpdatePms {
+        float: right;
+    }
+
+    .margintop-10 {
+        margin-top: 10px;
+    }
+
+    .height20 {
+        width: 1000px;
+        height: 20px;
+        clear: both;
+    }
+
+    .mg-left20 {
+        margin-left: 20px;
+    }
+
+    .btnSearch:hover {
+        background-image: url('/Content/Images/Icon-flat/Search-over.png');
+        width: 32px;
+        height: 32px;
+    }
+
+    .btnSearch:active {
+        background-image: url('/Content/Images/Icon-flat/Search.png');
+        width: 32px;
+        height: 32px;
+    }
+
+    .dxgvSearchPanel_EIS {
+        float: left;
+    }
+
+    .height_10 {
+        height: 10px;
+        clear: both;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#editMode").change(function () {
+            gvEditing.PeformCallback({ editMode: $("#editMode").val() });
+        });
+    });
+
+    function StoreTypeRole() {
+        _typeRoleId = window.ComboTypeRole.GetValue();
+    }
+
+
+    var _roleid = "0";
+    var _rolename = "";
+    var _typeRoleId = "";
+
+
+    function UpdateRolePermission() {
+        _rolename = $("input[name=txtRoleName]").val();
+        _rolename = $.trim(_rolename);
+
+        if (_rolename == "") {
+            alert("Bạn phải nhập tên phân quyền");
+            return false;
+        }
+
+        _typeRoleId = $.trim(_typeRoleId);
+        if (_typeRoleId == "")
+            _typeRoleId = $("#hd_typeRole").val();
+
+        _roleid = $("#hd_RoleId").val();
+        $.ajax({
+            url: '@Url.Action("UpdateRole", "RolePermission")',
+            type: "GET",
+            data: { roleId: _roleid.toString(), name: _rolename.toString(), RoleTypeId: _typeRoleId.toString() },
+            success: function (response) {
+                var _stNotice = response;
+                if (_stNotice == "OK") {
+                    alert("Bạn đã cập nhật thành công!");
+                    back();
+                }
+                else if (_stNotice == "ExistName") {
+                    alert("Tên đã tồn tại, vui lòng chọn tên khác!");
+                }
+            }
+        });
+    }
+
+    function OnCheckedChangedPms(pms, checkReal) {
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("ChangeCheckBoxPms", "RolePermission")',
+            data: { pms: pms, checkReal: checkReal },
+            success: function () {
+            }
+        });
+    }
+
+    function back() {
+        window.location.href = '@Url.Action("Index", "RolePermission")';
+    }
+</script>
+
+<input type="hidden" value="@ViewBag.TypeRoleId" id="hd_typeRole" />
+<input type="hidden" value="@ViewBag.hdRoleId" id="hd_RoleId" />
+
+<div class="height_10"></div>
+@Html.DevExpress().RoundPanel(settings =>
+       {
+           settings.Name = "roundPanel";
+           settings.AllowCollapsingByHeaderClick = false;
+
+           settings.ShowCollapseButton = false;
+           settings.EnableAnimation = false;
+           settings.HeaderText = "Quản lý Phân quyền - quyền";
+           settings.Width = Unit.Percentage(90);
+       }).GetHtml()
+<div>
+    <table>
+        <tr>
+            <td>
+                <div>
+                    @Html.DevExpress().TextBox(t =>
+               {
+                   t.Enabled = (bool)ViewBag.RoleEnable;
+                   t.Name = "txtRoleName";
+                   t.Text = ViewBag.rolename.ToString();
+                   t.Properties.MaxLength = 100;
+                   t.Properties.Caption = "Tên phân quyền";
+                   t.Properties.CaptionStyle.Font.Bold = true;
+                   t.Properties.Style.Font.Bold = true;
+                   t.Properties.CaptionSettings.HorizontalAlign = EditorCaptionHorizontalAlign.Left;
+                   t.ControlStyle.HorizontalAlign = HorizontalAlign.Left;
+                   t.Width = 300;
+                   t.Height = 20;
+               }).GetHtml()
+                </div>
+            </td>
+            <td>
+                <div class="mg-left20">
+                    @Html.DevExpress().ComboBox(settings =>
+               {
+                   settings.Name = "LoaiType";
+                   settings.Properties.ClientSideEvents.SelectedIndexChanged = "StoreTypeRole";
+                   settings.Properties.Caption = "Loại";
+                   settings.Properties.CaptionStyle.Font.Bold = true;
+                   settings.Properties.Width = 400;
+                   settings.Properties.DropDownWidth = 400;
+                   settings.Width = 300;
+                   settings.Name = "ComboTypeRole";
+                   settings.Properties.DropDownStyle = DropDownStyle.DropDownList;
+                   settings.Properties.ValueType = typeof(string);
+                   settings.Properties.FilterMinLength = 0;
+                   settings.SelectedIndex = int.Parse(ViewBag.TypeRoleId.ToString());
+                   settings.Properties.Items.Add("Cấp quản trị", 0);
+                   settings.Properties.Items.Add("Cấp trung ương", 1);
+                   settings.Properties.Items.Add("Cấp tỉnh", 2);
+                   settings.Properties.Items.Add("Cấp khác", 3);
+               }).GetHtml()
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="height20"></div>
+    <div>
+        @Html.Partial("PermissionForEditRolePartial", Model.lstObjPmsView)
+    </div>
+    <table class="margintop-10">
+        <tr>
+            <td>
+                <div class="float-r10">
+                    @Html.DevExpress().Button(
+                        settings =>
+                        {
+                            settings.ControlStyle.CssClass = "button";
+                            settings.Name = "Savebtn";
+                            settings.Text = "Lưu";
+                            settings.ClientSideEvents.Click = "UpdateRolePermission";
+                            settings.Images.Image.IconID = IconID.SaveSave16x16;
+                        }).GetHtml()
+                </div>
+                <div class="float-r10">
+                    @Html.DevExpress().Button(
+                        settings =>
+                        {
+                            settings.ControlStyle.CssClass = "button";
+                            settings.Name = "backbtn";
+                            settings.Text = "Quay Lại";
+                            settings.ClientSideEvents.Click = "back";
+                            settings.Images.Image.IconID = IconID.NavigationBackward16x16;
+                        }).GetHtml()
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="height20"></div>

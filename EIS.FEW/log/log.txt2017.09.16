@@ -1,0 +1,654 @@
+﻿2017-09-16 00:33:11,783 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Util.ThreadSafeDictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Type.TypeFactory.GetType(NullableType defaultUnqualifiedType, Int32 length, GetNullableTypeWithLength ctorDelegate)
+   at NHibernate.Type.TypeFactory.<RegisterDefaultNetTypes>b__c(Int32 l)
+   at NHibernate.Type.TypeFactory.BuiltInType(String typeName, Int32 length)
+   at NHibernate.Mapping.SimpleValue.GetHeuristicType()
+   at NHibernate.Mapping.SimpleValue.get_Type()
+   at NHibernate.Mapping.SimpleValue.IsValid(IMapping mapping)
+   at NHibernate.Mapping.PersistentClass.Validate(IMapping mapping)
+   at NHibernate.Mapping.RootClass.Validate(IMapping mapping)
+   at NHibernate.Cfg.Configuration.ValidateEntities()
+   at NHibernate.Cfg.Configuration.Validate()
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-09-16 00:33:12,987 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: Item has already been added. Key in dictionary: 'D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Config\NHibernateConfig.xml'  Key being added: 'D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Config\NHibernateConfig.xml'
+   at System.Collections.Hashtable.Insert(Object key, Object nvalue, Boolean add)
+   at System.Collections.Hashtable.Add(Object key, Object value)
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-09-16 00:33:58,585 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-09-16 00:33:58,604 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-09-16 00:33:58,651 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-09-16 00:33:58,652 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-09-16 00:33:58,652 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-09-16 00:33:58,653 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-09-16 00:33:58,792 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-09-16 00:33:58,800 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-09-16 00:47:43,188 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: Value cannot be null.
+Parameter name: maThe
+ -    at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 84 
+2017-09-16 00:55:17,810 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Util.ThreadSafeDictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Type.TypeFactory.GetType(NullableType defaultUnqualifiedType, Int32 length, GetNullableTypeWithLength ctorDelegate)
+   at NHibernate.Type.TypeFactory.<RegisterDefaultNetTypes>b__c(Int32 l)
+   at NHibernate.Type.TypeFactory.BuiltInType(String typeName, Int32 length)
+   at NHibernate.Mapping.SimpleValue.GetHeuristicType()
+   at NHibernate.Mapping.SimpleValue.get_Type()
+   at NHibernate.Mapping.SimpleValue.IsValid(IMapping mapping)
+   at NHibernate.Mapping.PersistentClass.Validate(IMapping mapping)
+   at NHibernate.Mapping.RootClass.Validate(IMapping mapping)
+   at NHibernate.Cfg.Configuration.ValidateEntities()
+   at NHibernate.Cfg.Configuration.Validate()
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-09-16 00:55:18,922 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewDanhSachDichVuPartial - message: Item has already been added. Key in dictionary: 'D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Config\NHibernateConfig.xml'  Key being added: 'D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Config\NHibernateConfig.xml'
+ -    at System.Collections.Hashtable.Insert(Object key, Object nvalue, Boolean add)
+   at System.Collections.Hashtable.Add(Object key, Object value)
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller._GridViewDanhSachDichVuPartial() in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_DICHVU21Controller.cs:line 60 
+2017-09-16 00:55:57,233 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-09-16 00:55:57,258 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-09-16 00:55:57,273 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-09-16 00:55:57,273 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-09-16 00:55:57,274 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-09-16 00:55:57,274 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-09-16 00:55:57,316 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-09-16 00:55:57,320 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-09-16 01:42:34,554 ERROR NHibernate.Util.ADOExceptionReporter - Connection request timed out 
+2017-09-16 01:42:34,575 ERROR NHibernate.Util.ADOExceptionReporter - Connection request timed out 
+2017-09-16 01:42:34,576 ERROR NHibernate.Util.ADOExceptionReporter - Connection request timed out 
+2017-09-16 01:42:34,592 ERROR IdentityManagement.Authorization.UserIdentity - NHibernate.Exceptions.GenericADOException: could not execute query
+[ select role0_.roleid as roleid29_, role0_.AppID as AppID29_, role0_.name as name29_ from ROLE role0_ where role0_.name in (? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ?) ]
+  Name:p1_0_ - Value:Phê Duyệt Quy Tắc TW  Name:p1_1_ - Value:Lãnh đạo trung ương  Name:p1_2_ - Value:Báo cáo cấp trung ương  Name:p1_3_ - Value:Danh mục cấp trung ương  Name:p1_4_ - Value:Thống kê tra cứu cấp trung ương  Name:p1_5_ - Value:Tạo mới CSKCB  Name:p1_6_ - Value:Xem Danh mục  Name:p1_7_ - Value:FULL_CSYT  Name:p1_8_ - Value:FULL_XEM_CSYT  Name:p1_9_ - Value:PQTW  Name:p1_10_ - Value:CQT_TW  Name:p1_11_ - Value:Giám định Hồ Sơ  Name:p1_12_ - Value:Thống kê chi phí XML - TW  Name:p1_13_ - Value:TEST_DM_TW  Name:p1_14_ - Value:Ban Dược
+[SQL: select role0_.roleid as roleid29_, role0_.AppID as AppID29_, role0_.name as name29_ from ROLE role0_ where role0_.name in (? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ?)] ---> Oracle.DataAccess.Client.OracleException: Connection request timed out
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   at Oracle.DataAccess.Client.OracleConnection.Open()
+   at NHibernate.Connection.DriverConnectionProvider.GetConnection()
+   at NHibernate.AdoNet.ConnectionManager.GetConnection()
+   at NHibernate.AdoNet.AbstractBatcher.Prepare(IDbCommand cmd)
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- End of inner exception stack trace ---
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Hql.Ast.ANTLR.Loader.QueryLoader.List(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Hql.Ast.ANTLR.QueryTranslatorImpl.List(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Engine.Query.HQLQueryPlan.PerformList(QueryParameters queryParameters, ISessionImplementor session, IList results)
+   at NHibernate.Impl.SessionImpl.List(IQueryExpression queryExpression, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.AbstractSessionImpl.List(IQueryExpression queryExpression, QueryParameters parameters)
+   at NHibernate.Impl.ExpressionQueryImpl.List()
+   at NHibernate.Linq.NhQueryProvider.ExecuteQuery(NhLinqExpression nhLinqExpression, IQuery query, NhLinqExpression nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute[TResult](Expression expression)
+   at Remotion.Data.Linq.QueryableBase`1.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-09-16 01:42:49,996 ERROR NHibernate.Util.ADOExceptionReporter - Connection request timed out 
+2017-09-16 01:42:50,006 ERROR NHibernate.Util.ADOExceptionReporter - Connection request timed out 
+2017-09-16 01:42:50,006 ERROR NHibernate.Util.ADOExceptionReporter - Connection request timed out 
+2017-09-16 01:43:03,381 ERROR NHibernate.Util.ADOExceptionReporter - ORA-28547: connection to server failed, probable Oracle Net admin error 
+2017-09-16 01:43:03,390 ERROR NHibernate.Util.ADOExceptionReporter - ORA-28547: connection to server failed, probable Oracle Net admin error 
+2017-09-16 01:43:03,390 ERROR NHibernate.Util.ADOExceptionReporter - ORA-28547: connection to server failed, probable Oracle Net admin error 
+2017-09-16 02:03:19,587 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: Value cannot be null.
+Parameter name: maThe
+ -    at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 84 
+2017-09-16 02:03:23,457 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: Value cannot be null.
+Parameter name: maThe
+ -    at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 84 
+2017-09-16 02:03:24,034 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: Value cannot be null.
+Parameter name: maThe
+ -    at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 84 
+2017-09-16 02:03:24,423 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: Value cannot be null.
+Parameter name: maThe
+ -    at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 84 
+2017-09-16 02:14:18,391 ERROR IdentityManagement.Authorization.UserIdentity - Oracle.DataAccess.Client.OracleException ORA-12170: TNS:Connect timeout occurred    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   at Oracle.DataAccess.Client.OracleConnection.Open()
+   at NHibernate.Connection.DriverConnectionProvider.GetConnection()
+   at NHibernate.Tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.Prepare()
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.GetReservedWords(Dialect dialect, IConnectionHelper connectionHelper)
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.Update(ISessionFactory sessionFactory)
+   at NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-09-16 02:15:30,656 ERROR IdentityManagement.Authorization.UserIdentity - Oracle.DataAccess.Client.OracleException ORA-12170: TNS:Connect timeout occurred    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   at Oracle.DataAccess.Client.OracleConnection.Open()
+   at NHibernate.Connection.DriverConnectionProvider.GetConnection()
+   at NHibernate.Tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.Prepare()
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.GetReservedWords(Dialect dialect, IConnectionHelper connectionHelper)
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.Update(ISessionFactory sessionFactory)
+   at NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-09-16 02:16:14,786 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Util.ThreadSafeDictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Type.TypeFactory.GetType(NullableType defaultUnqualifiedType, Int32 length, GetNullableTypeWithLength ctorDelegate)
+   at NHibernate.Type.TypeFactory.<RegisterDefaultNetTypes>b__c(Int32 l)
+   at NHibernate.Type.TypeFactory.BuiltInType(String typeName, Int32 length)
+   at NHibernate.Mapping.SimpleValue.GetHeuristicType()
+   at NHibernate.Mapping.SimpleValue.get_Type()
+   at NHibernate.Mapping.SimpleValue.IsValid(IMapping mapping)
+   at NHibernate.Mapping.PersistentClass.Validate(IMapping mapping)
+   at NHibernate.Mapping.RootClass.Validate(IMapping mapping)
+   at NHibernate.Cfg.Configuration.ValidateEntities()
+   at NHibernate.Cfg.Configuration.Validate()
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-09-16 02:16:36,332 ERROR IdentityManagement.Authorization.UserIdentity - Oracle.DataAccess.Client.OracleException ORA-12170: TNS:Connect timeout occurred    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   at Oracle.DataAccess.Client.OracleConnection.Open()
+   at NHibernate.Connection.DriverConnectionProvider.GetConnection()
+   at NHibernate.Tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.Prepare()
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.GetReservedWords(Dialect dialect, IConnectionHelper connectionHelper)
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.Update(ISessionFactory sessionFactory)
+   at NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-09-16 02:18:31,576 ERROR IdentityManagement.Authorization.UserIdentity - Oracle.DataAccess.Client.OracleException ORA-12170: TNS:Connect timeout occurred    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   at Oracle.DataAccess.Client.OracleConnection.Open()
+   at NHibernate.Connection.DriverConnectionProvider.GetConnection()
+   at NHibernate.Tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.Prepare()
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.GetReservedWords(Dialect dialect, IConnectionHelper connectionHelper)
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.Update(ISessionFactory sessionFactory)
+   at NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-09-16 03:09:30,180 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Util.ThreadSafeDictionary`2.Add(TKey key, TValue value)
+   at NHibernate.Type.TypeFactory.GetType(NullableType defaultUnqualifiedType, Int32 length, GetNullableTypeWithLength ctorDelegate)
+   at NHibernate.Type.TypeFactory.<RegisterDefaultNetTypes>b__c(Int32 l)
+   at NHibernate.Type.TypeFactory.BuiltInType(String typeName, Int32 length)
+   at NHibernate.Mapping.SimpleValue.GetHeuristicType()
+   at NHibernate.Mapping.SimpleValue.get_Type()
+   at NHibernate.Mapping.SimpleValue.IsValid(IMapping mapping)
+   at NHibernate.Mapping.PersistentClass.Validate(IMapping mapping)
+   at NHibernate.Mapping.RootClass.Validate(IMapping mapping)
+   at NHibernate.Cfg.Configuration.ValidateEntities()
+   at NHibernate.Cfg.Configuration.Validate()
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-09-16 03:09:31,165 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: Item has already been added. Key in dictionary: 'D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Config\NHibernateConfig.xml'  Key being added: 'D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Config\NHibernateConfig.xml'
+   at System.Collections.Hashtable.Insert(Object key, Object nvalue, Boolean add)
+   at System.Collections.Hashtable.Add(Object key, Object value)
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-09-16 03:10:02,270 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-09-16 03:10:02,290 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-09-16 03:10:02,338 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-09-16 03:10:02,339 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-09-16 03:10:02,340 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-09-16 03:10:02,340 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-09-16 03:10:02,426 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-09-16 03:10:02,430 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-09-16 03:54:12,863 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO COCAUGIA_THUCTE_CT (ID, MA_COCAU, TEN_COCAU_OLD, SO_LUONG_OLD, DONGIA_OLD, TEN_COCAU_NEW, SO_LUONG_NEW, DONGIA_NEW, ID_LOAI, ID_THUCTE) VALUES (COCAUGIA_THUCTE_CT_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_LOAI")    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-09-16 03:54:12,890 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_LOAI") 
+2017-09-16 03:57:23,955 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO COCAUGIA_THUCTE_CT (ID, MA_COCAU, TEN_COCAU_OLD, SO_LUONG_OLD, DONGIA_OLD, TEN_COCAU_NEW, SO_LUONG_NEW, DONGIA_NEW, ID_LOAI, ID_THUCTE) VALUES (COCAUGIA_THUCTE_CT_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_LOAI")    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-09-16 03:57:23,973 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_LOAI") 
+2017-09-16 03:59:54,129 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO COCAUGIA_THUCTE_CT (ID, MA_COCAU, TEN_COCAU_OLD, SO_LUONG_OLD, DONGIA_OLD, TEN_COCAU_NEW, SO_LUONG_NEW, DONGIA_NEW, ID_LOAI, ID_THUCTE) VALUES (COCAUGIA_THUCTE_CT_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_LOAI")    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-09-16 03:59:54,143 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01400: cannot insert NULL into ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_LOAI") 
+2017-09-16 04:13:44,096 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01407: cannot update ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_LOAI") to NULL 
+2017-09-16 04:13:44,102 ERROR NHibernate.Event.Default.AbstractFlushingEventListener - Could not synchronize database state with session 
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> Oracle.DataAccess.Client.OracleException: ORA-01407: cannot update ("COCAUGIA"."COCAUGIA_THUCTE_CT"."ID_LOAI") to NULL
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.OracleDataClientBatchingBatcher.DoExecuteBatch(IDbCommand ps)
+   --- End of inner exception stack trace ---
+   at NHibernate.AdoNet.OracleDataClientBatchingBatcher.DoExecuteBatch(IDbCommand ps)
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps)
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteBatch()
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+2017-09-16 04:35:37,621 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO COCAUGIA_DICHVU21 (ID, MA_DICHVU21, TEN_DICHVU21, MATINH, NGAYTAO, NGUOITAO, NGAYCAPNHAT, NGUOICAPNHAT, TENTINH, TRANGTHAI) VALUES (DICHVU21_COCAUGIA_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-00001: unique constraint (COCAUGIA.DICHVU21_COCAUGIA_PK) violated    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-09-16 04:35:37,636 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00001: unique constraint (COCAUGIA.DICHVU21_COCAUGIA_PK) violated 
+2017-09-16 04:35:37,652 ERROR EIS.FEW.Controllers.THEMMOI_COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: could not insert: [EIS.Core.Domain.COCAUGIA_DICHVU21][SQL: INSERT INTO COCAUGIA_DICHVU21 (ID, MA_DICHVU21, TEN_DICHVU21, MATINH, NGAYTAO, NGUOITAO, NGAYCAPNHAT, NGUOICAPNHAT, TENTINH, TRANGTHAI) VALUES (DICHVU21_COCAUGIA_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+ -    at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.SaveOrUpdate(Object obj)
+   at FX.Data.BaseService`2.Save(T entity)
+   at EIS.FEW.Controllers.THEMMOI_COCAUGIA_DICHVU21Controller._GridViewChiTietDichVuFilter(String maNhomdv, String tenNhomdv) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\THEMMOI_COCAUGIA_DICHVU21Controller.cs:line 165 
+2017-09-16 10:35:44,310 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-09-16 10:35:44,347 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-09-16 10:35:44,363 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-09-16 10:35:44,363 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-09-16 10:35:44,363 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-09-16 10:35:44,363 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-09-16 10:35:44,478 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-09-16 10:35:44,522 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-09-16 10:36:22,963 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: System.String Right(System.String, Int32)
+ -    at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitMethodCallExpression(MethodCallExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.Visit(Expression expression)
+   at NHibernate.Linq.Functions.EqualsGenerator.BuildHql(MethodInfo method, Expression targetObject, ReadOnlyCollection`1 arguments, HqlTreeBuilder treeBuilder, IHqlExpressionVisitor visitor)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitMethodCallExpression(MethodCallExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitBinaryExpression(BinaryExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.QueryModelVisitor.VisitWhereClause(WhereClause whereClause, QueryModel queryModel, Int32 index)
+   at Remotion.Data.Linq.Clauses.WhereClause.Accept(IQueryModelVisitor visitor, QueryModel queryModel, Int32 index)
+   at Remotion.Data.Linq.QueryModelVisitorBase.VisitBodyClauses(ObservableCollection`1 bodyClauses, QueryModel queryModel)
+   at Remotion.Data.Linq.QueryModelVisitorBase.VisitQueryModel(QueryModel queryModel)
+   at NHibernate.Linq.Visitors.QueryModelVisitor.GenerateHqlQuery(QueryModel queryModel, VisitorParameters parameters, Boolean root)
+   at NHibernate.Linq.NhLinqExpression.Translate(ISessionFactoryImplementor sessionFactory)
+   at NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory.CreateQueryTranslators(String queryIdentifier, IQueryExpression queryExpression, String collectionRole, Boolean shallow, IDictionary`2 filters, ISessionFactoryImplementor factory)
+   at NHibernate.Engine.Query.QueryPlanCache.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow, IDictionary`2 enabledFilters)
+   at NHibernate.Impl.AbstractSessionImpl.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow)
+   at NHibernate.Impl.AbstractSessionImpl.CreateQuery(IQueryExpression queryExpression)
+   at NHibernate.Linq.NhQueryProvider.PrepareQuery(Expression expression, IQuery& query, NhLinqExpression& nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at EIS.Core.ServiceImp.COCAUGIA_THUCTEService.GetByFilter(String maCskcb, String maThe, Nullable`1 ngayVao, Nullable`1 ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\COCAUGIA_THUCTEService.cs:line 21
+   at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 91 
+2017-09-16 10:36:24,882 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: System.String Right(System.String, Int32)
+ -    at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitMethodCallExpression(MethodCallExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.Visit(Expression expression)
+   at NHibernate.Linq.Functions.EqualsGenerator.BuildHql(MethodInfo method, Expression targetObject, ReadOnlyCollection`1 arguments, HqlTreeBuilder treeBuilder, IHqlExpressionVisitor visitor)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitMethodCallExpression(MethodCallExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitBinaryExpression(BinaryExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.QueryModelVisitor.VisitWhereClause(WhereClause whereClause, QueryModel queryModel, Int32 index)
+   at Remotion.Data.Linq.Clauses.WhereClause.Accept(IQueryModelVisitor visitor, QueryModel queryModel, Int32 index)
+   at Remotion.Data.Linq.QueryModelVisitorBase.VisitBodyClauses(ObservableCollection`1 bodyClauses, QueryModel queryModel)
+   at Remotion.Data.Linq.QueryModelVisitorBase.VisitQueryModel(QueryModel queryModel)
+   at NHibernate.Linq.Visitors.QueryModelVisitor.GenerateHqlQuery(QueryModel queryModel, VisitorParameters parameters, Boolean root)
+   at NHibernate.Linq.NhLinqExpression.Translate(ISessionFactoryImplementor sessionFactory)
+   at NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory.CreateQueryTranslators(String queryIdentifier, IQueryExpression queryExpression, String collectionRole, Boolean shallow, IDictionary`2 filters, ISessionFactoryImplementor factory)
+   at NHibernate.Engine.Query.QueryPlanCache.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow, IDictionary`2 enabledFilters)
+   at NHibernate.Impl.AbstractSessionImpl.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow)
+   at NHibernate.Impl.AbstractSessionImpl.CreateQuery(IQueryExpression queryExpression)
+   at NHibernate.Linq.NhQueryProvider.PrepareQuery(Expression expression, IQuery& query, NhLinqExpression& nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at EIS.Core.ServiceImp.COCAUGIA_THUCTEService.GetByFilter(String maCskcb, String maThe, Nullable`1 ngayVao, Nullable`1 ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\COCAUGIA_THUCTEService.cs:line 21
+   at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 91 
+2017-09-16 10:48:21,760 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: System.String Right(System.String, Int32)
+ -    at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitMethodCallExpression(MethodCallExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.Visit(Expression expression)
+   at NHibernate.Linq.Functions.EqualsGenerator.BuildHql(MethodInfo method, Expression targetObject, ReadOnlyCollection`1 arguments, HqlTreeBuilder treeBuilder, IHqlExpressionVisitor visitor)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitMethodCallExpression(MethodCallExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitBinaryExpression(BinaryExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.QueryModelVisitor.VisitWhereClause(WhereClause whereClause, QueryModel queryModel, Int32 index)
+   at Remotion.Data.Linq.Clauses.WhereClause.Accept(IQueryModelVisitor visitor, QueryModel queryModel, Int32 index)
+   at Remotion.Data.Linq.QueryModelVisitorBase.VisitBodyClauses(ObservableCollection`1 bodyClauses, QueryModel queryModel)
+   at Remotion.Data.Linq.QueryModelVisitorBase.VisitQueryModel(QueryModel queryModel)
+   at NHibernate.Linq.Visitors.QueryModelVisitor.GenerateHqlQuery(QueryModel queryModel, VisitorParameters parameters, Boolean root)
+   at NHibernate.Linq.NhLinqExpression.Translate(ISessionFactoryImplementor sessionFactory)
+   at NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory.CreateQueryTranslators(String queryIdentifier, IQueryExpression queryExpression, String collectionRole, Boolean shallow, IDictionary`2 filters, ISessionFactoryImplementor factory)
+   at NHibernate.Engine.Query.QueryPlanCache.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow, IDictionary`2 enabledFilters)
+   at NHibernate.Impl.AbstractSessionImpl.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow)
+   at NHibernate.Impl.AbstractSessionImpl.CreateQuery(IQueryExpression queryExpression)
+   at NHibernate.Linq.NhQueryProvider.PrepareQuery(Expression expression, IQuery& query, NhLinqExpression& nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at EIS.Core.ServiceImp.COCAUGIA_THUCTEService.GetByFilter(String maCskcb, String maThe, Nullable`1 ngayVao, Nullable`1 ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\COCAUGIA_THUCTEService.cs:line 22
+   at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 91 
+2017-09-16 10:50:18,519 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: System.String Right(System.String, Int32)
+ -    at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitMethodCallExpression(MethodCallExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitBinaryExpression(BinaryExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitBinaryExpression(BinaryExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.QueryModelVisitor.VisitWhereClause(WhereClause whereClause, QueryModel queryModel, Int32 index)
+   at Remotion.Data.Linq.Clauses.WhereClause.Accept(IQueryModelVisitor visitor, QueryModel queryModel, Int32 index)
+   at Remotion.Data.Linq.QueryModelVisitorBase.VisitBodyClauses(ObservableCollection`1 bodyClauses, QueryModel queryModel)
+   at Remotion.Data.Linq.QueryModelVisitorBase.VisitQueryModel(QueryModel queryModel)
+   at NHibernate.Linq.Visitors.QueryModelVisitor.GenerateHqlQuery(QueryModel queryModel, VisitorParameters parameters, Boolean root)
+   at NHibernate.Linq.NhLinqExpression.Translate(ISessionFactoryImplementor sessionFactory)
+   at NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory.CreateQueryTranslators(String queryIdentifier, IQueryExpression queryExpression, String collectionRole, Boolean shallow, IDictionary`2 filters, ISessionFactoryImplementor factory)
+   at NHibernate.Engine.Query.QueryPlanCache.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow, IDictionary`2 enabledFilters)
+   at NHibernate.Impl.AbstractSessionImpl.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow)
+   at NHibernate.Impl.AbstractSessionImpl.CreateQuery(IQueryExpression queryExpression)
+   at NHibernate.Linq.NhQueryProvider.PrepareQuery(Expression expression, IQuery& query, NhLinqExpression& nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at EIS.Core.ServiceImp.COCAUGIA_THUCTEService.GetByFilter(String maCskcb, String maThe, Nullable`1 ngayVao, Nullable`1 ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\COCAUGIA_THUCTEService.cs:line 22
+   at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 91 
+2017-09-16 10:50:28,138 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: System.String Right(System.String, Int32)
+ -    at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitMethodCallExpression(MethodCallExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitBinaryExpression(BinaryExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitBinaryExpression(BinaryExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.QueryModelVisitor.VisitWhereClause(WhereClause whereClause, QueryModel queryModel, Int32 index)
+   at Remotion.Data.Linq.Clauses.WhereClause.Accept(IQueryModelVisitor visitor, QueryModel queryModel, Int32 index)
+   at Remotion.Data.Linq.QueryModelVisitorBase.VisitBodyClauses(ObservableCollection`1 bodyClauses, QueryModel queryModel)
+   at Remotion.Data.Linq.QueryModelVisitorBase.VisitQueryModel(QueryModel queryModel)
+   at NHibernate.Linq.Visitors.QueryModelVisitor.GenerateHqlQuery(QueryModel queryModel, VisitorParameters parameters, Boolean root)
+   at NHibernate.Linq.NhLinqExpression.Translate(ISessionFactoryImplementor sessionFactory)
+   at NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory.CreateQueryTranslators(String queryIdentifier, IQueryExpression queryExpression, String collectionRole, Boolean shallow, IDictionary`2 filters, ISessionFactoryImplementor factory)
+   at NHibernate.Engine.Query.QueryPlanCache.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow, IDictionary`2 enabledFilters)
+   at NHibernate.Impl.AbstractSessionImpl.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow)
+   at NHibernate.Impl.AbstractSessionImpl.CreateQuery(IQueryExpression queryExpression)
+   at NHibernate.Linq.NhQueryProvider.PrepareQuery(Expression expression, IQuery& query, NhLinqExpression& nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at EIS.Core.ServiceImp.COCAUGIA_THUCTEService.GetByFilter(String maCskcb, String maThe, Nullable`1 ngayVao, Nullable`1 ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\COCAUGIA_THUCTEService.cs:line 22
+   at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 91 
+2017-09-16 10:59:50,392 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: Boolean IsLike(System.String, System.String, NHibernate.Criterion.MatchMode)
+ -    at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitMethodCallExpression(MethodCallExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitBinaryExpression(BinaryExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.QueryModelVisitor.VisitWhereClause(WhereClause whereClause, QueryModel queryModel, Int32 index)
+   at Remotion.Data.Linq.Clauses.WhereClause.Accept(IQueryModelVisitor visitor, QueryModel queryModel, Int32 index)
+   at Remotion.Data.Linq.QueryModelVisitorBase.VisitBodyClauses(ObservableCollection`1 bodyClauses, QueryModel queryModel)
+   at Remotion.Data.Linq.QueryModelVisitorBase.VisitQueryModel(QueryModel queryModel)
+   at NHibernate.Linq.Visitors.QueryModelVisitor.GenerateHqlQuery(QueryModel queryModel, VisitorParameters parameters, Boolean root)
+   at NHibernate.Linq.NhLinqExpression.Translate(ISessionFactoryImplementor sessionFactory)
+   at NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory.CreateQueryTranslators(String queryIdentifier, IQueryExpression queryExpression, String collectionRole, Boolean shallow, IDictionary`2 filters, ISessionFactoryImplementor factory)
+   at NHibernate.Engine.Query.QueryPlanCache.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow, IDictionary`2 enabledFilters)
+   at NHibernate.Impl.AbstractSessionImpl.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow)
+   at NHibernate.Impl.AbstractSessionImpl.CreateQuery(IQueryExpression queryExpression)
+   at NHibernate.Linq.NhQueryProvider.PrepareQuery(Expression expression, IQuery& query, NhLinqExpression& nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at EIS.Core.ServiceImp.COCAUGIA_THUCTEService.GetByFilter(String maCskcb, String maThe, Nullable`1 ngayVao, Nullable`1 ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\COCAUGIA_THUCTEService.cs:line 23
+   at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 91 
+2017-09-16 10:59:52,175 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: Boolean IsLike(System.String, System.String, NHibernate.Criterion.MatchMode)
+ -    at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitMethodCallExpression(MethodCallExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitBinaryExpression(BinaryExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.QueryModelVisitor.VisitWhereClause(WhereClause whereClause, QueryModel queryModel, Int32 index)
+   at Remotion.Data.Linq.Clauses.WhereClause.Accept(IQueryModelVisitor visitor, QueryModel queryModel, Int32 index)
+   at Remotion.Data.Linq.QueryModelVisitorBase.VisitBodyClauses(ObservableCollection`1 bodyClauses, QueryModel queryModel)
+   at Remotion.Data.Linq.QueryModelVisitorBase.VisitQueryModel(QueryModel queryModel)
+   at NHibernate.Linq.Visitors.QueryModelVisitor.GenerateHqlQuery(QueryModel queryModel, VisitorParameters parameters, Boolean root)
+   at NHibernate.Linq.NhLinqExpression.Translate(ISessionFactoryImplementor sessionFactory)
+   at NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory.CreateQueryTranslators(String queryIdentifier, IQueryExpression queryExpression, String collectionRole, Boolean shallow, IDictionary`2 filters, ISessionFactoryImplementor factory)
+   at NHibernate.Engine.Query.QueryPlanCache.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow, IDictionary`2 enabledFilters)
+   at NHibernate.Impl.AbstractSessionImpl.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow)
+   at NHibernate.Impl.AbstractSessionImpl.CreateQuery(IQueryExpression queryExpression)
+   at NHibernate.Linq.NhQueryProvider.PrepareQuery(Expression expression, IQuery& query, NhLinqExpression& nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at EIS.Core.ServiceImp.COCAUGIA_THUCTEService.GetByFilter(String maCskcb, String maThe, Nullable`1 ngayVao, Nullable`1 ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\COCAUGIA_THUCTEService.cs:line 23
+   at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 91 
+2017-09-16 10:59:53,253 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: Boolean IsLike(System.String, System.String, NHibernate.Criterion.MatchMode)
+ -    at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitMethodCallExpression(MethodCallExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitBinaryExpression(BinaryExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.QueryModelVisitor.VisitWhereClause(WhereClause whereClause, QueryModel queryModel, Int32 index)
+   at Remotion.Data.Linq.Clauses.WhereClause.Accept(IQueryModelVisitor visitor, QueryModel queryModel, Int32 index)
+   at Remotion.Data.Linq.QueryModelVisitorBase.VisitBodyClauses(ObservableCollection`1 bodyClauses, QueryModel queryModel)
+   at Remotion.Data.Linq.QueryModelVisitorBase.VisitQueryModel(QueryModel queryModel)
+   at NHibernate.Linq.Visitors.QueryModelVisitor.GenerateHqlQuery(QueryModel queryModel, VisitorParameters parameters, Boolean root)
+   at NHibernate.Linq.NhLinqExpression.Translate(ISessionFactoryImplementor sessionFactory)
+   at NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory.CreateQueryTranslators(String queryIdentifier, IQueryExpression queryExpression, String collectionRole, Boolean shallow, IDictionary`2 filters, ISessionFactoryImplementor factory)
+   at NHibernate.Engine.Query.QueryPlanCache.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow, IDictionary`2 enabledFilters)
+   at NHibernate.Impl.AbstractSessionImpl.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow)
+   at NHibernate.Impl.AbstractSessionImpl.CreateQuery(IQueryExpression queryExpression)
+   at NHibernate.Linq.NhQueryProvider.PrepareQuery(Expression expression, IQuery& query, NhLinqExpression& nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at EIS.Core.ServiceImp.COCAUGIA_THUCTEService.GetByFilter(String maCskcb, String maThe, Nullable`1 ngayVao, Nullable`1 ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\COCAUGIA_THUCTEService.cs:line 23
+   at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 91 
+2017-09-16 11:00:55,274 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: Boolean IsLike(System.String, System.String, NHibernate.Criterion.MatchMode)
+ -    at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitMethodCallExpression(MethodCallExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitBinaryExpression(BinaryExpression expression)
+   at NHibernate.Linq.Visitors.HqlGeneratorExpressionTreeVisitor.VisitExpression(Expression expression)
+   at NHibernate.Linq.Visitors.QueryModelVisitor.VisitWhereClause(WhereClause whereClause, QueryModel queryModel, Int32 index)
+   at Remotion.Data.Linq.Clauses.WhereClause.Accept(IQueryModelVisitor visitor, QueryModel queryModel, Int32 index)
+   at Remotion.Data.Linq.QueryModelVisitorBase.VisitBodyClauses(ObservableCollection`1 bodyClauses, QueryModel queryModel)
+   at Remotion.Data.Linq.QueryModelVisitorBase.VisitQueryModel(QueryModel queryModel)
+   at NHibernate.Linq.Visitors.QueryModelVisitor.GenerateHqlQuery(QueryModel queryModel, VisitorParameters parameters, Boolean root)
+   at NHibernate.Linq.NhLinqExpression.Translate(ISessionFactoryImplementor sessionFactory)
+   at NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory.CreateQueryTranslators(String queryIdentifier, IQueryExpression queryExpression, String collectionRole, Boolean shallow, IDictionary`2 filters, ISessionFactoryImplementor factory)
+   at NHibernate.Engine.Query.QueryPlanCache.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow, IDictionary`2 enabledFilters)
+   at NHibernate.Impl.AbstractSessionImpl.GetHQLQueryPlan(IQueryExpression queryExpression, Boolean shallow)
+   at NHibernate.Impl.AbstractSessionImpl.CreateQuery(IQueryExpression queryExpression)
+   at NHibernate.Linq.NhQueryProvider.PrepareQuery(Expression expression, IQuery& query, NhLinqExpression& nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at EIS.Core.ServiceImp.COCAUGIA_THUCTEService.GetByFilter(String maCskcb, String maThe, Nullable`1 ngayVao, Nullable`1 ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\COCAUGIA_THUCTEService.cs:line 23
+   at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 91 
+2017-09-16 11:05:05,065 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: Object reference not set to an instance of an object.
+ -    at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 104 
+2017-09-16 11:05:06,676 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: Object reference not set to an instance of an object.
+ -    at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 104 
+2017-09-16 11:08:10,826 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: Object reference not set to an instance of an object.
+ -    at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 104 
+2017-09-16 13:15:25,703 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-09-16 13:15:25,766 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-09-16 13:15:25,887 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-09-16 13:15:25,887 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-09-16 13:15:25,887 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-09-16 13:15:25,887 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-09-16 13:15:26,026 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-09-16 13:15:26,042 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-09-16 13:16:13,544 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: Object reference not set to an instance of an object.
+ -    at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 104 
+2017-09-16 13:16:14,990 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: Object reference not set to an instance of an object.
+ -    at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 104 
+2017-09-16 13:28:52,837 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: Object reference not set to an instance of an object.
+ -    at EIS.Core.ServiceImp.COCAUGIA_CHITIETService.GetByMaTrung4So(String ma) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\COCAUGIA_CHITIETService.cs:line 59
+   at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 106 
+2017-09-16 13:30:14,455 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: Object reference not set to an instance of an object.
+ -    at EIS.Core.ServiceImp.COCAUGIA_CHITIETService.GetByMaTrung4So(String ma) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\COCAUGIA_CHITIETService.cs:line 59
+   at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 106 
+2017-09-16 13:36:02,986 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: Object reference not set to an instance of an object.
+ -    at EIS.Core.ServiceImp.COCAUGIA_CHITIETService.GetByMaTrung4So(String ma) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\COCAUGIA_CHITIETService.cs:line 60
+   at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 106 
+2017-09-16 13:39:08,071 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: No row with the given identifier exists[EIS.Core.Domain.COCAUGIA_DICHVU21#0]
+ -    at NHibernate.Impl.SessionFactoryImpl.DefaultEntityNotFoundDelegate.HandleEntityNotFound(String entityName, Object id)
+   at NHibernate.Proxy.AbstractLazyInitializer.CheckTargetState()
+   at NHibernate.Proxy.AbstractLazyInitializer.Initialize()
+   at NHibernate.ByteCode.Castle.LazyInitializer.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.COCAUGIA_DICHVU21Proxy.get_MA_DICHVU21()
+   at EIS.Core.ServiceImp.COCAUGIA_CHITIETService.GetByMaTrung4So(String ma) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\COCAUGIA_CHITIETService.cs:line 60
+   at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, String ngayVao, String ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 106 

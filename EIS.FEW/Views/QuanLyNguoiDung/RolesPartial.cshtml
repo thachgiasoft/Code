@@ -1,0 +1,66 @@
+﻿<style>
+    .float_left_pms {
+        float: left;
+    }
+
+    .dxeBase_EIS {
+        float: left !important;
+        width: 220px !important;
+    }
+
+        .dxeBase_EIS .dxichCellSys {
+            width: 20px;
+        }
+</style>
+@model EIS.Core.CustomView.QuanLyNguoiDungModels
+@Html.DevExpress().CheckBoxList(settings =>
+{
+    settings.Name = "selectedRoles";
+    settings.ControlStyle.CssClass = "float_left_pms";
+    settings.Properties.CaptionSettings.Position = EditorCaptionPosition.Top;
+    settings.Properties.CheckedImage.IconID = IconID.ContentCheckbox16x16;
+    settings.Properties.TextField = "NAME";
+    settings.Properties.ValueField = "ROLEID";
+    settings.Properties.RepeatColumns = 4;
+    settings.Properties.CaptionStyle.Font.Bold = true;
+    settings.EncodeHtml = false;
+    settings.Properties.RepeatLayout = RepeatLayout.Table;
+    settings.Properties.RepeatDirection = RepeatDirection.Vertical;
+    settings.Properties.ClientSideEvents.SelectedIndexChanged = "function(s,e) {StoreRole(s,e);}";
+    settings.Width = Unit.Percentage(100);
+    settings.ControlStyle.Border.BorderWidth = 1;
+    settings.ControlStyle.Border.BorderStyle = BorderStyle.Solid;
+    settings.ControlStyle.Border.BorderColor = System.Drawing.Color.FromArgb(0, 147, 221);
+    settings.Properties.CheckBoxStyle.Border.BorderWidth = 1;
+    settings.Properties.CheckBoxStyle.Border.BorderStyle = BorderStyle.Solid;
+    settings.Properties.CheckBoxStyle.Border.BorderColor = System.Drawing.Color.FromArgb(0, 147, 221);
+    settings.Properties.UncheckedImage.SpriteProperties.CssClass = "checkboxclass";
+    bool? check = false;
+    check = Session["qlnd_ckpms"] as bool?;
+    if (check == true)
+    {
+        settings.Enabled = false;
+    }
+    else
+    {
+        settings.Enabled = true;
+    }
+
+    settings.PreRender = (sender, e) =>
+    {
+
+        var roles = string.IsNullOrEmpty(Model.Roles) ? new string[] { } : Model.Roles.Split(',');
+
+        ASPxCheckBoxList cbl = (ASPxCheckBoxList)sender;
+        foreach (ListEditItem item in cbl.Items)
+        {
+            item.Selected = roles.Any(t => !string.IsNullOrEmpty(t) && t == item.Value.ToString());
+            item.Text = string.Format("<span class='cssLstpq'><a  style='text-decoration: none;color: #0093DD; 'href={0}>{1}</a></span>", Url.RouteUrl(new { controller = "RolePms", action = "EditRole", ROLEID = item.Value }), item.Text);
+        }
+
+    };
+    settings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+}).BindList(Session["Role_QLPQ"]).GetHtml()
+
+
+

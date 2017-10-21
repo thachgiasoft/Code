@@ -1,0 +1,264 @@
+﻿2017-09-15 08:25:42,847 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-09-15 08:25:42,916 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-09-15 08:25:43,016 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-09-15 08:25:43,016 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-09-15 08:25:43,020 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-09-15 08:25:43,020 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-09-15 08:25:43,225 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-09-15 08:25:43,265 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-09-15 21:13:02,089 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-09-15 21:13:02,274 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-09-15 21:13:02,351 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-09-15 21:13:02,351 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-09-15 21:13:02,357 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-09-15 21:13:02,357 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-09-15 21:13:02,558 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-09-15 21:13:02,574 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-09-15 21:42:10,531 ERROR IdentityManagement.Authorization.UserIdentity - System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.set_Item(TKey key, TValue value)
+   at NHibernate.Impl.SessionFactoryObjectFactory.AddInstance(String uid, String name, ISessionFactory instance, IDictionary`2 properties)
+   at NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-09-15 21:42:36,202 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-09-15 21:42:36,230 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-09-15 21:42:36,254 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-09-15 21:42:36,255 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-09-15 21:42:36,257 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-09-15 21:42:36,257 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-09-15 21:42:36,306 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-09-15 21:42:36,312 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-09-15 22:49:04,706 ERROR NHibernate.Cfg.Configuration - EIS.Core.Domain.COCAUGIA_THUCTE.hbm.xml(20,8): XML validation error: The element 'list' in namespace 'urn:nhibernate-mapping-2.2' has invalid child element 'one-to-many' in namespace 'urn:nhibernate-mapping-2.2'. List of possible elements expected: 'index, list-index' in namespace 'urn:nhibernate-mapping-2.2'. 
+NHibernate.MappingException: EIS.Core.Domain.COCAUGIA_THUCTE.hbm.xml(20,8): XML validation error: The element 'list' in namespace 'urn:nhibernate-mapping-2.2' has invalid child element 'one-to-many' in namespace 'urn:nhibernate-mapping-2.2'. List of possible elements expected: 'index, list-index' in namespace 'urn:nhibernate-mapping-2.2'. ---> System.Xml.Schema.XmlSchemaValidationException: The element 'list' in namespace 'urn:nhibernate-mapping-2.2' has invalid child element 'one-to-many' in namespace 'urn:nhibernate-mapping-2.2'. List of possible elements expected: 'index, list-index' in namespace 'urn:nhibernate-mapping-2.2'.
+   --- End of inner exception stack trace ---
+2017-09-15 22:49:04,853 ERROR NHibernate.Cfg.Configuration - Problem parsing configuration 
+NHibernate.MappingException: EIS.Core.Domain.COCAUGIA_THUCTE.hbm.xml(20,8): XML validation error: The element 'list' in namespace 'urn:nhibernate-mapping-2.2' has invalid child element 'one-to-many' in namespace 'urn:nhibernate-mapping-2.2'. List of possible elements expected: 'index, list-index' in namespace 'urn:nhibernate-mapping-2.2'. ---> System.Xml.Schema.XmlSchemaValidationException: The element 'list' in namespace 'urn:nhibernate-mapping-2.2' has invalid child element 'one-to-many' in namespace 'urn:nhibernate-mapping-2.2'. List of possible elements expected: 'index, list-index' in namespace 'urn:nhibernate-mapping-2.2'.
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.Configuration.LogAndThrow(Exception exception)
+   at NHibernate.Cfg.Configuration.ValidationHandler(Object o, ValidationEventArgs args)
+   at System.Xml.Schema.XmlSchemaValidator.SendValidationEvent(ValidationEventHandler eventHandler, Object sender, XmlSchemaValidationException e, XmlSeverityType severity)
+   at System.Xml.Schema.XmlSchemaValidator.ElementValidationError(XmlQualifiedName name, ValidationState context, ValidationEventHandler eventHandler, Object sender, String sourceUri, Int32 lineNo, Int32 linePos, XmlSchemaSet schemaSet)
+   at System.Xml.Schema.XmlSchemaValidator.ValidateElementContext(XmlQualifiedName elementName, Boolean& invalidElementInContext)
+   at System.Xml.Schema.XmlSchemaValidator.ValidateElement(String localName, String namespaceUri, XmlSchemaInfo schemaInfo, String xsiType, String xsiNil, String xsiSchemaLocation, String xsiNoNamespaceSchemaLocation)
+   at System.Xml.XsdValidatingReader.ProcessElementEvent()
+   at System.Xml.XsdValidatingReader.ProcessReaderEvent()
+   at System.Xml.XsdValidatingReader.Read()
+   at System.Xml.XmlLoader.LoadNode(Boolean skipOverWhitespace)
+   at System.Xml.XmlLoader.LoadDocSequence(XmlDocument parentDoc)
+   at System.Xml.XmlLoader.Load(XmlDocument doc, XmlReader reader, Boolean preserveWhitespace)
+   at System.Xml.XmlDocument.Load(XmlReader reader)
+   at NHibernate.Cfg.Configuration.LoadMappingDocument(XmlReader hbmReader, String name)
+   at NHibernate.Cfg.Configuration.AddInputStream(Stream xmlInputStream, String name)
+   at NHibernate.Cfg.Configuration.AddResource(String path, Assembly assembly)
+   at NHibernate.Cfg.Configuration.AddAssembly(Assembly assembly)
+   at NHibernate.Cfg.Configuration.AddAssembly(String assemblyName)
+   at NHibernate.Cfg.Configuration.DoConfigure(ISessionFactoryConfiguration factoryConfiguration)
+   at NHibernate.Cfg.Configuration.Configure(XmlReader textReader)
+2017-09-15 22:49:04,868 ERROR IdentityManagement.Authorization.UserIdentity - NHibernate.MappingException: EIS.Core.Domain.COCAUGIA_THUCTE.hbm.xml(20,8): XML validation error: The element 'list' in namespace 'urn:nhibernate-mapping-2.2' has invalid child element 'one-to-many' in namespace 'urn:nhibernate-mapping-2.2'. List of possible elements expected: 'index, list-index' in namespace 'urn:nhibernate-mapping-2.2'. ---> System.Xml.Schema.XmlSchemaValidationException: The element 'list' in namespace 'urn:nhibernate-mapping-2.2' has invalid child element 'one-to-many' in namespace 'urn:nhibernate-mapping-2.2'. List of possible elements expected: 'index, list-index' in namespace 'urn:nhibernate-mapping-2.2'.
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.Configuration.LogAndThrow(Exception exception)
+   at NHibernate.Cfg.Configuration.ValidationHandler(Object o, ValidationEventArgs args)
+   at System.Xml.Schema.XmlSchemaValidator.SendValidationEvent(ValidationEventHandler eventHandler, Object sender, XmlSchemaValidationException e, XmlSeverityType severity)
+   at System.Xml.Schema.XmlSchemaValidator.ElementValidationError(XmlQualifiedName name, ValidationState context, ValidationEventHandler eventHandler, Object sender, String sourceUri, Int32 lineNo, Int32 linePos, XmlSchemaSet schemaSet)
+   at System.Xml.Schema.XmlSchemaValidator.ValidateElementContext(XmlQualifiedName elementName, Boolean& invalidElementInContext)
+   at System.Xml.Schema.XmlSchemaValidator.ValidateElement(String localName, String namespaceUri, XmlSchemaInfo schemaInfo, String xsiType, String xsiNil, String xsiSchemaLocation, String xsiNoNamespaceSchemaLocation)
+   at System.Xml.XsdValidatingReader.ProcessElementEvent()
+   at System.Xml.XsdValidatingReader.ProcessReaderEvent()
+   at System.Xml.XsdValidatingReader.Read()
+   at System.Xml.XmlLoader.LoadNode(Boolean skipOverWhitespace)
+   at System.Xml.XmlLoader.LoadDocSequence(XmlDocument parentDoc)
+   at System.Xml.XmlLoader.Load(XmlDocument doc, XmlReader reader, Boolean preserveWhitespace)
+   at System.Xml.XmlDocument.Load(XmlReader reader)
+   at NHibernate.Cfg.Configuration.LoadMappingDocument(XmlReader hbmReader, String name)
+   at NHibernate.Cfg.Configuration.AddInputStream(Stream xmlInputStream, String name)
+   at NHibernate.Cfg.Configuration.AddResource(String path, Assembly assembly)
+   at NHibernate.Cfg.Configuration.AddAssembly(Assembly assembly)
+   at NHibernate.Cfg.Configuration.AddAssembly(String assemblyName)
+   at NHibernate.Cfg.Configuration.DoConfigure(ISessionFactoryConfiguration factoryConfiguration)
+   at NHibernate.Cfg.Configuration.Configure(XmlReader textReader)
+   at NHibernate.Cfg.Configuration.Configure(String fileName, Boolean ignoreSessionFactoryConfig)
+   at NHibernate.Cfg.Configuration.Configure(String fileName)
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-09-15 22:49:05,571 ERROR NHibernate.Cfg.Configuration - EIS.Core.Domain.COCAUGIA_THUCTE.hbm.xml(20,8): XML validation error: The element 'list' in namespace 'urn:nhibernate-mapping-2.2' has invalid child element 'one-to-many' in namespace 'urn:nhibernate-mapping-2.2'. List of possible elements expected: 'index, list-index' in namespace 'urn:nhibernate-mapping-2.2'. 
+NHibernate.MappingException: EIS.Core.Domain.COCAUGIA_THUCTE.hbm.xml(20,8): XML validation error: The element 'list' in namespace 'urn:nhibernate-mapping-2.2' has invalid child element 'one-to-many' in namespace 'urn:nhibernate-mapping-2.2'. List of possible elements expected: 'index, list-index' in namespace 'urn:nhibernate-mapping-2.2'. ---> System.Xml.Schema.XmlSchemaValidationException: The element 'list' in namespace 'urn:nhibernate-mapping-2.2' has invalid child element 'one-to-many' in namespace 'urn:nhibernate-mapping-2.2'. List of possible elements expected: 'index, list-index' in namespace 'urn:nhibernate-mapping-2.2'.
+   --- End of inner exception stack trace ---
+2017-09-15 22:49:05,614 ERROR NHibernate.Cfg.Configuration - Problem parsing configuration 
+NHibernate.MappingException: EIS.Core.Domain.COCAUGIA_THUCTE.hbm.xml(20,8): XML validation error: The element 'list' in namespace 'urn:nhibernate-mapping-2.2' has invalid child element 'one-to-many' in namespace 'urn:nhibernate-mapping-2.2'. List of possible elements expected: 'index, list-index' in namespace 'urn:nhibernate-mapping-2.2'. ---> System.Xml.Schema.XmlSchemaValidationException: The element 'list' in namespace 'urn:nhibernate-mapping-2.2' has invalid child element 'one-to-many' in namespace 'urn:nhibernate-mapping-2.2'. List of possible elements expected: 'index, list-index' in namespace 'urn:nhibernate-mapping-2.2'.
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.Configuration.LogAndThrow(Exception exception)
+   at NHibernate.Cfg.Configuration.ValidationHandler(Object o, ValidationEventArgs args)
+   at System.Xml.Schema.XmlSchemaValidator.SendValidationEvent(ValidationEventHandler eventHandler, Object sender, XmlSchemaValidationException e, XmlSeverityType severity)
+   at System.Xml.Schema.XmlSchemaValidator.ElementValidationError(XmlQualifiedName name, ValidationState context, ValidationEventHandler eventHandler, Object sender, String sourceUri, Int32 lineNo, Int32 linePos, XmlSchemaSet schemaSet)
+   at System.Xml.Schema.XmlSchemaValidator.ValidateElementContext(XmlQualifiedName elementName, Boolean& invalidElementInContext)
+   at System.Xml.Schema.XmlSchemaValidator.ValidateElement(String localName, String namespaceUri, XmlSchemaInfo schemaInfo, String xsiType, String xsiNil, String xsiSchemaLocation, String xsiNoNamespaceSchemaLocation)
+   at System.Xml.XsdValidatingReader.ProcessElementEvent()
+   at System.Xml.XsdValidatingReader.ProcessReaderEvent()
+   at System.Xml.XsdValidatingReader.Read()
+   at System.Xml.XmlLoader.LoadNode(Boolean skipOverWhitespace)
+   at System.Xml.XmlLoader.LoadDocSequence(XmlDocument parentDoc)
+   at System.Xml.XmlLoader.Load(XmlDocument doc, XmlReader reader, Boolean preserveWhitespace)
+   at System.Xml.XmlDocument.Load(XmlReader reader)
+   at NHibernate.Cfg.Configuration.LoadMappingDocument(XmlReader hbmReader, String name)
+   at NHibernate.Cfg.Configuration.AddInputStream(Stream xmlInputStream, String name)
+   at NHibernate.Cfg.Configuration.AddResource(String path, Assembly assembly)
+   at NHibernate.Cfg.Configuration.AddAssembly(Assembly assembly)
+   at NHibernate.Cfg.Configuration.AddAssembly(String assemblyName)
+   at NHibernate.Cfg.Configuration.DoConfigure(ISessionFactoryConfiguration factoryConfiguration)
+   at NHibernate.Cfg.Configuration.Configure(XmlReader textReader)
+2017-09-15 22:49:05,653 ERROR NHibernate.Cfg.Configuration - EIS.Core.Domain.COCAUGIA_THUCTE.hbm.xml(20,8): XML validation error: The element 'list' in namespace 'urn:nhibernate-mapping-2.2' has invalid child element 'one-to-many' in namespace 'urn:nhibernate-mapping-2.2'. List of possible elements expected: 'index, list-index' in namespace 'urn:nhibernate-mapping-2.2'. 
+NHibernate.MappingException: EIS.Core.Domain.COCAUGIA_THUCTE.hbm.xml(20,8): XML validation error: The element 'list' in namespace 'urn:nhibernate-mapping-2.2' has invalid child element 'one-to-many' in namespace 'urn:nhibernate-mapping-2.2'. List of possible elements expected: 'index, list-index' in namespace 'urn:nhibernate-mapping-2.2'. ---> System.Xml.Schema.XmlSchemaValidationException: The element 'list' in namespace 'urn:nhibernate-mapping-2.2' has invalid child element 'one-to-many' in namespace 'urn:nhibernate-mapping-2.2'. List of possible elements expected: 'index, list-index' in namespace 'urn:nhibernate-mapping-2.2'.
+   --- End of inner exception stack trace ---
+2017-09-15 22:49:05,686 ERROR NHibernate.Cfg.Configuration - Problem parsing configuration 
+NHibernate.MappingException: EIS.Core.Domain.COCAUGIA_THUCTE.hbm.xml(20,8): XML validation error: The element 'list' in namespace 'urn:nhibernate-mapping-2.2' has invalid child element 'one-to-many' in namespace 'urn:nhibernate-mapping-2.2'. List of possible elements expected: 'index, list-index' in namespace 'urn:nhibernate-mapping-2.2'. ---> System.Xml.Schema.XmlSchemaValidationException: The element 'list' in namespace 'urn:nhibernate-mapping-2.2' has invalid child element 'one-to-many' in namespace 'urn:nhibernate-mapping-2.2'. List of possible elements expected: 'index, list-index' in namespace 'urn:nhibernate-mapping-2.2'.
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.Configuration.LogAndThrow(Exception exception)
+   at NHibernate.Cfg.Configuration.ValidationHandler(Object o, ValidationEventArgs args)
+   at System.Xml.Schema.XmlSchemaValidator.SendValidationEvent(ValidationEventHandler eventHandler, Object sender, XmlSchemaValidationException e, XmlSeverityType severity)
+   at System.Xml.Schema.XmlSchemaValidator.ElementValidationError(XmlQualifiedName name, ValidationState context, ValidationEventHandler eventHandler, Object sender, String sourceUri, Int32 lineNo, Int32 linePos, XmlSchemaSet schemaSet)
+   at System.Xml.Schema.XmlSchemaValidator.ValidateElementContext(XmlQualifiedName elementName, Boolean& invalidElementInContext)
+   at System.Xml.Schema.XmlSchemaValidator.ValidateElement(String localName, String namespaceUri, XmlSchemaInfo schemaInfo, String xsiType, String xsiNil, String xsiSchemaLocation, String xsiNoNamespaceSchemaLocation)
+   at System.Xml.XsdValidatingReader.ProcessElementEvent()
+   at System.Xml.XsdValidatingReader.ProcessReaderEvent()
+   at System.Xml.XsdValidatingReader.Read()
+   at System.Xml.XmlLoader.LoadNode(Boolean skipOverWhitespace)
+   at System.Xml.XmlLoader.LoadDocSequence(XmlDocument parentDoc)
+   at System.Xml.XmlLoader.Load(XmlDocument doc, XmlReader reader, Boolean preserveWhitespace)
+   at System.Xml.XmlDocument.Load(XmlReader reader)
+   at NHibernate.Cfg.Configuration.LoadMappingDocument(XmlReader hbmReader, String name)
+   at NHibernate.Cfg.Configuration.AddInputStream(Stream xmlInputStream, String name)
+   at NHibernate.Cfg.Configuration.AddResource(String path, Assembly assembly)
+   at NHibernate.Cfg.Configuration.AddAssembly(Assembly assembly)
+   at NHibernate.Cfg.Configuration.AddAssembly(String assemblyName)
+   at NHibernate.Cfg.Configuration.DoConfigure(ISessionFactoryConfiguration factoryConfiguration)
+   at NHibernate.Cfg.Configuration.Configure(XmlReader textReader)
+2017-09-15 22:52:09,967 ERROR IdentityManagement.Authorization.UserIdentity - NHibernate.PropertyNotFoundException: Could not find a getter for property 'CSKCB' in class 'EIS.Core.Domain.COCAUGIA_THUCTE'
+   at NHibernate.Properties.BasicPropertyAccessor.GetGetter(Type type, String propertyName)
+   at NHibernate.Tuple.Entity.PocoEntityTuplizer.BuildPropertyGetter(Property mappedProperty, PersistentClass mappedEntity)
+   at NHibernate.Tuple.Entity.AbstractEntityTuplizer..ctor(EntityMetamodel entityMetamodel, PersistentClass mappingInfo)
+   at NHibernate.Tuple.Entity.PocoEntityTuplizer..ctor(EntityMetamodel entityMetamodel, PersistentClass mappedEntity)
+   at NHibernate.Tuple.Entity.EntityEntityModeToTuplizerMapping..ctor(PersistentClass mappedEntity, EntityMetamodel em)
+   at NHibernate.Tuple.Entity.EntityMetamodel..ctor(PersistentClass persistentClass, ISessionFactoryImplementor sessionFactory)
+   at NHibernate.Persister.Entity.AbstractEntityPersister..ctor(PersistentClass persistentClass, ICacheConcurrencyStrategy cache, ISessionFactoryImplementor factory)
+   at NHibernate.Persister.Entity.SingleTableEntityPersister..ctor(PersistentClass persistentClass, ICacheConcurrencyStrategy cache, ISessionFactoryImplementor factory, IMapping mapping)
+   at NHibernate.Persister.PersisterFactory.CreateClassPersister(PersistentClass model, ICacheConcurrencyStrategy cache, ISessionFactoryImplementor factory, IMapping cfg)
+   at NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-09-15 23:56:35,735 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewChiTietDichVuPartial - message: StartIndex cannot be less than zero.
+Parameter name: startIndex
+ -    at System.String.Substring(Int32 startIndex, Int32 length)
+   at lambda_method(Closure )
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitors.PartialEvaluatingExpressionTreeVisitor.EvaluateSubtree(Expression subtree)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitors.PartialEvaluatingExpressionTreeVisitor.VisitExpression(Expression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitBinaryExpression(BinaryExpression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitExpression(Expression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitors.PartialEvaluatingExpressionTreeVisitor.VisitExpression(Expression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitBinaryExpression(BinaryExpression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitExpression(Expression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitors.PartialEvaluatingExpressionTreeVisitor.VisitExpression(Expression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitLambdaExpression(LambdaExpression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitExpression(Expression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitors.PartialEvaluatingExpressionTreeVisitor.VisitExpression(Expression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitUnaryExpression(UnaryExpression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitExpression(Expression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitors.PartialEvaluatingExpressionTreeVisitor.VisitExpression(Expression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitAndConvert[T](T expression, String methodName)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.<>c__DisplayClass6`1.<VisitAndConvert>b__5(T expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitList[T](ReadOnlyCollection`1 list, Func`2 visitMethod)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitAndConvert[T](ReadOnlyCollection`1 expressions, String callerName)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitMethodCallExpression(MethodCallExpression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitExpression(Expression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitors.PartialEvaluatingExpressionTreeVisitor.VisitExpression(Expression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitAndConvert[T](T expression, String methodName)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.<>c__DisplayClass6`1.<VisitAndConvert>b__5(T expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitList[T](ReadOnlyCollection`1 list, Func`2 visitMethod)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitAndConvert[T](ReadOnlyCollection`1 expressions, String callerName)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitMethodCallExpression(MethodCallExpression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitor.VisitExpression(Expression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitors.PartialEvaluatingExpressionTreeVisitor.VisitExpression(Expression expression)
+   at Remotion.Data.Linq.Parsing.ExpressionTreeVisitors.PartialEvaluatingExpressionTreeVisitor.EvaluateIndependentSubtrees(Expression expressionTree)
+   at NHibernate.Linq.NhLinqExpression..ctor(Expression expression)
+   at NHibernate.Linq.NhQueryProvider.PrepareQuery(Expression expression, IQuery& query, NhLinqExpression& nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at EIS.Core.ServiceImp.COCAUGIA_THUCTEService.GetByFilter(String maCskcb, String maThe, Nullable`1 ngayVao, Nullable`1 ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\COCAUGIA_THUCTEService.cs:line 20
+   at EIS.FEW.Controllers.COCAUGIA_PHATSINHController._GridViewChiTietDichVuFilter(String maCskcb, String maThe, Nullable`1 ngayVao, Nullable`1 ngayRa, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\COCAUGIA_PHATSINHController.cs:line 83 

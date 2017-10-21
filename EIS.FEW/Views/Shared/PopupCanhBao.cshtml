@@ -1,0 +1,56 @@
+﻿@model string
+@{
+    var popup_thongbao_shared= Html.DevExpress().PopupControl(
+    settings =>
+    {
+        settings.Name = "popup_thongbao_shared";
+        settings.HeaderText = "Thông báo";
+        settings.Width = Unit.Pixel(300);
+        settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+        settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+        settings.CloseOnEscape = true;
+        settings.Modal = true;
+        settings.AllowDragging = true;
+        settings.ShowOnPageLoad = true;
+        settings.CloseAction = CloseAction.CloseButton;
+        settings.SetContent(() =>
+        {
+            ViewContext.Writer.Write("<div style=\" padding : 10px\">");
+            Html.DevExpress().Label(
+                labelSettings =>
+                {
+                    labelSettings.ControlStyle.CssClass = "label";
+                    labelSettings.Text = Model;
+                }
+            )
+            .Render();
+
+            ViewContext.Writer.Write("</div><div style=\" padding : 10px\"> <table><tr><td style=\"padding : 10px; margin:auto\">");
+
+            Html.DevExpress().Button(
+                buttonSettings =>
+                {
+                    buttonSettings.Name = "btCanhbao";
+                    buttonSettings.ControlStyle.CssClass = "button";
+                    buttonSettings.Width = 80;
+                    buttonSettings.Text = "Đồng ý";
+                    buttonSettings.ClientSideEvents.Click = "function(s, e){ popup_thongbao_shared.Hide(); }";
+                }
+            )
+            .Render();
+            ViewContext.Writer.Write(" </td><td style=\"padding : 10px; margin:auto\">");
+            Html.DevExpress().Button(
+                buttonSettings =>
+                {
+                    buttonSettings.Name = "btnCancel_Canhbao";
+                    buttonSettings.ControlStyle.CssClass = "button";
+                    buttonSettings.Width = 80;
+                    buttonSettings.Text = "Hủy";
+                    buttonSettings.ClientSideEvents.Click = "function(s, e){ popup_thongbao_shared.Hide(); }";
+                }
+            )
+            .Render();
+            ViewContext.Writer.Write("</td></tr></table></div><b class=\"Clear\"></b>");
+        });
+    }).GetHtml();
+}

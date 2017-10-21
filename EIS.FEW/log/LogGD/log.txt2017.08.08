@@ -1,0 +1,131 @@
+﻿2017-08-08 10:49:54,416 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-08-08 10:49:54,427 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-08-08 10:49:54,428 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-08-08 10:49:54,633 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-08-08 10:49:54,639 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-08-08 10:50:59,083 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: select cast(count(*) as NUMBER(10,0)) as col_0_0_ from QUY_KINHPHI_TQ_NEW quy_kinhph0_ 
+Oracle.DataAccess.Client.OracleException ORA-00942: table or view does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-08-08 10:50:59,092 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00942: table or view does not exist 
+2017-08-08 10:50:59,101 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00942: table or view does not exist 
+2017-08-08 10:50:59,102 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00942: table or view does not exist 
+2017-08-08 10:50:59,303 ERROR EIS.FEW.Controllers.QUY_KINHPHI_TQ_NEWController - _GridViewQuy_KinhPhiPartial - message: could not execute query
+[ select cast(count(*) as NUMBER(10,0)) as col_0_0_ from QUY_KINHPHI_TQ_NEW quy_kinhph0_ ]
+[SQL: select cast(count(*) as NUMBER(10,0)) as col_0_0_ from QUY_KINHPHI_TQ_NEW quy_kinhph0_]
+ -    at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Hql.Ast.ANTLR.Loader.QueryLoader.List(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Hql.Ast.ANTLR.QueryTranslatorImpl.List(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Engine.Query.HQLQueryPlan.PerformList(QueryParameters queryParameters, ISessionImplementor session, IList results)
+   at NHibernate.Impl.SessionImpl.List(IQueryExpression queryExpression, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.AbstractSessionImpl.List(IQueryExpression queryExpression, QueryParameters parameters)
+   at NHibernate.Impl.ExpressionQueryImpl.List()
+   at NHibernate.Linq.NhQueryProvider.ExecuteQuery(NhLinqExpression nhLinqExpression, IQuery query, NhLinqExpression nhQuery)
+   at NHibernate.Linq.NhQueryProvider.Execute(Expression expression)
+   at DevExpress.Data.Linq.Helpers.CriteriaToQueryableExtender.Count(IQueryable src)
+   at EIS.Core.Common.GridViewCustomBindingHandlers.GetDataRowCountAdvanced(GridViewCustomBindingGetDataRowCountArgs e) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.Core\Common\GridViewCustomBindingHandlers.cs:line 31
+   at DevExpress.Web.Mvc.Internal.GridViewCustomOperationHelper.LoadTotalRowCount()
+   at DevExpress.Web.Mvc.Internal.GridViewCustomOperationHelper.ProcessCustomBinding(GridViewCustomBindingGetDataRowCountHandler getDataRowCountMethod, GridViewCustomBindingGetDataHandler getDataMethod, GridViewCustomBindingGetSummaryValuesHandler getSummaryValuesMethod, GridViewCustomBindingGetGroupingInfoHandler getGroupingInfoMethod, GridViewCustomBindingGetUniqueHeaderFilterValuesHandler getUniqueHeaderFilterValuesMethod)
+   at DevExpress.Web.Mvc.GridViewModel.ProcessCustomBinding(GridViewCustomBindingGetDataRowCountHandler getDataRowCountMethod, GridViewCustomBindingGetDataHandler getDataMethod, GridViewCustomBindingGetSummaryValuesHandler getSummaryValuesMethod, GridViewCustomBindingGetGroupingInfoHandler getGroupingInfoMethod, GridViewCustomBindingGetUniqueHeaderFilterValuesHandler getUniqueHeaderFilterValuesMethod)
+   at EIS.FEW.Controllers.QUY_KINHPHI_TQ_NEWController.AdvancedCustomBindingCore(GridViewModel viewModel) in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\QUY_KINHPHI_TQ_NEWController.cs:line 56
+   at EIS.FEW.Controllers.QUY_KINHPHI_TQ_NEWController._GridViewQuy_KinhPhiPartial() in E:\Giamsat\GIAMSAT\GIAMSATVIEW\04_Build\Source\EIS.FEW\Controllers\QUY_KINHPHI_TQ_NEWController.cs:line 78 
+2017-08-08 10:53:52,831 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: select quy_kinhph0_.ID as ID34_, quy_kinhph0_.MA_TINHTHANH as MA2_34_, quy_kinhph0_.TEN_TINHTHANH as TEN3_34_, quy_kinhph0_.QUY_KCB as QUY4_34_, quy_kinhph0_.KINHPHI_KCB as KINHPHI5_34_, quy_kinhph0_.KY_QT as KY6_34_ from QUY_KINHPHI_TQ_NEW quy_kinhph0_ 
+Oracle.DataAccess.Client.OracleException ORA-00942: table or view does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-08-08 10:53:52,867 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00942: table or view does not exist 
+2017-08-08 10:53:53,028 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00942: table or view does not exist 
+2017-08-08 10:53:53,029 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00942: table or view does not exist 
+2017-08-08 10:53:53,373 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: select quy_kinhph0_.ID as ID34_, quy_kinhph0_.MA_TINHTHANH as MA2_34_, quy_kinhph0_.TEN_TINHTHANH as TEN3_34_, quy_kinhph0_.QUY_KCB as QUY4_34_, quy_kinhph0_.KINHPHI_KCB as KINHPHI5_34_, quy_kinhph0_.KY_QT as KY6_34_ from QUY_KINHPHI_TQ_NEW quy_kinhph0_ 
+Oracle.DataAccess.Client.OracleException ORA-00942: table or view does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-08-08 10:53:53,374 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00942: table or view does not exist 
+2017-08-08 10:53:53,535 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00942: table or view does not exist 
+2017-08-08 10:53:53,535 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00942: table or view does not exist 
+2017-08-08 10:57:38,802 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-08-08 10:57:38,812 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-08-08 10:57:38,812 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-08-08 10:57:48,528 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-08-08 10:57:48,528 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-08-08 10:57:48,528 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-08-08 10:58:56,446 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-08-08 10:58:56,447 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-08-08 10:58:56,447 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-08-08 10:59:06,399 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-08-08 10:59:06,399 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-08-08 10:59:06,399 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-08-08 10:59:06,415 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.2: End -Function AuthenUser  
+2017-08-08 10:59:12,360 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-08-08 10:59:12,360 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-08-08 10:59:12,360 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-08-08 10:59:12,376 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.2: End -Function AuthenUser  
+2017-08-08 10:59:41,446 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-08-08 10:59:41,446 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-08-08 10:59:41,446 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-08-08 10:59:41,530 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-08-08 10:59:41,532 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-08-08 15:15:27,827 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: select user0_.userid as userid64_, user0_.username as username64_, user0_.password as password64_, user0_.PasswordFormat as Password4_64_, user0_.PasswordSalt as Password5_64_, user0_.email as email64_, user0_.PasswordQuestion as Password7_64_, user0_.PasswordAnswer as Password8_64_, user0_.IsApproved as IsApproved64_, user0_.IsLockedOut as IsLocke10_64_, user0_.CreateDate as CreateDate64_, user0_.LastLoginDate as LastLog12_64_, user0_.LastPasswordChangedDate as LastPas13_64_, user0_.LastLockoutDate as LastLoc14_64_, user0_.FailedPassAttemptCount as FailedP15_64_, user0_.FailedPassAnswerAttemptCount as FailedP16_64_, user0_.FailedPassAttemptWindowStart as FailedP17_64_, user0_.FailedPassAnswerAttemptStart as FailedP18_64_, user0_.GroupName as GroupName64_, user0_.ISADMIN as ISADMIN64_ from userdata user0_ inner join APP_USER applicatio1_ on user0_.userid=applicatio1_.UserID inner join Applications applicatio2_ on applicatio1_.AppID=applicatio2_.AppID where user0_.username=:p0 and applicatio2_.AppID=:p1 
+Oracle.DataAccess.Client.OracleException ORA-03135: connection lost contact
+Process ID: 10425
+Session ID: 22 Serial number: 15296    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-08-08 15:15:27,848 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 10425
+Session ID: 22 Serial number: 15296 
+2017-08-08 15:15:27,859 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 10425
+Session ID: 22 Serial number: 15296 
+2017-08-08 15:15:27,861 ERROR NHibernate.Util.ADOExceptionReporter - ORA-03135: connection lost contact
+Process ID: 10425
+Session ID: 22 Serial number: 15296 
+2017-08-08 15:15:27,864 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - GetNumberOfUsersOnline Error Application EIS 
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select user0_.userid as userid64_, user0_.username as username64_, user0_.password as password64_, user0_.PasswordFormat as Password4_64_, user0_.PasswordSalt as Password5_64_, user0_.email as email64_, user0_.PasswordQuestion as Password7_64_, user0_.PasswordAnswer as Password8_64_, user0_.IsApproved as IsApproved64_, user0_.IsLockedOut as IsLocke10_64_, user0_.CreateDate as CreateDate64_, user0_.LastLoginDate as LastLog12_64_, user0_.LastPasswordChangedDate as LastPas13_64_, user0_.LastLockoutDate as LastLoc14_64_, user0_.FailedPassAttemptCount as FailedP15_64_, user0_.FailedPassAnswerAttemptCount as FailedP16_64_, user0_.FailedPassAttemptWindowStart as FailedP17_64_, user0_.FailedPassAnswerAttemptStart as FailedP18_64_, user0_.GroupName as GroupName64_, user0_.ISADMIN as ISADMIN64_ from userdata user0_ inner join APP_USER applicatio1_ on user0_.userid=applicatio1_.UserID inner join Applications applicatio2_ on applicatio1_.AppID=applicatio2_.AppID where user0_.username=:p0 and applicatio2_.AppID=:p1 ]
+  Name:username - Value:admin  Name:AppID - Value:1
+[SQL: select user0_.userid as userid64_, user0_.username as username64_, user0_.password as password64_, user0_.PasswordFormat as Password4_64_, user0_.PasswordSalt as Password5_64_, user0_.email as email64_, user0_.PasswordQuestion as Password7_64_, user0_.PasswordAnswer as Password8_64_, user0_.IsApproved as IsApproved64_, user0_.IsLockedOut as IsLocke10_64_, user0_.CreateDate as CreateDate64_, user0_.LastLoginDate as LastLog12_64_, user0_.LastPasswordChangedDate as LastPas13_64_, user0_.LastLockoutDate as LastLoc14_64_, user0_.FailedPassAttemptCount as FailedP15_64_, user0_.FailedPassAnswerAttemptCount as FailedP16_64_, user0_.FailedPassAttemptWindowStart as FailedP17_64_, user0_.FailedPassAnswerAttemptStart as FailedP18_64_, user0_.GroupName as GroupName64_, user0_.ISADMIN as ISADMIN64_ from userdata user0_ inner join APP_USER applicatio1_ on user0_.userid=applicatio1_.UserID inner join Applications applicatio2_ on applicatio1_.AppID=applicatio2_.AppID where user0_.username=:p0 and applicatio2_.AppID=:p1] ---> Oracle.DataAccess.Client.OracleException: ORA-03135: connection lost contact
+Process ID: 10425
+Session ID: 22 Serial number: 15296
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- End of inner exception stack trace ---
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Hql.Ast.ANTLR.Loader.QueryLoader.List(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Hql.Ast.ANTLR.QueryTranslatorImpl.List(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Engine.Query.HQLQueryPlan.PerformList(QueryParameters queryParameters, ISessionImplementor session, IList results)
+   at NHibernate.Impl.SessionImpl.List(String query, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List[T](String query, QueryParameters parameters)
+   at NHibernate.Impl.QueryImpl.List[T]()
+   at FX.Data.BaseService`2.GetbyHQuery(String Query, SQLParam[] _params)
+   at IdentityManagement.ImplementService.userService.GetByName(String mUserName, Int32 AppID)
+   at IdentityManagement.WebProviders.RBACMembershipProvider.GetUser(String username, Boolean userIsOnline)
+2017-08-08 15:17:07,840 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-08-08 15:17:07,840 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-08-08 15:17:07,840 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-08-08 15:17:07,875 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-08-08 15:17:07,875 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  

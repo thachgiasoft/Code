@@ -1,0 +1,453 @@
+﻿2017-09-18 18:00:39,175 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-09-18 18:00:39,206 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-09-18 18:00:39,275 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-09-18 18:00:39,275 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-09-18 18:00:39,275 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-09-18 18:00:39,275 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-09-18 18:00:39,444 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-09-18 18:00:39,478 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-09-18 18:00:40,665 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-09-18 18:00:40,686 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-09-18 18:00:40,705 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-09-18 18:00:40,705 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-09-18 18:00:40,705 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-09-18 18:00:40,705 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-09-18 18:00:40,735 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-09-18 18:00:40,735 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-09-18 19:34:26,756 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-09-18 19:34:26,813 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-09-18 19:34:26,903 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-09-18 19:34:26,903 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-09-18 19:34:26,903 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-09-18 19:34:26,903 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-09-18 19:34:27,013 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-09-18 19:34:27,032 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-09-18 19:34:28,082 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute command: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, :p0, :p1, :p2, :p3, :p4, :p5, :p6) returning ID into :nhIdOutParam 
+Oracle.DataAccess.Client.OracleException ORA-02289: sequence does not exist    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2017-09-18 19:34:28,099 ERROR NHibernate.Util.ADOExceptionReporter - ORA-02289: sequence does not exist 
+2017-09-18 19:34:28,112 ERROR EIS.Core.ServiceImp.LogSystemService - CreateNew- Message:could not insert: [EIS.Core.Domain.LogSystem][SQL: INSERT INTO LOGSYSTEM (ID, ADMINID, EVENT, CREATEDATE, COMMENT_LOG, IPADDRESS, BROWSER, TRANGTHAI) VALUES (LOGSYSTEM_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?) returning ID into :nhIdOutParam]
+- StackTrace   at NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Boolean[] notNull, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityIdentityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSaveOrReplicate(Object entity, EntityKey key, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.PerformSave(Object entity, Object id, IEntityPersister persister, Boolean useIdentityColumn, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FX.Data.BaseService`2.CreateNew(T entity)
+   at EIS.Core.ServiceImp.LogSystemService.CreateNew(String userName, String mEvent, String comment, String ipaddress, String browser) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\LogSystemService.cs:line 104 
+2017-09-18 19:34:28,112 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 1: Going -Function Logon  
+2017-09-18 19:34:28,112 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.1: Going -Function Authenticate  
+2017-09-18 19:34:28,112 ERROR IdentityManagement.WebProviders.RBACMembershipProvider - 1.1.1: Going -Function AuthenUser  
+2017-09-18 19:34:28,171 ERROR IdentityManagement.Authorization.FanxiAuthentication - 1.2: End -Function Authenticate  
+2017-09-18 19:34:28,171 ERROR IdentityManagement.Authorization.FanxiAuthenticationBase - 2: End -Function Logon  
+2017-09-18 20:40:00,530 ERROR IdentityManagement.Authorization.UserIdentity - Oracle.DataAccess.Client.OracleException ORA-12170: TNS:Connect timeout occurred    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   at Oracle.DataAccess.Client.OracleConnection.Open()
+   at NHibernate.Connection.DriverConnectionProvider.GetConnection()
+   at NHibernate.Tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.Prepare()
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.GetReservedWords(Dialect dialect, IConnectionHelper connectionHelper)
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.Update(ISessionFactory sessionFactory)
+   at NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-09-18 20:41:06,342 ERROR IdentityManagement.Authorization.UserIdentity - Oracle.DataAccess.Client.OracleException ORA-12170: TNS:Connect timeout occurred    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   at Oracle.DataAccess.Client.OracleConnection.Open()
+   at NHibernate.Connection.DriverConnectionProvider.GetConnection()
+   at NHibernate.Tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.Prepare()
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.GetReservedWords(Dialect dialect, IConnectionHelper connectionHelper)
+   at NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.Update(ISessionFactory sessionFactory)
+   at NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-09-18 20:43:18,908 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: SELECT dichvu21.ID Id, bhyt21.MADVKT MaDichVu, dichvu21.TEN_DICHVU21 TenDichVu,bhyt21.SOLUONG SoLuong, bhyt21.DONGIA DonGia, bhyt21.THANHTIEN ThanhTien FROM BHYT_21 bhyt21, COCAUGIA_DICHVU21 dichvu21, DM_COSOKCB cskcb WHERE SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.COSOKCB_ID = cskcb.ID AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 AND cskcb.MA = 68038 
+Oracle.DataAccess.Client.OracleException ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-09-18 20:43:18,924 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH 
+2017-09-18 20:43:18,955 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH 
+2017-09-18 20:43:18,955 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH 
+2017-09-18 20:43:18,971 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewDanhSachDichVuPartial - message: could not execute query
+[ SELECT dichvu21.ID Id, bhyt21.MADVKT MaDichVu, dichvu21.TEN_DICHVU21 TenDichVu,bhyt21.SOLUONG SoLuong, bhyt21.DONGIA DonGia, bhyt21.THANHTIEN ThanhTien FROM BHYT_21 bhyt21, COCAUGIA_DICHVU21 dichvu21, DM_COSOKCB cskcb WHERE SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.COSOKCB_ID = cskcb.ID AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 AND cskcb.MA = 68038 ]
+[SQL: SELECT dichvu21.ID Id, bhyt21.MADVKT MaDichVu, dichvu21.TEN_DICHVU21 TenDichVu,bhyt21.SOLUONG SoLuong, bhyt21.DONGIA DonGia, bhyt21.THANHTIEN ThanhTien FROM BHYT_21 bhyt21, COCAUGIA_DICHVU21 dichvu21, DM_COSOKCB cskcb WHERE SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.COSOKCB_ID = cskcb.ID AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 AND cskcb.MA = 68038]
+ -    at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Impl.SessionImpl.ListCustomQuery(ICustomQuery customQuery, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List(NativeSQLQuerySpecification spec, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List[T](NativeSQLQuerySpecification spec, QueryParameters queryParameters)
+   at NHibernate.Impl.SqlQueryImpl.List[T]()
+   at EIS.Core.ServiceImp.SoSanhCoCau21Service.GetDichVu21(Int32 month, Int32 year, String maCskcb) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\SoSanhCoCau21Service.cs:line 80
+   at EIS.FEW.Controllers.SoSanhCoCau21Controller._GridViewDanhSachDichVuFilter(Int32 month, Int32 year, String maCskcb) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\SoSanhCoCau21Controller.cs:line 72 
+2017-09-18 20:43:39,195 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: SELECT dichvu21.ID Id, bhyt21.MADVKT MaDichVu, dichvu21.TEN_DICHVU21 TenDichVu,bhyt21.SOLUONG SoLuong, bhyt21.DONGIA DonGia, bhyt21.THANHTIEN ThanhTien FROM BHYT_21 bhyt21, COCAUGIA_DICHVU21 dichvu21, DM_COSOKCB cskcb WHERE SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.COSOKCB_ID = cskcb.ID AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 AND cskcb.MA = 68038 
+Oracle.DataAccess.Client.OracleException ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-09-18 20:43:39,202 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH 
+2017-09-18 20:43:39,218 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH 
+2017-09-18 20:43:39,218 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH 
+2017-09-18 20:43:39,221 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewDanhSachDichVuPartial - message: could not execute query
+[ SELECT dichvu21.ID Id, bhyt21.MADVKT MaDichVu, dichvu21.TEN_DICHVU21 TenDichVu,bhyt21.SOLUONG SoLuong, bhyt21.DONGIA DonGia, bhyt21.THANHTIEN ThanhTien FROM BHYT_21 bhyt21, COCAUGIA_DICHVU21 dichvu21, DM_COSOKCB cskcb WHERE SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.COSOKCB_ID = cskcb.ID AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 AND cskcb.MA = 68038 ]
+[SQL: SELECT dichvu21.ID Id, bhyt21.MADVKT MaDichVu, dichvu21.TEN_DICHVU21 TenDichVu,bhyt21.SOLUONG SoLuong, bhyt21.DONGIA DonGia, bhyt21.THANHTIEN ThanhTien FROM BHYT_21 bhyt21, COCAUGIA_DICHVU21 dichvu21, DM_COSOKCB cskcb WHERE SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.COSOKCB_ID = cskcb.ID AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 AND cskcb.MA = 68038]
+ -    at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Impl.SessionImpl.ListCustomQuery(ICustomQuery customQuery, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List(NativeSQLQuerySpecification spec, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List[T](NativeSQLQuerySpecification spec, QueryParameters queryParameters)
+   at NHibernate.Impl.SqlQueryImpl.List[T]()
+   at EIS.Core.ServiceImp.SoSanhCoCau21Service.GetDichVu21(Int32 month, Int32 year, String maCskcb) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\SoSanhCoCau21Service.cs:line 80
+   at EIS.FEW.Controllers.SoSanhCoCau21Controller._GridViewDanhSachDichVuFilter(Int32 month, Int32 year, String maCskcb) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\SoSanhCoCau21Controller.cs:line 72 
+2017-09-18 20:44:09,654 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: SELECT dichvu21.ID Id, bhyt21.MADVKT MaDichVu, dichvu21.TEN_DICHVU21 TenDichVu,bhyt21.SOLUONG SoLuong, bhyt21.DONGIA DonGia, bhyt21.THANHTIEN ThanhTien FROM BHYT_21 bhyt21, COCAUGIA_DICHVU21 dichvu21, DM_COSOKCB cskcb WHERE SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.COSOKCB_ID = cskcb.ID AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 AND cskcb.MA = 68038 
+Oracle.DataAccess.Client.OracleException ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-09-18 20:44:09,663 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH 
+2017-09-18 20:44:09,680 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH 
+2017-09-18 20:44:09,680 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH 
+2017-09-18 20:44:09,688 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewDanhSachDichVuPartial - message: could not execute query
+[ SELECT dichvu21.ID Id, bhyt21.MADVKT MaDichVu, dichvu21.TEN_DICHVU21 TenDichVu,bhyt21.SOLUONG SoLuong, bhyt21.DONGIA DonGia, bhyt21.THANHTIEN ThanhTien FROM BHYT_21 bhyt21, COCAUGIA_DICHVU21 dichvu21, DM_COSOKCB cskcb WHERE SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.COSOKCB_ID = cskcb.ID AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 AND cskcb.MA = 68038 ]
+[SQL: SELECT dichvu21.ID Id, bhyt21.MADVKT MaDichVu, dichvu21.TEN_DICHVU21 TenDichVu,bhyt21.SOLUONG SoLuong, bhyt21.DONGIA DonGia, bhyt21.THANHTIEN ThanhTien FROM BHYT_21 bhyt21, COCAUGIA_DICHVU21 dichvu21, DM_COSOKCB cskcb WHERE SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.COSOKCB_ID = cskcb.ID AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 AND cskcb.MA = 68038]
+ -    at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Impl.SessionImpl.ListCustomQuery(ICustomQuery customQuery, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List(NativeSQLQuerySpecification spec, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List[T](NativeSQLQuerySpecification spec, QueryParameters queryParameters)
+   at NHibernate.Impl.SqlQueryImpl.List[T]()
+   at EIS.Core.ServiceImp.SoSanhCoCau21Service.GetDichVu21(Int32 month, Int32 year, String maCskcb) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\SoSanhCoCau21Service.cs:line 80
+   at EIS.FEW.Controllers.SoSanhCoCau21Controller._GridViewDanhSachDichVuFilter(Int32 month, Int32 year, String maCskcb) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\SoSanhCoCau21Controller.cs:line 72 
+2017-09-18 20:47:14,803 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: SELECT dichvu21.ID ID, bhyt21.MADVKT MADICHVU, dichvu21.TEN_DICHVU21 TENDICHVU,bhyt21.SOLUONG SOLUONG, bhyt21.DONGIA DONGIA, bhyt21.THANHTIEN THANHTIEN FROM BHYT_21 bhyt21, COCAUGIA_DICHVU21 dichvu21, DM_COSOKCB cskcb WHERE SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.COSOKCB_ID = cskcb.ID AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 AND cskcb.MA = 68038 
+Oracle.DataAccess.Client.OracleException ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-09-18 20:47:14,822 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH 
+2017-09-18 20:47:14,838 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH 
+2017-09-18 20:47:14,838 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH 
+2017-09-18 20:47:14,851 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewDanhSachDichVuPartial - message: could not execute query
+[ SELECT dichvu21.ID ID, bhyt21.MADVKT MADICHVU, dichvu21.TEN_DICHVU21 TENDICHVU,bhyt21.SOLUONG SOLUONG, bhyt21.DONGIA DONGIA, bhyt21.THANHTIEN THANHTIEN FROM BHYT_21 bhyt21, COCAUGIA_DICHVU21 dichvu21, DM_COSOKCB cskcb WHERE SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.COSOKCB_ID = cskcb.ID AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 AND cskcb.MA = 68038 ]
+[SQL: SELECT dichvu21.ID ID, bhyt21.MADVKT MADICHVU, dichvu21.TEN_DICHVU21 TENDICHVU,bhyt21.SOLUONG SOLUONG, bhyt21.DONGIA DONGIA, bhyt21.THANHTIEN THANHTIEN FROM BHYT_21 bhyt21, COCAUGIA_DICHVU21 dichvu21, DM_COSOKCB cskcb WHERE SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.COSOKCB_ID = cskcb.ID AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 AND cskcb.MA = 68038]
+ -    at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Impl.SessionImpl.ListCustomQuery(ICustomQuery customQuery, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List(NativeSQLQuerySpecification spec, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List[T](NativeSQLQuerySpecification spec, QueryParameters queryParameters)
+   at NHibernate.Impl.SqlQueryImpl.List[T]()
+   at EIS.Core.ServiceImp.SoSanhCoCau21Service.GetDichVu21(Int32 month, Int32 year, String maCskcb) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\SoSanhCoCau21Service.cs:line 80
+   at EIS.FEW.Controllers.SoSanhCoCau21Controller._GridViewDanhSachDichVuFilter(Int32 month, Int32 year, String maCskcb) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\SoSanhCoCau21Controller.cs:line 72 
+2017-09-18 20:47:58,250 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: SELECT dichvu21.ID ID, bhyt21.MADVKT MADICHVU, dichvu21.TEN_DICHVU21 TENDICHVU,bhyt21.SOLUONG SOLUONG, bhyt21.DONGIA DONGIA, bhyt21.THANHTIEN THANHTIEN FROM BHYT_21 bhyt21, COCAUGIA_DICHVU21 dichvu21, DM_COSOKCB cskcb WHERE SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.COSOKCB_ID = cskcb.ID AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 AND cskcb.MA = 68038 
+Oracle.DataAccess.Client.OracleException ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-09-18 20:47:58,257 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH 
+2017-09-18 20:47:58,262 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH 
+2017-09-18 20:47:58,262 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH 
+2017-09-18 20:47:58,278 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewDanhSachDichVuPartial - message: could not execute query
+[ SELECT dichvu21.ID ID, bhyt21.MADVKT MADICHVU, dichvu21.TEN_DICHVU21 TENDICHVU,bhyt21.SOLUONG SOLUONG, bhyt21.DONGIA DONGIA, bhyt21.THANHTIEN THANHTIEN FROM BHYT_21 bhyt21, COCAUGIA_DICHVU21 dichvu21, DM_COSOKCB cskcb WHERE SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.COSOKCB_ID = cskcb.ID AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 AND cskcb.MA = 68038 ]
+[SQL: SELECT dichvu21.ID ID, bhyt21.MADVKT MADICHVU, dichvu21.TEN_DICHVU21 TENDICHVU,bhyt21.SOLUONG SOLUONG, bhyt21.DONGIA DONGIA, bhyt21.THANHTIEN THANHTIEN FROM BHYT_21 bhyt21, COCAUGIA_DICHVU21 dichvu21, DM_COSOKCB cskcb WHERE SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.COSOKCB_ID = cskcb.ID AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 AND cskcb.MA = 68038]
+ -    at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Impl.SessionImpl.ListCustomQuery(ICustomQuery customQuery, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List(NativeSQLQuerySpecification spec, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List[T](NativeSQLQuerySpecification spec, QueryParameters queryParameters)
+   at NHibernate.Impl.SqlQueryImpl.List[T]()
+   at EIS.Core.ServiceImp.SoSanhCoCau21Service.GetDichVu21(Int32 month, Int32 year, String maCskcb) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\SoSanhCoCau21Service.cs:line 80
+   at EIS.FEW.Controllers.SoSanhCoCau21Controller._GridViewDanhSachDichVuFilter(Int32 month, Int32 year, String maCskcb) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\SoSanhCoCau21Controller.cs:line 72 
+2017-09-18 20:48:40,113 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: SELECT dichvu21.ID ID, bhyt21.MADVKT MADICHVU, dichvu21.TEN_DICHVU21 TENDICHVU,bhyt21.SOLUONG SOLUONG, bhyt21.DONGIA DONGIA, bhyt21.THANHTIEN THANHTIEN FROM BHYT_21 bhyt21, COCAUGIA_DICHVU21 dichvu21, DM_COSOKCB cskcb WHERE SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.COSOKCB_ID = cskcb.ID AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 AND cskcb.MA = 68038 
+Oracle.DataAccess.Client.OracleException ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-09-18 20:48:40,122 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH 
+2017-09-18 20:48:40,126 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH 
+2017-09-18 20:48:40,126 ERROR NHibernate.Util.ADOExceptionReporter - ORA-01722: invalid number
+ORA-02063: preceding line from GIAMDINH 
+2017-09-18 21:40:04,814 ERROR IdentityManagement.Authorization.UserIdentity - System.ArgumentException: Item has already been added. Key in dictionary: 'D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Config\NHibernateConfig.xml'  Key being added: 'D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Config\NHibernateConfig.xml'
+   at System.Collections.Hashtable.Insert(Object key, Object nvalue, Boolean add)
+   at System.Collections.Hashtable.Add(Object key, Object value)
+   at FX.Data.NHibernateSessionManager.GetSessionFactoryFor(String sessionFactoryConfigPath)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath, IInterceptor interceptor)
+   at FX.Data.NHibernateSessionManager.GetSessionFrom(String sessionFactoryConfigPath)
+   at FX.Data.BaseService`2.get_NHibernateSession()
+   at FX.Data.BaseService`2.get_Query()
+   at IdentityManagement.Authorization.UserIdentity..ctor(FormsAuthenticationTicket mTicket) 
+2017-09-18 23:35:42,591 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='24.0269.1674' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 
+Oracle.DataAccess.Client.OracleException ORA-00904: "BHYT_21"."SOLUONG": invalid identifier    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-09-18 23:35:42,618 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:35:42,635 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:35:42,635 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:35:42,675 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewCompareFilter - message: could not execute query
+[ SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='24.0269.1674' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 ]
+[SQL: SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='24.0269.1674' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017]
+ -    at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Impl.SessionImpl.ListCustomQuery(ICustomQuery customQuery, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List(NativeSQLQuerySpecification spec, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List[T](NativeSQLQuerySpecification spec, QueryParameters queryParameters)
+   at NHibernate.Impl.SqlQueryImpl.List[T]()
+   at EIS.Core.ServiceImp.SoSanhCoCau21Service.GetCocauGiaThucTe(Int32 month, Int32 year, String maCskcb, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\SoSanhCoCau21Service.cs:line 104
+   at EIS.FEW.Controllers.SoSanhCoCau21Controller._GridViewChiTietDichVuFilter(String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\SoSanhCoCau21Controller.cs:line 105 
+2017-09-18 23:35:44,087 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='1401870789' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 
+Oracle.DataAccess.Client.OracleException ORA-00904: "BHYT_21"."SOLUONG": invalid identifier    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-09-18 23:35:44,108 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:35:44,165 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:35:44,165 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:35:44,192 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewCompareFilter - message: could not execute query
+[ SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='1401870789' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 ]
+[SQL: SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='1401870789' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017]
+ -    at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Impl.SessionImpl.ListCustomQuery(ICustomQuery customQuery, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List(NativeSQLQuerySpecification spec, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List[T](NativeSQLQuerySpecification spec, QueryParameters queryParameters)
+   at NHibernate.Impl.SqlQueryImpl.List[T]()
+   at EIS.Core.ServiceImp.SoSanhCoCau21Service.GetCocauGiaThucTe(Int32 month, Int32 year, String maCskcb, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\SoSanhCoCau21Service.cs:line 104
+   at EIS.FEW.Controllers.SoSanhCoCau21Controller._GridViewChiTietDichVuFilter(String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\SoSanhCoCau21Controller.cs:line 105 
+2017-09-18 23:35:47,562 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='2200191348' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 
+Oracle.DataAccess.Client.OracleException ORA-00904: "BHYT_21"."SOLUONG": invalid identifier    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-09-18 23:35:47,573 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:35:47,596 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:35:47,596 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:35:47,615 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewCompareFilter - message: could not execute query
+[ SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='2200191348' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 ]
+[SQL: SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='2200191348' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017]
+ -    at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Impl.SessionImpl.ListCustomQuery(ICustomQuery customQuery, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List(NativeSQLQuerySpecification spec, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List[T](NativeSQLQuerySpecification spec, QueryParameters queryParameters)
+   at NHibernate.Impl.SqlQueryImpl.List[T]()
+   at EIS.Core.ServiceImp.SoSanhCoCau21Service.GetCocauGiaThucTe(Int32 month, Int32 year, String maCskcb, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\SoSanhCoCau21Service.cs:line 104
+   at EIS.FEW.Controllers.SoSanhCoCau21Controller._GridViewChiTietDichVuFilter(String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\SoSanhCoCau21Controller.cs:line 105 
+2017-09-18 23:35:49,298 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='1401870789' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 
+Oracle.DataAccess.Client.OracleException ORA-00904: "BHYT_21"."SOLUONG": invalid identifier    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-09-18 23:35:49,310 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:35:49,331 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:35:49,331 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:35:49,344 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewCompareFilter - message: could not execute query
+[ SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='1401870789' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 ]
+[SQL: SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='1401870789' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017]
+ -    at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Impl.SessionImpl.ListCustomQuery(ICustomQuery customQuery, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List(NativeSQLQuerySpecification spec, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List[T](NativeSQLQuerySpecification spec, QueryParameters queryParameters)
+   at NHibernate.Impl.SqlQueryImpl.List[T]()
+   at EIS.Core.ServiceImp.SoSanhCoCau21Service.GetCocauGiaThucTe(Int32 month, Int32 year, String maCskcb, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\SoSanhCoCau21Service.cs:line 104
+   at EIS.FEW.Controllers.SoSanhCoCau21Controller._GridViewChiTietDichVuFilter(String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\SoSanhCoCau21Controller.cs:line 105 
+2017-09-18 23:36:07,675 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='2200191348' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 
+Oracle.DataAccess.Client.OracleException ORA-00904: "BHYT_21"."SOLUONG": invalid identifier    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-09-18 23:36:07,685 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:36:07,706 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:36:07,706 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:36:07,719 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewCompareFilter - message: could not execute query
+[ SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='2200191348' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 ]
+[SQL: SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='2200191348' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017]
+ -    at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Impl.SessionImpl.ListCustomQuery(ICustomQuery customQuery, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List(NativeSQLQuerySpecification spec, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List[T](NativeSQLQuerySpecification spec, QueryParameters queryParameters)
+   at NHibernate.Impl.SqlQueryImpl.List[T]()
+   at EIS.Core.ServiceImp.SoSanhCoCau21Service.GetCocauGiaThucTe(Int32 month, Int32 year, String maCskcb, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\SoSanhCoCau21Service.cs:line 104
+   at EIS.FEW.Controllers.SoSanhCoCau21Controller._GridViewChiTietDichVuFilter(String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\SoSanhCoCau21Controller.cs:line 105 
+2017-09-18 23:36:15,744 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='1401870789' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 
+Oracle.DataAccess.Client.OracleException ORA-00904: "BHYT_21"."SOLUONG": invalid identifier    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-09-18 23:36:15,751 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:36:15,766 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:36:15,766 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:36:15,775 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewCompareFilter - message: could not execute query
+[ SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='1401870789' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 ]
+[SQL: SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='1401870789' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017]
+ -    at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Impl.SessionImpl.ListCustomQuery(ICustomQuery customQuery, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List(NativeSQLQuerySpecification spec, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List[T](NativeSQLQuerySpecification spec, QueryParameters queryParameters)
+   at NHibernate.Impl.SqlQueryImpl.List[T]()
+   at EIS.Core.ServiceImp.SoSanhCoCau21Service.GetCocauGiaThucTe(Int32 month, Int32 year, String maCskcb, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\SoSanhCoCau21Service.cs:line 104
+   at EIS.FEW.Controllers.SoSanhCoCau21Controller._GridViewChiTietDichVuFilter(String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\SoSanhCoCau21Controller.cs:line 105 
+2017-09-18 23:36:46,679 ERROR NHibernate.AdoNet.AbstractBatcher - Could not execute query: SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='2200191348' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 
+Oracle.DataAccess.Client.OracleException ORA-00904: "BHYT_21"."SOLUONG": invalid identifier    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+2017-09-18 23:36:46,685 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:36:46,700 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:36:46,700 ERROR NHibernate.Util.ADOExceptionReporter - ORA-00904: "BHYT_21"."SOLUONG": invalid identifier 
+2017-09-18 23:37:35,740 ERROR EIS.FEW.Controllers.COCAUGIA_DICHVU21Controller - _GridViewCompareFilter - message: could not execute query
+[ SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='2200191348' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017 ]
+[SQL: SELECT thucte_ct.ID, thucte_ct.ID_LOAI, thucte_ct.MA_COCAU , thucte_ct.TEN_COCAU_OLD, (thucte_ct.SO_LUONG_OLD * bhyt21.SOLUONG) SO_LUONG_OLD, thucte_ct.DONGIA_OLD, thucte_ct.TEN_COCAU_NEW, (thucte_ct.SO_LUONG_NEW * bhyt_21.SOLUONG) SO_LUONG_NEW, thucte_ct.DONGIA_NEW, loai.ten TEN_LOAI FROM COCAUGIA_THUCTE thucte, COCAUGIA_THUCTE_CT thucte_ct, COCAUGIA_DICHVU21 dichvu21, COCAUGIA_LOAI loai, DM_COSOKCB cskcb, BHYT_21 bhyt21 WHERE thucte_ct.ID_THUCTE = thucte.ID AND thucte_ct.ID_LOAI = loai.ID AND dichvu21.ID = thucte.ID_DV AND bhyt21.COSOKCB_ID = cskcb.ID AND SUBSTR(bhyt21.MADVKT, -4, 4) = SUBSTR(dichvu21.MA_DICHVU21, -4, 4) AND bhyt21.MADVKT='2200191348' AND bhyt21.THANG_QT=8 AND bhyt21.NAM_QT=2017]
+ -    at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes)
+   at NHibernate.Impl.SessionImpl.ListCustomQuery(ICustomQuery customQuery, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List(NativeSQLQuerySpecification spec, QueryParameters queryParameters, IList results)
+   at NHibernate.Impl.SessionImpl.List[T](NativeSQLQuerySpecification spec, QueryParameters queryParameters)
+   at NHibernate.Impl.SqlQueryImpl.List[T]()
+   at EIS.Core.ServiceImp.SoSanhCoCau21Service.GetCocauGiaThucTe(Int32 month, Int32 year, String maCskcb, String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.Core\ServiceImp\SoSanhCoCau21Service.cs:line 104
+   at EIS.FEW.Controllers.SoSanhCoCau21Controller._GridViewChiTietDichVuFilter(String maDichVu) in D:\outsource\Mr.Khanh\20170907\COCAUGIA\Code\EIS.FEW\Controllers\SoSanhCoCau21Controller.cs:line 105 

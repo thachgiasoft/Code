@@ -1,0 +1,90 @@
+﻿@model IEnumerable<IdentityManagement.Domain.user>
+@{
+    ViewBag.Title = "EIS v" + EIS.FEW.RouteConfig.Version + " | Danh sách người dùng hệ thống";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+@section HeadResources{
+    @Html.Partial("HeadResourcesPartial")
+}
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#editMode").change(function () {
+            window.gvDSND.PerformCallback({ editMode: $("#editMode").val() });
+        });
+    });
+
+    function Filter() {
+        window.gvDSND.PerformCallback({
+            'strTimKiem': window.str_TimKiem.GetValue()
+        });
+    }
+
+    function OnInit() {
+        AdjustSize();
+        window.ASPxClientUtils.AttachEventToElement(window, "resize", function () {
+            AdjustSize();
+        });
+    }
+
+    function OnEndCallback() {
+        AdjustSize();
+    }
+
+    function AdjustSize() {
+        var height = document.documentElement.clientHeight * 0.78;
+        window.gvDSND.SetHeight(height);
+    }
+
+    function OnTextBoxKeyDown(s, e) {
+        if (e.htmlEvent.keyCode == 13)
+            Filter();
+    }
+
+    function OnDeleteUser(UserId) {
+        if (confirm('Bạn có thực sự muốn xóa người dùng này?')) {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("Delete", "QuanLyNguoiDung")',
+                data: { UserId: UserId },
+                success: function (data) {
+                    if (data == 'OK') {
+                        alert('Bạn đã xóa thành công!');
+                        window.location.href = '@Url.Action("Index","QuanLyNguoiDung")';
+                        return;
+                    }
+                    else {
+                        alert('Tồn tại chức năng sử dụng bởi người dùng này, bạn không thể xóa người dùng này!');
+                        return false;
+                    }
+                }
+            });
+        }
+    }
+    function LinkGroup() {
+        window.location.href = '@Url.Action("Index", "GroupUser")';
+    }
+
+</script>
+<style>
+    /*#gvCSKCB_DXMainTable {
+        border-right: 1px solid #c0c0c0;
+        border-bottom: 1px solid #c0c0c0;
+    }*/
+</style>
+<div>
+    @Html.DevExpress().RoundPanel(settings =>
+       {
+           settings.Name = "roundPanel";
+           settings.AllowCollapsingByHeaderClick = true;
+
+           settings.ShowCollapseButton = true;
+           settings.EnableAnimation = true;
+           settings.Width = Unit.Percentage(80);
+           settings.HeaderText = "NGƯỜI DÙNG HỆ THỐNG";
+           settings.SetContent(() => Html.RenderPartial("FilterView"));
+       }).GetHtml()
+    @*<br />*@
+    @Html.Partial("DS_NguoiDungPartial")
+</div>
+

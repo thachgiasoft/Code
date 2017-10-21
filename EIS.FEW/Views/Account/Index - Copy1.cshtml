@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="@Url.Content("~/Content/Images/Icon/logo_bhxh.png")" type="image/x-icon" />
+    <link rel="icon" href="@Url.Content("~/Content/Images/Icon/logo_bhxh.png")" type="image/x-icon" />
+    <link href="@Url.Content("~/Content/Login.css")" rel="stylesheet" type="text/css" />
+
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui.min.js")"></script>
+
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+
+    @Html.DevExpress().GetStyleSheets(
+        new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout }
+    )
+    @Html.DevExpress().GetScripts()
+    <style>
+        .ui-widget-header {
+            border: 0px !important;
+            background: #ffffff !important;
+        }
+
+        .ui-corner-all {
+            border-bottom-right-radius: 0px !important;
+            border-bottom-left-radius: 0px !important;
+            border-top-right-radius: 0px !important;
+            border-top-left-radius: 0px !important;
+        }
+
+        .ui-widget-header {
+            color: #0093DD !important;
+        }
+
+        .ui-button-text {
+            padding: 0px !important;
+        }
+        a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        a:active {
+            text-decoration: none;
+        }
+
+        #Captcha_IMGD {
+            width: 260px !important;
+            height: 60px !important;
+        }
+
+        #Captcha_IMG {
+            height: 60px !important;
+            width: 260px !important;
+        }
+
+        #Captcha_TB_I {
+            width: 250px;
+            height: 20px;
+        }
+
+        #actions {
+            margin: 0px 0 0 0;
+        }
+
+        #popup_error_PWC-1 {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    @model EIS.Core.Domain.NGUOIDUNG
+    <form id="login">
+        <h1>ĐĂNG NHẬP</h1>
+        <fieldset id="inputs">
+            <input name="username" id="username" type="text" placeholder="Tài khoản" autofocus required>
+            <input name="password" id="password" type="password" placeholder="Mật khẩu" required>
+        </fieldset>
+        <div class="dxcaControl_EIS" id="Captcha">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div id="Captcha_IMGD" class="" style="background-color: #0093DD; border-width: 0px; width: 270px; line-height: 0px; font-size: 0px; text-align: center;">
+                                @Html.Partial("PartialImgCaptcha", Model)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="dxcaRefreshButtonCell_EIS" style="padding-top:3px;padding-bottom:4px;">
+                            <a class="dxcaRefreshButton_EIS" id="Captcha_RB" href="javascript:;">
+                                <img id="Captcha_RIMG" class="dx-vam dxEditors_caRefresh_EIS" src="/DXR.axd?r=1_36-uLdNc" alt="Hiển thị mã khác" style="margin-right:4px;">
+                                <span id="Captcha_RTS" class="dxcaRefreshButtonText_EIS" style="vertical-align:middle;">Hiển thị mã khác</span>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="dxcaTextBoxCellNoIndent_EIS" style="padding-top:3px;padding-bottom:4px;">
+                            <label class="dxcaTextBoxLabel_EIS" for="Captcha_TB_I">Gõ mã số hiển thị</label>
+                            <table id="Captcha_TB_ET" class="dxeValidStEditorTable dxeRoot_EIS">
+                                <tbody>
+                                    <tr>
+                                        <td id="Captcha_TB_CC" class="dxeErrorFrame_EIS dxeErrorFrameSys dxeNoBorderBottom dxeControlsCell_EIS">
+                                            <table class="dxeTextBoxSys dxeTextBox_EIS" id="Captcha_TB" style="width:270px;height:25px;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="dxic" style="width:100%;">
+                                                            <input class="dxeEditArea_EIS dxeEditAreaSys" id="Captcha_TB_I" name="Captcha$TB" type="text" autocomplete="off">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            @Html.DevExpress().Label(s =>
+            {
+                s.Name = "lblMessage";
+                s.Text = "";
+                s.Style.Add("font-weight", "bold");
+                s.Style.Add("color", "red");
+            }).GetHtml()
+        </div>
+        <fieldset id="actions">
+            <input type="button" onclick="logOn()" id="submit" value="Đăng nhập" />
+            <a href="#">Quên mật khẩu ?</a>
+            <a href="#">Đăng ký</a>
+        </fieldset>
+    </form>
+    <div id="PopupLogin" style="display: none; ">
+        <p style="color:red;"> Sai tên đăng nhập hoặc mật khẩu </p>
+    </div>
+    <div id="PopupCaptchar" style="display: none; border-top: 1px solid #0093DD !important; margin-top: 10px;">
+        <p style="color:red;"> Nhập sai Captcha. Vui lòng nhập lại! </p>
+    </div>
+    <div id="PopupCaptcharVali" style="display: none; border-top: 1px solid #0093DD !important; margin-top: 10px;">
+        <p style="color:red;"> Vui lòng nhập mã kiểm tra! </p>
+    </div>
+    <div id="PopuErrSystem" style="display: none; border-top: 1px solid #0093DD !important; margin-top: 10px;">
+        <p style="color:red;"> Lỗi hệ thống, liên hệ quản trị ! </p>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#username").keyup(function (event) {
+                if (event.keyCode == 13) {
+                    $("#submit").click();
+                }
+            });
+            $("#password").keyup(function (event) {
+                if (event.keyCode == 13) {
+                    $("#submit").click();
+                }
+            });
+            $("#Captcha_TB_I").keyup(function (event) {
+                if (event.keyCode == 13) {
+                    $("#submit").click();
+                }
+            });
+        });
+
+        $('input[type=text],input[type="password"]').on("change paste keyup", function () {
+            $('#lblMessage').text('');
+        });
+
+        function logOn() {
+            var strCaptcha = $('#Captcha_TB_I').val();
+            if (strCaptcha == "") {
+                $('#lblMessage').text('Bạn chưa nhập mã Captcha');
+                //window.popup_error.Show();
+                //window.popup_error.SetContentHtml("Bạn chưa nhập mã Captcha!");
+                return false;
+            }
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("Login", "Account")',
+                data: { username: $('#username').val(), password: $('#password').val(), captcha: strCaptcha },
+                success: function (data) {
+                    if (data.data == 1) {
+                        window.location.href = '@Url.Action("Index","Home")';
+                    }
+                    else if (data.data == 2) {
+                        $('#lblMessage').text('Nhập sai tên đăng nhập hoặc mật khẩu');
+                        //window.popup_error.Show();
+                        //window.popup_error.SetContentHtml("Nhập sai tên đăng nhập hoặc mật khẩu. Vui lòng nhập lại!");
+                        return false;
+                    }
+                    else if (data.data == 3) {
+                        $('#lblMessage').text('Nhập sai Captcha. Vui lòng nhập lại');
+                        //window.popup_error.Show();
+                        //window.popup_error.SetContentHtml("Nhập sai Captcha. Vui lòng nhập lại!");
+                        return false;
+                    }
+                    else if (data.data == 4) {
+                        //$('#lblMessage').text('Nhập sai tên đăng nhập hoặc mật khẩu');
+                        window.location.href = '/ThongTinTaiKhoan/Index';
+                        //popup_msg.Show();
+                    }
+                    else if (data.data == 5) {
+                        window.location.href = '/Account/PartialPhienLamViec';
+                    }
+                    else if (data.data == 6) {
+                        $('#lblMessage').text('Xảy ra lỗi hệ thống, liên hệ với quản trị');
+                        console.log('message: ' + data.message);
+                        console.log('stack: ' + data.stack);
+                        //window.popup_error.Show();
+                        //window.popup_error.SetContentHtml("Xảy ra lỗi hệ thống, liên hệ với quản trị!");
+                        return false;
+                    }
+                }
+            });
+        }
+
+        function DY_PhienLamViec() {
+            window.popupPhienLamViec.Hide();
+            @*$.ajax({
+                type: "POST",
+                url: '@Url.Action("DY_PhienLamViec", "Account")',
+                data: {
+                    cskcbId: window.DF_COSOKCB_ID.GetValue(), loaiTg: window.cbx_thoigian_session.GetValue(), thang: window.cbx_thang_session.GetValue()
+                    , quy: window.cbx_quy_session.GetValue(), nam: window.cbx_nam_session.GetValue()
+                },
+                success: function (data) {
+                    if (data == 'true') {
+                        window.popupPhienLamViec.Hide();
+                        return false;
+                    }
+                    else if (data == 'TimeNull') {
+                        popup_message_phienlamviec.Show(); popup_message_phienlamviec.SetContentHtml(IDrawMessageTable("error", "Bạn phải chọn loại thời gian Tháng hoặc Quý!"));
+                        return false;
+                    }
+                    else if (data == 'kcbnull') {
+                        popup_message_phienlamviec.Show(); popup_message_phienlamviec.SetContentHtml(IDrawMessageTable("error", "Bạn phải chọn một cơ sở khám chữa bệnh!"));
+                        return false;
+                    }
+                    else if (data == 'notExistCskcb') {
+                        popup_message_phienlamviec.Show(); popup_message_phienlamviec.SetContentHtml(IDrawMessageTable("error", "Không tồn tại cơ sở khám chữa bệnh này, mời bạn chọn cơ sở khám chữa bệnh khác!"));
+                        return false;
+                    }
+                    window.location.href = '@Url.Action("Index", "Account")';
+                }
+            });*@
+        }
+
+        $("#Captcha_RIMG, #Captcha_RTS").click(function () {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("PartialImgCaptcha", "Account")',
+                data: {},
+                success: function (data) {
+                    $("#Captcha_IMGD").html(data);
+                }
+            });
+        });
+        function EndCallBack_CskcbCombobox() {
+            window.popupPhienLamViecCopy.Show();
+        }
+
+        function CloseMessage() {
+            return false;
+        }
+        function CloseMessage_CL() {
+            @*window.location = '@Url.Action("Index", "ThongTinTaiKhoan")';*@
+        }
+        function btnOK() {
+            popup_msg.Hide();
+            @*window.location = '@Url.Action("Index", "ThongTinTaiKhoan")';*@
+        }
+
+    </script>
+
+    @Html.DevExpress().PopupControl(
+settings =>
+{
+    settings.Name = "popup_error";
+    settings.HeaderText = "Thông báo";
+    settings.Width = Unit.Pixel(400);
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+    settings.CloseOnEscape = true;
+    settings.AllowDragging = true;
+    settings.Modal = true;
+    settings.CloseAction = CloseAction.OuterMouseClick;
+    settings.ClientSideEvents.CloseButtonClick = "CloseMessage";
+}).GetHtml()
+    @Html.DevExpress().PopupControl(
+settings =>
+{
+    settings.Name = "popup_msg";
+    settings.HeaderText = "Bạn phải thực hiện đổi mật khẩu mặc định!";
+    settings.Width = Unit.Pixel(300);
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+    settings.CloseAction = CloseAction.CloseButton;
+    settings.ClientSideEvents.CloseButtonClick = "CloseMessage_CL";
+    settings.SetContent(() =>
+    {
+
+        @Html.DevExpress().Button(
+        it =>
+        {
+            it.Name = "btnOK";
+            it.EnableTheming = true;
+            it.Text = "OK";
+            it.AllowFocus = false;
+            it.ControlStyle.CssClass = "btnOK";
+            it.ClientSideEvents.Click = string.Format("function(s, e) {{ popup_msg.Hide(); window.location = 'ThongTinTaiKhoan/Index'; }}", "");
+        }).GetHtml();
+
+    });
+
+}).GetHtml()
+</body>
+</html>

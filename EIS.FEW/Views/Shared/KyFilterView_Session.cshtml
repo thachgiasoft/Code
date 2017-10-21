@@ -1,0 +1,164 @@
+﻿@model EIS.Core.CustomView.KyFilterSession
+<script>
+    $(document).ready(function () {
+        cbx_ThoiGian_Session_SelectedIndexChanged(cbx_thoigian_session, 1);
+    });
+
+    function cbx_ThoiGian_Session_SelectedIndexChanged(s, e) {
+        var thoiGian = s.GetValue();
+        showHideChangeSession(thoiGian);
+    }
+
+    function showHideChangeSession(thoiGian) {
+        var now = new Date();
+        switch (thoiGian) {
+            case 0: { //Nam
+                $('#thangSession').hide();
+                $('#quySession').hide();
+                $('#namSession').show();
+                $('#giai_doanSession').hide();
+                $('#tu_thangSession').hide();
+                $('#den_thangSession').hide();
+                cbx_nam_session.SetValue(now.getFullYear());
+                break;
+            }
+            case 1: { //quý
+                $('#thangSession').hide();
+                $('#quySession').show();
+                $('#namSession').show();
+                $('#giai_doanSession').hide();
+                $('#tu_thangSession').hide();
+                $('#den_thangSession').hide();
+                cbx_quy_session.SetValue(Math.floor(now.getMonth() / 3) + 1);
+                cbx_nam_session.SetValue(now.getFullYear());
+                break;
+            }
+            case 2: { //thang
+                $('#thangSession').show();
+                $('#quySession').hide();
+                $('#namSession').show();
+                $('#giai_doanSession').hide();
+                $('#tu_thangSession').hide();
+                $('#den_thangSession').hide();
+                cbx_thang_session.SetValue(now.getMonth() + 1);
+                cbx_nam_session.SetValue(now.getFullYear());
+                break;
+            }
+            case 3: { //tuthang - den thang
+                $('#thangSession').hide();
+                $('#quySession').hide();
+                $('#namSession').show();
+                $('#giai_doanSession').show();
+                $('#tu_thangSession').show();
+                $('#den_thangSession').show();
+                cbx_tuthag_session.SetValue(now.getMonth() + 1);
+                cbx_denthag_session.SetValue(now.getMonth() + 1);
+                cbx_nam_session.SetValue(now.getFullYear());
+                break;
+            }
+            default: {
+                $('#thangSession').hide();
+                $('#quySession').hide();
+                $('#namSession').hide();
+                $('#giai_doanSession').hide();
+                $('#tu_thangSession').hide();
+                $('#den_thangSession').hide();
+            }
+        }
+    }
+</script>
+
+<table style="width:100%">
+    <tr>
+        <td style="width: 40%; padding-right:5px">
+           @Html.DevExpress().ComboBoxFor(model => model.thoiGian,
+                settings =>
+                {
+                    settings.Width = Unit.Percentage(100);
+                    settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                    settings.Name = "cbx_thoigian_session";
+                    settings.Properties.Width = Unit.Percentage(100);
+                    settings.Properties.Caption = "";
+                    settings.Properties.ValueField = "Key";
+                    settings.Properties.TextField = "Value";
+                    settings.Properties.ValueType = typeof(int?);
+                    settings.Properties.ClientSideEvents.SelectedIndexChanged = "cbx_ThoiGian_Session_SelectedIndexChanged";
+                }).BindList(EIS.Core.Common.Common.ThoiGianSession).GetHtml()
+        </td>
+        <td style="width: 30%; padding-right: 5px">
+            <div id="thangSession" style="display:none">
+                @Html.DevExpress().ComboBoxFor(model => model.thang,
+                   settings =>
+                   {
+                       settings.Width = Unit.Percentage(100);
+                       settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                       settings.Name = "cbx_thang_session";
+                       settings.Properties.ValueType = typeof(int?);
+                       settings.Properties.NullText = "Tháng";
+                       settings.Properties.Width = Unit.Percentage(100);
+                   }).BindList(EIS.Core.Common.Common.thangs).GetHtml()
+            </div>
+            <div id="quySession" style="display:none">
+                @Html.DevExpress().ComboBoxFor(model => model.quy,
+                   settings =>
+                   {
+                       settings.Width = Unit.Percentage(100);
+                       settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                       settings.Name = "cbx_quy_session";
+                       settings.Properties.Width = Unit.Percentage(100);
+                       settings.Properties.ValueField = "key";
+                       settings.Properties.TextField = "value";
+                       settings.Properties.ValueType = typeof(int?);
+                       settings.Properties.NullText = "Quý";
+                   }).BindList(EIS.Core.Common.Common.quys).GetHtml()
+            </div>
+            <table id="giai_doanSession" style="display:none">
+                <tr>
+                    <td style="padding-right:3px">
+                        <div id="tu_thangSession">
+                            @Html.DevExpress().ComboBoxFor(model => model.tuthang,
+                   settings =>
+                   {
+                       settings.Width = Unit.Percentage(100);
+                       settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                       settings.Name = "cbx_tuthag_session";
+                       settings.Properties.ValueType = typeof(int?);
+                       settings.Properties.NullText = "Từ tháng";
+                       settings.Properties.Width = Unit.Percentage(100);
+                   }).BindList(EIS.Core.Common.Common.thangs).GetHtml()
+                        </div>
+                    </td>
+                    <td style="padding-left:2px">
+                        <div id="den_thangSession">
+                            @Html.DevExpress().ComboBoxFor(model => model.denthang,
+                   settings =>
+                   {
+                       settings.Width = Unit.Percentage(100);
+                       settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                       settings.Name = "cbx_denthag_session";
+                       settings.Properties.ValueType = typeof(int?);
+                       settings.Properties.NullText = "đến tháng";
+                       settings.Properties.Width = Unit.Percentage(100);
+                   }).BindList(EIS.Core.Common.Common.thangs).GetHtml()
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td style="width:30%">
+            <div id="namSession" style="display:none">
+                @Html.DevExpress().ComboBoxFor(model => model.nam,
+                settings =>
+                {
+                    settings.Width = Unit.Percentage(100);
+                    settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                    settings.Name = "cbx_nam_session";
+                    settings.Properties.Width = Unit.Percentage(100);
+                    settings.Properties.ValueType = typeof(int?);
+                    settings.Properties.NullText = "Năm";
+                }).BindList(EIS.Core.Common.Common.nams).GetHtml()
+            </div>
+
+        </td>
+    </tr>
+</table>

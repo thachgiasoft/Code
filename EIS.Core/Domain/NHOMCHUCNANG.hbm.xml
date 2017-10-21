@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="EIS.Core.Domain.NHOMCHUCNANG, EIS.Core" table="NHOMCHUCNANG" >
+    <id name="NHOMCHUCNANGID" column="NHOMCHUCNANGID">
+      <generator class="sequence-identity">
+        <param name="sequence">NHOMCHUCNANG_SEQ</param>
+      </generator>
+    </id>
+    <property name="MODULEID" column="MODULEID" type="int" />
+    <property name="DESCRIPTION" column="DESCRIPTION" type="string" length="255" />
+  </class>
+</hibernate-mapping>

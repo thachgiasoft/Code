@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+<class name="EIS.Core.Domain.TYPE_ROLE, EIS.Core" table="TYPE_ROLE" >
+  <id name="ROLE_ID" column="ROLE_ID" type="Int64" />
+  <property name="TYPE"  column="TYPE_ROLE" type="int" />
+  <property name="USERID"  column="USERID" type="int" />
+</class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+﻿@Html.DevExpress().ComboBox(
+    settings =>
+    {
+        settings.Name = "cbo_dichvu21";
+        settings.Width = 230;
+        settings.Properties.DropDownWidth = 350;
+        settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+        settings.CallbackRouteValues = new { Controller = "COCAUGIA_PHATSINH", Action = "_ComboboxDichVu21Partial" };
+        settings.Properties.CallbackPageSize = 10;
+        settings.Properties.TextField = "TEN";
+        settings.Properties.TextFormatString = "{0} {1}";
+        settings.Properties.ValueField = "ID";
+        settings.Properties.ValueType = typeof(int);
+        settings.Properties.FilterMinLength = 0;
+        //settings.Properties.Caption = "Type to search:";
+
+        //settings.Properties.Columns.Add("ID", "ID", 90);
+        settings.Properties.Columns.Add("MA", "Mã", 90);
+        settings.Properties.Columns.Add("TEN", "Tên", Unit.Percentage(100));
+
+        //settings.Properties.ClientSideEvents.BeginCallback = "OnStartCallback";
+        //settings.Properties.ClientSideEvents.EndCallback = "OnEndCallback";
+    }
+).BindList(FX.Core.IoC.Resolve<EIS.Core.IService.IDMCOSOKCBService>().GetDM_COSOKCBRange, FX.Core.IoC.Resolve<EIS.Core.IService.IDMCOSOKCBService>().GetDM_COSOKCBByID).GetHtml()

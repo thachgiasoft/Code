@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+@section HeadResources{
+    @Html.Partial("HeadResourcesPartial")
+}
+
+@model EIS.FEW.Models.COCAUGIA_DICHVU
+
+<script type="text/javascript">
+    function Filter() {
+        gridviewChiTiet.PerformCallback({ month: cbx_month.GetValue(), year: cbx_year.GetValue(), maCskcb: cbo_cskcb.GetValue() });
+    }
+</script>
+@Html.Hidden("selectedIDsHF");
+@Html.DevExpress().RoundPanel(settings =>
+{
+    settings.Name = "roundPanel";
+    settings.AllowCollapsingByHeaderClick = true;
+    settings.ShowCollapseButton = true;
+    settings.EnableAnimation = true;
+    settings.Width = Unit.Percentage(100);
+    settings.HeaderText = "TỔNG HỢP CƠ CẤU CHI TIẾT";
+    settings.Height = Unit.Pixel(50);
+    settings.SetContent(() =>
+    {
+        Html.RenderPartial("FilterView");
+    });
+}).GetHtml()
+
+@Html.DevExpress().Splitter(
+    settings =>
+    {
+        settings.Name = "splClientSideEvents";
+        settings.FullscreenMode = true;
+        settings.Width = Unit.Percentage(100);
+        settings.Orientation = Orientation.Horizontal;
+        settings.ShowCollapseBackwardButton = true;
+        settings.ShowCollapseForwardButton = true;
+
+        settings.Panes.Add(pane =>
+        {
+            pane.Name = "GvChiTietDichVu";
+            pane.Size = Unit.Percentage(100);
+            pane.SetContent(() => ViewContext.Writer.Write(Html.Action("GridViewFilterServices")));
+        });
+    }).GetHtml()

@@ -1,0 +1,362 @@
+﻿@{
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "gvChiTietDichVu";
+        settings.KeyFieldName = "ID";
+
+        settings.CallbackRouteValues = new { Controller = "NhapCoCauThucTe", Action = "GridViewThucTeChiTietPartial" };
+        settings.CustomActionRouteValues = new { Controller = "NhapCoCauThucTe", Action = "GridViewCoCauThucTeFilter" };
+
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "NhapCoCauThucTe", Action = "AddThucTeChiTiet" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "NhapCoCauThucTe", Action = "UpdateThucTeChiTiet" };
+
+        //settings.SettingsEditing.BatchUpdateRouteValues = new { Controller = "NhapCoCauThucte", Action = "BatchEditingUpdateModel" };
+
+        //settings.SettingsEditing.Mode = GridViewEditingMode.Batch;
+        //settings.SettingsEditing.BatchEditSettings.EditMode = GridViewBatchEditMode.Cell;
+        //settings.SettingsEditing.BatchEditSettings.StartEditAction = GridViewBatchStartEditAction.Click;
+        //settings.Settings.ShowStatusBar = GridViewStatusBarMode.Hidden;
+
+        settings.SettingsEditing.Mode = EIS.FEW.Helper.GridViewEditingHelper.EditMode;
+        settings.SettingsPopup.EditForm.Width = 800;
+        settings.SettingsPopup.EditForm.HorizontalAlign = PopupHorizontalAlign.WindowCenter;
+        settings.SettingsPopup.EditForm.VerticalAlign = PopupVerticalAlign.WindowCenter;
+
+        //settings.Settings.VerticalScrollBarMode = ScrollBarMode.Auto;
+        //settings.Settings.HorizontalScrollBarMode = ScrollBarMode.Auto;
+        settings.Settings.ShowFilterRow = true;
+
+        settings.Settings.ShowFilterRowMenu = true;
+        settings.SettingsContextMenu.Enabled = true;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+        settings.EncodeHtml = false;
+
+        settings.SettingsContextMenu.RowMenuItemVisibility.NewRow = true;
+        settings.SettingsContextMenu.RowMenuItemVisibility.Refresh = false;
+        settings.SettingsContextMenu.RowMenuItemVisibility.EditRow = true;
+        //settings.SettingsContextMenu.RowMenuItemVisibility.DeleteRow = true;
+        settings.SettingsBehavior.AllowFocusedRow = true;
+
+        settings.SetEditFormTemplateContent(c =>
+        {
+            //try
+            //{
+            try
+            {
+                if (c.KeyValue != null)
+                {
+                    Html.RenderAction("EditFormPartial", new { id = c.KeyValue.ToString() });
+                }
+                else
+                {
+                    Html.RenderAction("CreateFormPartial");
+                }
+            }
+            catch(Exception e)
+            {
+                Html.RenderAction("CreateFormPartial");
+            }
+            //}
+            //catch(Exception e)
+            //{
+            //    Html.
+            //}
+
+
+
+            //Html.DevExpress().FormLayout(formSettings =>
+            //{
+            //    formSettings.Name = "FormLayout";
+            //    formSettings.SettingsItems.ShowCaption = DefaultBoolean.True;
+            //    formSettings.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Left;
+            //    formSettings.ColCount = 3;
+
+            //    formSettings.Items.Add(i =>
+            //    {
+            //        i.FieldName = "LOAI.ID";
+            //        i.Caption = "Loại";
+            //        i.ColSpan = 3;
+            //        i.NestedExtension().ComboBox(s =>
+            //        {
+            //            s.Properties.TextField = "TEN";
+            //            s.Properties.ValueField = "ID";
+            //            s.Properties.ValueType = typeof(string);
+            //            s.Properties.DataSource = FX.Core.IoC.Resolve<EIS.Core.IService.ICOCAUGIA_LOAIService>().GetAll();
+            //            s.Width = Unit.Percentage(100);
+            //        });
+            //    });
+
+            //    formSettings.Items.Add(i =>
+            //    {
+            //        i.FieldName = "MA_COCAU";
+            //        i.Caption = "Mã";
+            //        i.ColSpan = 3;
+            //        i.NestedExtension().TextBox(s =>
+            //        {
+            //            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            //            s.ShowModelErrors = true;
+            //            s.Width = Unit.Percentage(100);
+            //        });
+            //    });
+            //    formSettings.Items.Add(i =>
+            //    {
+            //        i.FieldName = "TEN_COCAU_OLD";
+            //        i.Caption = "Tên Cơ Câu 37";
+            //        i.NestedExtension().TextBox(s =>
+            //        {
+            //            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            //            s.ShowModelErrors = true;
+            //            s.Width = Unit.Percentage(100);
+            //        });
+            //    });
+            //    formSettings.Items.Add(i =>
+            //    {
+            //        i.FieldName = "SO_LUONG_OLD";
+            //        i.Caption = "Số lượng Cơ Câu 37";
+            //        i.NestedExtension().TextBox(s =>
+            //        {
+            //            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            //            s.ShowModelErrors = true;
+            //            s.Width = Unit.Percentage(100);
+            //        });
+            //    });
+            //    formSettings.Items.Add(i =>
+            //    {
+            //        i.FieldName = "DONGIA_OLD";
+            //        i.Caption = "Đơn giá Cơ Cấu 37";
+            //        i.NestedExtension().TextBox(s =>
+            //        {
+            //            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            //            s.ShowModelErrors = true;
+            //            s.Width = Unit.Percentage(100);
+            //        });
+            //    });
+            //    formSettings.Items.Add(i =>
+            //    {
+            //        i.FieldName = "TEN_COCAU_NEW";
+            //        i.Caption = "Tên Cơ Câu Thực Tế";
+            //        i.NestedExtension().TextBox(s =>
+            //        {
+            //            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            //            s.ShowModelErrors = true;
+            //            s.Width = Unit.Percentage(100);
+            //        });
+            //    });
+
+            //    formSettings.Items.Add(i =>
+            //    {
+            //        i.FieldName = "SO_LUONG_NEW";
+            //        i.Caption = "Số lượng thực tế";
+            //        i.NestedExtension().TextBox(s =>
+            //        {
+            //            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            //            s.ShowModelErrors = true;
+            //            s.Width = Unit.Percentage(100);
+            //        });
+            //    });
+
+            //    formSettings.Items.Add(i =>
+            //    {
+            //        i.FieldName = "DONGIA_NEW";
+            //        i.Caption = "Đơn giá thực tế";
+            //        i.NestedExtension().TextBox(s =>
+            //        {
+            //            s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
+            //            s.ShowModelErrors = true;
+            //            s.Width = Unit.Percentage(100);
+            //        });
+            //    });
+
+            //    formSettings.Items.Add(i =>
+            //    {
+            //        i.ShowCaption = DefaultBoolean.False;
+            //    }).SetNestedContent(() =>
+            //    {
+            //        ViewContext.Writer.Write("<div style='margin-left: 130px;'>");
+            //        Html.DevExpress().Button(
+            //            btnSettings =>
+            //            {
+            //                btnSettings.Name = "btnUpdate";
+            //                btnSettings.Text = "Lưu";
+            //                btnSettings.ClientSideEvents.Click = "function(s, e){ gvChiTietDichVu.UpdateEdit(); }";
+            //            }).Render();
+            //        Html.DevExpress().Button(
+            //            btnSettings =>
+            //            {
+            //                btnSettings.Name = "btnCancel";
+            //                btnSettings.Text = "Hủy";
+            //                btnSettings.Style[HtmlTextWriterStyle.MarginLeft] = "5px";
+            //                btnSettings.ClientSideEvents.Click = "function(s, e){ gvChiTietDichVu.CancelEdit(); }";
+            //            }).Render();
+            //        ViewContext.Writer.Write("</div>");
+            //    });
+            //})
+            //.Bind(data)
+            //.Render();
+        });
+
+        settings.Settings.ShowGroupPanel = true;
+
+        settings.InitNewRow += (s, e) =>
+        {
+
+        };
+
+        settings.Width = Unit.Percentage(100);
+
+        settings.Columns.Add(s =>
+        {
+            s.FieldName = "MaCoCau";
+            s.Caption = "Mã";
+            s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            s.Width = Unit.Percentage(10);
+            s.ReadOnly = true;
+        });
+        settings.Columns.Add(s =>
+        {
+            s.FieldName = "TenCoCauOld";
+            s.Caption = "Nội dung";
+            s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            s.Width = Unit.Percentage(30);
+            s.ReadOnly = true;
+        });
+
+        settings.Columns.AddBand(s =>
+        {
+            s.Caption = "Cơ cấu giá 37";
+            s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            s.Columns.Add(s1 =>
+            {
+                s1.FieldName = "SoLuongOld";
+                s1.Caption = "Số lượng";
+                s1.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                s1.Width = Unit.Percentage(10);
+                s1.ReadOnly = true;
+            });
+
+            s.Columns.Add(s1 =>
+            {
+                s1.FieldName = "DonGiaOld";
+                s1.Caption = "Đơn giá";
+                s1.PropertiesEdit.DisplayFormatString = "#,#";
+                s1.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                s1.Width = Unit.Percentage(10);
+                s1.ReadOnly = true;
+            });
+
+            s.Columns.Add(s1 =>
+            {
+                s1.FieldName = "THANH_TIEN_OLD";
+                s1.Caption = "Thành tiền";
+                s1.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+                s1.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                s1.PropertiesEdit.DisplayFormatString = "#,#";
+                s1.Width = Unit.Percentage(10);
+                s1.ReadOnly = true;
+            });
+        });
+
+        settings.Columns.AddBand(s =>
+        {
+            s.Caption = "Cơ cấu giá thực tế";
+            s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+
+            s.Columns.Add(s1 =>
+            {
+                s1.FieldName = "TenCoCauNew";
+                s1.Caption = "Nội dung";
+                s1.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                s1.Width = Unit.Percentage(10);
+                s1.ReadOnly = true;
+            });
+
+            s.Columns.Add(s1 =>
+            {
+                s1.FieldName = "SoLuongNew";
+                s1.Caption = "Số lượng";
+                s1.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                s1.Width = Unit.Percentage(10);
+            });
+            s.Columns.Add(s1 =>
+            {
+                s1.FieldName = "DonGiaNew";
+                s1.Caption = "Đơn giá";
+                s1.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                s1.PropertiesEdit.DisplayFormatString = "#,#";
+                s1.Width = Unit.Percentage(10);
+                s1.ReadOnly = true;
+            });
+            s.Columns.Add(s1 =>
+            {
+                s1.FieldName = "THANH_TIEN_NEW";
+                s1.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+                s1.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                s1.Caption = "Thành tiền";
+                s1.PropertiesEdit.DisplayFormatString = "#,#";
+                s1.Width = Unit.Percentage(10);
+                s1.ReadOnly = true;
+            });
+        });
+
+        settings.Columns.Add(s =>
+        {
+            s.FieldName = "CHENH_LECH";
+            s.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            s.Caption = "Chênh lệch";
+            s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            s.PropertiesEdit.DisplayFormatString = "#,#";
+            s.Width = Unit.Percentage(10);
+            s.ReadOnly = true;
+        });
+
+        settings.Columns.Add(s =>
+        {
+            s.FieldName = "LoaiName";
+            //s.Caption = "Loại";
+            s.Width = Unit.Percentage(20);
+            s.GroupIndex = 0;
+        });
+
+        settings.CustomUnboundColumnData = (sender, e) =>
+        {
+            if (e.Column.FieldName == "THANH_TIEN_OLD")
+            {
+                e.Value = (double)e.GetListSourceFieldValue("DonGiaOld") * (double)e.GetListSourceFieldValue("SoLuongOld");
+            }
+            else if (e.Column.FieldName == "THANH_TIEN_NEW")
+            {
+                e.Value = (double)e.GetListSourceFieldValue("DonGiaNew") * (double)e.GetListSourceFieldValue("SoLuongNew");
+            }
+            else if (e.Column.FieldName == "CHENH_LECH")
+            {
+                e.Value = (double)e.GetListSourceFieldValue("THANH_TIEN_NEW") - (double)e.GetListSourceFieldValue("THANH_TIEN_OLD");
+            }
+        };
+
+        settings.PreRender = (s, e) =>
+        {
+            MVCxGridView gridview = s as MVCxGridView;
+            if (gridview != null)
+            {
+                gridview.ExpandAll();
+            }
+        };
+
+        //settings.CellEditorInitialize = (sender, e) =>
+        //{
+        //    ASPxEdit editor = (ASPxEdit)e.Editor;
+        //    editor.ValidationSettings.Display = Display.Dynamic;
+        //};
+
+    });
+
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+
+@grid.Bind(Model).GetHtml();

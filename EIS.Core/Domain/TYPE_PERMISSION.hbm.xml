@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="EIS.Core.Domain.TYPE_PERMISSION, EIS.Core" table="TYPE_PERMISSION" >
+    <id name="PERMISSIONID" column="PERMISSIONID" type="int" />
+    <property name="LOAI_PERMISSION"  column="LOAI_PERMISSION" type="int"/>
+    <property name="TYPE_PERMISSIONMULTI"  column="TYPE_PERMISSIONMULTI" type="string" length="64"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,139 @@
+﻿
+@using System.Globalization
+@{
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+
+    var isPq = (bool)HttpContext.Current.Session["IsPQ_QLPQ"];
+    var check = (int?)HttpContext.Current.Session["ABC"];
+
+    Html.DevExpress().GridView(
+        settings =>
+        {
+            settings.Name = "gvDSND";
+            settings.KeyFieldName = "userid";
+            settings.CallbackRouteValues = new { Controller = "QuanLyNguoiDung", Action = "DS_NguoiDungPartial" };
+            settings.CustomActionRouteValues = new { Controller = "QuanLyNguoiDung", Action = "ft_TimKiem_DSND" };
+            settings.ClientSideEvents.EndCallback = "OnEndCallback";
+            settings.ClientSideEvents.Init = "OnInit";
+            settings.SettingsEditing.Mode = EIS.FEW.Helper.GridViewEditingHelper.EditMode;
+            settings.SettingsBehavior.AllowSelectByRowClick = true;
+            settings.SettingsBehavior.ConfirmDelete = true;
+            settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.Control;
+            settings.SettingsPager.PageSizeItemSettings.Visible = true;
+            settings.SettingsPager.PageSizeItemSettings.Items = new[] { "10", "15", "20", "30", "50" };
+            settings.SettingsPager.PageSize = 15;
+            settings.Settings.VerticalScrollBarMode = ScrollBarMode.Auto;
+            settings.Width = Unit.Percentage(80);
+            settings.Columns.Add(s =>
+            {
+                s.EditFormSettings.Visible = DefaultBoolean.False;
+                s.Caption = @"STT";
+                s.Width = 50;
+                s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                s.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+                s.ExportCellStyle.BorderSides = DevExpress.XtraPrinting.BorderSide.All;
+                s.VisibleIndex = 0;
+            });
+            settings.CustomColumnDisplayText = (send, e) =>
+            {
+                if (e.Column.Caption == @"STT")
+                {
+                    e.DisplayText = (e.VisibleRowIndex + 1).ToString(CultureInfo.InvariantCulture);
+                }
+            };
+            settings.Columns.Add(s =>
+            {
+                s.FieldName = "username";
+                s.Caption = @"Tên tài khoản";
+                s.PropertiesEdit.EnableClientSideAPI = true;
+                s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+            });
+            settings.Columns.Add(s =>
+            {
+                s.FieldName = "IsApproved";
+                s.Caption = @"Kích hoạt";
+                s.Width = 100;
+                s.PropertiesEdit.EnableClientSideAPI = true;
+                s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                s.ColumnType = MVCxGridViewColumnType.CheckBox;
+            });
+            settings.Columns.Add(s =>
+            {
+                s.FieldName = "IsLockedOut";
+                s.Caption = @"Khóa";
+                s.Width = 50;
+                s.PropertiesEdit.EnableClientSideAPI = true;
+                s.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                s.ColumnType = MVCxGridViewColumnType.CheckBox;
+            });
+            settings.Columns.Add(item =>
+            {
+                item.Caption = @"Ngày tạo";
+                item.Name = "CreateDate";
+                item.FieldName = @"CreateDate";
+                item.Width = Unit.Percentage(25);
+                item.ColumnType = MVCxGridViewColumnType.DateEdit;
+            });
+
+            settings.Columns.Add(column =>
+            {
+                column.SetDataItemTemplateContent(c =>
+                {
+                    var id = DataBinder.Eval(c.DataItem, "userid");
+
+                    if (id != null && check != null && int.Parse(id.ToString()) != check && isPq == false)
+                    {
+                        Html.DevExpress().HyperLink(hl =>
+                        {
+                            hl.Name = "hlEdit_" + id;
+                            hl.NavigateUrl = Url.Action("AddDsnd", "QuanLyNguoiDung", new { userid = id });
+                            hl.Properties.ImageUrl = "~/Content/Images/Edit_16x16.png";
+                            hl.ToolTip = "Sửa người dùng";
+                        }).Render();
+
+                        ViewContext.Writer.Write(" ");
+
+                        string deleteActionUrl = Url.Action("Delete", "QuanLyNguoiDung", new { userid = id });
+
+                        Html.DevExpress().HyperLink(hl =>
+                        {
+                            hl.Name = "hlDelete_" + id;
+                            hl.NavigateUrl = "javascript:;";
+                            hl.ToolTip = "Xóa người dùng";
+                            hl.Properties.ClientSideEvents.Click = "function (s, e){ OnDeleteUser(\"" + id.ToString() + "\");}";
+                            hl.Properties.ImageUrl = "~/Content/Images/Delete_16x16.png";
+                        }).Render();
+                    }
+                    if (id != null && int.Parse(id.ToString()) != check && isPq)
+                    {
+                        Html.DevExpress().HyperLink(hl =>
+                        {
+                            hl.Name = "hlEdit_" + id;
+                            hl.NavigateUrl = Url.Action("AddDsnd", "QuanLyNguoiDung", new { userid = id });
+                            hl.Properties.ImageUrl = "~/Content/Images/Edit_16x16.png";
+                            hl.ToolTip = "Sửa người dùng";
+                        }).Render();
+                    }
+                });
+                if (isPq == false)
+                {
+                    column.SetHeaderCaptionTemplateContent(c => Html.DevExpress().HyperLink(hl =>
+                    {
+                        hl.Name = "hlNew";
+                        hl.NavigateUrl = Url.Action("AddDsnd", "QuanLyNguoiDung", new { userid = 0 });
+                        hl.ToolTip = "Tạo mới người dùng";
+                        hl.Properties.ImageUrl = "~/Content/Images/add2.png";
+                    }).Render());
+                }
+                column.Width = 50;
+                column.HeaderStyle.HorizontalAlign = HorizontalAlign.Center;
+                column.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+
+            });
+        }).BindToLINQ(string.Empty, string.Empty, (s, e) =>
+        {
+            e.KeyExpression = "userid";
+            e.QueryableSource = Model;
+        }).Render();
+}
